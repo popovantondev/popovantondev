@@ -29,6 +29,10 @@ A macOS app for sending numbered batches of videos, audio and subtitles to Teleg
 
 </details>
 
+### Project stack
+
+**Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
+
 ### Lecture Companion for Microsoft Teams
 
 A Windows 11 desktop companion for lectures. It summarizes new live captions and can explain a currently shared slide on request. Processing stays on the PC.
@@ -48,10 +52,6 @@ A Windows 11 desktop companion for lectures. It summarizes new live captions and
 *Screenshot from the published v2.4 preview; synthetic content, no real meeting data.*
 
 </details>
-
-### Project stack
-
-**Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
 
 ### Project guides
 
