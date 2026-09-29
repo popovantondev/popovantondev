@@ -29,6 +29,26 @@ Eine macOS-App, die nummerierte Pakete aus Videos, Audiodateien und Untertiteln 
 
 </details>
 
+### Lecture Companion für Microsoft Teams
+
+Ein Windows-11-Assistent für Vorlesungen. Er fasst neue Liveuntertitel zusammen und erklärt auf Wunsch eine gerade geteilte Folie. Die KI-Verarbeitung bleibt auf dem PC.
+
+- **Drei Sprachen** — Deutsch, Englisch und Russisch.
+- **Portable Vorschau** — keine separate Python-Installation und kein API-Schlüssel.
+- **Datenschutz** — keine Mikrofonaufnahme und kein Cloud-Fallback.
+
+**[Release-Vorschau v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Überblick und Schnellstart](https://github.com/popovantondev/LectureCompanion/blob/main/README.md)** · **[Problem melden](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+<details>
+<summary>Anwendung ansehen</summary>
+<br>
+
+![Lecture Companion v2.4, deutsche Oberfläche mit synthetischen Beispielen](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-de.png)
+
+*Screenshot der veröffentlichten v2.4-Vorschau; synthetische Inhalte, keine echten Meeting-Daten.*
+
+</details>
+
 ### Technologien des Projekts
 
 **Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
