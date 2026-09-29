@@ -29,6 +29,21 @@
 
 </details>
 
+### Другие проекты
+
+- [Anki SOUND](https://github.com/popovantondev/AnkiSound) — macOS · текущий выпуск [3.4.11](https://github.com/popovantondev/AnkiSound/releases/latest); локальная генерация речи для карточек Anki.
+- [LectureTranslate](https://github.com/popovantondev/LectureTranslate) — macOS 15+ · выпуск [3.5.1](https://github.com/popovantondev/LectureTranslate/releases/latest); перевод субтитров лекций с черновиками для проверки.
+- [SRT to Sound](https://github.com/popovantondev/SRTtoSound) — macOS 15+ · выпуск [3.5.0](https://github.com/popovantondev/SRTtoSound/releases/latest); синхронизированная озвучка русских SRT. Python, FFmpeg и веса модели устанавливаются отдельно.
+- [LectureMerge](https://github.com/popovantondev/LectureMerge) — macOS 14+ · выпуск [2.2.0](https://github.com/popovantondev/LectureMerge/releases/latest); объединение видео лекции, аудио и субтитров.
+- [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) — Windows x64 · [5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7); переносное резервное копирование папок в одном направлении, пока Preview.
+- [Hotspot Control](https://github.com/popovantondev/HotspotControl) — Windows 11 24H2+ x64 · [0.3.0](https://github.com/popovantondev/HotspotControl/releases/latest); управление параметрами мобильной точки доступа.
+- [MegaProg](https://github.com/popovantondev/MegaProg) — macOS · Preview 4.5.1; организация утверждённых планов разработки и проверок.
+- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · [предварительный выпуск v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) опубликован; Portable-архив разделён на четыре части, а JoinPortable.cmd проверяет и собирает их.
+- [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) — macOS · ранняя разработка, доступны только исходники и документация.
+- [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) — macOS · только исходники; проверка прав на распространение сторонних компонентов ещё не завершена.
+
+### Технологии Telegram Media Sender
+
 ### Стек проекта
 
 **Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
