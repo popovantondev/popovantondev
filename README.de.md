@@ -38,7 +38,7 @@ Eine macOS-App, die nummerierte Pakete aus Videos, Audiodateien und Untertiteln 
 - [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) — Windows x64 · [5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7); portable Sicherung in eine Richtung, weiterhin Preview.
 - [Hotspot Control](https://github.com/popovantondev/HotspotControl) — Windows 11 24H2+ x64 · [0.3.0](https://github.com/popovantondev/HotspotControl/releases/latest); Mobile-Hotspot-Einstellungen verwalten.
 - [MegaProg](https://github.com/popovantondev/MegaProg) — macOS · Preview 4.5.1; freigegebene Entwicklungspläne und Prüfungen organisieren.
-- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · Version 2.4 ist ein unveröffentlichter Entwurf ohne öffentliche Programmdateien.
+- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · [öffentlicher Vorab-Release v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4); das Portable-Archiv umfasst vier Teile und wird mit JoinPortable.cmd geprüft.
 - [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) — macOS · frühe Entwicklung, nur Quelltext und Dokumentation.
 - [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) — macOS · nur Quelltext; die Freigabe der Drittanbieterkomponenten wird noch geprüft.
 

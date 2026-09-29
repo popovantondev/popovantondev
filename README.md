@@ -38,7 +38,7 @@ A macOS app for sending numbered batches of videos, audio and subtitles to Teleg
 - [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) — Windows x64 · [5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7); portable one-way folder backup, still a preview.
 - [Hotspot Control](https://github.com/popovantondev/HotspotControl) — Windows 11 24H2+ x64 · [0.3.0](https://github.com/popovantondev/HotspotControl/releases/latest); manage Mobile Hotspot settings.
 - [MegaProg](https://github.com/popovantondev/MegaProg) — macOS · Preview 4.5.1; organize approved development plans and verification.
-- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · version 2.4 is an unpublished draft with no public app download.
+- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · [public v2.4 pre-release](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4); the portable archive is split into four parts and verified by JoinPortable.cmd.
 - [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) — macOS · early development, source and documentation only.
 - [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) — macOS · source only; third-party release clearance is still under review.
 

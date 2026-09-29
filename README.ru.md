@@ -38,7 +38,7 @@
 - [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) — Windows x64 · [5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7); переносное резервное копирование папок в одном направлении, пока Preview.
 - [Hotspot Control](https://github.com/popovantondev/HotspotControl) — Windows 11 24H2+ x64 · [0.3.0](https://github.com/popovantondev/HotspotControl/releases/latest); управление параметрами мобильной точки доступа.
 - [MegaProg](https://github.com/popovantondev/MegaProg) — macOS · Preview 4.5.1; организация утверждённых планов разработки и проверок.
-- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · версия 2.4 пока является неопубликованным черновиком без общедоступной сборки.
+- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · [предварительный выпуск v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) опубликован; Portable-архив разделён на четыре части, а JoinPortable.cmd проверяет и собирает их.
 - [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) — macOS · ранняя разработка, доступны только исходники и документация.
 - [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) — macOS · только исходники; проверка прав на распространение сторонних компонентов ещё не завершена.
 
