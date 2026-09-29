@@ -29,6 +29,10 @@ Eine macOS-App, die nummerierte Pakete aus Videos, Audiodateien und Untertiteln 
 
 </details>
 
+### Technologien des Projekts
+
+**Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
+
 ### Lecture Companion für Microsoft Teams
 
 Ein Windows-11-Assistent für Vorlesungen. Er fasst neue Liveuntertitel zusammen und erklärt auf Wunsch eine gerade geteilte Folie. Die KI-Verarbeitung bleibt auf dem PC.
@@ -48,10 +52,6 @@ Ein Windows-11-Assistent für Vorlesungen. Er fasst neue Liveuntertitel zusammen
 *Screenshot der veröffentlichten v2.4-Vorschau; synthetische Inhalte, keine echten Meeting-Daten.*
 
 </details>
-
-### Technologien des Projekts
-
-**Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
 
 ### Anleitungen zur Anwendung
 
