@@ -35,7 +35,7 @@ A macOS app for sending numbered batches of videos, audio and subtitles to Teleg
 
 ### Lecture Companion for Microsoft Teams
 
-A Windows 11 desktop companion for lectures. It summarizes new live captions and can explain a currently shared slide on request. AI processing stays on the PC.
+A small animated robot companion for Windows 11 lectures in Teams. It summarizes new live captions and can explain a shared slide on request. AI processing stays on the PC.
 
 - **Three languages** — German, English and Russian.
 - **Portable preview** — no separate Python installation or API key.
