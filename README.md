@@ -48,6 +48,26 @@ A macOS app for sending numbered batches of videos, audio and subtitles to Teleg
 
 **Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
 
+### Lecture Companion for Microsoft Teams
+
+A small animated robot companion for Windows 11 lectures in Teams. It summarizes new live captions and can explain a shared slide on request. AI processing stays on the PC.
+
+- **Three languages** — German, English and Russian.
+- **Portable preview** — no separate Python installation or API key.
+- **Privacy-aware** — no microphone recording or cloud fallback.
+
+**[v2.4 release preview](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Overview and quick start](https://github.com/popovantondev/LectureCompanion/blob/main/README.en.md)** · **[Report a problem](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+<details>
+<summary>See the application</summary>
+<br>
+
+![Lecture Companion v2.4, English interface with synthetic demo content](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-en.png)
+
+*Screenshot from the published v2.4 preview; synthetic content, no real meeting data.*
+
+</details>
+
 ### Project guides
 
 [User guide](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/en/README.md) · [Connect Telegram](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/en/telegram-setup.md)

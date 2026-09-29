@@ -48,6 +48,26 @@
 
 **Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
 
+### Lecture Companion для Microsoft Teams
+
+Анимированный робот-помощник для лекций в Teams на Windows 11. Он кратко пересказывает новые живые субтитры и по запросу объясняет демонстрируемый слайд. ИИ работает на компьютере.
+
+- **Три языка** — немецкий, английский и русский.
+- **Переносимая версия** — без отдельной установки Python и API-ключа.
+- **Конфиденциальность** — без записи микрофона и облачного резерва.
+
+**[Предварительный релиз v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Обзор и быстрый старт](https://github.com/popovantondev/LectureCompanion/blob/main/README.ru.md)** · **[Сообщить о проблеме](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+<details>
+<summary>Посмотреть приложение</summary>
+<br>
+
+![Lecture Companion v2.4, русский интерфейс и синтетические примеры](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png)
+
+*Скриншот опубликованной версии v2.4; синтетические данные, без реальной встречи.*
+
+</details>
+
 ### Инструкции к приложению
 
 [Руководство пользователя](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/ru/README.md) · [Подключение Telegram](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/ru/telegram-setup.md)
