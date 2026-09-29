@@ -29,6 +29,26 @@ A macOS app for sending numbered batches of videos, audio and subtitles to Teleg
 
 </details>
 
+### Lecture Companion for Microsoft Teams
+
+A Windows 11 desktop companion for lectures. It summarizes new live captions and can explain a currently shared slide on request. Processing stays on the PC.
+
+- **Three languages** — German, English and Russian.
+- **Portable preview** — no separate Python installation or API key.
+- **Privacy-aware** — no microphone recording or cloud fallback.
+
+**[v2.4 release preview](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Overview and quick start](https://github.com/popovantondev/LectureCompanion/blob/main/README.en.md)** · **[Report a problem](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+
+<details>
+<summary>See the application</summary>
+<br>
+
+![Lecture Companion v2.4, English interface with synthetic demo content](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-en.png)
+
+*Screenshot from the published v2.4 preview; synthetic content, no real meeting data.*
+
+</details>
+
 ### Project stack
 
 **Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
