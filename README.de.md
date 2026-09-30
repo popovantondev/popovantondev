@@ -50,7 +50,7 @@ Eine macOS-App, die nummerierte Pakete aus Videos, Audiodateien und Untertiteln 
 
 ### Lecture Companion für Microsoft Teams
 
-Ein animierter Roboter für Teams-Vorlesungen unter Windows 11. Er fasst neue Liveuntertitel zusammen und erklärt auf Wunsch eine geteilte Folie. Die KI-Verarbeitung bleibt auf dem PC.
+Ein animierter Roboter für Teams-Vorlesungen unter Windows 11. Er fasst neue Liveuntertitel zusammen und erklärt auf Wunsch eine geteilte Folie. Die Verarbeitung bleibt auf dem PC.
 
 - **Drei Sprachen** — Deutsch, Englisch und Russisch.
 - **Portable Vorschau** — keine separate Python-Installation und kein API-Schlüssel.
