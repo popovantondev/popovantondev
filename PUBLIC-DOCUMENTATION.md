@@ -9,3 +9,5 @@ Run `python tools/check_public_docs.py --online --published` to check local page
 Preview links target the exact reviewed release. Source-only projects have no binary download button. Published archives, licenses and repository visibility require their own review.
 
 Temporary technical results belong in Actions artifacts. Do not use user-facing Releases for diagnostic self-tests. Screenshots and attachments must exclude credentials and private user content; label demonstration data honestly.
+
+For the profile catalog, run `python tools/check_public_docs.py --refresh-catalog --write` after project metadata PRs are merged. The weekly check compares catalog entries to each project on its current main branch.
