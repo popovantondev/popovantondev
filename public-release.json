@@ -774,5 +774,18 @@
       "downloads": [],
       "checksums": []
     }
-  ]
+  ],
+  "catalog_icons": {
+    "TelegramMediaSender": "assets/app-icons/TelegramMediaSender.svg",
+    "AnkiSound": "assets/app-icons/AnkiSound.png",
+    "LectureTranslate": "assets/app-icons/LectureTranslate.png",
+    "SRTtoSound": "assets/app-icons/SRTtoSound.png",
+    "LectureMerge": "assets/app-icons/LectureMerge.png",
+    "Kaktus-Backup-Sync": "assets/app-icons/Kaktus-Backup-Sync.png",
+    "HotspotControl": "assets/app-icons/HotspotControl.ico",
+    "MegaProg": "assets/app-icons/MegaProg.svg",
+    "LectureCompanion": "assets/app-icons/LectureCompanion.png",
+    "openmedia-downloader": "assets/app-icons/openmedia-downloader.png",
+    "StudyArchivePrep": "assets/app-icons/StudyArchivePrep.svg"
+  }
 }
