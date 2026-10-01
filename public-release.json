@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "repo": "popovantondev",
+  "projects": [
+    {
+      "name": "Telegram Media Sender",
+      "version": "1.1.2",
+      "platform": "macOS 13+ · Apple Silicon",
+      "tag": "v1.1.2",
+      "description": {
+        "ru": "Отправляет пронумерованные наборы видео, аудио и субтитров в Telegram в выбранном порядке.",
+        "de": "Sendet nummerierte Pakete aus Video, Audio und Untertiteln in der gewählten Reihenfolge an Telegram.",
+        "en": "Send numbered bundles of video, audio and subtitles to Telegram in your chosen order."
+      },
+      "requirements": {
+        "ru": "Нужны собственный аккаунт Telegram, API ID и API Hash; приложение не нотарифицировано Apple.",
+        "de": "Eigenes Telegram-Konto, API ID und API Hash erforderlich; keine Apple-Notarisierung.",
+        "en": "Requires your own Telegram account, API ID and API Hash; not notarized by Apple."
+      },
+      "start": {
+        "ru": "Распакуйте архив, перенесите Telegram Media Sender.app в Applications и настройте подключение по руководству.",
+        "de": "ZIP entpacken, Telegram Media Sender.app nach Applications verschieben und die Verbindung nach Anleitung einrichten.",
+        "en": "Extract the ZIP, move Telegram Media Sender.app to Applications and follow the guide to connect Telegram."
+      },
+      "schema_version": 1,
+      "repo": "TelegramMediaSender",
+      "source_url": "https://github.com/popovantondev/TelegramMediaSender",
+      "readmes": {
+        "en": [
+          "README.md",
+          "docs/en/README.md"
+        ],
+        "de": [
+          "docs/de/README.md"
+        ],
+        "ru": [
+          "docs/ru/README.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/TelegramMediaSender/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/TelegramMediaSender/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/TelegramMediaSender/releases/tag/v1.1.2",
+      "assets": [
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 108,
+          "url": "https://github.com/popovantondev/TelegramMediaSender/releases/download/v1.1.2/SHA256SUMS.txt"
+        },
+        {
+          "name": "TelegramMediaSender-1.1.2-macOS-arm64.zip",
+          "size": 42963589,
+          "url": "https://github.com/popovantondev/TelegramMediaSender/releases/download/v1.1.2/TelegramMediaSender-1.1.2-macOS-arm64.zip"
+        }
+      ],
+      "downloads": [
+        "TelegramMediaSender-1.1.2-macOS-arm64.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS.txt"
+      ]
+    },
+    {
+      "name": "Anki SOUND",
+      "version": "3.4.11",
+      "platform": "macOS 13+ · Apple Silicon",
+      "tag": "v3.4.11",
+      "description": {
+        "ru": "Добавляет локальную озвучку выбранным карточкам Anki и сохраняет отдельный проверенный пакет.",
+        "de": "Ergänzt ausgewählte Anki-Karten um lokale Sprachausgabe und erstellt ein separat geprüftes Paket.",
+        "en": "Add local speech to selected Anki cards and save a separately verified package."
+      },
+      "requirements": {
+        "ru": "Python 3.9–3.12; интернет для первоначальной установки зависимостей и моделей. Приложение не нотарифицировано Apple.",
+        "de": "Python 3.9–3.12; Internet für die erste Installation von Paketen und Stimmen. Keine Apple-Notarisierung.",
+        "en": "Python 3.9–3.12; internet for initial dependency and voice-model setup. Not notarized by Apple."
+      },
+      "start": {
+        "ru": "Распакуйте всю папку в доступное для записи место. Выполните SETUP.command, затем OPEN.command; выберите экспорт .apkg.",
+        "de": "Den gesamten Ordner an einen beschreibbaren Ort entpacken. SETUP.command, danach OPEN.command starten; einen .apkg-Export wählen.",
+        "en": "Extract the complete folder to a writable location. Run SETUP.command, then OPEN.command and select an .apkg export."
+      },
+      "schema_version": 1,
+      "repo": "AnkiSound",
+      "source_url": "https://github.com/popovantondev/AnkiSound",
+      "readmes": {
+        "en": [
+          "README.md"
+        ],
+        "de": [
+          "README.de.md"
+        ],
+        "ru": [
+          "README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "docs/Guide-ru.html",
+        "de": "docs/Guide-de.html",
+        "en": "docs/Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/AnkiSound/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/AnkiSound/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/AnkiSound/releases/tag/v3.4.11",
+      "assets": [
+        {
+          "name": "Anki_SOUND-v3.4.11-macOS-AppleSilicon.zip",
+          "size": 5620663,
+          "url": "https://github.com/popovantondev/AnkiSound/releases/download/v3.4.11/Anki_SOUND-v3.4.11-macOS-AppleSilicon.zip"
+        },
+        {
+          "name": "Anki_SOUND-v3.4.11-source.zip",
+          "size": 3505710,
+          "url": "https://github.com/popovantondev/AnkiSound/releases/download/v3.4.11/Anki_SOUND-v3.4.11-source.zip"
+        },
+        {
+          "name": "BUILD_INFO.txt",
+          "size": 285,
+          "url": "https://github.com/popovantondev/AnkiSound/releases/download/v3.4.11/BUILD_INFO.txt"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 368,
+          "url": "https://github.com/popovantondev/AnkiSound/releases/download/v3.4.11/SHA256SUMS.txt"
+        }
+      ],
+      "downloads": [
+        "Anki_SOUND-v3.4.11-macOS-AppleSilicon.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS.txt"
+      ]
+    },
+    {
+      "name": "LectureTranslate",
+      "version": "3.5.1",
+      "platform": "macOS 15+ · Apple Silicon",
+      "tag": "v3.5.1",
+      "description": {
+        "ru": "Переводит немецкие SRT-субтитры на русский с сохранением таймкодов, очередью и проверкой черновика.",
+        "de": "Übersetzt deutsche SRT-Untertitel ins Russische mit Zeitcodes, Warteschlange und Entwurfsprüfung.",
+        "en": "Translate German SRT subtitles into Russian with preserved timecodes, a queue and draft review."
+      },
+      "requirements": {
+        "ru": "Нужны отдельное подключение и вход во внешний сервис перевода. FFmpeg/ffprobe необязательны для отдельных медиафункций.",
+        "de": "Separate Verbindung und Anmeldung beim externen Übersetzungsdienst nötig. FFmpeg/ffprobe sind für einzelne Medienfunktionen optional.",
+        "en": "Requires a separate connection and sign-in to an external translation service. FFmpeg/ffprobe are optional for specific media features."
+      },
+      "start": {
+        "ru": "Распакуйте архив приложения, настройте подключение по руководству и добавьте немецкие .srt. Проверяйте перевод перед использованием.",
+        "de": "App-Archiv entpacken, Verbindung nach Anleitung einrichten und deutsche .srt hinzufügen. Übersetzungen vor Verwendung prüfen.",
+        "en": "Extract the app archive, configure the connection using the guide and add German .srt files. Review translations before use."
+      },
+      "schema_version": 1,
+      "repo": "LectureTranslate",
+      "source_url": "https://github.com/popovantondev/LectureTranslate",
+      "readmes": {
+        "de": [
+          "README.md",
+          "docs/de/README.md"
+        ],
+        "en": [
+          "docs/en/README.md"
+        ],
+        "ru": [
+          "docs/ru/README.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/LectureTranslate/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/LectureTranslate/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/LectureTranslate/releases/tag/v3.5.1",
+      "assets": [
+        {
+          "name": "lecture_translate-v3.5.1-app.zip",
+          "size": 3853130,
+          "url": "https://github.com/popovantondev/LectureTranslate/releases/download/v3.5.1/lecture_translate-v3.5.1-app.zip"
+        },
+        {
+          "name": "lecture_translate-v3.5.1-source.zip",
+          "size": 11930708,
+          "url": "https://github.com/popovantondev/LectureTranslate/releases/download/v3.5.1/lecture_translate-v3.5.1-source.zip"
+        },
+        {
+          "name": "manifest.json",
+          "size": 3766,
+          "url": "https://github.com/popovantondev/LectureTranslate/releases/download/v3.5.1/manifest.json"
+        },
+        {
+          "name": "RELEASE.md",
+          "size": 1585,
+          "url": "https://github.com/popovantondev/LectureTranslate/releases/download/v3.5.1/RELEASE.md"
+        },
+        {
+          "name": "SHA256SUMS",
+          "size": 358,
+          "url": "https://github.com/popovantondev/LectureTranslate/releases/download/v3.5.1/SHA256SUMS"
+        }
+      ],
+      "downloads": [
+        "lecture_translate-v3.5.1-app.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "name": "SRT to Sound",
+      "version": "3.5.0",
+      "platform": "macOS 15+ · Apple Silicon",
+      "tag": "v3.5.0",
+      "description": {
+        "ru": "Создаёт синхронизированную русскую озвучку из готовых SRT-субтитров в M4A или WAV.",
+        "de": "Erstellt synchronisierte russische Sprachausgabe aus fertigen SRT-Untertiteln als M4A oder WAV.",
+        "en": "Create synchronized Russian narration from finished SRT subtitles as M4A or WAV."
+      },
+      "requirements": {
+        "ru": "Отдельно установите Python 3.12 ARM64, FFmpeg, пакеты Silero и модель v5_5_ru.pt. Они не входят в архив. Приложение не нотарифицировано Apple.",
+        "de": "Python 3.12 ARM64, FFmpeg, Silero-Pakete und Modell v5_5_ru.pt separat installieren; nicht im ZIP enthalten. Keine Apple-Notarisierung.",
+        "en": "Install Python 3.12 ARM64, FFmpeg, Silero packages and v5_5_ru.pt separately; they are not bundled. Not notarized by Apple."
+      },
+      "start": {
+        "ru": "Распакуйте приложение и сначала выполните установку зависимостей по руководству. Добавьте .ru.srt, выберите голос, формат и выходную папку.",
+        "de": "App entpacken und zuerst die Abhängigkeiten nach Anleitung einrichten. .ru.srt hinzufügen, Stimme, Format und Ausgabeordner wählen.",
+        "en": "Extract the app and complete dependency setup in the guide first. Add .ru.srt files and choose voice, format and output folder."
+      },
+      "schema_version": 1,
+      "repo": "SRTtoSound",
+      "source_url": "https://github.com/popovantondev/SRTtoSound",
+      "readmes": {
+        "en": [
+          "README.md",
+          "README.en.md"
+        ],
+        "de": [
+          "README.de.md"
+        ],
+        "ru": [
+          "README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/SRTtoSound/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/SRTtoSound/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/SRTtoSound/releases/tag/v3.5.0",
+      "assets": [
+        {
+          "name": "RELEASE.md",
+          "size": 471,
+          "url": "https://github.com/popovantondev/SRTtoSound/releases/download/v3.5.0/RELEASE.md"
+        },
+        {
+          "name": "SHA256SUMS",
+          "size": 197,
+          "url": "https://github.com/popovantondev/SRTtoSound/releases/download/v3.5.0/SHA256SUMS"
+        },
+        {
+          "name": "SRT-to-Sound-3.5.0-macOS-arm64.zip",
+          "size": 4047207,
+          "url": "https://github.com/popovantondev/SRTtoSound/releases/download/v3.5.0/SRT-to-Sound-3.5.0-macOS-arm64.zip"
+        },
+        {
+          "name": "SRT-to-Sound-3.5.0-source.zip",
+          "size": 2258272,
+          "url": "https://github.com/popovantondev/SRTtoSound/releases/download/v3.5.0/SRT-to-Sound-3.5.0-source.zip"
+        }
+      ],
+      "downloads": [
+        "SRT-to-Sound-3.5.0-macOS-arm64.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "name": "LectureMerge",
+      "version": "2.2.0",
+      "platform": "macOS 14+ · Apple Silicon",
+      "tag": "v2.2.0",
+      "description": {
+        "ru": "Объединяет видео лекции, озвучку, исходное аудио и субтитры в MP4; также экспортирует аудио.",
+        "de": "Verbindet Vorlesungsvideo, Sprachausgabe, Originalton und Untertitel als MP4; exportiert auch Audio.",
+        "en": "Combine lecture video, narration, original audio and subtitles into MP4, or export audio."
+      },
+      "requirements": {
+        "ru": "Обработка локальная; внешний сервис не нужен. Приложение подписано ad-hoc и не нотарифицировано Apple.",
+        "de": "Lokale Verarbeitung ohne externen Dienst. Ad-hoc signiert, keine Apple-Notarisierung.",
+        "en": "Local processing without an external service. Ad-hoc signed and not notarized by Apple."
+      },
+      "start": {
+        "ru": "Распакуйте архив приложения, добавьте видео, аудио и субтитры. Проверьте 30-секундный фрагмент перед полным экспортом.",
+        "de": "App-Archiv entpacken, Video, Audio und Untertitel hinzufügen. Vor dem vollständigen Export einen 30-Sekunden-Ausschnitt prüfen.",
+        "en": "Extract the app archive and add video, audio and subtitles. Check a 30-second sample before the full export."
+      },
+      "schema_version": 1,
+      "repo": "LectureMerge",
+      "source_url": "https://github.com/popovantondev/LectureMerge",
+      "readmes": {
+        "en": [
+          "README.md",
+          "docs/en/README.md"
+        ],
+        "de": [
+          "docs/de/README.md"
+        ],
+        "ru": [
+          "docs/ru/README.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/LectureMerge/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/LectureMerge/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/LectureMerge/releases/tag/v2.2.0",
+      "assets": [
+        {
+          "name": "LectureMerge-v2.2.0-macos-arm64.zip",
+          "size": 35160166,
+          "url": "https://github.com/popovantondev/LectureMerge/releases/download/v2.2.0/LectureMerge-v2.2.0-macos-arm64.zip"
+        },
+        {
+          "name": "LectureMerge-v2.2.0-source.zip",
+          "size": 2435386,
+          "url": "https://github.com/popovantondev/LectureMerge/releases/download/v2.2.0/LectureMerge-v2.2.0-source.zip"
+        },
+        {
+          "name": "manifest.json",
+          "size": 3869,
+          "url": "https://github.com/popovantondev/LectureMerge/releases/download/v2.2.0/manifest.json"
+        },
+        {
+          "name": "RELEASE.md",
+          "size": 1231,
+          "url": "https://github.com/popovantondev/LectureMerge/releases/download/v2.2.0/RELEASE.md"
+        },
+        {
+          "name": "SHA256SUMS",
+          "size": 356,
+          "url": "https://github.com/popovantondev/LectureMerge/releases/download/v2.2.0/SHA256SUMS"
+        }
+      ],
+      "downloads": [
+        "LectureMerge-v2.2.0-macos-arm64.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "name": "Kaktus Backup & Sync",
+      "version": "5.2.0-preview.7",
+      "platform": "Windows · x64",
+      "tag": "v5.2.0-preview.7",
+      "description": {
+        "ru": "Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.",
+        "de": "Einseitige Ordnersicherung mit Vorschau und Aufbewahrung früherer Dateiversionen.",
+        "en": "One-way folder backup with a preview and preserved previous file versions."
+      },
+      "requirements": {
+        "ru": "Portable-пакет содержит .NET. Установка Python и SDK не нужна. Это предварительный выпуск.",
+        "de": "Portable-Paket enthält .NET; Python und SDK sind nicht nötig. Dies ist eine Vorabversion.",
+        "en": "Portable package includes .NET; Python and an SDK are not needed. This is a preview release."
+      },
+      "start": {
+        "ru": "Распакуйте ZIP целиком и откройте KaktusBackupSync.exe. Выберите источник и цель, проверьте план перед синхронизацией.",
+        "de": "ZIP vollständig entpacken und KaktusBackupSync.exe öffnen. Quelle und Ziel wählen, den Plan vor der Synchronisierung prüfen.",
+        "en": "Extract the entire ZIP and open KaktusBackupSync.exe. Choose source and target, then review the plan before syncing."
+      },
+      "schema_version": 1,
+      "repo": "Kaktus-Backup-Sync",
+      "source_url": "https://github.com/popovantondev/Kaktus-Backup-Sync",
+      "readmes": {
+        "de": [
+          "README.md"
+        ],
+        "en": [
+          "docs/README.en.md"
+        ],
+        "ru": [
+          "docs/README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose",
+      "status": "preview",
+      "release_url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7",
+      "assets": [
+        {
+          "name": "de-main.png",
+          "size": 108526,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/de-main.png"
+        },
+        {
+          "name": "en-main.png",
+          "size": 106765,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/en-main.png"
+        },
+        {
+          "name": "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip",
+          "size": 84835499,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip"
+        },
+        {
+          "name": "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256",
+          "size": 112,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256"
+        },
+        {
+          "name": "Kaktus-Backup-Sync-Source-5.2-preview.7.zip",
+          "size": 1943011,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip"
+        },
+        {
+          "name": "Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256",
+          "size": 110,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256"
+        },
+        {
+          "name": "ru-main.png",
+          "size": 115217,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/ru-main.png"
+        },
+        {
+          "name": "startup.png",
+          "size": 66221,
+          "url": "https://github.com/popovantondev/Kaktus-Backup-Sync/releases/download/v5.2.0-preview.7/startup.png"
+        }
+      ],
+      "downloads": [
+        "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip"
+      ],
+      "checksums": [
+        "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256",
+        "Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256"
+      ]
+    },
+    {
+      "name": "Hotspot Control",
+      "version": "0.3.0",
+      "platform": "Windows 11 24H2+ · x64",
+      "tag": "v0.3.0",
+      "description": {
+        "ru": "Управляет мобильной точкой доступа Windows, показывает устройства и настройки сети.",
+        "de": "Steuert den mobilen Windows-Hotspot und zeigt Geräte sowie Netzwerkeinstellungen.",
+        "en": "Control Windows Mobile Hotspot and view devices and network settings."
+      },
+      "requirements": {
+        "ru": "Совместимый Wi-Fi-адаптер; политики Windows или организации могут ограничивать операции. .NET входит в пакет.",
+        "de": "Kompatibler WLAN-Adapter; Windows- oder Organisationsrichtlinien können Funktionen einschränken. .NET ist enthalten.",
+        "en": "Compatible Wi-Fi adapter; Windows or organization policy may restrict operations. .NET is bundled."
+      },
+      "start": {
+        "ru": "Проверьте SHA-256, распакуйте ZIP полностью и откройте HotspotControl.App.exe. Отдельная установка .NET не нужна.",
+        "de": "SHA-256 prüfen, ZIP vollständig entpacken und HotspotControl.App.exe öffnen. Keine separate .NET-Installation nötig.",
+        "en": "Verify SHA-256, extract the full ZIP and open HotspotControl.App.exe. No separate .NET installation is needed."
+      },
+      "schema_version": 1,
+      "repo": "HotspotControl",
+      "source_url": "https://github.com/popovantondev/HotspotControl",
+      "readmes": {
+        "en": [
+          "README.md"
+        ],
+        "de": [
+          "docs/README.de.md"
+        ],
+        "ru": [
+          "docs/README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/HotspotControl/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/HotspotControl/issues/new/choose",
+      "status": "release",
+      "release_url": "https://github.com/popovantondev/HotspotControl/releases/tag/v0.3.0",
+      "assets": [
+        {
+          "name": "HotspotControl-0.3.0-win-x64.zip",
+          "size": 83605101,
+          "url": "https://github.com/popovantondev/HotspotControl/releases/download/v0.3.0/HotspotControl-0.3.0-win-x64.zip"
+        },
+        {
+          "name": "HotspotControl-0.3.0-win-x64.zip.sha256",
+          "size": 100,
+          "url": "https://github.com/popovantondev/HotspotControl/releases/download/v0.3.0/HotspotControl-0.3.0-win-x64.zip.sha256"
+        }
+      ],
+      "downloads": [
+        "HotspotControl-0.3.0-win-x64.zip"
+      ],
+      "checksums": [
+        "HotspotControl-0.3.0-win-x64.zip.sha256"
+      ]
+    },
+    {
+      "name": "MegaProg",
+      "version": "4.5.1",
+      "platform": "macOS · Apple Silicon",
+      "tag": "v4.5.1-preview.1",
+      "description": {
+        "ru": "Запускает согласованные задачи разработки через Codex и сохраняет требования, проверки и прогресс проекта.",
+        "de": "Führt freigegebene Entwicklungsaufgaben über Codex aus und speichert Anforderungen, Prüfungen und Fortschritt.",
+        "en": "Run approved development tasks through Codex and preserve requirements, checks and project progress."
+      },
+      "requirements": {
+        "ru": "Отдельно установите Codex CLI и войдите через аккаунт ChatGPT с доступом к Codex; нужен Git-проект. Приложение не нотарифицировано Apple.",
+        "de": "Codex CLI separat installieren und mit einem ChatGPT-Konto mit Codex-Zugang anmelden; Git-Projekt nötig. Keine Apple-Notarisierung.",
+        "en": "Install Codex CLI separately and sign in with a ChatGPT account with Codex access; requires a Git project. Not notarized by Apple."
+      },
+      "start": {
+        "ru": "Распакуйте MegaProg.app, проверьте подключение и откройте учебный пример. Просмотрите план и команды перед разрешением запуска.",
+        "de": "MegaProg.app entpacken, Verbindung prüfen und das Tutorial öffnen. Plan und Befehle vor der Ausführung prüfen.",
+        "en": "Extract MegaProg.app, check the connection and open the tutorial. Review the plan and commands before approving execution."
+      },
+      "schema_version": 1,
+      "repo": "MegaProg",
+      "source_url": "https://github.com/popovantondev/MegaProg",
+      "readmes": {
+        "en": [
+          "README.md"
+        ],
+        "de": [
+          "README.de.md"
+        ],
+        "ru": [
+          "README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/MegaProg/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/MegaProg/issues/new/choose",
+      "status": "preview",
+      "release_url": "https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1",
+      "assets": [
+        {
+          "name": "MegaProg-4.5.1-macos-arm64.zip",
+          "size": 31952317,
+          "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-macos-arm64.zip"
+        },
+        {
+          "name": "MegaProg-4.5.1-source.zip",
+          "size": 2138749,
+          "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-source.zip"
+        },
+        {
+          "name": "MegaProg-4.5.1-third-party-source.zip",
+          "size": 74583208,
+          "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/MegaProg-4.5.1-third-party-source.zip"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 293,
+          "url": "https://github.com/popovantondev/MegaProg/releases/download/v4.5.1-preview.1/SHA256SUMS.txt"
+        }
+      ],
+      "downloads": [
+        "MegaProg-4.5.1-macos-arm64.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS.txt"
+      ]
+    },
+    {
+      "name": "Lecture Companion",
+      "version": "2.4",
+      "platform": "Windows 11 · x64",
+      "tag": "v2.4",
+      "description": {
+        "ru": "Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.",
+        "de": "Begleitet Teams-Vorlesungen: fasst Untertitel lokal zusammen und erklärt eine ausgewählte Folie.",
+        "en": "Follow Teams lectures with local caption summaries and explanations of a selected slide."
+      },
+      "requirements": {
+        "ru": "Teams Desktop и совместимые драйверы; рекомендуются 32 ГБ RAM, внутренняя SSD и 25 ГБ свободного места для частей, ZIP и распаковки. EXE не подписан; проверка на втором чистом ПК не выполнена.",
+        "de": "Teams Desktop und kompatible Treiber; empfohlen: 32 GB RAM, interne SSD und 25 GB freier Platz für Teile, ZIP und Entpacken. EXE nicht signiert; Prüfung auf einem zweiten sauberen PC steht aus.",
+        "en": "Teams Desktop and compatible drivers; recommended: 32 GB RAM, internal SSD and 25 GB free for the parts, ZIP and extraction. EXE is unsigned; a second clean-PC check is pending."
+      },
+      "start": {
+        "ru": "Скачайте четыре части и JoinPortable.cmd в одну папку (всего около 5,8 ГБ). Запустите JoinPortable.cmd для проверки и сборки ZIP, распакуйте целиком и откройте LectureCompanion.exe.",
+        "de": "Vier Teile und JoinPortable.cmd in denselben Ordner herunterladen (etwa 5,8 GB). JoinPortable.cmd prüft und verbindet sie; ZIP vollständig entpacken und LectureCompanion.exe öffnen.",
+        "en": "Download all four parts and JoinPortable.cmd into one folder (about 5.8 GB). Run JoinPortable.cmd to verify and combine them, extract the entire ZIP and open LectureCompanion.exe."
+      },
+      "schema_version": 1,
+      "repo": "LectureCompanion",
+      "source_url": "https://github.com/popovantondev/LectureCompanion",
+      "readmes": {
+        "de": [
+          "README.md"
+        ],
+        "en": [
+          "README.en.md"
+        ],
+        "ru": [
+          "README.ru.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/LectureCompanion/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/LectureCompanion/issues/new/choose",
+      "status": "preview",
+      "release_url": "https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4",
+      "assets": [
+        {
+          "name": "JoinPortable.cmd",
+          "size": 1876,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/JoinPortable.cmd"
+        },
+        {
+          "name": "LectureCompanion-2.4-Final-Portable.zip.part01",
+          "size": 1800000000,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part01"
+        },
+        {
+          "name": "LectureCompanion-2.4-Final-Portable.zip.part02",
+          "size": 1800000000,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part02"
+        },
+        {
+          "name": "LectureCompanion-2.4-Final-Portable.zip.part03",
+          "size": 1800000000,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part03"
+        },
+        {
+          "name": "LectureCompanion-2.4-Final-Portable.zip.part04",
+          "size": 384722535,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/LectureCompanion-2.4-Final-Portable.zip.part04"
+        },
+        {
+          "name": "SHA256SUMS",
+          "size": 641,
+          "url": "https://github.com/popovantondev/LectureCompanion/releases/download/v2.4/SHA256SUMS"
+        }
+      ],
+      "downloads": [
+        "JoinPortable.cmd",
+        "LectureCompanion-2.4-Final-Portable.zip.part01",
+        "LectureCompanion-2.4-Final-Portable.zip.part02",
+        "LectureCompanion-2.4-Final-Portable.zip.part03",
+        "LectureCompanion-2.4-Final-Portable.zip.part04"
+      ],
+      "checksums": [
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "name": "Study Archive Prep",
+      "version": "0.1.0",
+      "platform": "macOS 13+ · Apple Silicon",
+      "tag": null,
+      "description": {
+        "ru": "Организует учебные материалы по датам, извлекает аудио и готовит порядок публикации для Telegram Media Sender.",
+        "de": "Ordnet Lernmaterial nach Datum, extrahiert Audio und bereitet die Reihenfolge für Telegram Media Sender vor.",
+        "en": "Organize study materials by date, extract audio and prepare a publication order for Telegram Media Sender."
+      },
+      "requirements": {
+        "ru": "Ранняя разработка: доступны исходники, готового установочного пакета нет. Python 3.12; локальная модель и движок для подсказок заголовков устанавливаются отдельно.",
+        "de": "Frühe Entwicklung: nur Quellcode, kein fertiges Installationspaket. Python 3.12; lokales Modell und Engine für Titelvorschläge separat einrichten.",
+        "en": "Early development: source only, no ready-to-install package. Python 3.12; set up the local model and engine separately for title suggestions."
+      },
+      "start": {
+        "ru": "Откройте руководство запуска из исходников. Программа сама не отправляет материалы в Telegram.",
+        "de": "Die Anleitung zum Start aus dem Quellcode lesen. Die App sendet selbst keine Materialien an Telegram.",
+        "en": "Follow the source setup guide. This app does not send materials to Telegram itself."
+      },
+      "schema_version": 1,
+      "repo": "StudyArchivePrep",
+      "source_url": "https://github.com/popovantondev/StudyArchivePrep",
+      "readmes": {
+        "en": [
+          "README.md"
+        ],
+        "de": [
+          "docs/de/README.md"
+        ],
+        "ru": [
+          "docs/ru/README.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/StudyArchivePrep/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/StudyArchivePrep/issues/new/choose",
+      "status": "source",
+      "release_url": null,
+      "assets": [],
+      "downloads": [],
+      "checksums": []
+    },
+    {
+      "name": "OpenMedia Downloader",
+      "version": "5.5.0",
+      "platform": "macOS 15+ · Apple Silicon",
+      "tag": null,
+      "description": {
+        "ru": "Проверяет поддерживаемые медиассылки и позволяет выбрать разрешённую загрузку или запись трансляции.",
+        "de": "Prüft unterstützte Medienlinks und ermöglicht erlaubte Downloads oder die Aufzeichnung unterstützter Streams.",
+        "en": "Inspect supported media links and select authorized downloads or supported stream recordings."
+      },
+      "requirements": {
+        "ru": "Только исходники: распространение готового приложения пока не согласовано по сторонним компонентам. Сохраняйте только материалы, на которые у вас есть право.",
+        "de": "Nur Quellcode: Freigabe der gebündelten Fremdkomponenten für eine App-Veröffentlichung steht aus. Nur berechtigte Medien speichern.",
+        "en": "Source only: redistribution clearance for bundled third-party components is pending. Save only media you are authorized to keep."
+      },
+      "start": {
+        "ru": "Откройте документацию и статус распространения. Готовый DMG или ZIP приложения сейчас не предлагается.",
+        "de": "Dokumentation und Veröffentlichungsstatus lesen. Derzeit wird kein fertiges App-DMG oder ZIP angeboten.",
+        "en": "Read the documentation and release status. No ready-to-use app DMG or ZIP is offered."
+      },
+      "schema_version": 1,
+      "repo": "openmedia-downloader",
+      "source_url": "https://github.com/popovantondev/openmedia-downloader",
+      "readmes": {
+        "en": [
+          "README.md",
+          "README_EN.md"
+        ],
+        "de": [
+          "README_DE.md"
+        ],
+        "ru": [
+          "README_RU.md"
+        ]
+      },
+      "guides": {
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html",
+        "en": "Guide-en.html"
+      },
+      "help_url": "https://popovantondev.github.io/openmedia-downloader/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/openmedia-downloader/issues/new/choose",
+      "status": "source",
+      "release_url": null,
+      "assets": [],
+      "downloads": [],
+      "checksums": []
+    }
+  ]
+}

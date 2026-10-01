@@ -1,75 +1,65 @@
 **[Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**
 
-![popovantondev — Программы для повседневных задач](assets/header-ru.svg)
+![popovantondev](assets/header-ru.svg)
 
-Разрабатываю приложения и инструменты для разных платформ. Уделяю внимание понятному интерфейсу и простой настройке.
+Приложения для повседневных задач. Выберите программу, проверьте требования и откройте руководство.
 
-### Мой проект
+**[Программы](https://popovantondev.github.io/popovantondev/index-ru.html)**
 
-<p><a href="https://github.com/popovantondev/TelegramMediaSender"><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></a></p>
+## [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender)
 
-### [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender)
+<p><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></p>
 
-Приложение для macOS, которое отправляет пронумерованные комплекты видео, аудио и субтитров в Telegram по порядку.
+Отправляет пронумерованные наборы видео, аудио и субтитров в Telegram в выбранном порядке.
 
-- **Разные комплекты** — видео, аудио, субтитры или их сочетание.
-- **Проверка перед отправкой** — просмотр выбранных файлов и возможных повторов.
-- **Три языка интерфейса** — немецкий, русский и английский.
-- **Локальные профили** — данные подключения и сессии Telegram хранятся на вашем Mac.
+**macOS 13+ · Apple Silicon · Выпуск 1.1.2**
 
-**[Скачать для macOS](https://github.com/popovantondev/TelegramMediaSender/releases/latest)** · **[Код и документация](https://github.com/popovantondev/TelegramMediaSender)** · **[Обратная связь](https://github.com/popovantondev/TelegramMediaSender/issues/new/choose)**
+**[Скачать](https://github.com/popovantondev/TelegramMediaSender/releases/tag/v1.1.2)** · **[Инструкция](https://popovantondev.github.io/TelegramMediaSender/Guide-ru.html)** · **[Сообщить об ошибке](https://github.com/popovantondev/TelegramMediaSender/issues/new/choose)**
 
 <details>
-<summary>Посмотреть приложение</summary>
-<br>
+<summary>Посмотреть интерфейс</summary>
 
 ![Telegram Media Sender](https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/docs/images/app-ru.png)
 
-*Демонстрационные файлы; аккаунт Telegram не подключён.*
+*Демонстрационный интерфейс; настоящий аккаунт Telegram не подключён.*
 
 </details>
 
-### Другие проекты
+### Стек Telegram Media Sender
 
-- [Anki SOUND](https://github.com/popovantondev/AnkiSound) — macOS · текущий выпуск [3.4.11](https://github.com/popovantondev/AnkiSound/releases/latest); локальная генерация речи для карточек Anki.
-- [LectureTranslate](https://github.com/popovantondev/LectureTranslate) — macOS 15+ · выпуск [3.5.1](https://github.com/popovantondev/LectureTranslate/releases/latest); перевод субтитров лекций с черновиками для проверки.
-- [SRT to Sound](https://github.com/popovantondev/SRTtoSound) — macOS 15+ · выпуск [3.5.0](https://github.com/popovantondev/SRTtoSound/releases/latest); синхронизированная озвучка русских SRT. Python, FFmpeg и веса модели устанавливаются отдельно.
-- [LectureMerge](https://github.com/popovantondev/LectureMerge) — macOS 14+ · выпуск [2.2.0](https://github.com/popovantondev/LectureMerge/releases/latest); объединение видео лекции, аудио и субтитров.
-- [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) — Windows x64 · [5.2.0-preview.7](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7); переносное резервное копирование папок в одном направлении, пока Preview.
-- [Hotspot Control](https://github.com/popovantondev/HotspotControl) — Windows 11 24H2+ x64 · [0.3.0](https://github.com/popovantondev/HotspotControl/releases/latest); управление параметрами мобильной точки доступа.
-- [MegaProg](https://github.com/popovantondev/MegaProg) — macOS · Preview 4.5.1; организация утверждённых планов разработки и проверок.
-- [Lecture Companion](https://github.com/popovantondev/LectureCompanion) — Windows 11 x64 · [предварительный выпуск v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) опубликован; Portable-архив разделён на четыре части, а JoinPortable.cmd проверяет и собирает их.
-- [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) — macOS · ранняя разработка, доступны только исходники и документация.
-- [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) — macOS · только исходники; проверка прав на распространение сторонних компонентов ещё не завершена.
+Python · PySide6 / Qt · Telethon · PyInstaller
 
-### Технологии Telegram Media Sender
+## [Lecture Companion](https://github.com/popovantondev/LectureCompanion)
 
-### Стек проекта
+Помогает следить за лекцией в Teams: локально обобщает субтитры и объясняет выбранный слайд.
 
-**Python** · **PySide6 / Qt** · **Telethon** · **PyInstaller**
+**Windows 11 · x64 · Предварительный выпуск 2.4**
 
-### Lecture Companion для Microsoft Teams
-
-Анимированный робот-помощник для лекций в Teams на Windows 11. Он кратко пересказывает новые живые субтитры и по запросу объясняет демонстрируемый слайд. Обработка выполняется на компьютере.
-
-- **Три языка** — немецкий, английский и русский.
-- **Переносимая версия** — без отдельной установки Python и API-ключа.
-- **Конфиденциальность** — без записи микрофона и облачного резерва.
-
-**[Предварительный релиз v2.4](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Обзор и быстрый старт](https://github.com/popovantondev/LectureCompanion/blob/main/README.ru.md)** · **[Сообщить о проблеме](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
+**[Скачать](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4)** · **[Инструкция](https://popovantondev.github.io/LectureCompanion/Guide-ru.html)** · **[Сообщить об ошибке](https://github.com/popovantondev/LectureCompanion/issues/new/choose)**
 
 <details>
-<summary>Посмотреть приложение</summary>
-<br>
+<summary>Посмотреть интерфейс</summary>
 
-![Lecture Companion v2.4, русский интерфейс и синтетические примеры](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png)
+![Lecture Companion](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png)
 
-*Скриншот опубликованной версии v2.4; синтетические данные, без реальной встречи.*
+*Опубликованная демонстрация v2.4 с синтетическими данными.*
 
 </details>
 
-### Инструкции к приложению
+## Все программы
 
-[Руководство пользователя](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/ru/README.md) · [Подключение Telegram](https://github.com/popovantondev/TelegramMediaSender/blob/main/docs/ru/telegram-setup.md)
+| Программы | Платформа | Статус | Ссылки |
+|---|---|---|---|
+| [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender) | macOS 13+ · Apple Silicon | Выпуск 1.1.2 | [Скачать](https://github.com/popovantondev/TelegramMediaSender/releases/tag/v1.1.2) · [Инструкция](https://popovantondev.github.io/TelegramMediaSender/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/TelegramMediaSender/issues/new/choose) |
+| [Anki SOUND](https://github.com/popovantondev/AnkiSound) | macOS 13+ · Apple Silicon | Выпуск 3.4.11 | [Скачать](https://github.com/popovantondev/AnkiSound/releases/tag/v3.4.11) · [Инструкция](https://popovantondev.github.io/AnkiSound/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/AnkiSound/issues/new/choose) |
+| [LectureTranslate](https://github.com/popovantondev/LectureTranslate) | macOS 15+ · Apple Silicon | Выпуск 3.5.1 | [Скачать](https://github.com/popovantondev/LectureTranslate/releases/tag/v3.5.1) · [Инструкция](https://popovantondev.github.io/LectureTranslate/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/LectureTranslate/issues/new/choose) |
+| [SRT to Sound](https://github.com/popovantondev/SRTtoSound) | macOS 15+ · Apple Silicon | Выпуск 3.5.0 | [Скачать](https://github.com/popovantondev/SRTtoSound/releases/tag/v3.5.0) · [Инструкция](https://popovantondev.github.io/SRTtoSound/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/SRTtoSound/issues/new/choose) |
+| [LectureMerge](https://github.com/popovantondev/LectureMerge) | macOS 14+ · Apple Silicon | Выпуск 2.2.0 | [Скачать](https://github.com/popovantondev/LectureMerge/releases/tag/v2.2.0) · [Инструкция](https://popovantondev.github.io/LectureMerge/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/LectureMerge/issues/new/choose) |
+| [Kaktus Backup & Sync](https://github.com/popovantondev/Kaktus-Backup-Sync) | Windows · x64 | Предварительный выпуск 5.2.0-preview.7 | [Скачать](https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7) · [Инструкция](https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose) |
+| [Hotspot Control](https://github.com/popovantondev/HotspotControl) | Windows 11 24H2+ · x64 | Выпуск 0.3.0 | [Скачать](https://github.com/popovantondev/HotspotControl/releases/tag/v0.3.0) · [Инструкция](https://popovantondev.github.io/HotspotControl/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/HotspotControl/issues/new/choose) |
+| [MegaProg](https://github.com/popovantondev/MegaProg) | macOS · Apple Silicon | Предварительный выпуск 4.5.1 | [Скачать](https://github.com/popovantondev/MegaProg/releases/tag/v4.5.1-preview.1) · [Инструкция](https://popovantondev.github.io/MegaProg/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/MegaProg/issues/new/choose) |
+| [Lecture Companion](https://github.com/popovantondev/LectureCompanion) | Windows 11 · x64 | Предварительный выпуск 2.4 | [Скачать](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) · [Инструкция](https://popovantondev.github.io/LectureCompanion/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/LectureCompanion/issues/new/choose) |
+| [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) | macOS 13+ · Apple Silicon | Только исходники 0.1.0 | [Исходники](https://github.com/popovantondev/StudyArchivePrep) · [Инструкция](https://popovantondev.github.io/StudyArchivePrep/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/StudyArchivePrep/issues/new/choose) |
+| [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) | macOS 15+ · Apple Silicon | Только исходники 5.5.0 | [Исходники](https://github.com/popovantondev/openmedia-downloader) · [Инструкция](https://popovantondev.github.io/openmedia-downloader/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/openmedia-downloader/issues/new/choose) |
 
-Об ошибках и предложениях можно написать на русском, немецком или английском в разделе Issues проекта.
+Перед использованием прочитайте руководство и примечания к выпуску.
