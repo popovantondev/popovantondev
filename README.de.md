@@ -8,6 +8,8 @@ Anwendungen für alltägliche Aufgaben. Programm wählen, Voraussetzungen prüfe
 
 ## [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender)
 
+<p><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></p>
+
 Sendet nummerierte Pakete aus Video, Audio und Untertiteln in der gewählten Reihenfolge an Telegram.
 
 **macOS 13+ · Apple Silicon · Release 1.1.2**

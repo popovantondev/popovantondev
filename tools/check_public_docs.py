@@ -67,7 +67,11 @@ def profile_readme(d,l):
     for repo,cap,img in [('TelegramMediaSender',t['caption'],f'docs/images/app-{l}.png'),('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png')]:
         p=next(p for p in projects if p['repo']==repo)
         out += [f'## [{p["name"]}]({p["source_url"]})','',p['description'][l],'',f'**{p["platform"]} · {status(p,l)}**','', ' · '.join(f'**[{label}]({url})**' for label,url in actions(p,l)),'',f'<details>\n<summary>{t["details"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-        if repo=='TelegramMediaSender':out += [f'### {t["stack"]}','','Python · PySide6 / Qt · Telethon · PyInstaller','']
+        if repo=='TelegramMediaSender':
+            heading=f'## [{p["name"]}]({p["source_url"]})'
+            pos=out.index(heading)+1
+            out[pos:pos]=['', '<p><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></p>']
+            out += [f'### {t["stack"]}','','Python · PySide6 / Qt · Telethon · PyInstaller','']
     out += [f'## {t["all"]}','',f'| {t["catalog"]} | {t["os"]} | {t["status"]} | {t["links"]} |','|---|---|---|---|']
     for p in projects:
         out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]} | {status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l))+' |')

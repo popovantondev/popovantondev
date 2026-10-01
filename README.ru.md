@@ -8,6 +8,8 @@
 
 ## [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender)
 
+<p><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></p>
+
 Отправляет пронумерованные наборы видео, аудио и субтитров в Telegram в выбранном порядке.
 
 **macOS 13+ · Apple Silicon · Выпуск 1.1.2**
