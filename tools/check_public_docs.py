@@ -63,19 +63,29 @@ def generated_app(d):
     return generated
 CATALOG_CSS='''*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#14253d;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:#0753ad;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #1677ff;outline-offset:3px}.shell{max-width:1100px;margin:auto;padding:24px 20px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}nav{display:flex;gap:8px}nav a{padding:5px 10px;border:1px solid #dbe4f0;border-radius:20px;text-decoration:none;background:white}nav a[aria-current]{background:#e5efff;font-weight:700}.hero{margin:22px 0;padding:32px;border-radius:24px;color:white;background:linear-gradient(115deg,#07172e,#245faa)}h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 14px}h2{font-size:22px;line-height:1.3;margin:0 0 10px}.hero p{max-width:760px;margin:0}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project{background:white;border:1px solid #dbe4f0;border-radius:18px;padding:24px;display:flex;flex-direction:column}.project-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px}.project-title{min-width:0;flex:1}.project-icon{width:64px;height:64px;flex:0 0 64px;object-fit:contain;display:block}.project p{margin:8px 0}.project .description{flex:1}.platform{font-size:14px;color:#526176}.status{display:inline-block;align-self:flex-start;border-radius:8px;padding:3px 8px;background:#e7f3eb;color:#25633b;font-size:13px;font-weight:650}.preview{background:#fff1d7;color:#7d5315}.source{background:#eef0f4;color:#4d5663}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.actions a{padding:8px 12px;background:#edf4ff;border-radius:9px;text-decoration:none;font-weight:650;font-size:14px}.actions a:first-child{background:#0753ad;color:white}.requirements{font-size:14px;color:#526176}footer{margin:25px 0 0;color:#526176;font-size:14px}@media(max-width:650px){.projects{grid-template-columns:1fr}.hero{padding:24px}.project{padding:20px}}'''
 def profile_readme(d,l):
-    t=LABELS[l];projects=d['projects'];out=['**[Deutsch](README.de.md) · [Русский](README.ru.md) · [English](README.md)**','',f'![popovantondev](assets/header-{l}.svg)','',t['intro'],'',f"**[{t['catalog']}](https://popovantondev.github.io/popovantondev/{'index.html' if l=='en' else 'index-'+l+'.html'})**",'']
+    t=LABELS[l];e=escape
+    copy={
+        'en':{'intro':'I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.','catalog':'Browse applications & guides','featured':'Featured applications','all':'All applications','screens':'Interface previews','help':'Downloads & support','help_text':'Open a program’s guide for requirements and first steps. Download the application from Releases, not the source-code ZIP. Preview releases are still being developed; source-only projects have no ready-to-install package.','support':'For help or a bug report, use “Report a problem” in the application catalog. Include the application version, operating system and steps to reproduce the problem.','tech':'Built with','tags':'STUDY · MEDIA · BACKUP · AUTOMATION'},
+        'ru':{'intro':'Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.','catalog':'Каталог программ и руководств','featured':'Основные программы','all':'Все программы','screens':'Посмотреть интерфейсы','help':'Загрузка и помощь','help_text':'В руководстве каждой программы указаны требования и первые шаги. Скачивайте приложение из Releases, а не ZIP с исходниками. Preview — предварительные версии; для проектов со статусом «Только исходники» готового установочного пакета нет.','support':'Для вопроса или сообщения об ошибке откройте «Сообщить об ошибке» в каталоге. Укажите версию программы, ОС и действия, после которых возникла проблема.','tech':'Технологии','tags':'УЧЁБА · МЕДИА · РЕЗЕРВНЫЕ КОПИИ · АВТОМАТИЗАЦИЯ'},
+        'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Lade die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog. Gib die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien','tags':'LERNEN · MEDIEN · BACKUP · AUTOMATISIERUNG'}
+    }[l]
+    catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
+    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/header-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    featured=['TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge','HotspotControl','Kaktus-Backup-Sync']
+    for i,repo in enumerate(featured):
+        p=next(p for p in d['projects'] if p['repo']==repo)
+        if i%2==0:out.append('<tr>')
+        icon=d['catalog_icons'][repo]
+        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(p["source_url"])}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l))+'</p></td>']
+        if i%2==1:out.append('</tr>')
+    out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
+    for p in d['projects']:
+        out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l))+' |')
+    out += ['',f'## {copy["screens"]}','']
     for repo,cap,img in [('TelegramMediaSender',t['caption'],f'docs/images/app-{l}.png'),('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png')]:
-        p=next(p for p in projects if p['repo']==repo)
-        out += [f'## [{p["name"]}]({p["source_url"]})','',p['description'][l],'',f'**{p["platform"]} · {status(p,l)}**','', ' · '.join(f'**[{label}]({url})**' for label,url in actions(p,l)),'',f'<details>\n<summary>{t["details"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-        if repo=='TelegramMediaSender':
-            heading=f'## [{p["name"]}]({p["source_url"]})'
-            pos=out.index(heading)+1
-            out[pos:pos]=['', '<p><img width="72" alt="Telegram Media Sender" src="https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/src/telegram_media_sender/assets/app-icon.svg"></p>']
-            out += [f'### {t["stack"]}','','Python · PySide6 / Qt · Telethon · PyInstaller','']
-    out += [f'## {t["all"]}','',f'| {t["catalog"]} | {t["os"]} | {t["status"]} | {t["links"]} |','|---|---|---|---|']
-    for p in projects:
-        out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]} | {status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l))+' |')
-    out += ['',t['notice'],'']
+        p=next(p for p in d['projects'] if p['repo']==repo)
+        out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
+    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
     return '\n'.join(out)
 def catalog(d,l):
     t=LABELS[l];e=escape
