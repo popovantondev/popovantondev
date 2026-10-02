@@ -1,6 +1,6 @@
 <p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>
 
-![popovantondev](assets/profile-portrait-en.svg)
+![popovantondev](assets/profile-laptops-en.svg)
 
 I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.
 
