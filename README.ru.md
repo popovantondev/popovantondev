@@ -38,6 +38,7 @@
 | [Lecture Companion](https://github.com/popovantondev/LectureCompanion) | Windows 11 · x64<br>Предварительный выпуск 2.4 | [Скачать](https://github.com/popovantondev/LectureCompanion/releases/tag/v2.4) · [Инструкция](https://popovantondev.github.io/LectureCompanion/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/LectureCompanion/issues/new/choose) |
 | [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) | macOS 13+ · Apple Silicon<br>Только исходники 0.1.0 | [Исходники](https://github.com/popovantondev/StudyArchivePrep) · [Инструкция](https://popovantondev.github.io/StudyArchivePrep/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/StudyArchivePrep/issues/new/choose) |
 | [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) | macOS 15+ · Apple Silicon<br>Только исходники 5.5.0 | [Исходники](https://github.com/popovantondev/openmedia-downloader) · [Инструкция](https://popovantondev.github.io/openmedia-downloader/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/openmedia-downloader/issues/new/choose) |
+| [GitHubSync](https://github.com/popovantondev/GitHubSync) | Windows 10/11 · x64<br>Выпуск 1.5.3 | [Скачать](https://github.com/popovantondev/GitHubSync/releases/tag/v1.5.3) · [Инструкция](https://popovantondev.github.io/GitHubSync/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/GitHubSync/issues/new/choose) |
 
 ## Посмотреть интерфейсы
 
