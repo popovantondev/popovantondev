@@ -39,6 +39,7 @@ I build desktop tools for studying, working with media and managing everyday tas
 | [Study Archive Prep](https://github.com/popovantondev/StudyArchivePrep) | macOS 13+ · Apple Silicon<br>Source only 0.1.0 | [Source](https://github.com/popovantondev/StudyArchivePrep) · [User guide](https://popovantondev.github.io/StudyArchivePrep/Guide-en.html) · [Report a problem](https://github.com/popovantondev/StudyArchivePrep/issues/new/choose) |
 | [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) | macOS 15+ · Apple Silicon<br>Source only 5.5.0 | [Source](https://github.com/popovantondev/openmedia-downloader) · [User guide](https://popovantondev.github.io/openmedia-downloader/Guide-en.html) · [Report a problem](https://github.com/popovantondev/openmedia-downloader/issues/new/choose) |
 | [GitHubSync](https://github.com/popovantondev/GitHubSync) | Windows 10/11 · x64<br>Release 1.5.3 | [Download](https://github.com/popovantondev/GitHubSync/releases/tag/v1.5.3) · [User guide](https://popovantondev.github.io/GitHubSync/Guide-en.html) · [Report a problem](https://github.com/popovantondev/GitHubSync/issues/new/choose) |
+| [Virtual Piano Arranger](https://github.com/popovantondev/VirtualPianoArranger) | Windows · x64<br>Preview 0.1.0-preview.1 | [Download](https://github.com/popovantondev/VirtualPianoArranger/releases/tag/v0.1.0-preview.1) · [User guide](https://popovantondev.github.io/VirtualPianoArranger/Guide-en.html) · [Report a problem](https://github.com/popovantondev/VirtualPianoArranger/issues/new) |
 
 ## Interface previews
 

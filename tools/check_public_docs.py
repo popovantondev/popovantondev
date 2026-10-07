@@ -131,7 +131,7 @@ def validate(d,files,online=False,published=False):
     for p in projects:
         expected='https://popovantondev.github.io/'+p['repo']+'/Guide-{lang}.html'
         if p['help_url']!=expected:errors.append(p['repo']+': guide URL must target localized published HTML')
-        if p['feedback_url']!=p['source_url']+'/issues/new/choose':errors.append(p['repo']+': incorrect feedback destination')
+        if p['feedback_url'] not in (p['source_url']+'/issues/new/choose', p['source_url']+'/issues/new'):errors.append(p['repo']+': incorrect feedback destination')
         if p['status']=='source' and (p['release_url'] or p['downloads']):errors.append(p['repo']+': source-only project advertises a release')
         if p['tag'] and p['release_url']!=p['source_url']+'/releases/tag/'+p['tag']:errors.append(p['repo']+': release URL/tag mismatch')
         for field in ('description','requirements','start'):
