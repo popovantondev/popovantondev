@@ -40,6 +40,7 @@ Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltäglich
 | [OpenMedia Downloader](https://github.com/popovantondev/openmedia-downloader) | macOS 15+ · Apple Silicon<br>Nur Quellcode 5.5.0 | [Quellcode](https://github.com/popovantondev/openmedia-downloader) · [Anleitung](https://popovantondev.github.io/openmedia-downloader/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/openmedia-downloader/issues/new/choose) |
 | [GitHubSync](https://github.com/popovantondev/GitHubSync) | Windows 10/11 · x64<br>Release 1.5.3 | [Herunterladen](https://github.com/popovantondev/GitHubSync/releases/tag/v1.5.3) · [Anleitung](https://popovantondev.github.io/GitHubSync/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/GitHubSync/issues/new/choose) |
 | [Virtual Piano Arranger](https://github.com/popovantondev/VirtualPianoArranger) | Windows · x64<br>Vorabversion 0.1.0-preview.1 | [Herunterladen](https://github.com/popovantondev/VirtualPianoArranger/releases/tag/v0.1.0-preview.1) · [Anleitung](https://popovantondev.github.io/VirtualPianoArranger/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/VirtualPianoArranger/issues/new) |
+| [SoundLeaf](https://github.com/popovantondev/SoundLeaf) | Windows 11 · x64<br>Vorabversion 3.0.5 | [Herunterladen](https://github.com/popovantondev/SoundLeaf/releases/tag/v3.0.5) · [Anleitung](https://popovantondev.github.io/SoundLeaf/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/SoundLeaf/issues/new/choose) |
 
 ## Oberflächen ansehen
 
