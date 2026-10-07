@@ -88,12 +88,10 @@ def profile_readme(d,l):
     out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
     return '\n'.join(out)
 def catalog(d,l):
-    t=LABELS[l];e=escape
-    nav=''.join(f'<a href="{"index.html" if x=="en" else "index-"+x+".html"}"'+(' aria-current="page"' if x==l else '')+f'>{dict(de="Deutsch",en="English",ru="Русский")[x]}</a>' for x in LANGS)
-    cards=[]
-    for p in d['projects']:
-        cards += [f'<article class="project" id="{e(p["repo"])}"><div class="project-heading"><div class="project-title"><h2><a href="{e(p["source_url"])}">{e(p["name"])}</a></h2><span class="status {p["status"]}">{e(status(p,l))}</span></div><img class="project-icon" src="{e(d["catalog_icons"][p["repo"]])}" width="64" height="64" alt="" decoding="async"></div><p class="platform">{e(p["platform"])}</p><p class="description">{e(p["description"][l])}</p><p class="requirements">{e(p["requirements"][l])}</p><div class="actions">'+''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l))+'</div></article>']
-    return f'<!doctype html>\n<html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(t["intro"])}"><title>popovantondev — {e(t["catalog"])}</title><style>{CATALOG_CSS}</style></head><body><div class="shell"><header class="top"><a href="https://github.com/popovantondev">popovantondev</a><nav aria-label="Language">{nav}</nav></header><main><section class="hero"><h1 class="catalog-heading">{e(t["catalog"])}</h1><img class="hero-banner" src="assets/profile-laptops-v2-{l}.svg" width="1400" height="360" alt="{e(t["catalog"])} — macOS &amp; Windows"><p>{e(t["intro"])}</p></section><div class="projects">'+ '\n'.join(cards)+f'</div></main><footer>{e(t["notice"])} · <a href="https://github.com/popovantondev">GitHub</a></footer></div></body></html>\n'
+    sys.path.insert(0,str(ROOT/'tools'))
+    from catalog_page import render
+    return render(d,l,LABELS,status,actions)
+
 def generated(d):
     if 'projects' not in d:
         pages=generated_app(d)
