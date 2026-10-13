@@ -6,16 +6,22 @@ COPY={
  'de':dict(eyebrow='ANWENDUNGEN FÜR MACOS UND WINDOWS',title='Ihre Aufgaben. Die passenden Werkzeuge.',intro='Lernen, Medien, Backups und alltägliche Arbeit. Anwendung auswählen — Download und Anleitung sind direkt dabei.',all='Alle Anwendungen',search='Anwendung suchen',placeholder='Name oder Aufgabe…',requirements='Voraussetzungen und Grenzen',count='Anwendungen',empty='Keine Ergebnisse. Suche oder Plattform ändern.',github='GitHub öffnen',browse='Anwendung auswählen',footer='Voraussetzungen vor dem Download prüfen. Preview ist eine Vorabversion; „Quellcode“ bedeutet, dass kein fertiges Paket verfügbar ist.',platform='Plattform'),
  'en':dict(eyebrow='APPLICATIONS FOR MACOS AND WINDOWS',title='Your tasks. The right tools.',intro='Study, media, backups and everyday work. Choose an application — downloads and guides are right beside it.',all='All applications',search='Find an application',placeholder='Name or task…',requirements='Requirements and limitations',count='applications',empty='No matches. Change your search or platform.',github='Open GitHub',browse='Explore applications',footer='Check requirements before downloading. Preview is an early release; “Source” means there is no ready-to-run package.',platform='Platform')}
 
+PERMISSION_NOTICE={
+ 'ru':'Только с разрешения всех участников — для каждой встречи.',
+ 'de':'Nur mit Zustimmung aller Beteiligten — vor jeder Besprechung.',
+ 'en':'Only with every participant’s permission — for each meeting.'}
+
 def render(d,l,labels,status,actions):
  c=COPY[l]; nav=''.join(f'<a href="{("index.html" if x=="en" else "index-"+x+".html")}" lang="{x}" hreflang="{x}"'+(' aria-current="page"' if x==l else '')+f'>{dict(ru="RU",de="DE",en="EN")[x]}</a>' for x in ('ru','de','en'))
  cards=[]
  for p in d['projects']:
   os='macos' if 'macOS' in p['platform'] else 'windows'
   icon=d['catalog_icons'][p['repo']]
+  notice=f'<p class="collection-notice">{e(PERMISSION_NOTICE[l])}</p>' if p['repo']=='SaveLecture' else ''
   cards.append(f'''<article class="project" id="{e(p['repo'])}" data-platform="{os}">
 <div class="project-heading"><img class="project-icon" src="{e(icon)}" width="64" height="64" alt="" decoding="async" loading="lazy"><span class="platform">{e(p['platform'])}</span></div>
 <h2><a href="{e(p['source_url'])}">{e(p['name'])}</a></h2><span class="status {p['status']}">{e(status(p,l))}</span>
-<p class="description">{e(p['description'][l])}</p>
+<p class="description">{e(p['description'][l])}</p>{notice}
 <details class="requirements"><summary>{e(c['requirements'])}</summary><p>{e(p['requirements'][l])}</p></details>
 <div class="actions">{''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l))}</div></article>''')
  n=len(d['projects'])

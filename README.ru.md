@@ -27,6 +27,7 @@
 
 | Программы | Платформа / Статус | Ссылки |
 |---|---|---|
+| [SaveLecture](https://github.com/popovantondev/SaveLecture) | Windows 11 · x64<br>Предварительный выпуск 0.1.0-preview.2 | [Скачать](https://github.com/popovantondev/SaveLecture/releases/tag/v0.1.0-preview.2) · [Инструкция](https://popovantondev.github.io/SaveLecture/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/SaveLecture/issues/new) |
 | [Telegram Media Sender](https://github.com/popovantondev/TelegramMediaSender) | macOS 13+ · Apple Silicon<br>Выпуск 1.1.2 | [Скачать](https://github.com/popovantondev/TelegramMediaSender/releases/tag/v1.1.2) · [Инструкция](https://popovantondev.github.io/TelegramMediaSender/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/TelegramMediaSender/issues/new/choose) |
 | [Anki SOUND](https://github.com/popovantondev/AnkiSound) | macOS 13+ · Apple Silicon<br>Выпуск 3.4.11 | [Скачать](https://github.com/popovantondev/AnkiSound/releases/tag/v3.4.11) · [Инструкция](https://popovantondev.github.io/AnkiSound/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/AnkiSound/issues/new/choose) |
 | [LectureTranslate](https://github.com/popovantondev/LectureTranslate) | macOS 15+ · Apple Silicon<br>Выпуск 3.5.1 | [Скачать](https://github.com/popovantondev/LectureTranslate/releases/tag/v3.5.1) · [Инструкция](https://popovantondev.github.io/LectureTranslate/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/LectureTranslate/issues/new/choose) |
