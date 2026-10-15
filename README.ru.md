@@ -72,6 +72,6 @@
 
 ### Технологии
 
-Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF
+Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF
 
 Перед использованием прочитайте руководство и примечания к выпуску.

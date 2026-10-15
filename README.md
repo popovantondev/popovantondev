@@ -72,6 +72,6 @@ For help or a bug report, use “Report a problem” in the application catalog.
 
 ### Built with
 
-Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF
+Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF
 
 Read the guide and release notes before use.
