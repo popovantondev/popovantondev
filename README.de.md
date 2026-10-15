@@ -72,6 +72,6 @@ Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog.
 
 ### Technologien
 
-Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF
+Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF
 
 Vor der Nutzung die Anleitung und Release-Hinweise lesen.

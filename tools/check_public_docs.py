@@ -85,7 +85,7 @@ def profile_readme(d,l):
     for repo,cap,img in [('TelegramMediaSender',t['caption'],f'docs/images/app-{l}.png'),('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png')]:
         p=next(p for p in d['projects'] if p['repo']==repo)
         out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
+    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
     return '\n'.join(out)
 def catalog(d,l):
     sys.path.insert(0,str(ROOT/'tools'))
