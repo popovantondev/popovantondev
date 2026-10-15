@@ -42,6 +42,7 @@
 | [GitHubSync](https://github.com/popovantondev/GitHubSync) | Windows 10/11 · x64<br>Выпуск 1.5.3 | [Скачать](https://github.com/popovantondev/GitHubSync/releases/tag/v1.5.3) · [Инструкция](https://popovantondev.github.io/GitHubSync/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/GitHubSync/issues/new/choose) |
 | [Virtual Piano Arranger](https://github.com/popovantondev/VirtualPianoArranger) | Windows · x64<br>Предварительный выпуск 0.1.0-preview.1 | [Скачать](https://github.com/popovantondev/VirtualPianoArranger/releases/tag/v0.1.0-preview.1) · [Инструкция](https://popovantondev.github.io/VirtualPianoArranger/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/VirtualPianoArranger/issues/new) |
 | [SoundLeaf](https://github.com/popovantondev/SoundLeaf) | Windows 11 · x64<br>Предварительный выпуск 3.0.5 | [Скачать](https://github.com/popovantondev/SoundLeaf/releases/tag/v3.0.5) · [Инструкция](https://popovantondev.github.io/SoundLeaf/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/SoundLeaf/issues/new/choose) |
+| [Quick Answer](https://github.com/popovantondev/QuickAnswer) | Microsoft Edge · Windows<br>Только исходники 1.7.8 | [Исходники](https://github.com/popovantondev/QuickAnswer) · [Инструкция](https://popovantondev.github.io/QuickAnswer/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/QuickAnswer/issues/new) |
 
 ## Посмотреть интерфейсы
 
