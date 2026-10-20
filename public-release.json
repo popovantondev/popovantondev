@@ -993,13 +993,15 @@
         },
         {
           "name": "SHA256SUMS.txt",
-          "url": "https://github.com/popovantondev/VirtualPianoArranger/releases/download/v0.1.0-preview.1/SHA256SUMS.txt",
-          "size": 259
+          "size": 259,
+          "sha256": "56743ecdd09999ef64e5f4fefe29b5ec4481dd64e412d65dda6c81991e241437",
+          "url": "https://github.com/popovantondev/VirtualPianoArranger/releases/download/v0.1.0-preview.1/SHA256SUMS.txt"
         },
         {
           "name": "release-manifest.json",
-          "url": "https://github.com/popovantondev/VirtualPianoArranger/releases/download/v0.1.0-preview.1/release-manifest.json",
-          "size": 652
+          "size": 652,
+          "sha256": "ffe23bd9425532e68fcb67f6d58a5adcfec31e67849aa4b41fb8ae66b7b03cb3",
+          "url": "https://github.com/popovantondev/VirtualPianoArranger/releases/download/v0.1.0-preview.1/release-manifest.json"
         }
       ],
       "downloads": [
@@ -1162,8 +1164,8 @@
         },
         {
           "name": "SHA256SUMS.txt",
-          "size": 317,
-          "sha256": "194c553cf94edf9798bf7706a10bf0f71aef09b60c4717f6b65d5786dad0aee7",
+          "size": 314,
+          "sha256": "9dfe4243467b405f1cbdbd59279d56e6aedc94617cb467106f30c9ad956f6d62",
           "url": "https://github.com/popovantondev/QuickAnswer/releases/download/v1.7.8-desktop-0.1-preview/SHA256SUMS.txt"
         }
       ],
@@ -1184,6 +1186,116 @@
       "license": "not-selected",
       "source_preview_tag": "v1.7.8-desktop-0.1-preview",
       "source_preview_url": "https://github.com/popovantondev/QuickAnswer/releases/tag/v1.7.8-desktop-0.1-preview"
+    },
+    {
+      "schema_version": 1,
+      "name": "YouTube Downloader",
+      "repo": "YouTubeDownloader",
+      "version": "2.5.0",
+      "platform": "Windows 7 SP1 / 10 / 11 · x86 / x64",
+      "status": "preview",
+      "tag": "v2.5.0",
+      "source_url": "https://github.com/popovantondev/YouTubeDownloader",
+      "release_url": "https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.5.0",
+      "description": {
+        "en": "Save YouTube video and audio on Windows. Choose the buttons you want; download original streams while the video stays paused.",
+        "ru": "Загрузка видео и звука YouTube в Windows. Оставь нужные кнопки и сохраняй исходные потоки, пока видео стоит на паузе.",
+        "de": "YouTube-Videos und Audio unter Windows speichern. Gewünschte Schaltflächen wählen und Originalstreams laden, während das Video pausiert bleibt."
+      },
+      "requirements": {
+        "en": "Originally created for Windows 7 and low-powered computers. The native component targets .NET Framework 3.5 / CLR2, with configured CLR4 fallback for modern Windows. Windows 10/11 and compatible older/newer Chromium browsers are intended targets; see the exact test matrix.",
+        "ru": "Первоначально создан для Windows 7 и слабых компьютеров. Локальный компонент использует .NET Framework 3.5 / CLR2; для современных Windows предусмотрен запуск через CLR4. Рассчитан также на Windows 10/11 и совместимые старые/новые Chromium-браузеры. Реальные проверки перечислены отдельно.",
+        "de": "Ursprünglich für Windows 7 und schwache Rechner entwickelt. Die lokale Komponente zielt auf .NET Framework 3.5 / CLR2; für moderne Windows-Versionen ist CLR4-Fallback konfiguriert. Auch Windows 10/11 und kompatible ältere/neuere Chromium-Browser sind vorgesehen. Tatsächliche Tests sind getrennt aufgeführt."
+      },
+      "start": {
+        "en": "Extract the entire release ZIP to a writable folder. Check SHA256SUMS.txt. Browser, Windows and the system .NET runtime are prerequisites.",
+        "ru": "Распакуйте весь ZIP выпуска в доступную для записи папку. Проверьте SHA256SUMS.txt. Браузер, Windows и системный .NET устанавливаются отдельно.",
+        "de": "Gesamtes Release-ZIP in einen beschreibbaren Ordner entpacken. SHA256SUMS.txt prüfen. Browser, Windows und System-.NET werden separat vorausgesetzt."
+      },
+      "readmes": {
+        "en": [
+          "README.md"
+        ],
+        "ru": [
+          "docs/README.ru.md"
+        ],
+        "de": [
+          "docs/README.de.md"
+        ]
+      },
+      "guides": {
+        "en": "Guide-en.html",
+        "ru": "Guide-ru.html",
+        "de": "Guide-de.html"
+      },
+      "help_url": "https://popovantondev.github.io/YouTubeDownloader/Guide-{lang}.html",
+      "feedback_url": "https://github.com/popovantondev/YouTubeDownloader/issues/new/choose",
+      "assets": [
+        {
+          "name": "YouTubeDownloader-2.5.0-windows-full.zip",
+          "size": 18143849,
+          "sha256": "455a2f244be321b30becf51df0706baa08368ec1e2afd993470e64d9e024c462",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-windows-full.zip"
+        },
+        {
+          "name": "YouTubeDownloader-2.5.0-source.zip",
+          "size": 1957187,
+          "sha256": "16d21b0532a473afcedfd7e9a0862f9372aa763bf054a6e16a60487b466bc159",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-source.zip"
+        },
+        {
+          "name": "YouTubeDownloader-2.5.0-corresponding-sources.zip",
+          "size": 11952942,
+          "sha256": "9e44f623e1fcb2604abaad9f98a692dfa5e4512d83aba3f19cb6c2469ab73b6f",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-corresponding-sources.zip"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "size": 327,
+          "sha256": "31de0c411a5db0aecf324137d30eea393b2519ca6f5416a93c223c9375d866a5",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/SHA256SUMS.txt"
+        }
+      ],
+      "downloads": [
+        "YouTubeDownloader-2.5.0-windows-full.zip"
+      ],
+      "checksums": [
+        "SHA256SUMS.txt"
+      ],
+      "languages": [
+        "ru",
+        "de",
+        "en"
+      ],
+      "navigation": {
+        "ru": {
+          "website": "https://popovantondev.github.io/YouTubeDownloader/index-ru.html",
+          "guide": "https://popovantondev.github.io/YouTubeDownloader/Guide-ru.html"
+        },
+        "de": {
+          "website": "https://popovantondev.github.io/YouTubeDownloader/index-de.html",
+          "guide": "https://popovantondev.github.io/YouTubeDownloader/Guide-de.html"
+        },
+        "en": {
+          "website": "https://popovantondev.github.io/YouTubeDownloader/index-en.html",
+          "guide": "https://popovantondev.github.io/YouTubeDownloader/Guide-en.html"
+        }
+      },
+      "version_files": [
+        {
+          "path": "extension/manifest.json",
+          "pattern": "\"version\"\\s*:\\s*\"([^\"]+)\""
+        },
+        {
+          "path": "SOURCE/Host.cs",
+          "pattern": "AssemblyVersion\\(\"(\\d+\\.\\d+\\.\\d+)\\.0\"\\)"
+        }
+      ],
+      "known_limitations": {
+        "en": "Preview limitation: YouTube may require session verification (attestation required) and stop an original-quality download. No playback fallback or complete-download guarantee is provided.",
+        "ru": "Ограничение Preview: YouTube может потребовать подтверждение сеанса (attestation required) и остановить загрузку исходного качества. Автоматического перехода к просмотру нет; загрузка целого ролика не гарантируется.",
+        "de": "Preview-Einschränkung: YouTube kann eine Sitzungsbestätigung verlangen (attestation required) und den Originaldownload abbrechen. Kein automatischer Wiedergabemodus und keine Garantie vollständiger Downloads."
+      }
     }
   ],
   "catalog_icons": {
@@ -1202,6 +1314,7 @@
     "VirtualPianoArranger": "assets/app-icons/VirtualPianoArranger.png",
     "SoundLeaf": "assets/app-icons/SoundLeaf.png",
     "SaveLecture": "assets/app-icons/SaveLecture.png",
-    "QuickAnswer": "assets/app-icons/QuickAnswer.png"
+    "QuickAnswer": "assets/app-icons/QuickAnswer.png",
+    "YouTubeDownloader": "assets/app-icons/YouTubeDownloader.png"
   }
 }
