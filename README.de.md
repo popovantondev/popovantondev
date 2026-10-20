@@ -7,6 +7,10 @@ Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltäglich
 **[→ Anwendungen und Anleitungen entdecken](https://popovantondev.github.io/popovantondev/index-de.html)**
 
 ## Ausgewählte Anwendungen
+[![PeakMP3 im Browser testen](assets/peakmp3-demo-de.svg)](https://popovantondev.github.io/PeakMP3/index-de.html#demo)
+
+**[▶ PeakMP3 im Browser testen](https://popovantondev.github.io/PeakMP3/index-de.html#demo)**
+
 
 <table>
 <tr>
@@ -43,7 +47,8 @@ Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltäglich
 | [Virtual Piano Arranger](https://github.com/popovantondev/VirtualPianoArranger) | Windows · x64<br>Vorabversion 0.1.0-preview.1 | [Herunterladen](https://github.com/popovantondev/VirtualPianoArranger/releases/tag/v0.1.0-preview.1) · [Anleitung](https://popovantondev.github.io/VirtualPianoArranger/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/VirtualPianoArranger/issues/new) |
 | [SoundLeaf](https://github.com/popovantondev/SoundLeaf) | Windows 11 · x64<br>Vorabversion 3.0.5 | [Herunterladen](https://github.com/popovantondev/SoundLeaf/releases/tag/v3.0.5) · [Anleitung](https://popovantondev.github.io/SoundLeaf/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/SoundLeaf/issues/new/choose) |
 | [Quick Answer](https://github.com/popovantondev/QuickAnswer) | Microsoft Edge · Windows<br>Nur Quellcode 1.7.8 | [Quellcode](https://github.com/popovantondev/QuickAnswer) · [Anleitung](https://popovantondev.github.io/QuickAnswer/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/QuickAnswer/issues/new) |
-| [YouTube Downloader + PeakMP3](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Vorabversion 2.6.0 | [Herunterladen](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Anleitung](https://popovantondev.github.io/YouTubeDownloader/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
+| [YouTube Downloader](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Vorabversion 2.6.0 | [Herunterladen](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Website](https://popovantondev.github.io/YouTubeDownloader/index-de.html) · [Anleitung](https://popovantondev.github.io/YouTubeDownloader/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
+| [PeakMP3](https://github.com/popovantondev/PeakMP3) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Vorabversion 0.16.0 | [Herunterladen](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Website](https://popovantondev.github.io/PeakMP3/index-de.html) · [Im Browser testen](https://popovantondev.github.io/PeakMP3/index-de.html#demo) · [Anleitung](https://popovantondev.github.io/PeakMP3/Guide-de.html) · [Fehler melden](https://github.com/popovantondev/PeakMP3/issues/new) |
 
 ## Oberflächen ansehen
 

@@ -7,6 +7,10 @@
 **[→ Каталог программ и руководств](https://popovantondev.github.io/popovantondev/index-ru.html)**
 
 ## Основные программы
+[![Попробовать PeakMP3 в браузере](assets/peakmp3-demo-ru.svg)](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)
+
+**[▶ Попробовать PeakMP3 в браузере](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)**
+
 
 <table>
 <tr>
@@ -43,7 +47,8 @@
 | [Virtual Piano Arranger](https://github.com/popovantondev/VirtualPianoArranger) | Windows · x64<br>Предварительный выпуск 0.1.0-preview.1 | [Скачать](https://github.com/popovantondev/VirtualPianoArranger/releases/tag/v0.1.0-preview.1) · [Инструкция](https://popovantondev.github.io/VirtualPianoArranger/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/VirtualPianoArranger/issues/new) |
 | [SoundLeaf](https://github.com/popovantondev/SoundLeaf) | Windows 11 · x64<br>Предварительный выпуск 3.0.5 | [Скачать](https://github.com/popovantondev/SoundLeaf/releases/tag/v3.0.5) · [Инструкция](https://popovantondev.github.io/SoundLeaf/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/SoundLeaf/issues/new/choose) |
 | [Quick Answer](https://github.com/popovantondev/QuickAnswer) | Microsoft Edge · Windows<br>Только исходники 1.7.8 | [Исходники](https://github.com/popovantondev/QuickAnswer) · [Инструкция](https://popovantondev.github.io/QuickAnswer/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/QuickAnswer/issues/new) |
-| [YouTube Downloader + PeakMP3](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Предварительный выпуск 2.6.0 | [Скачать](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Инструкция](https://popovantondev.github.io/YouTubeDownloader/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
+| [YouTube Downloader](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Предварительный выпуск 2.6.0 | [Скачать](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Сайт](https://popovantondev.github.io/YouTubeDownloader/index-ru.html) · [Инструкция](https://popovantondev.github.io/YouTubeDownloader/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
+| [PeakMP3](https://github.com/popovantondev/PeakMP3) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Предварительный выпуск 0.16.0 | [Скачать](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [Сайт](https://popovantondev.github.io/PeakMP3/index-ru.html) · [Попробовать в браузере](https://popovantondev.github.io/PeakMP3/index-ru.html#demo) · [Инструкция](https://popovantondev.github.io/PeakMP3/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/PeakMP3/issues/new) |
 
 ## Посмотреть интерфейсы
 
