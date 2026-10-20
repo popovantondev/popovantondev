@@ -1189,14 +1189,14 @@
     },
     {
       "schema_version": 1,
-      "name": "YouTube Downloader",
+      "name": "YouTube Downloader + PeakMP3",
       "repo": "YouTubeDownloader",
-      "version": "2.5.0",
+      "version": "2.6.0",
       "platform": "Windows 7 SP1 / 10 / 11 · x86 / x64",
       "status": "preview",
-      "tag": "v2.5.0",
+      "tag": "v2.6.0",
       "source_url": "https://github.com/popovantondev/YouTubeDownloader",
-      "release_url": "https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.5.0",
+      "release_url": "https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0",
       "description": {
         "en": "Save YouTube video and audio on Windows. Choose the buttons you want; download original streams while the video stays paused.",
         "ru": "Загрузка видео и звука YouTube в Windows. Оставь нужные кнопки и сохраняй исходные потоки, пока видео стоит на паузе.",
@@ -1208,9 +1208,9 @@
         "de": "Ursprünglich für Windows 7 und schwache Rechner entwickelt. Die lokale Komponente zielt auf .NET Framework 3.5 / CLR2; für moderne Windows-Versionen ist CLR4-Fallback konfiguriert. Auch Windows 10/11 und kompatible ältere/neuere Chromium-Browser sind vorgesehen. Tatsächliche Tests sind getrennt aufgeführt."
       },
       "start": {
-        "en": "Extract the entire release ZIP to a writable folder. Check SHA256SUMS.txt. Browser, Windows and the system .NET runtime are prerequisites.",
-        "ru": "Распакуйте весь ZIP выпуска в доступную для записи папку. Проверьте SHA256SUMS.txt. Браузер, Windows и системный .NET устанавливаются отдельно.",
-        "de": "Gesamtes Release-ZIP in einen beschreibbaren Ordner entpacken. SHA256SUMS.txt prüfen. Browser, Windows und System-.NET werden separat vorausgesetzt."
+        "ru": "Запустите общий Setup.exe. Подключите расширение через мастер в каждом профиле браузера. Инструкции включены в полный ZIP и меню расширения.",
+        "de": "Gemeinsames Setup.exe starten. Erweiterung pro Browserprofil mit dem Assistenten verbinden. Anleitungen im vollständigen ZIP und Erweiterungsmenü.",
+        "en": "Run the combined Setup.exe. Connect the extension in each browser profile with the wizard. Guides are included in the full ZIP and extension menu."
       },
       "readmes": {
         "en": [
@@ -1232,32 +1232,41 @@
       "feedback_url": "https://github.com/popovantondev/YouTubeDownloader/issues/new/choose",
       "assets": [
         {
-          "name": "YouTubeDownloader-2.5.0-windows-full.zip",
-          "size": 18143849,
-          "sha256": "455a2f244be321b30becf51df0706baa08368ec1e2afd993470e64d9e024c462",
-          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-windows-full.zip"
+          "name": "YouTubeDownloader-PeakMP3-2.6.0-Preview-Setup.exe",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.6.0/YouTubeDownloader-PeakMP3-2.6.0-Preview-Setup.exe",
+          "size": 40493075,
+          "sha256": "0866f897810e7524f49585d13370166935805a9f45381986dd90c3b3a3096be7"
         },
         {
-          "name": "YouTubeDownloader-2.5.0-source.zip",
-          "size": 1957187,
-          "sha256": "16d21b0532a473afcedfd7e9a0862f9372aa763bf054a6e16a60487b466bc159",
-          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-source.zip"
+          "name": "YouTubeDownloader-PeakMP3-2.6.0-Preview-FULL.zip",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.6.0/YouTubeDownloader-PeakMP3-2.6.0-Preview-FULL.zip",
+          "size": 82344237,
+          "sha256": "969f67a69b82ed1d2ba3905ed007a8131e2e5a232ebfeef5f978cb4e6952d5d4"
         },
         {
-          "name": "YouTubeDownloader-2.5.0-corresponding-sources.zip",
-          "size": 11952942,
-          "sha256": "9e44f623e1fcb2604abaad9f98a692dfa5e4512d83aba3f19cb6c2469ab73b6f",
-          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/YouTubeDownloader-2.5.0-corresponding-sources.zip"
+          "name": "YouTubeDownloader-PeakMP3-2.6.0-Preview-SOURCES.zip",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.6.0/YouTubeDownloader-PeakMP3-2.6.0-Preview-SOURCES.zip",
+          "size": 32474299,
+          "sha256": "d1dc502d16ce77c98c96b311bf200b24a20ccbf8eed0d2af3125686876b874ea"
+        },
+        {
+          "name": "YouTubeDownloader-2.6.0-FFmpeg-Corresponding-Sources.zip",
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.6.0/YouTubeDownloader-2.6.0-FFmpeg-Corresponding-Sources.zip",
+          "size": 11636071,
+          "sha256": "dd1316f340a43cf48ce6276ef80209e1aa0025ef736ed9dbac4f7ec6e0b78950"
         },
         {
           "name": "SHA256SUMS.txt",
-          "size": 327,
-          "sha256": "31de0c411a5db0aecf324137d30eea393b2519ca6f5416a93c223c9375d866a5",
-          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.5.0/SHA256SUMS.txt"
+          "url": "https://github.com/popovantondev/YouTubeDownloader/releases/download/v2.6.0/SHA256SUMS.txt",
+          "size": 476,
+          "sha256": "a4dc8063e98e1e1091260e20dfaf24c1f6116544d48337ac13e2c7d15b2d330e"
         }
       ],
       "downloads": [
-        "YouTubeDownloader-2.5.0-windows-full.zip"
+        "YouTubeDownloader-PeakMP3-2.6.0-Preview-Setup.exe",
+        "YouTubeDownloader-PeakMP3-2.6.0-Preview-FULL.zip",
+        "YouTubeDownloader-PeakMP3-2.6.0-Preview-SOURCES.zip",
+        "YouTubeDownloader-2.6.0-FFmpeg-Corresponding-Sources.zip"
       ],
       "checksums": [
         "SHA256SUMS.txt"
@@ -1295,7 +1304,10 @@
         "en": "Preview limitation: YouTube may require session verification (attestation required) and stop an original-quality download. No playback fallback or complete-download guarantee is provided.",
         "ru": "Ограничение Preview: YouTube может потребовать подтверждение сеанса (attestation required) и остановить загрузку исходного качества. Автоматического перехода к просмотру нет; загрузка целого ролика не гарантируется.",
         "de": "Preview-Einschränkung: YouTube kann eine Sitzungsbestätigung verlangen (attestation required) und den Originaldownload abbrechen. Kein automatischer Wiedergabemodus und keine Garantie vollständiger Downloads."
-      }
+      },
+      "desktop_version": "0.16.0",
+      "publication": "Preview release candidate; publication verified separately.",
+      "runtime_target": "Windows 7 SP1 x86, SSE2, .NET 3.5 / CLR2; configured CLR4 fallback"
     }
   ],
   "catalog_icons": {
