@@ -35,6 +35,23 @@ class PublicDocsTests(unittest.TestCase):
         del self.data['description']['ru'];self.assertTrue(any('incomplete localization' in e for e in self.check()))
     def test_release_tag_destination(self):
         self.data.update(tag='v1.0',release_url='https://github.com/popovantondev/Example/releases/latest',status='release');self.assertTrue(any('URL/tag mismatch' in e for e in self.check()))
+class SharedDistributionTests(PublicDocsTests):
+    def set_shared(self):
+        release='https://github.com/popovantondev/Bundle/releases/tag/v2.0'
+        self.data.update(status='preview',tag=None,release_url=release,shared_distribution={'repo':'Bundle','version':'2.0','tag':'v2.0','release_url':release,'application_versions':{'Example':'1.0'}})
+    def test_shared_release_keeps_application_version(self):
+        self.set_shared();self.assertEqual(self.check(),[]);self.assertEqual(docs.release_target(self.data),('Bundle','v2.0'))
+    def test_unmarked_foreign_release_rejected(self):
+        self.set_shared();del self.data['shared_distribution'];self.assertTrue(any('requires shared_distribution' in e for e in self.check()))
+    def test_wrong_application_version_rejected(self):
+        self.set_shared();self.data['shared_distribution']['application_versions']['Example']='2.0';self.assertTrue(any('application version mismatch' in e for e in self.check()))
+    def test_shared_tag_cannot_be_own_tag(self):
+        self.set_shared();self.data['tag']='v1.0';self.assertTrue(any('impersonate' in e for e in self.check()))
+    def test_shared_asset_must_belong_to_declared_release(self):
+        self.set_shared();self.data['assets']=[{'name':'setup.exe','url':'https://example.invalid/setup.exe'}];self.assertTrue(any('asset URL mismatch' in e for e in self.check()))
+    def test_invalid_shared_repository_rejected(self):
+        self.set_shared();self.data['shared_distribution']['repo']='../Other';self.assertTrue(any('invalid shared' in e for e in self.check()))
+
 class NetworkRetryTests(unittest.TestCase):
     def test_transient_connection_error_is_retried(self):
         import io

@@ -16,7 +16,13 @@ def status(d,l):
     return LABELS[l][{'release':'release','preview':'preview','source':'source_status'}[d['status']]]+' '+d['version']
 def actions(d,l):
     t=LABELS[l]
-    return [(t['download'] if d['release_url'] else t['source'],d['release_url'] or d['source_url']), (t['guide'],d['help_url'].format(lang=l)),(t['bug'],d['feedback_url'])]
+    result=[(t['download'] if d['release_url'] else t['source'],d['release_url'] or d['source_url'])]
+    if d['repo'] in ('PeakMP3','YouTubeDownloader'):
+        website='https://popovantondev.github.io/'+d['repo']+'/index-'+l+'.html'
+        result.append(({'ru':'Сайт','de':'Website','en':'Website'}[l],website))
+        if d['repo']=='PeakMP3':result.append(({'ru':'Попробовать в браузере','de':'Im Browser testen','en':'Try in browser'}[l],website+'#demo'))
+    return result+[(t['guide'],d['help_url'].format(lang=l)),(t['bug'],d['feedback_url'])]
+
 def markdown(d,l):
     t=LABELS[l];out=[d['description'][l],'',f"**{d['platform']} · {status(d,l)}**",'', ' · '.join(f'**[{label}]({url})**' for label,url in actions(d,l)),'',f"**{t['setup']}:** {d['requirements'][l]}",'',f"**{t['start']}:** {d['start'][l]}"]
     if d['downloads']:
@@ -71,6 +77,10 @@ def profile_readme(d,l):
     }[l]
     catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
     out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v2-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    if any(p['repo']=='PeakMP3' for p in d['projects']):
+        demo='https://popovantondev.github.io/PeakMP3/index-'+l+'.html#demo'
+        label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
+        out=out[:-2]+[f'[![{label}](assets/peakmp3-demo-{l}.svg)]({demo})','',f'**[▶ {label}]({demo})**','',out[-2],out[-1]]
     featured=['TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge','HotspotControl','Kaktus-Backup-Sync']
     for i,repo in enumerate(featured):
         p=next(p for p in d['projects'] if p['repo']==repo)
@@ -123,10 +133,35 @@ def fetch_bytes(request, attempts=3):
                 raise
         time.sleep(attempt + 1)
 
+def distribution_errors(p):
+    shared=p.get('shared_distribution')
+    if not shared:
+        if p.get('release_url') and not p.get('tag'):
+            return [p['repo']+': release without an own tag requires shared_distribution']
+        return []
+    errors=[]
+    repo=shared.get('repo','');version=shared.get('version','');tag=shared.get('tag','')
+    if not re.fullmatch(r'[A-Za-z0-9_.-]+',repo) or repo in ('.','..'):
+        errors.append(p['repo']+': invalid shared distribution repository')
+    expected='https://github.com/popovantondev/'+repo+'/releases/tag/'+tag
+    if p.get('tag') is not None:errors.append(p['repo']+': shared distribution must not impersonate an own release tag')
+    if not version or tag!='v'+version:errors.append(p['repo']+': shared distribution version/tag mismatch')
+    if shared.get('release_url')!=expected or p.get('release_url')!=expected:errors.append(p['repo']+': shared release URL mismatch')
+    if shared.get('application_versions',{}).get(p['repo'])!=p['version']:errors.append(p['repo']+': shared distribution application version mismatch')
+    prefix='https://github.com/popovantondev/'+repo+'/releases/download/'+tag+'/'
+    for asset in p.get('assets',[]):
+        if asset['url']!=prefix+asset['name']:errors.append(p['repo']+': shared asset URL mismatch '+asset['name'])
+    return errors
+
+def release_target(p):
+    shared=p.get('shared_distribution')
+    return (shared['repo'],shared['tag']) if shared else (p['repo'],p['tag'])
+
 def validate(d,files,online=False,published=False):
     errors=[]
     projects=d.get('projects',[d])
     for p in projects:
+        errors.extend(distribution_errors(p))
         expected='https://popovantondev.github.io/'+p['repo']+'/Guide-{lang}.html'
         if p['help_url']!=expected:errors.append(p['repo']+': guide URL must target localized published HTML')
         if p['feedback_url'] not in (p['source_url']+'/issues/new/choose', p['source_url']+'/issues/new'):errors.append(p['repo']+': incorrect feedback destination')
@@ -170,8 +205,10 @@ def validate(d,files,online=False,published=False):
         headers={'Accept':'application/vnd.github+json','User-Agent':'public-documentation-check'}
         if os.environ.get('GITHUB_TOKEN'):headers['Authorization']='Bearer '+os.environ['GITHUB_TOKEN']
         for p in projects:
-            if not p['tag']:continue
-            url='https://api.github.com/repos/popovantondev/'+p['repo']+'/releases/tags/'+p['tag']
+            if distribution_errors(p):continue
+            release_repo,release_tag=release_target(p)
+            if not release_tag:continue
+            url='https://api.github.com/repos/popovantondev/'+release_repo+'/releases/tags/'+release_tag
             try:
                 r=json.loads(fetch_bytes(urllib.request.Request(url,headers=headers)))
                 if r['draft'] or r['prerelease']!=(p['status']=='preview'):errors.append(p['repo']+': incorrect release status')
@@ -185,8 +222,9 @@ def validate(d,files,online=False,published=False):
                 url='https://raw.githubusercontent.com/popovantondev/'+p['repo']+'/main/public-release.json'
                 try:
                     current=json.loads(fetch_bytes(url))
-                    for field in ('version','platform','tag','status','downloads','help_url','feedback_url','description','requirements'):
+                    for field in ('version','platform','tag','status','downloads','help_url','feedback_url','description','requirements','release_url','assets'):
                         if current[field]!=p[field]:errors.append(p['repo']+': catalog differs from project metadata: '+field)
+                    if current.get('shared_distribution')!=p.get('shared_distribution'):errors.append(p['repo']+': catalog differs from project metadata: shared_distribution')
                 except Exception as exc:errors.append(p['repo']+': catalog metadata check failed: '+str(exc))
         if published:
             for p in projects:

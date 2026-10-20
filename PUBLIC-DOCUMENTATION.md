@@ -11,3 +11,6 @@ Preview links target the exact reviewed release. Source-only projects have no bi
 Temporary technical results belong in Actions artifacts. Do not use user-facing Releases for diagnostic self-tests. Screenshots and attachments must exclude credentials and private user content; label demonstration data honestly.
 
 For the profile catalog, run `python tools/check_public_docs.py --refresh-catalog --write` after project metadata PRs are merged. The weekly check compares catalog entries to each project on its current main branch.
+
+
+Applications distributed in another project’s installer declare `shared_distribution` with `repo`, distribution `version`, `tag`, `release_url` and `application_versions`. The application keeps its own `version` and uses `tag: null` when it has no separate GitHub release. The validator checks asset URLs, status and files against the declared distribution repository; it does not treat the bundle version as the application version. The catalog must copy this declaration from the application metadata.
