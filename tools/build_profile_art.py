@@ -1,7 +1,6 @@
-"""Compose self-contained SVG profile artwork from published interface images.
+"""Compose self-contained SVG banners from whole-device CSS perspective renders.
 
-The laptop photograph is reused unchanged. A small SVG triangle mesh puts each
-device in the same inward-facing perspective as its screen contents.
+Run render_profile_devices.cjs first when interface images change.
 """
 from pathlib import Path
 from html import escape
@@ -25,64 +24,13 @@ def image_data(name):
         (ASSETS / 'banner-sources' / name).read_bytes()).decode('ascii')
 
 
-def affine(source, target):
-    (x, y), (x1, y1), (x2, y2) = source
-    (u, v), (u1, v1), (u2, v2) = target
-    dx, dy, ex, ey = x1-x, y1-y, x2-x, y2-y
-    du, dv, eu, ev = u1-u, v1-v, u2-u, v2-v
-    det = dx*ey-ex*dy
-    a, c = (du*ey-eu*dy)/det, (dx*eu-ex*du)/det
-    b, d = (dv*ey-ev*dy)/det, (dx*ev-ex*dv)/det
-    return ' '.join(f'{n:.5f}' for n in (a, b, c, d, u-a*x-c*y, v-b*x-d*y))
-
-
-def device_mesh(name, source_rect, corners):
-    x, y, width, height = source_rect
-    tl, tr, br, bl = corners
-
-    def point(u, v):
-        return tuple((1-u)*(1-v)*tl[k]+u*(1-v)*tr[k]+u*v*br[k]+(1-u)*v*bl[k]
-                     for k in (0, 1))
-
-    boundary=' '.join(f'{px},{py}' for px,py in corners)
-    result = [f'<clipPath id="{name}-boundary"><polygon points="{boundary}"/></clipPath>',
-              f'<g clip-path="url(#{name}-boundary)">']
-    for row in range(4):
-        for column in range(4):
-            uv = [(column/4, row/4), ((column+1)/4, row/4),
-                  ((column+1)/4, (row+1)/4), (column/4, (row+1)/4)]
-            src = [(x+u*width, y+v*height) for u, v in uv]
-            dst = [point(u, v) for u, v in uv]
-            for half, indices in enumerate(((0, 1, 2), (0, 2, 3))):
-                s, t = [src[i] for i in indices], [dst[i] for i in indices]
-                identity = f'{name}-{row}-{column}-{half}'
-                # Slight overlap avoids transparent hairlines between triangles.
-                cx, cy = sum(p[0] for p in s)/3, sum(p[1] for p in s)/3
-                polygon = ' '.join(f'{cx+(px-cx)*1.06:.4f},{cy+(py-cy)*1.06:.4f}'
-                                   for px, py in s)
-                result.append(f'<clipPath id="{identity}"><polygon points="{polygon}"/></clipPath>'
-                              f'<g transform="matrix({affine(s,t)})"><use href="#{name}" '
-                              f'clip-path="url(#{identity})"/></g>')
-    return ''.join(result)+'</g>'
-
-
 def banner(lang):
     title, subtitle, tags, _ = COPY[lang]
-    laptops, peak, quick = (image_data(n) for n in
-                            ('laptops.webp', f'peakmp3-{lang}.webp', f'quickanswer-{lang}.webp'))
-    definitions = f'''<defs>
-<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07172e"/><stop offset="1" stop-color="#245faa"/></linearGradient>
-<clipPath id="round"><rect width="1400" height="360" rx="24"/></clipPath>
-<image id="laptops" width="720" height="480" href="{laptops}"/>
-<g id="mac"><use href="#laptops"/></g>
-<g id="windows"><use href="#laptops"/><rect x="382" y="94" width="310" height="204" rx="3" fill="#101a2d"/>
-<image x="388" y="98" width="128" height="196" preserveAspectRatio="xMidYMid meet" href="{peak}"/>
-<image x="524" y="98" width="160" height="196" preserveAspectRatio="xMidYMid meet" href="{quick}"/></g>
-</defs>'''
-    mac = device_mesh('mac', (0, 70, 365, 355),
-                      ((36, 90), (300, 70), (315, 330), (24, 323)))
-    windows = device_mesh('windows', (365, 70, 355, 355),
-                          ((1100, 70), (1364, 90), (1376, 323), (1085, 330)))
+    mac_data=image_data('mac-perspective.webp')
+    windows_data=image_data(f'windows-perspective-{lang}.webp')
+    definitions='''<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07172e"/><stop offset="1" stop-color="#245faa"/></linearGradient><clipPath id="round"><rect width="1400" height="360" rx="24"/></clipPath></defs>'''
+    mac=f'<image x="0" y="10" width="340" height="340" href="{mac_data}"/>'
+    windows=f'<image x="1060" y="10" width="340" height="340" href="{windows_data}"/>'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-label="popovantondev — {escape(title)}">
 {definitions}<g clip-path="url(#round)"><rect width="1400" height="360" fill="url(#bg)"/>
 <path d="M1100 0 870 360M1290 0 1060 360" stroke="#a7dcff" stroke-opacity=".08" stroke-width="64"/>
@@ -98,7 +46,7 @@ def banner(lang):
 def main():
     ET.register_namespace('', 'http://www.w3.org/2000/svg')
     for lang, (_, _, _, label) in COPY.items():
-        (ASSETS / f'profile-laptops-v3-{lang}.svg').write_text(banner(lang), encoding='utf-8')
+        (ASSETS / f'profile-laptops-v4-{lang}.svg').write_text(banner(lang), encoding='utf-8')
         # Preserve the approved demo panel; remove only its bottom brown stripe.
         path = ASSETS / f'peakmp3-demo-{lang}.svg'
         root = ET.fromstring(path.read_text(encoding='utf-8'))

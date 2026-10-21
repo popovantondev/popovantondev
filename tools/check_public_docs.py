@@ -14,11 +14,11 @@ END='<!-- public-release:end -->'
 LANGS=('de','en','ru')
 def status(d,l):
     return LABELS[l][{'release':'release','preview':'preview','source':'source_status'}[d['status']]]+' '+d['version']
-def actions(d,l):
+def actions(d,l,websites=None):
     t=LABELS[l]
     result=[(t['download'] if d['release_url'] else t['source'],d['release_url'] or d['source_url'])]
-    if d['repo'] in ('PeakMP3','YouTubeDownloader'):
-        website='https://popovantondev.github.io/'+d['repo']+'/index-'+l+'.html'
+    website=d.get('navigation',{}).get(l,{}).get('website') or (websites or {}).get(d['repo'],{}).get(l)
+    if website:
         result.append(({'ru':'Сайт','de':'Website','en':'Website'}[l],website))
         if d['repo']=='PeakMP3':result.append(({'ru':'Попробовать в браузере','de':'Im Browser testen','en':'Try in browser'}[l],website+'#demo'))
     return result+[(t['guide'],d['help_url'].format(lang=l)),(t['bug'],d['feedback_url'])]
@@ -76,7 +76,7 @@ def profile_readme(d,l):
         'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Lade die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog. Gib die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien','tags':'LERNEN · MEDIEN · BACKUP · AUTOMATISIERUNG'}
     }[l]
     catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
-    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v3-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v4-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
     if any(p['repo']=='PeakMP3' for p in d['projects']):
         demo='https://popovantondev.github.io/PeakMP3/index-'+l+'.html#demo'
         label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
@@ -86,11 +86,11 @@ def profile_readme(d,l):
         p=next(p for p in d['projects'] if p['repo']==repo)
         if i%2==0:out.append('<tr>')
         icon=d['catalog_icons'][repo]
-        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(p["source_url"])}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l))+'</p></td>']
+        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(p["source_url"])}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l,d.get('catalog_websites')))+'</p></td>']
         if i%2==1:out.append('</tr>')
     out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
-        out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l))+' |')
+        out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l,d.get('catalog_websites')))+' |')
     out += ['',f'## {copy["screens"]}','']
     demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
     illustration_caption={'ru':'Опубликованная демонстрационная иллюстрация интерфейса.','de':'Veröffentlichte Demonstrationsillustration der Oberfläche.','en':'Published demonstration illustration of the interface.'}[l]
@@ -109,7 +109,7 @@ def profile_readme(d,l):
 def catalog(d,l):
     sys.path.insert(0,str(ROOT/'tools'))
     from catalog_page import render
-    return render(d,l,LABELS,status,actions)
+    return render(d,l,LABELS,status,lambda p,lang:actions(p,lang,d.get('catalog_websites')))
 
 def generated(d):
     if 'projects' not in d:

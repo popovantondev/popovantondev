@@ -18,12 +18,17 @@ def render(d,l,labels,status,actions):
   os='macos' if 'macOS' in p['platform'] else 'windows'
   icon=d['catalog_icons'][p['repo']]
   notice=f'<p class="collection-notice">{e(PERMISSION_NOTICE[l])}</p>' if p['repo']=='SaveLecture' else ''
+  links=actions(p,l)
+  demo=next(((label,url) for label,url in links if p['repo']=='PeakMP3' and url.endswith('#demo')),None)
+  if demo:
+   links=[(label,url) for label,url in links if url!=demo[1]]
+  demo_link=f'<a class="try-demo" href="{e(demo[1])}">{e(demo[0])} <span aria-hidden="true">↗</span></a>' if demo else ''
   cards.append(f'''<article class="project" id="{e(p['repo'])}" data-platform="{os}">
 <div class="project-heading"><img class="project-icon" src="{e(icon)}" width="64" height="64" alt="" decoding="async" loading="lazy"><span class="platform">{e(p['platform'])}</span></div>
-<h2><a href="{e(p['source_url'])}">{e(p['name'])}</a></h2><span class="status {p['status']}">{e(status(p,l))}</span>
+<div class="project-title-row"><h2><a href="{e(p['source_url'])}">{e(p['name'])}</a></h2>{demo_link}</div><span class="status {p['status']}">{e(status(p,l))}</span>
 <p class="description">{e(p['description'][l])}</p>{notice}
 <details class="requirements"><summary>{e(c['requirements'])}</summary><p>{e(p['requirements'][l])}</p></details>
-<div class="actions">{''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l))}</div></article>''')
+<div class="actions">{''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in links)}</div></article>''')
  n=len(d['projects'])
  return f'''<!doctype html>
 <html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(c['intro'])}"><meta name="theme-color" content="#f6f7fb"><title>popovantondev — {e(labels[l]['catalog'])}</title><link rel="stylesheet" href="assets/catalog.css"><script src="assets/catalog.js" defer></script></head>

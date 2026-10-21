@@ -1454,5 +1454,97 @@
     "QuickAnswer": "assets/app-icons/QuickAnswer.png",
     "YouTubeDownloader": "assets/app-icons/YouTubeDownloader.png",
     "PeakMP3": "assets/app-icons/PeakMP3.svg"
+  },
+  "catalog_websites": {
+    "SaveLecture": {
+      "ru": "https://popovantondev.github.io/SaveLecture/index-ru.html",
+      "de": "https://popovantondev.github.io/SaveLecture/index-de.html",
+      "en": "https://popovantondev.github.io/SaveLecture/index-en.html"
+    },
+    "TelegramMediaSender": {
+      "ru": "https://popovantondev.github.io/TelegramMediaSender/index.html",
+      "de": "https://popovantondev.github.io/TelegramMediaSender/index.html",
+      "en": "https://popovantondev.github.io/TelegramMediaSender/index.html"
+    },
+    "AnkiSound": {
+      "ru": "https://popovantondev.github.io/AnkiSound/index.html",
+      "de": "https://popovantondev.github.io/AnkiSound/index.html",
+      "en": "https://popovantondev.github.io/AnkiSound/index.html"
+    },
+    "LectureTranslate": {
+      "ru": "https://popovantondev.github.io/LectureTranslate/index.html",
+      "de": "https://popovantondev.github.io/LectureTranslate/index.html",
+      "en": "https://popovantondev.github.io/LectureTranslate/index.html"
+    },
+    "SRTtoSound": {
+      "ru": "https://popovantondev.github.io/SRTtoSound/index.html",
+      "de": "https://popovantondev.github.io/SRTtoSound/index.html",
+      "en": "https://popovantondev.github.io/SRTtoSound/index.html"
+    },
+    "LectureMerge": {
+      "ru": "https://popovantondev.github.io/LectureMerge/index.html",
+      "de": "https://popovantondev.github.io/LectureMerge/index.html",
+      "en": "https://popovantondev.github.io/LectureMerge/index.html"
+    },
+    "Kaktus-Backup-Sync": {
+      "ru": "https://popovantondev.github.io/Kaktus-Backup-Sync/index.html",
+      "de": "https://popovantondev.github.io/Kaktus-Backup-Sync/index.html",
+      "en": "https://popovantondev.github.io/Kaktus-Backup-Sync/index.html"
+    },
+    "HotspotControl": {
+      "ru": "https://popovantondev.github.io/HotspotControl/index.html",
+      "de": "https://popovantondev.github.io/HotspotControl/index.html",
+      "en": "https://popovantondev.github.io/HotspotControl/index.html"
+    },
+    "MegaProg": {
+      "ru": "https://popovantondev.github.io/MegaProg/index.html",
+      "de": "https://popovantondev.github.io/MegaProg/index.html",
+      "en": "https://popovantondev.github.io/MegaProg/index.html"
+    },
+    "LectureCompanion": {
+      "ru": "https://popovantondev.github.io/LectureCompanion/index.html",
+      "de": "https://popovantondev.github.io/LectureCompanion/index.html",
+      "en": "https://popovantondev.github.io/LectureCompanion/index.html"
+    },
+    "StudyArchivePrep": {
+      "ru": "https://popovantondev.github.io/StudyArchivePrep/index.html",
+      "de": "https://popovantondev.github.io/StudyArchivePrep/index.html",
+      "en": "https://popovantondev.github.io/StudyArchivePrep/index.html"
+    },
+    "openmedia-downloader": {
+      "ru": "https://popovantondev.github.io/openmedia-downloader/index.html",
+      "de": "https://popovantondev.github.io/openmedia-downloader/index.html",
+      "en": "https://popovantondev.github.io/openmedia-downloader/index.html"
+    },
+    "GitHubSync": {
+      "ru": "https://popovantondev.github.io/GitHubSync/index.html",
+      "de": "https://popovantondev.github.io/GitHubSync/index.html",
+      "en": "https://popovantondev.github.io/GitHubSync/index.html"
+    },
+    "VirtualPianoArranger": {
+      "ru": "https://popovantondev.github.io/VirtualPianoArranger/index.html",
+      "de": "https://popovantondev.github.io/VirtualPianoArranger/index.html",
+      "en": "https://popovantondev.github.io/VirtualPianoArranger/index.html"
+    },
+    "SoundLeaf": {
+      "ru": "https://popovantondev.github.io/SoundLeaf/index-ru.html",
+      "de": "https://popovantondev.github.io/SoundLeaf/index-de.html",
+      "en": "https://popovantondev.github.io/SoundLeaf/index-en.html"
+    },
+    "QuickAnswer": {
+      "ru": "https://popovantondev.github.io/QuickAnswer/index-ru.html",
+      "de": "https://popovantondev.github.io/QuickAnswer/index-de.html",
+      "en": "https://popovantondev.github.io/QuickAnswer/index-en.html"
+    },
+    "YouTubeDownloader": {
+      "ru": "https://popovantondev.github.io/YouTubeDownloader/index-ru.html",
+      "de": "https://popovantondev.github.io/YouTubeDownloader/index-de.html",
+      "en": "https://popovantondev.github.io/YouTubeDownloader/index-en.html"
+    },
+    "PeakMP3": {
+      "ru": "https://popovantondev.github.io/PeakMP3/index-ru.html",
+      "de": "https://popovantondev.github.io/PeakMP3/index-de.html",
+      "en": "https://popovantondev.github.io/PeakMP3/index-en.html"
+    }
   }
 }
