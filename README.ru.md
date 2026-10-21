@@ -1,6 +1,6 @@
 <p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>
 
-![popovantondev](assets/profile-laptops-v2-ru.svg)
+![popovantondev](assets/profile-laptops-v3-ru.svg)
 
 Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.
 
@@ -9,7 +9,7 @@
 ## Основные программы
 [![Попробовать PeakMP3 в браузере](assets/peakmp3-demo-ru.svg)](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)
 
-**[▶ Попробовать PeakMP3 в браузере](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)**
+[![Попробовать PeakMP3 в браузере](assets/peakmp3-demo-link-ru.svg)](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)
 
 
 <table>
@@ -53,11 +53,29 @@
 ## Посмотреть интерфейсы
 
 <details>
-<summary>Telegram Media Sender</summary>
+<summary>Virtual Piano Arranger</summary>
 
-![Telegram Media Sender](https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/docs/images/app-ru.png)
+![Virtual Piano Arranger](https://raw.githubusercontent.com/popovantondev/VirtualPianoArranger/main/assets/surface-laptop-v1.png)
 
-*Демонстрационный интерфейс; настоящий аккаунт Telegram не подключён.*
+*Опубликованная демонстрационная иллюстрация интерфейса.*
+
+</details>
+
+<details>
+<summary>PeakMP3</summary>
+
+![PeakMP3](https://raw.githubusercontent.com/popovantondev/PeakMP3/main/assets/site/peakmp3-ru.webp)
+
+*Интерфейс с демонстрационными данными.*
+
+</details>
+
+<details>
+<summary>SoundLeaf</summary>
+
+![SoundLeaf](https://raw.githubusercontent.com/popovantondev/SoundLeaf/main/assets/screenshots/ru-control-dark.png)
+
+*Интерфейс с демонстрационными данными.*
 
 </details>
 
@@ -67,6 +85,24 @@
 ![Lecture Companion](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png)
 
 *Опубликованная демонстрация v2.4 с синтетическими данными.*
+
+</details>
+
+<details>
+<summary>LectureMerge</summary>
+
+![LectureMerge](https://raw.githubusercontent.com/popovantondev/LectureMerge/main/docs/ru/screenshots/main.png)
+
+*Интерфейс с демонстрационными данными.*
+
+</details>
+
+<details>
+<summary>Quick Answer</summary>
+
+![Quick Answer](https://raw.githubusercontent.com/popovantondev/QuickAnswer/main/docs/assets/screenshots/popup-ru.png)
+
+*Интерфейс с демонстрационными данными.*
 
 </details>
 

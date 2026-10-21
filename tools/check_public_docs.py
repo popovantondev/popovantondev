@@ -76,11 +76,11 @@ def profile_readme(d,l):
         'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Lade die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog. Gib die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien','tags':'LERNEN · MEDIEN · BACKUP · AUTOMATISIERUNG'}
     }[l]
     catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
-    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v2-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v3-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
     if any(p['repo']=='PeakMP3' for p in d['projects']):
         demo='https://popovantondev.github.io/PeakMP3/index-'+l+'.html#demo'
         label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
-        out=out[:-2]+[f'[![{label}](assets/peakmp3-demo-{l}.svg)]({demo})','',f'**[▶ {label}]({demo})**','',out[-2],out[-1]]
+        out=out[:-2]+[f'[![{label}](assets/peakmp3-demo-{l}.svg)]({demo})','',f'[![{label}](assets/peakmp3-demo-link-{l}.svg)]({demo})','',out[-2],out[-1]]
     featured=['TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge','HotspotControl','Kaktus-Backup-Sync']
     for i,repo in enumerate(featured):
         p=next(p for p in d['projects'] if p['repo']==repo)
@@ -92,7 +92,16 @@ def profile_readme(d,l):
     for p in d['projects']:
         out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l))+' |')
     out += ['',f'## {copy["screens"]}','']
-    for repo,cap,img in [('TelegramMediaSender',t['caption'],f'docs/images/app-{l}.png'),('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png')]:
+    demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
+    illustration_caption={'ru':'Опубликованная демонстрационная иллюстрация интерфейса.','de':'Veröffentlichte Demonstrationsillustration der Oberfläche.','en':'Published demonstration illustration of the interface.'}[l]
+    previews=[
+        ('VirtualPianoArranger',illustration_caption,'assets/surface-laptop'+({'ru':'','de':'-de','en':'-en'}[l])+'-v1.png'),
+        ('PeakMP3',demo_caption,f'assets/site/peakmp3-{l}.webp'),
+        ('SoundLeaf',demo_caption,f'assets/screenshots/{l}-control-dark.png'),
+        ('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png'),
+        ('LectureMerge',demo_caption,f'docs/{l}/screenshots/main.png'),
+        ('QuickAnswer',demo_caption,f'docs/assets/screenshots/popup-{l}.png')]
+    for repo,cap,img in previews:
         p=next(p for p in d['projects'] if p['repo']==repo)
         out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
     out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']

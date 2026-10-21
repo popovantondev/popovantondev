@@ -1,6 +1,6 @@
 <p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>
 
-![popovantondev](assets/profile-laptops-v2-en.svg)
+![popovantondev](assets/profile-laptops-v3-en.svg)
 
 I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.
 
@@ -9,7 +9,7 @@ I build desktop tools for studying, working with media and managing everyday tas
 ## Featured applications
 [![Try PeakMP3 in your browser](assets/peakmp3-demo-en.svg)](https://popovantondev.github.io/PeakMP3/index-en.html#demo)
 
-**[▶ Try PeakMP3 in your browser](https://popovantondev.github.io/PeakMP3/index-en.html#demo)**
+[![Try PeakMP3 in your browser](assets/peakmp3-demo-link-en.svg)](https://popovantondev.github.io/PeakMP3/index-en.html#demo)
 
 
 <table>
@@ -53,11 +53,29 @@ I build desktop tools for studying, working with media and managing everyday tas
 ## Interface previews
 
 <details>
-<summary>Telegram Media Sender</summary>
+<summary>Virtual Piano Arranger</summary>
 
-![Telegram Media Sender](https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/docs/images/app-en.png)
+![Virtual Piano Arranger](https://raw.githubusercontent.com/popovantondev/VirtualPianoArranger/main/assets/surface-laptop-en-v1.png)
 
-*Demonstration interface; no real Telegram account connected.*
+*Published demonstration illustration of the interface.*
+
+</details>
+
+<details>
+<summary>PeakMP3</summary>
+
+![PeakMP3](https://raw.githubusercontent.com/popovantondev/PeakMP3/main/assets/site/peakmp3-en.webp)
+
+*Interface with demonstration data.*
+
+</details>
+
+<details>
+<summary>SoundLeaf</summary>
+
+![SoundLeaf](https://raw.githubusercontent.com/popovantondev/SoundLeaf/main/assets/screenshots/en-control-dark.png)
+
+*Interface with demonstration data.*
 
 </details>
 
@@ -67,6 +85,24 @@ I build desktop tools for studying, working with media and managing everyday tas
 ![Lecture Companion](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-en.png)
 
 *Published v2.4 demonstration with synthetic data.*
+
+</details>
+
+<details>
+<summary>LectureMerge</summary>
+
+![LectureMerge](https://raw.githubusercontent.com/popovantondev/LectureMerge/main/docs/en/screenshots/main.png)
+
+*Interface with demonstration data.*
+
+</details>
+
+<details>
+<summary>Quick Answer</summary>
+
+![Quick Answer](https://raw.githubusercontent.com/popovantondev/QuickAnswer/main/docs/assets/screenshots/popup-en.png)
+
+*Interface with demonstration data.*
 
 </details>
 
