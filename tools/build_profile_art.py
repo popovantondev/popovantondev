@@ -1,4 +1,4 @@
-"""Compose self-contained SVG banners from whole-device CSS perspective renders.
+"""Compose self-contained SVG banners from hinged 3D laptop renders.
 
 Run render_profile_devices.cjs first when interface images change.
 """
@@ -26,11 +26,11 @@ def image_data(name):
 
 def banner(lang):
     title, subtitle, tags, _ = COPY[lang]
-    mac_data=image_data('mac-perspective.webp')
-    windows_data=image_data(f'windows-perspective-{lang}.webp')
+    mac_data=image_data('mac-spatial.webp')
+    windows_data=image_data(f'windows-spatial-{lang}.webp')
     definitions='''<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07172e"/><stop offset="1" stop-color="#245faa"/></linearGradient><clipPath id="round"><rect width="1400" height="360" rx="24"/></clipPath></defs>'''
-    mac=f'<image x="0" y="10" width="340" height="340" href="{mac_data}"/>'
-    windows=f'<image x="1060" y="10" width="340" height="340" href="{windows_data}"/>'
+    mac=f'<image x="0" y="0" width="340" height="360" href="{mac_data}"/>'
+    windows=f'<image x="1060" y="0" width="340" height="360" href="{windows_data}"/>'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-label="popovantondev — {escape(title)}">
 {definitions}<g clip-path="url(#round)"><rect width="1400" height="360" fill="url(#bg)"/>
 <path d="M1100 0 870 360M1290 0 1060 360" stroke="#a7dcff" stroke-opacity=".08" stroke-width="64"/>
@@ -46,7 +46,7 @@ def banner(lang):
 def main():
     ET.register_namespace('', 'http://www.w3.org/2000/svg')
     for lang, (_, _, _, label) in COPY.items():
-        (ASSETS / f'profile-laptops-v4-{lang}.svg').write_text(banner(lang), encoding='utf-8')
+        (ASSETS / f'profile-laptops-v5-{lang}.svg').write_text(banner(lang), encoding='utf-8')
         # Preserve the approved demo panel; remove only its bottom brown stripe.
         path = ASSETS / f'peakmp3-demo-{lang}.svg'
         root = ET.fromstring(path.read_text(encoding='utf-8'))

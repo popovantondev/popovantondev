@@ -13,6 +13,7 @@ PERMISSION_NOTICE={
 
 def render(d,l,labels,status,actions):
  c=COPY[l]; nav=''.join(f'<a href="{("index.html" if x=="en" else "index-"+x+".html")}" lang="{x}" hreflang="{x}"'+(' aria-current="page"' if x==l else '')+f'>{dict(ru="RU",de="DE",en="EN")[x]}</a>' for x in ('ru','de','en'))
+ title=' '.join('<span>'+e(part)+'</span>' for part in {'ru':['Ваши задачи.','Нужные инструменты.'],'de':['Ihre Aufgaben.','Die passenden Werkzeuge.'],'en':['Your tasks.','The right tools.']}[l])
  cards=[]
  for p in d['projects']:
   os='macos' if 'macOS' in p['platform'] else 'windows'
@@ -31,10 +32,10 @@ def render(d,l,labels,status,actions):
 <div class="actions">{''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in links)}</div></article>''')
  n=len(d['projects'])
  return f'''<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(c['intro'])}"><meta name="theme-color" content="#f6f7fb"><title>popovantondev — {e(labels[l]['catalog'])}</title><link rel="stylesheet" href="assets/catalog.css"><script src="assets/catalog.js" defer></script></head>
-<body><div class="shell"><header class="top"><a class="brand" href="https://github.com/popovantondev"><span class="brand-mark">P</span>popovantondev</a><nav aria-label="Language">{nav}</nav></header>
-<main><section class="hero"><div class="hero-copy"><p class="eyebrow">{e(c['eyebrow'])}</p><h1>{e(c['title'])}</h1><p class="lead">{e(c['intro'])}</p><div class="hero-actions"><a class="primary" href="#catalog">{e(c['browse'])} <span aria-hidden="true">↘</span></a><a href="https://github.com/popovantondev">{e(c['github'])} <span aria-hidden="true">↗</span></a></div><div class="hero-meta"><span>{n} {e(c['count'])}</span><span>macOS / Windows</span><span>RU / DE / EN</span></div></div>
-<div class="hero-art"><img src="assets/profile-laptops-compact.png" width="800" height="600" alt="{e(labels[l]['catalog'])} — macOS &amp; Windows"></div></section>
+<html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(c['intro'])}"><meta name="theme-color" content="#f6f7fb"><title>popovantondev — {e(labels[l]['catalog'])}</title><link rel="stylesheet" href="assets/catalog.css?v=hero-v5"><script src="assets/catalog.js" defer></script></head>
+<body><div class="shell"><header class="top"><a class="brand" href="https://github.com/popovantondev">popovantondev</a><nav aria-label="Language">{nav}</nav></header>
+<main><section class="hero hero-unified"><img class="hero-device hero-device-left" src="assets/banner-sources/mac-spatial.webp" width="340" height="360" alt="" aria-hidden="true"><div class="hero-copy"><p class="eyebrow">{e(c['eyebrow'])}</p><h1>{title}</h1><p class="lead">{e(c['intro'])}</p><div class="hero-actions"><a class="primary" href="#catalog">{e(c['browse'])} <span aria-hidden="true">↘</span></a><a href="https://github.com/popovantondev">{e(c['github'])} <span aria-hidden="true">↗</span></a></div><div class="hero-meta"><span>{n} {e(c['count'])}</span><span>macOS / Windows</span><span>RU / DE / EN</span></div></div>
+<img class="hero-device hero-device-right" src="assets/banner-sources/windows-spatial-{l}.webp" width="340" height="360" alt="" aria-hidden="true"></section>
 <a class="peak-demo-feature" href="https://popovantondev.github.io/PeakMP3/index-{l}.html#demo"><img src="assets/peakmp3-demo-{l}.svg" width="1400" height="520" alt="PeakMP3 — {dict(ru='Попробовать в браузере',de='Im Browser testen',en='Try in browser')[l]}" loading="lazy"></a>
 <section id="catalog" aria-labelledby="catalog-title"><div class="catalog-top"><div><p class="eyebrow">{e(c['platform'])} · macOS / Windows</p><h2 id="catalog-title">{e(c['all'])}</h2></div><span class="result-count" id="result-count" aria-live="polite">{n} / {n}</span></div>
 <div class="catalog-controls" hidden><div class="filters" role="group" aria-label="{e(c['platform'])}"><button type="button" data-filter="all" aria-pressed="true">{e(c['all'])}</button><button type="button" data-filter="macos" aria-pressed="false">macOS</button><button type="button" data-filter="windows" aria-pressed="false">Windows</button></div><label class="search"><span class="sr-only">{e(c['search'])}</span><input id="project-search" type="search" placeholder="{e(c['placeholder'])}" autocomplete="off"></label></div>

@@ -1,6 +1,6 @@
 <p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>
 
-![popovantondev](assets/profile-laptops-v4-de.svg)
+![popovantondev](assets/profile-laptops-v5-de.svg)
 
 Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.
 
