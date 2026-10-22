@@ -25,3 +25,7 @@ Applications distributed in another project’s installer declare `shared_distri
 - Retain before/after browser screenshots for visual changes. Automated documentation checks complement this review; they do not replace it.
 
 - The studio hero uses one approved photograph and original localized application screenshots. Preserve the fixed screen-plane transforms and screenshot proportions; reflow live text and buttons below the artwork on small screens. Do not flatten interactive controls into an image.
+
+### Profile studio artwork
+
+Generate catalog pages first with `python tools/check_public_docs.py --write`, then run `node tools/render_profile_studio.cjs` with Playwright available. This renders the three `assets/profile-studio-*.png` files from the same photograph, localized screenshots and screen transforms as the website. Each complete README banner links to its localized catalog; it contains one matching catalog action, not several independently clickable image buttons. The older `build_profile_art.py` / `render_profile_devices.cjs` helpers maintain legacy artwork and do not build the current profile hero.
