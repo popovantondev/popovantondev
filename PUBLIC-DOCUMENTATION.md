@@ -23,3 +23,5 @@ Applications distributed in another project’s installer declare `shared_distri
 - Review RU/DE/EN, available light/dark themes, long labels and enlarged text. Check for horizontal overflow, matching control heights, and visible gaps between text, buttons and divider lines.
 - Click the user-facing destinations: guides must open as published HTML pages, not GitHub HTML source views; each project's actions must point to that project.
 - Retain before/after browser screenshots for visual changes. Automated documentation checks complement this review; they do not replace it.
+
+- The studio hero uses one approved photograph and original localized application screenshots. Preserve the fixed screen-plane transforms and screenshot proportions; reflow live text and buttons below the artwork on small screens. Do not flatten interactive controls into an image.
