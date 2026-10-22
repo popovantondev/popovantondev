@@ -76,7 +76,7 @@ def profile_readme(d,l):
         'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Lade die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog. Gib die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien','tags':'LERNEN · MEDIEN · BACKUP · AUTOMATISIERUNG'}
     }[l]
     catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
-    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'![popovantondev](assets/profile-laptops-v5-{l}.svg)','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'[![popovantondev](assets/profile-studio-{l}.png)]({catalog_url})','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
     if any(p['repo']=='PeakMP3' for p in d['projects']):
         demo='https://popovantondev.github.io/PeakMP3/index-'+l+'.html#demo'
         label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
@@ -86,7 +86,8 @@ def profile_readme(d,l):
         p=next(p for p in d['projects'] if p['repo']==repo)
         if i%2==0:out.append('<tr>')
         icon=d['catalog_icons'][repo]
-        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(p["source_url"])}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l,d.get('catalog_websites')))+'</p></td>']
+        website=p.get('navigation',{}).get(l,{}).get('website') or d.get('catalog_websites',{}).get(repo,{}).get(l) or p['source_url']
+        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(website)}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l,d.get('catalog_websites')))+'</p></td>']
         if i%2==1:out.append('</tr>')
     out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
@@ -104,7 +105,7 @@ def profile_readme(d,l):
     for repo,cap,img in previews:
         p=next(p for p in d['projects'] if p['repo']==repo)
         out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · JavaScript · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
+    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
     return '\n'.join(out)
 def catalog(d,l):
     sys.path.insert(0,str(ROOT/'tools'))
