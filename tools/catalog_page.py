@@ -20,19 +20,21 @@ def render(d,l,labels,status,actions):
   icon=d['catalog_icons'][p['repo']]
   notice=f'<p class="collection-notice">{e(PERMISSION_NOTICE[l])}</p>' if p['repo']=='SaveLecture' else ''
   links=actions(p,l)
+  website=p.get('navigation',{}).get(l,{}).get('website') or d.get('catalog_websites',{}).get(p['repo'],{}).get(l)
+  title_url=website or p['source_url']
   demo=next(((label,url) for label,url in links if p['repo']=='PeakMP3' and url.endswith('#demo')),None)
   if demo:
    links=[(label,url) for label,url in links if url!=demo[1]]
   demo_link=f'<a class="try-demo" href="{e(demo[1])}">{e(demo[0])} <span aria-hidden="true">↗</span></a>' if demo else ''
   cards.append(f'''<article class="project" id="{e(p['repo'])}" data-platform="{os}">
 <div class="project-heading"><img class="project-icon" src="{e(icon)}" width="64" height="64" alt="" decoding="async" loading="lazy"><span class="platform">{e(p['platform'])}</span></div>
-<div class="project-title-row"><h2><a href="{e(p['source_url'])}">{e(p['name'])}</a></h2>{demo_link}</div><span class="status {p['status']}">{e(status(p,l))}</span>
+<div class="project-title-row"><h2><a href="{e(title_url)}">{e(p['name'])}</a></h2>{demo_link}</div><span class="status {p['status']}">{e(status(p,l))}</span>
 <p class="description">{e(p['description'][l])}</p>{notice}
 <details class="requirements"><summary>{e(c['requirements'])}</summary><p>{e(p['requirements'][l])}</p></details>
 <div class="actions">{''.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in links)}</div></article>''')
  n=len(d['projects'])
  return f'''<!doctype html>
-<html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(c['intro'])}"><meta name="theme-color" content="#f6f7fb"><title>popovantondev — {e(labels[l]['catalog'])}</title><link rel="stylesheet" href="assets/catalog.css?v=hero-v5"><script src="assets/catalog.js" defer></script></head>
+<html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{e(c['intro'])}"><meta name="theme-color" content="#f6f7fb"><title>popovantondev — {e(labels[l]['catalog'])}</title><link rel="stylesheet" href="assets/catalog.css?v=fix-20261022"><script src="assets/catalog.js" defer></script></head>
 <body><div class="shell"><header class="top"><a class="brand" href="https://github.com/popovantondev">popovantondev</a><nav aria-label="Language">{nav}</nav></header>
 <main><section class="hero hero-unified"><img class="hero-device hero-device-left" src="assets/banner-sources/mac-spatial.webp" width="340" height="360" alt="" aria-hidden="true"><div class="hero-copy"><p class="eyebrow">{e(c['eyebrow'])}</p><h1>{title}</h1><p class="lead">{e(c['intro'])}</p><div class="hero-actions"><a class="primary" href="#catalog">{e(c['browse'])} <span aria-hidden="true">↘</span></a><a href="https://github.com/popovantondev">{e(c['github'])} <span aria-hidden="true">↗</span></a></div><div class="hero-meta"><span>{n} {e(c['count'])}</span><span>macOS / Windows</span><span>RU / DE / EN</span></div></div>
 <img class="hero-device hero-device-right" src="assets/banner-sources/windows-spatial-{l}.webp" width="340" height="360" alt="" aria-hidden="true"></section>
