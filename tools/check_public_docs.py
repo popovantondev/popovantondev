@@ -19,7 +19,7 @@ def actions(d,l,websites=None):
     result=[(t['download'] if d['release_url'] else t['source'],d['release_url'] or d['source_url'])]
     website=d.get('navigation',{}).get(l,{}).get('website') or (websites or {}).get(d['repo'],{}).get(l)
     if website:
-        result.append(({'ru':'Сайт','de':'Website','en':'Website'}[l],website))
+        result.append(({'ru':'О программе','de':'Über die App','en':'About the app'}[l],website))
         if d['repo']=='PeakMP3':result.append(({'ru':'Попробовать в браузере','de':'Im Browser testen','en':'Try in browser'}[l],website+'#demo'))
     return result+[(t['guide'],d['help_url'].format(lang=l)),(t['bug'],d['feedback_url'])]
 
