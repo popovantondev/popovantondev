@@ -43,3 +43,5 @@ nav a[aria-current],.filters button[aria-pressed=true]{background:#e6efff;border
 .project-icon{flex-shrink:0}
 .search input{min-height:44px;font-size:16px}
 @media(max-width:400px){.top{flex-wrap:wrap;gap:12px}.catalog-top{flex-wrap:wrap}.hero-meta{flex-wrap:wrap}}
+
+.peak-demo-feature{max-width:760px;margin:12px auto 40px}.peak-demo-feature img{box-shadow:0 8px 22px #37270c0c}.actions .support-link{background:transparent;color:#52647b;border:1px solid #e0e8f5;font-weight:500}.catalog-controls{padding:16px;background:#fff;border:1px solid #d8e3f3;border-radius:16px}.catalog-controls .filters{align-items:center}.hero-unified .hero-meta{font-size:14px}.hero-unified .eyebrow{font-size:14px}.result-count{font-variant-numeric:tabular-nums}
