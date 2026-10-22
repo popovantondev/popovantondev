@@ -31,7 +31,7 @@ const uri=name=>'data:image/webp;base64,'+fs.readFileSync(path.join(folder,name)
     void main(){float pitch=radians(25.0);vec3 p=vec3(cos(yaw)*position.x+sin(yaw)*position.z,position.y,-sin(yaw)*position.x+cos(yaw)*position.z);
     float vy=cos(pitch)*p.y-sin(pitch)*p.z;float vz=sin(pitch)*p.y+cos(pitch)*p.z;float w=2500.0-vz;
     gl_Position=vec4((2.0*170.0/340.0-1.0)*w+2.0*0.8*2500.0*p.x/340.0,(1.0-2.0*235.0/360.0)*w+2.0*0.8*2500.0*vy/360.0,0.0,w);tex=textureProjection*vec3(uv,1.0);face=uv;}`;
-    const fragment='precision highp float;uniform sampler2D photo;varying vec3 tex;varying vec2 face;void main(){vec4 c=texture2D(photo,tex.xy/tex.z);vec2 q=abs(face-0.5)-vec2(0.482);float edge=length(max(q,0.0))+min(max(q.x,q.y),0.0)-0.018;c.a=smoothstep(0.75,0.98,c.a)*(1.0-smoothstep(-0.004,0.0,edge));gl_FragColor=c;}';
+    const fragment='precision highp float;uniform sampler2D photo;uniform vec4 surface;varying vec3 tex;varying vec2 face;void main(){vec4 c=texture2D(photo,tex.xy/tex.z);vec2 q=abs(face-0.5)-vec2(0.482);float edge=length(max(q,0.0))+min(max(q.x,q.y),0.0)-0.018;c.a=smoothstep(0.75,0.98,c.a)*(1.0-smoothstep(-0.004,0.0,edge));if(surface.a>0.0)c=vec4(mix(surface.rgb*0.72,surface.rgb,face.y),c.a);gl_FragColor=c;}';
     function shader(kind,code){const s=gl.createShader(kind);gl.shaderSource(s,code);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
     const program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);
     if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));gl.useProgram(program);
@@ -45,7 +45,8 @@ const uri=name=>'data:image/webp;base64,'+fs.readFileSync(path.join(folder,name)
      const det=dx1*dy2-dx2*dy1,g=(dx3*dy2-dx2*dy3)/det,h=(dx1*dy3-dx3*dy1)/det;
      return new Float32Array([p1[0]-p0[0]+g*p1[0],p1[1]-p0[1]+g*p1[1],g,p3[0]-p0[0]+h*p3[0],p3[1]-p0[1]+h*p3[1],h,p0[0],p0[1],1]);
     }
-    function panel(points,photoQuad){
+    function panel(points,photoQuad,solid=null){
+     gl.uniform4fv(gl.getUniformLocation(program,'surface'),solid||[0,0,0,0]);
      const indices=[0,1,2,0,2,3],coords=[[0,0],[1,0],[1,1],[0,1]];
      for(const [name,size,values] of [['position',3,indices.flatMap(i=>points[i])],['uv',2,indices.flatMap(i=>coords[i])]]){
       const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(values),gl.STATIC_DRAW);const attr=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(attr);gl.vertexAttribPointer(attr,size,gl.FLOAT,false,0,0);
@@ -53,6 +54,12 @@ const uri=name=>'data:image/webp;base64,'+fs.readFileSync(path.join(folder,name)
      gl.uniformMatrix3fv(gl.getUniformLocation(program,'textureProjection'),false,matrix(photoQuad));gl.drawArrays(gl.TRIANGLES,0,6);
     }
     const pitch=25*Math.PI/180,H=228,W=windows?336:330;
+    // A visible aluminum front and side give the MacBook a Pro-like base.
+    if(!windows){
+     const metal=[0.77,0.79,0.82,1],quad=[[44,391],[335,391],[335,402],[44,402]];
+     panel([[-W/2,0,0],[-W/2,0,230],[-W/2,-11,230],[-W/2,-11,0]],quad,metal);
+     panel([[-W/2,0,230],[W/2,0,230],[W/2,-11,230],[-W/2,-11,230]],quad,metal);
+    }
     // Keyboard remains horizontal; display leans back by the original view angle.
     panel([[-W/2,0,0],[W/2,0,0],[W/2,0,230],[-W/2,0,230]],windows?[[369,307],[704,307],[719,416],[361,416]]:[[31,306],[360,306],[352,411],[5,409]]);
     panel([[-W/2,H*Math.cos(pitch),-H*Math.sin(pitch)],[W/2,H*Math.cos(pitch),-H*Math.sin(pitch)],[W/2,0,0],[-W/2,0,0]],windows?[[369,80],[703,80],[704,307],[368,307]]:[[31,79],[360,79],[360,307],[31,307]]);

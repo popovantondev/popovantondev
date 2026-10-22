@@ -34,3 +34,12 @@ nav a[aria-current],.filters button[aria-pressed=true]{background:#e6efff;border
 .hero-unified .hero-device{display:block;width:100%;height:auto;max-width:310px;object-fit:contain;align-self:center;margin:0 auto}.hero-device-left{grid-area:left}.hero-device-right{grid-area:right}
 @media(max-width:900px) and (min-width:761px){.hero.hero-unified{grid-template-columns:150px minmax(0,1fr) 150px;padding:22px 8px}.hero-unified h1{font-size:33px}.hero-unified .lead{font-size:14px}.hero-unified .hero-meta{gap:8px}.hero-unified .hero-meta span+span{padding-left:8px}}
 @media(max-width:760px){.hero.hero-unified{grid-template-columns:1fr 1fr;grid-template-areas:"left right" "copy copy";min-height:0;padding:12px 20px 25px}.hero-unified .hero-device{max-width:165px}.hero-unified .hero-copy{padding-top:6px}.hero-unified h1{font-size:34px}.hero-unified .lead{font-size:15px}.hero-unified .eyebrow{font-size:9px;margin-bottom:14px}.hero-unified .hero-actions{gap:15px}.hero-unified .hero-meta{font-size:10px;gap:8px}.hero-unified .hero-meta span+span{padding-left:8px}}
+
+/* Small-screen controls and long labels must remain inside their cards. */
+.actions a,.try-demo,.filters button{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.actions a,.try-demo{white-space:normal;overflow-wrap:anywhere;max-width:100%;font-size:14px}
+.platform,.status,.requirements,.result-count{font-size:14px}
+.project-heading .platform{min-width:0;overflow-wrap:anywhere}
+.project-icon{flex-shrink:0}
+.search input{min-height:44px;font-size:16px}
+@media(max-width:400px){.top{flex-wrap:wrap;gap:12px}.catalog-top{flex-wrap:wrap}.hero-meta{flex-wrap:wrap}}
