@@ -49,6 +49,7 @@ I build desktop tools for studying, working with media and managing everyday tas
 | [Quick Answer](https://github.com/popovantondev/QuickAnswer) | Microsoft Edge · Windows<br>Source only 1.7.8 | [Source](https://github.com/popovantondev/QuickAnswer) · [About the app](https://popovantondev.github.io/QuickAnswer/index-en.html) · [User guide](https://popovantondev.github.io/QuickAnswer/Guide-en.html) · [Report a problem](https://github.com/popovantondev/QuickAnswer/issues/new) |
 | [YouTube Downloader](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Preview 2.6.0 | [Download](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [About the app](https://popovantondev.github.io/YouTubeDownloader/index-en.html) · [User guide](https://popovantondev.github.io/YouTubeDownloader/Guide-en.html) · [Report a problem](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
 | [PeakMP3](https://github.com/popovantondev/PeakMP3) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Preview 0.16.0 | [Download](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [About the app](https://popovantondev.github.io/PeakMP3/index-en.html) · [Try in browser](https://popovantondev.github.io/PeakMP3/index-en.html#demo) · [User guide](https://popovantondev.github.io/PeakMP3/Guide-en.html) · [Report a problem](https://github.com/popovantondev/PeakMP3/issues/new) |
+| [Kartoteka](https://popovantondev.github.io/Kartoteka/index.html) | Windows 11 · x64<br>Release 0.5.0 | [Download](https://github.com/popovantondev/Kartoteka/releases/tag/v0.5.0) · [About the app](https://popovantondev.github.io/Kartoteka/index.html) · [User guide](https://popovantondev.github.io/Kartoteka/Guide-en.html) · [Report a problem](https://github.com/popovantondev/Kartoteka/issues/new) |
 
 ## Interface previews
 
@@ -114,6 +115,6 @@ For help or a bug report, use “Report a problem” in the application catalog.
 
 ### Built with
 
-Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF
+Rust / egui / SQLite · Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF
 
 Read the guide and release notes before use.
