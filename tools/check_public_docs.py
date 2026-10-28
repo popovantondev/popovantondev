@@ -91,7 +91,8 @@ def profile_readme(d,l):
         if i%2==1:out.append('</tr>')
     out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
-        out.append(f'| [{p["name"]}]({p["source_url"]}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l,d.get('catalog_websites')))+' |')
+        target=p["navigation"][l]["website"] if p["repo"]=="Kartoteka" else p["source_url"]
+        out.append(f'| [{p["name"]}]({target}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l,d.get('catalog_websites')))+' |')
     out += ['',f'## {copy["screens"]}','']
     demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
     illustration_caption={'ru':'Опубликованная демонстрационная иллюстрация интерфейса.','de':'Veröffentlichte Demonstrationsillustration der Oberfläche.','en':'Published demonstration illustration of the interface.'}[l]
@@ -105,7 +106,7 @@ def profile_readme(d,l):
     for repo,cap,img in previews:
         p=next(p for p in d['projects'] if p['repo']==repo)
         out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
+    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Rust / egui / SQLite · Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
     return '\n'.join(out)
 def catalog(d,l):
     sys.path.insert(0,str(ROOT/'tools'))

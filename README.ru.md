@@ -49,6 +49,7 @@
 | [Quick Answer](https://github.com/popovantondev/QuickAnswer) | Microsoft Edge · Windows<br>Только исходники 1.7.8 | [Исходники](https://github.com/popovantondev/QuickAnswer) · [О программе](https://popovantondev.github.io/QuickAnswer/index-ru.html) · [Инструкция](https://popovantondev.github.io/QuickAnswer/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/QuickAnswer/issues/new) |
 | [YouTube Downloader](https://github.com/popovantondev/YouTubeDownloader) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Предварительный выпуск 2.6.0 | [Скачать](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [О программе](https://popovantondev.github.io/YouTubeDownloader/index-ru.html) · [Инструкция](https://popovantondev.github.io/YouTubeDownloader/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/YouTubeDownloader/issues/new/choose) |
 | [PeakMP3](https://github.com/popovantondev/PeakMP3) | Windows 7 SP1 / 10 / 11 · x86 / x64<br>Предварительный выпуск 0.16.0 | [Скачать](https://github.com/popovantondev/YouTubeDownloader/releases/tag/v2.6.0) · [О программе](https://popovantondev.github.io/PeakMP3/index-ru.html) · [Попробовать в браузере](https://popovantondev.github.io/PeakMP3/index-ru.html#demo) · [Инструкция](https://popovantondev.github.io/PeakMP3/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/PeakMP3/issues/new) |
+| [Kartoteka](https://popovantondev.github.io/Kartoteka/index-ru.html) | Windows 11 · x64<br>Выпуск 0.5.0 | [Скачать](https://github.com/popovantondev/Kartoteka/releases/tag/v0.5.0) · [О программе](https://popovantondev.github.io/Kartoteka/index-ru.html) · [Инструкция](https://popovantondev.github.io/Kartoteka/Guide-ru.html) · [Сообщить об ошибке](https://github.com/popovantondev/Kartoteka/issues/new) |
 
 ## Посмотреть интерфейсы
 
@@ -114,6 +115,6 @@
 
 ### Технологии
 
-Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF
+Rust / egui / SQLite · Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF
 
 Перед использованием прочитайте руководство и примечания к выпуску.
