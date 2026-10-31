@@ -91,7 +91,7 @@ def profile_readme(d,l):
         if i%2==1:out.append('</tr>')
     out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
-        target=p["navigation"][l]["website"] if p["repo"]=="Kartoteka" else p["source_url"]
+        target=p.get("navigation",{}).get(l,{}).get("website") or p["source_url"]
         out.append(f'| [{p["name"]}]({target}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l,d.get('catalog_websites')))+' |')
     out += ['',f'## {copy["screens"]}','']
     demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
