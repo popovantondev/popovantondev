@@ -108,30 +108,27 @@ nav.lang a[aria-current="page"] { background: var(--ink); color: var(--on-blue);
   background: var(--surface);
   box-shadow: var(--shadow-photo);
 }
-.about-hero-copy { max-width: 680px; }
+.about-hero-copy { max-width: 680px; min-width: 0; }
+.hero-name {
+  margin: 0 0 var(--space-0);
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
 .eyebrow {
-  margin: 0 0 var(--space-1);
+  margin: 0 0 var(--space-2);
   font-size: 14px;
   font-weight: 650;
   color: var(--blue-ink);
 }
 h1 {
-  margin: 0 0 var(--space-2);
-  font-size: clamp(36px, 5vw, 58px);
-  line-height: 1.07;
-  letter-spacing: -0.04em;
-  font-weight: 750;
-}
-.status-pill {
-  display: inline-block;
   margin: 0 0 var(--space-3);
-  padding: var(--space-inline) var(--space-2);
-  border: 1px solid var(--blue-line);
-  border-radius: var(--radius-pill);
-  background: var(--blue-soft);
-  color: var(--blue-ink);
-  font-size: 15px;
-  font-weight: 700;
+  font-size: clamp(32px, 4.2vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 750;
+  hyphens: auto;
 }
 .lead { margin: 0 0 var(--space-3); font-size: 18px; color: var(--card-text); }
 
@@ -262,7 +259,8 @@ h1 {
   .top { padding: var(--space-2) 0; }
   .about-hero { grid-template-columns: 1fr; gap: var(--space-3); margin-bottom: var(--space-4); }
   .portrait { max-width: 200px; border-radius: var(--radius-l); }
-  .status-pill { border-radius: var(--radius-m); }
+  .hero-name { font-size: 21px; }
+  h1 { font-size: 28px; }
   .lead { font-size: 16px; }
   .cases { grid-template-columns: 1fr; gap: var(--space-2); }
   .case { padding: var(--space-3); }
