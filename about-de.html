@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Anton Popov, Umschulung zum Fachinformatiker für Anwendungsentwicklung bei der FAW. Pflichtpraktikum ab 15.03.2027 gesucht. Arbeitsweise, fünf Projekte, Werdegang und Kontakt.">
+<meta name="theme-color" content="#f6f7fb">
+<title>Anton Popov — Über mich</title>
+<link rel="stylesheet" href="assets/about.css">
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <a class="brand" href="about-de.html">Anton Popov</a>
+  <nav class="lang" aria-label="Sprache">
+    <a href="about-ru.html" lang="ru" hreflang="ru">RU</a>
+    <a href="about-de.html" lang="de" hreflang="de" aria-current="page">DE</a>
+    <a href="about.html" lang="en" hreflang="en">EN</a>
+  </nav>
+</header>
+
+<main>
+<section class="about-hero" id="top">
+  <img class="portrait" src="assets/about/anton-popov.jpg" width="600" height="883" alt="Anton Popov">
+  <div class="about-hero-copy">
+    <p class="eyebrow">Umschulung Fachinformatiker für Anwendungsentwicklung · FAW</p>
+    <h1>Anton Popov</h1>
+    <p class="status-pill">Pflichtpraktikum Anwendungsentwicklung ab 15.03.2027</p>
+    <p class="lead">Für meine Umschulung bei der FAW (Fortbildungsakademie der Wirtschaft) suche ich ein Pflichtpraktikum in der Anwendungsentwicklung. Es umfasst rund 200 Praxistage in drei Phasen, die erste vom 15.03. bis 25.06.2027.</p>
+    <div class="actions">
+      <a class="button-primary" href="mailto:ant0ngm2012@gmail.com">E-Mail schreiben</a>
+      <a class="button-secondary" href="#projects">Projekte ansehen</a>
+      <a class="button-secondary" href="https://github.com/popovantondev">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <h2>So arbeite ich</h2>
+  <ol class="flow">
+    <li class="flow-step"><strong>Idee</strong><span>Ein konkretes Problem und die Person, die das Programm nutzen wird.</span></li>
+    <li class="flow-step"><strong>Anforderungen</strong><span>Was das Programm können muss, auf welchem System es läuft, die Oberfläche auf Papier.</span></li>
+    <li class="flow-step"><strong>KI schreibt den Code</strong><span>Codex, ChatGPT oder Claude setzen die Anforderungen um.</span></li>
+    <li class="flow-step"><strong>Prüfung</strong><span>Tests und Prüfskripte; was nicht geprüft ist, steht in der Dokumentation.</span></li>
+    <li class="flow-step"><strong>Release</strong><span>Versionsnummer, SHA-256-Prüfsumme und Anleitung in drei Sprachen.</span></li>
+  </ol>
+  <p>Den Code meiner Projekte schreibt eine KI; Idee, Anforderungen, Oberfläche und Tests liegen bei mir. Das Programmieren selbst baue ich jetzt in der Umschulung auf.</p>
+</section>
+
+<section class="block" id="projects">
+  <h2>Projekte</h2>
+  <p>Fünf Projekte aus meinem Katalog. Status und Version entsprechen der veröffentlichten Fassung.</p>
+  <div class="cases">
+    <article class="case" id="PeakMP3">
+      <h3>PeakMP3</h3>
+      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 und neuer · Preview 0.16.0 · Quellcode einsehbar, ohne Open-Source-Lizenz</p>
+      <dl class="case-parts">
+        <dt>Aufgabe</dt>
+        <dd>Ein Bekannter, der ein Kulturhaus leitet, schickte mir regelmäßig zu leise Musikdateien. Ich bearbeitete sie von Hand in REAPER und Audacity nach.</dd>
+        <dt>Was ich gemacht habe</dt>
+        <dd>Ich legte die Anforderungen für seinen alten Windows-7-PC fest und entwarf die Oberfläche auf Papier. Das Programm hat einen Regler für die Dichte (Kompressor und Limiter), einen A/B-Vergleich und speichert MP3 mit 320 kbit/s.</dd>
+        <dt>Wie geprüft</dt>
+        <dd>Jede Version habe ich selbst getestet. Ein Anwender bestätigt Windows 7 und 11, Windows 10 ist nicht geprüft. Heute bereitet der Bekannte seine Dateien selbst auf.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/PeakMP3/Guide-de.html">Anleitung <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="Kartoteka">
+      <h3>Kartoteka</h3>
+      <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
+      <dl class="case-parts">
+        <dt>Aufgabe</dt>
+        <dd>Eine Kartei für Klassenkameraden und andere Listen, die nur auf dem eigenen Rechner liegt. Sie arbeitet ohne Internet und ohne Telemetrie und wird ohne Administratorrechte installiert.</dd>
+        <dt>Was ich gemacht habe</dt>
+        <dd>Ich legte Anforderungen und Oberfläche fest: eigene Tabellen mit 11 Feldtypen, Fotos, Dokumentkopien, Suche, CSV-Export und eine Sicherheitskopie vor jedem Wiederherstellen. Die Oberfläche gibt es in drei Sprachen.</dd>
+        <dt>Wie geprüft</dt>
+        <dd>Vor dem Release 0.5.0 sind im Repository 39 bestandene Tests, das Update des Installers von 0.4.1 und die Prüfung der Oberfläche in drei Sprachen dokumentiert. Bildschirmskalierung über 100 % ist nicht geprüft, die EXE ist nicht signiert.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/Kartoteka">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/popovantondev/Kartoteka/blob/main/RELEASE-CHECKS.md">Prüfprotokoll <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/Kartoteka/Guide-de.html">Anleitung <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="Kaktus-Backup-Sync">
+      <h3>Kaktus Backup &amp; Sync</h3>
+      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7 · Quellcode einsehbar, nicht Open Source</p>
+      <dl class="case-parts">
+        <dt>Aufgabe</dt>
+        <dd>Ordner einseitig auf ein Ziel sichern, frühere Dateiversionen behalten und dabei keine Arbeitsdateien automatisch löschen.</dd>
+        <dt>Was ich gemacht habe</dt>
+        <dd>Ich legte Anforderungen und Oberfläche fest: Vorschau des Plans vor jeder Synchronisierung, standardmäßig sieben frühere Versionen je Datei, automatische Prüfung im gewählten Abstand. Neue Aufgaben laufen erst nach fünf bestätigten manuellen Durchgängen automatisch.</dd>
+        <dt>Wie geprüft</dt>
+        <dd>Bei jedem Push laufen in GitHub Actions auf Windows Tests der Dateioperationen und eine Prüfung der Abläufe, auch nach einem abgebrochenen Prozess. Laut README ersetzen diese Tests keine Prüfung bei Stromausfall oder auf einer sauberen Windows-Installation.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-de.html">Anleitung <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="GitHubSync">
+      <h3>GitHubSync</h3>
+      <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT-Lizenz</p>
+      <dl class="case-parts">
+        <dt>Aufgabe</dt>
+        <dd>Dateien zu GitHub hochladen und Projekt- oder Release-Dateien herunterladen, wobei jede Übertragung vorher bestätigt werden muss.</dd>
+        <dt>Was ich gemacht habe</dt>
+        <dd>Ich legte Anforderungen und Oberfläche fest: Anmeldung über den Git Credential Manager, keine Tokens in Programmdateien, kein Force-Push und kein Löschen. Ersetzte Dateien werden gesichert, Dateien über 100 MiB abgelehnt.</dd>
+        <dt>Wie geprüft</dt>
+        <dd>PowerShell-Testskripte prüfen das Programm gegen simulierte GitHub-Antworten und laufen bei jedem Push in GitHub Actions. Zum Release gehört eine SHA-256-Prüfsumme. Andere PCs und echte Netzunterbrechungen sind noch nicht geprüft.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/GitHubSync">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/GitHubSync/Guide-de.html">Anleitung <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="LektienPlayer">
+      <h3>Vorlesungs-Pipeline und LektienPlayer</h3>
+      <p class="case-meta">Whisper, Silero · Player: Swift, macOS 15 · im Aufbau · Source only</p>
+      <dl class="case-parts">
+        <dt>Aufgabe</dt>
+        <dd>Meine Partnerin bildet sich mit deutschen Videokursen in Phytotherapie weiter, versteht Russisch aber besser.</dd>
+        <dt>Was ich gemacht habe</dt>
+        <dd>Ich baue eine Pipeline: Whisper erstellt auf meinem Rechner deutsche Untertitel, danach folgen Übersetzung und russische Vertonung im Timing des Videos. Anforderungen und Prüfregeln stammen von mir.</dd>
+        <dt>Wie geprüft</dt>
+        <dd>Eine 40-Minuten-Lektion dient als Pilot; ein Prüfskript sucht Wiederholungen und Lücken in der Erkennung. Der Player für den Mac ist als Quellcode veröffentlicht, die Installation auf einem frisch eingerichteten Mac ist noch nicht geprüft.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/LektienPlayer">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/LektienPlayer/Guide-de.html">Anleitung <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="path">
+  <h2>Werdegang</h2>
+  <ol class="timeline">
+    <li>
+      <time datetime="2026-08">08.2026 – 08.2028</time>
+      <div>
+        <p><strong>Umschulung zum Fachinformatiker für Anwendungsentwicklung bei der FAW (Fortbildungsakademie der Wirtschaft)</strong></p>
+        <p>Bisher behandelt: IT-Berufe und Geschäftsprozesse, Informationssicherheit und ISO 27001, Zahlensysteme und Logik, Hardware, RAID und Backup, Netzwerke (OSI, IPv4/IPv6, Subnetting), Virtualisierung, Windows 11 und Hyper-V, Lizenzen, ERP und CRM, Projektmanagement (Lastenheft, Scrum, Kanban).</p>
+        <p>Praxisphasen: rund 200 Praxistage in drei Phasen, die erste vom 15.03. bis 25.06.2027.</p>
+        <p>Abschluss: Prüfung vor der IHK zum Ende der Umschulung.</p>
+      </div>
+    </li>
+    <li>
+      <time datetime="2024-06">seit 06.2024</time>
+      <p>In Deutschland. 2026 Prüfung Deutsch B2 Beruf (DTB).</p>
+    </li>
+    <li>
+      <time datetime="2022">2022 – 2024</time>
+      <p>In einem Computergeschäft mit Service in Ismajil (Ukraine), an dem ich beteiligt war, war ich für Einkauf sowie Lieferanten-, Kunden- und Verkaufsdaten in 1C 8.3 zuständig. Dazu kamen Reparatur und Datenrettung.</p>
+    </li>
+    <li>
+      <time datetime="2018">2018</time>
+      <p>Bachelor, Lehramt Informatik, Staatliche Humanitäre Universität Ismajil (Ukraine).</p>
+    </li>
+    <li>
+      <time datetime="2017">2017 – 2021</time>
+      <p>IT-Betreuung in einer Gemeindeverwaltung (Ukraine): Rechner von Verwaltung, Kulturhaus und Kindergarten. Ich richtete Datensicherungen ein und prüfte die Wiederherstellung vorab in einer virtuellen Maschine. Nach einem Verschlüsselungstrojaner liefen vier Buchhaltungs-PCs am nächsten Morgen wieder.</p>
+    </li>
+  </ol>
+  <h3>Sprachen</h3>
+  <ul class="languages">
+    <li>Deutsch: B2 Beruf</li>
+    <li>Russisch: fließend</li>
+    <li>Ukrainisch: fließend</li>
+  </ul>
+  <p>Den Praktikumsvertrag stimmen wir mit der FAW ab. Die Termine aller drei Phasen stehen im Praktikumskalender meiner Bewerbung.</p>
+</section>
+
+<section class="block" id="contact">
+  <h2>Kontakt</h2>
+  <ul class="contact">
+    <li>E-Mail: <a href="mailto:ant0ngm2012@gmail.com">ant0ngm2012@gmail.com</a></li>
+    <li>GitHub: <a href="https://github.com/popovantondev">github.com/popovantondev <span aria-hidden="true">↗</span></a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <nav class="legal-links" aria-label="Rechtliches">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="index-de.html">Alle Anwendungen</a>
+  </nav>
+  <p class="stand">Stand: 11/2026</p>
+</footer>
+</div>
+</body>
+</html>

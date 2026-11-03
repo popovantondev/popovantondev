@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Anton Popov, retraining as Fachinformatiker für Anwendungsentwicklung at FAW. Looking for a mandatory internship from 15.03.2027. How I work, five projects, background and contact.">
+<meta name="theme-color" content="#f6f7fb">
+<title>Anton Popov — About me</title>
+<link rel="stylesheet" href="assets/about.css">
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <a class="brand" href="about.html">Anton Popov</a>
+  <nav class="lang" aria-label="Language">
+    <a href="about-ru.html" lang="ru" hreflang="ru">RU</a>
+    <a href="about-de.html" lang="de" hreflang="de">DE</a>
+    <a href="about.html" lang="en" hreflang="en" aria-current="page">EN</a>
+  </nav>
+</header>
+
+<main>
+<section class="about-hero" id="top">
+  <img class="portrait" src="assets/about/anton-popov.jpg" width="600" height="883" alt="Anton Popov">
+  <div class="about-hero-copy">
+    <p class="eyebrow">Retraining as Fachinformatiker für Anwendungsentwicklung · FAW</p>
+    <h1>Anton Popov</h1>
+    <p class="status-pill">Mandatory internship in application development from 15.03.2027</p>
+    <p class="lead">As part of my retraining at FAW (Fortbildungsakademie der Wirtschaft), I am looking for a mandatory internship (Pflichtpraktikum) in application development. It covers about 200 working days in three phases, the first from 15.03. to 25.06.2027.</p>
+    <div class="actions">
+      <a class="button-primary" href="mailto:ant0ngm2012@gmail.com">Send an email</a>
+      <a class="button-secondary" href="#projects">See projects</a>
+      <a class="button-secondary" href="https://github.com/popovantondev">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <h2>How I work</h2>
+  <ol class="flow">
+    <li class="flow-step"><strong>Idea</strong><span>A specific problem and the person who will use the program.</span></li>
+    <li class="flow-step"><strong>Requirements</strong><span>What the program has to do, which system it runs on, the interface on paper.</span></li>
+    <li class="flow-step"><strong>AI writes the code</strong><span>Codex, ChatGPT or Claude implement the requirements.</span></li>
+    <li class="flow-step"><strong>Checks</strong><span>Tests and check scripts; whatever is not tested is stated in the documentation.</span></li>
+    <li class="flow-step"><strong>Release</strong><span>Version number, SHA-256 checksum and a guide in three languages.</span></li>
+  </ol>
+  <p>The code of my projects is written by an AI; the idea, requirements, interface and tests are mine. I am now building up programming itself in the retraining.</p>
+</section>
+
+<section class="block" id="projects">
+  <h2>Projects</h2>
+  <p>Five projects from my catalogue. Status and version match the published release.</p>
+  <div class="cases">
+    <article class="case" id="PeakMP3">
+      <h3>PeakMP3</h3>
+      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 and later · Preview 0.16.0 · source code viewable, no open-source licence</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>An acquaintance who runs a cultural centre kept sending me music files that were too quiet. I reworked them by hand in REAPER and Audacity.</dd>
+        <dt>What I did</dt>
+        <dd>I set the requirements for his old Windows 7 PC and sketched the interface on paper. The program has a density control (compressor and limiter), an A/B comparison and saves MP3 at 320 kbit/s.</dd>
+        <dt>How it was checked</dt>
+        <dd>I tested every version myself. A user confirms Windows 7 and 11; Windows 10 has not been tested. He now prepares his files himself.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/PeakMP3/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="Kartoteka">
+      <h3>Kartoteka</h3>
+      <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>A card index for classmates and other lists that stays on your own computer. It works without internet and without telemetry and installs without administrator rights.</dd>
+        <dt>What I did</dt>
+        <dd>I set the requirements and the interface: custom tables with 11 field types, photos, document copies, search, CSV export and a safety copy before every restore. The interface is available in three languages.</dd>
+        <dt>How it was checked</dt>
+        <dd>Before release 0.5.0, 39 passed tests, an installer upgrade from 0.4.1 and a check of the interface in three languages are documented in the repository. Display scaling above 100% has not been tested, and the EXE is not signed.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/Kartoteka">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/popovantondev/Kartoteka/blob/main/RELEASE-CHECKS.md">Release checks <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/Kartoteka/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="Kaktus-Backup-Sync">
+      <h3>Kaktus Backup &amp; Sync</h3>
+      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7 · source code viewable, not open source</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>Copy folders one way to a target, keep earlier file versions and never delete working files automatically.</dd>
+        <dt>What I did</dt>
+        <dd>I set the requirements and the interface: a preview of the plan before every sync, seven earlier versions per file by default, automatic checks at a chosen interval. New tasks only run automatically after five confirmed manual runs.</dd>
+        <dt>How it was checked</dt>
+        <dd>On every push, GitHub Actions runs tests of the file operations and a check of the workflows on Windows, including recovery after a terminated process. According to the README, these tests do not replace checks during a power failure or on a clean Windows installation.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="GitHubSync">
+      <h3>GitHubSync</h3>
+      <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT licence</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>Upload files to GitHub and download project or release files, with every transfer confirmed first.</dd>
+        <dt>What I did</dt>
+        <dd>I set the requirements and the interface: sign-in through Git Credential Manager, no tokens in the program's files, no force push and no deleting. Replaced files are backed up, and files over 100 MiB are rejected.</dd>
+        <dt>How it was checked</dt>
+        <dd>PowerShell test scripts check the program against simulated GitHub responses and run on every push in GitHub Actions. The release comes with a SHA-256 checksum. Other PCs and real network interruptions have not been tested yet.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/GitHubSync">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/GitHubSync/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+
+    <article class="case" id="LektienPlayer">
+      <h3>Lecture pipeline and LektienPlayer</h3>
+      <p class="case-meta">Whisper, Silero · player: Swift, macOS 15 · in progress · Source only</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>My partner is studying phytotherapy through German video courses but understands Russian better.</dd>
+        <dt>What I did</dt>
+        <dd>I am building a pipeline: Whisper creates German subtitles on my computer, followed by translation and Russian voice-over timed to the video. The requirements and check rules are mine.</dd>
+        <dt>How it was checked</dt>
+        <dd>A 40-minute lecture serves as the pilot; a check script looks for repetitions and gaps in the recognition. The player for the Mac is published as source code; installing it on a freshly set-up Mac has not been verified yet.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/LektienPlayer">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/LektienPlayer/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="path">
+  <h2>Background</h2>
+  <ol class="timeline">
+    <li>
+      <time datetime="2026-08">08.2026 – 08.2028</time>
+      <div>
+        <p><strong>Retraining as Fachinformatiker für Anwendungsentwicklung at FAW (Fortbildungsakademie der Wirtschaft)</strong></p>
+        <p>Covered so far: IT occupations and business processes, information security and ISO 27001, number systems and logic, hardware, RAID and backup, networks (OSI, IPv4/IPv6, Subnetting), virtualisation, Windows 11 and Hyper-V, licences, ERP and CRM, project management (Lastenheft, Scrum, Kanban).</p>
+        <p>Internship phases: about 200 working days in three phases, the first from 15.03. to 25.06.2027.</p>
+        <p>Final step: examination before the IHK at the end of the retraining.</p>
+      </div>
+    </li>
+    <li>
+      <time datetime="2024-06">since 06.2024</time>
+      <p>In Germany. Passed the German B2 Beruf exam (DTB) in 2026.</p>
+    </li>
+    <li>
+      <time datetime="2022">2022 – 2024</time>
+      <p>At a computer shop with repair service in Izmail (Ukraine) that I was involved in, I was responsible for purchasing and for supplier, customer and sales data in 1C 8.3. Repairs and data recovery were also part of the work.</p>
+    </li>
+    <li>
+      <time datetime="2018">2018</time>
+      <p>Bachelor's degree in teaching computer science (Lehramt Informatik), Izmail State University of Humanities (Ukraine).</p>
+    </li>
+    <li>
+      <time datetime="2017">2017 – 2021</time>
+      <p>IT support for a local council (Ukraine): computers of the administration, the cultural centre and the kindergarten. I set up data backups and checked the restore in a virtual machine beforehand. After a ransomware attack, four accounting PCs were running again the next morning.</p>
+    </li>
+  </ol>
+  <h3>Languages</h3>
+  <ul class="languages">
+    <li>German: B2 Beruf</li>
+    <li>Russian: fluent</li>
+    <li>Ukrainian: fluent</li>
+  </ul>
+  <p>The internship contract will be agreed together with FAW. The dates of all three phases are in the internship calendar of my application.</p>
+</section>
+
+<section class="block" id="contact">
+  <h2>Contact</h2>
+  <ul class="contact">
+    <li>Email: <a href="mailto:ant0ngm2012@gmail.com">ant0ngm2012@gmail.com</a></li>
+    <li>GitHub: <a href="https://github.com/popovantondev">github.com/popovantondev <span aria-hidden="true">↗</span></a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <nav class="legal-links" aria-label="Legal">
+    <a href="impressum.html" hreflang="de">Impressum (German)</a>
+    <a href="datenschutz.html" hreflang="de">Datenschutz (German)</a>
+    <a href="index.html">All applications</a>
+  </nav>
+  <p class="stand">As of 11/2026</p>
+</footer>
+</div>
+</body>
+</html>
