@@ -25,7 +25,12 @@
   --radius-l: 22px;
   --radius-xl: 28px;
   --radius-pill: 999px;
+  --space-hairline: 2px;
   --space-0: 4px;
+  --space-inline: 6px;
+  --space-control-y: 10px;
+  --space-control-x: 12px;
+  --space-control-x-narrow: 10px;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -77,7 +82,7 @@ nav.lang a {
   min-height: 44px;
   min-width: 44px;
   justify-content: center;
-  padding: var(--space-0) 12px;
+  padding: var(--space-0) var(--space-control-x);
   border-radius: var(--radius-xs);
   font-size: 13px;
   font-weight: 650;
@@ -120,7 +125,7 @@ h1 {
 .status-pill {
   display: inline-block;
   margin: 0 0 var(--space-3);
-  padding: 6px var(--space-2);
+  padding: var(--space-inline) var(--space-2);
   border: 1px solid var(--blue-line);
   border-radius: var(--radius-pill);
   background: var(--blue-soft);
@@ -130,13 +135,13 @@ h1 {
 }
 .lead { margin: 0 0 var(--space-3); font-size: 18px; color: var(--card-text); }
 
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-control-x); }
 .button-primary, .button-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-inline);
   min-height: 44px;
-  padding: 10px var(--space-2);
+  padding: var(--space-control-y) var(--space-2);
   border-radius: var(--radius-s);
   font-size: 15px;
   font-weight: 700;
@@ -196,7 +201,7 @@ h1 {
 .case-meta { margin: 0 0 var(--space-2); font-size: 13px; color: var(--muted); }
 .case-parts { margin: 0 0 var(--space-2); flex: 1; }
 .case-parts dt { font-size: 13px; font-weight: 700; color: var(--ink); }
-.case-parts dd { margin: 2px 0 var(--space-2); font-size: 15px; color: var(--card-text); }
+.case-parts dd { margin: var(--space-hairline) 0 var(--space-2); font-size: 15px; color: var(--card-text); }
 .case-links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: 0; font-size: 14px; font-weight: 700; }
 .case-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--blue-ink); }
 
@@ -263,7 +268,7 @@ h1 {
   .case { padding: var(--space-3); }
   .block h2 { font-size: 24px; }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-0); }
-  nav.lang a { padding: var(--space-0) 10px; }
+  nav.lang a { padding: var(--space-0) var(--space-control-x-narrow); }
 }
 
 @media (prefers-reduced-motion: reduce) {
