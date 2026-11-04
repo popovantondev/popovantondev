@@ -53,15 +53,18 @@
   <p>Five projects from my catalogue. Status and version match the published release.</p>
   <div class="cases">
     <article class="case" id="PeakMP3">
-      <h3>PeakMP3</h3>
-      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 and later · Preview 0.16.0 · source code viewable, no open-source licence</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>PeakMP3</h3>
+      </div>
+      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 and later · Preview 0.16.0</p>
       <dl class="case-parts">
         <dt>Task</dt>
-        <dd>An acquaintance who runs a cultural centre kept sending me music files that were too quiet. I reworked them by hand in REAPER and Audacity.</dd>
+        <dd>An acquaintance who runs a cultural centre regularly sent me music files to rework because they were too quiet.</dd>
         <dt>What I did</dt>
-        <dd>I set the requirements for his old Windows 7 PC. For the interface I took a real device as a model and ran the design through AI in many rounds; this took a long time. The program has a density control (compressor and limiter), an A/B comparison and saves MP3 at 320 kbit/s.</dd>
+        <dd>A real device was the model for the interface; I ran the design through AI in many rounds, which took a long time.</dd>
         <dt>How it was checked</dt>
-        <dd>I tested every version myself. A user confirms Windows 7 and 11; Windows 10 has not been tested. My acquaintance now prepares his files himself.</dd>
+        <dd>A user confirms Windows 7 and 11; my acquaintance now prepares his files himself.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
@@ -70,15 +73,18 @@
     </article>
 
     <article class="case" id="Kartoteka">
-      <h3>Kartoteka</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kartoteka.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kartoteka</h3>
+      </div>
       <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
       <dl class="case-parts">
         <dt>Task</dt>
-        <dd>A card index for classmates and other lists that stays on your own computer. It works without internet and without telemetry and installs without administrator rights.</dd>
+        <dd>A card index for classmates and other lists, only on your own computer, without internet and without telemetry.</dd>
         <dt>What I did</dt>
-        <dd>I set the requirements and the interface: custom tables with 11 field types, photos, document copies, search, CSV export and a safety copy before every restore. The interface is available in three languages.</dd>
+        <dd>I set the requirements and the interface: custom tables with 11 field types, photos, search, CSV export, a safety copy before every restore.</dd>
         <dt>How it was checked</dt>
-        <dd>Before release 0.5.0, 39 passed tests, an installer upgrade from 0.4.1 and a check of the interface in three languages are documented in the repository. Display scaling above 100% has not been tested, and the EXE is not signed.</dd>
+        <dd>The release checks for 0.5.0 document 39 passed tests and the upgrade from 0.4.1.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kartoteka">Repository <span aria-hidden="true">↗</span></a>
@@ -88,15 +94,18 @@
     </article>
 
     <article class="case" id="Kaktus-Backup-Sync">
-      <h3>Kaktus Backup &amp; Sync</h3>
-      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7 · source code viewable, not open source</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kaktus-Backup-Sync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kaktus Backup &amp; Sync</h3>
+      </div>
+      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7</p>
       <dl class="case-parts">
         <dt>Task</dt>
-        <dd>Copy folders one way to a target, keep earlier file versions and never delete working files automatically.</dd>
+        <dd>Copy folders one way, keep earlier file versions and never delete working files automatically.</dd>
         <dt>What I did</dt>
-        <dd>I set the requirements and the interface: a preview of the plan before every sync, seven earlier versions per file by default, automatic checks at selectable intervals. New tasks only run automatically after five confirmed manual runs.</dd>
+        <dd>I set the requirements and the interface: a preview before every sync, seven versions per file by default, automation only after five confirmed manual runs.</dd>
         <dt>How it was checked</dt>
-        <dd>On every push, GitHub Actions runs tests of the file operations and a check of the workflows on Windows, including recovery after a terminated process. According to the README, these tests do not replace checks during a power failure or on a clean Windows installation.</dd>
+        <dd>On every push, GitHub Actions runs tests of the file operations on Windows, including after a terminated process.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Repository <span aria-hidden="true">↗</span></a>
@@ -105,15 +114,18 @@
     </article>
 
     <article class="case" id="GitHubSync">
-      <h3>GitHubSync</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/GitHubSync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>GitHubSync</h3>
+      </div>
       <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT licence</p>
       <dl class="case-parts">
         <dt>Task</dt>
-        <dd>Upload files to GitHub and download project or release files, with every transfer confirmed first.</dd>
+        <dd>Upload files to GitHub and download them, with every transfer confirmed first.</dd>
         <dt>What I did</dt>
-        <dd>I set the requirements and the interface: sign-in through Git Credential Manager, no tokens in the program's files, no force push and no deleting. Replaced files are backed up, and files over 100 MiB are rejected.</dd>
+        <dd>I set the requirements and the interface: sign-in through Git Credential Manager, no force push, no deleting, replaced files are backed up.</dd>
         <dt>How it was checked</dt>
-        <dd>PowerShell test scripts check the program against simulated GitHub responses and run on every push in GitHub Actions. The release comes with a SHA-256 checksum. Other PCs and real network interruptions have not been tested yet.</dd>
+        <dd>PowerShell test scripts check the program against simulated GitHub responses on every push in GitHub Actions.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/GitHubSync">Repository <span aria-hidden="true">↗</span></a>
@@ -122,15 +134,18 @@
     </article>
 
     <article class="case" id="LektienPlayer">
-      <h3>Lecture pipeline and LektienPlayer</h3>
-      <p class="case-meta">Whisper, Silero · player: Swift, macOS 15 · in progress · Source only</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/icons/lektien-player.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Lecture pipeline and LektienPlayer</h3>
+      </div>
+      <p class="case-meta">Whisper, Silero · player: Swift, macOS 15 · in progress, Source only</p>
       <dl class="case-parts">
         <dt>Task</dt>
         <dd>My partner is studying phytotherapy through German video courses but understands Russian better.</dd>
         <dt>What I did</dt>
-        <dd>I am building a pipeline: Whisper creates German subtitles on my computer, followed by translation and Russian voice-over timed to the video. The requirements and check rules are mine.</dd>
+        <dd>I am building a pipeline: Whisper creates German subtitles on my computer, followed by translation and Russian voice-over timed to the video.</dd>
         <dt>How it was checked</dt>
-        <dd>A 40-minute lecture serves as the pilot; a check script looks for repetitions and gaps in the recognition. The player for the Mac is published as source code; installing it on a freshly set-up Mac has not been verified yet.</dd>
+        <dd>A 40-minute lecture serves as the pilot, and a check script looks for repetitions and gaps in the recognition.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/LektienPlayer">Repository <span aria-hidden="true">↗</span></a>

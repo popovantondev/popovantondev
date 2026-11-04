@@ -53,15 +53,18 @@
   <p>Пять проектов из моего каталога. Статус и версия соответствуют опубликованной сборке.</p>
   <div class="cases">
     <article class="case" id="PeakMP3">
-      <h3>PeakMP3</h3>
-      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 и новее · Preview 0.16.0 · исходный код открыт для просмотра, без лицензии Open Source</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>PeakMP3</h3>
+      </div>
+      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 и новее · Preview 0.16.0</p>
       <dl class="case-parts">
         <dt>Задача</dt>
-        <dd>Знакомый, который руководит домом культуры, регулярно присылал слишком тихие музыкальные файлы. Я вручную обрабатывал их в REAPER и Audacity.</dd>
+        <dd>Знакомый, который руководит домом культуры, регулярно присылал мне на доработку слишком тихие музыкальные файлы.</dd>
         <dt>Что сделал я</dt>
-        <dd>Я задал требования для его старого компьютера с Windows 7. Интерфейс я сделал по образцу настоящего прибора и много раз прогонял дизайн через ИИ; это заняло много времени. В программе есть регулятор плотности (компрессор и лимитер), сравнение A/B и сохранение MP3 320 кбит/с.</dd>
+        <dd>Интерфейс сделан по образцу настоящего прибора; дизайн я много раз прогонял через ИИ, это заняло много времени.</dd>
         <dt>Как проверено</dt>
-        <dd>Каждую версию я проверял сам. Пользователь подтверждает Windows 7 и 11, Windows 10 не проверялась. Теперь знакомый сам готовит свои файлы.</dd>
+        <dd>Пользователь подтверждает Windows 7 и 11; теперь знакомый сам готовит свои файлы.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Репозиторий <span aria-hidden="true">↗</span></a>
@@ -70,15 +73,18 @@
     </article>
 
     <article class="case" id="Kartoteka">
-      <h3>Kartoteka</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kartoteka.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kartoteka</h3>
+      </div>
       <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
       <dl class="case-parts">
         <dt>Задача</dt>
-        <dd>Картотека одноклассников и других списков, которая хранится только на своём компьютере. Она работает без интернета и без телеметрии и ставится без прав администратора.</dd>
+        <dd>Картотека одноклассников и других списков только на своём компьютере, без интернета и без телеметрии.</dd>
         <dt>Что сделал я</dt>
-        <dd>Я задал требования и интерфейс: свои таблицы с 11 типами полей, фотографии, копии документов, поиск, экспорт CSV и резервная копия перед каждым восстановлением. Интерфейс есть на трёх языках.</dd>
+        <dd>Я задал требования и интерфейс: свои таблицы с 11 типами полей, фотографии, поиск, экспорт CSV, резервная копия перед каждым восстановлением.</dd>
         <dt>Как проверено</dt>
-        <dd>Перед релизом 0.5.0 в репозитории задокументированы 39 пройденных тестов, обновление установщика с 0.4.1 и проверка интерфейса на трёх языках. Масштаб экрана выше 100 % не проверялся, EXE не подписан.</dd>
+        <dd>В протоколе проверки к 0.5.0 задокументированы 39 пройденных тестов и обновление с 0.4.1.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kartoteka">Репозиторий <span aria-hidden="true">↗</span></a>
@@ -88,15 +94,18 @@
     </article>
 
     <article class="case" id="Kaktus-Backup-Sync">
-      <h3>Kaktus Backup &amp; Sync</h3>
-      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7 · исходный код открыт для просмотра, не Open Source</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kaktus-Backup-Sync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kaktus Backup &amp; Sync</h3>
+      </div>
+      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7</p>
       <dl class="case-parts">
         <dt>Задача</dt>
-        <dd>Копировать папки в одну сторону на целевой диск, хранить прежние версии файлов и не удалять рабочие файлы автоматически.</dd>
+        <dd>Копировать папки в одну сторону, хранить прежние версии файлов и не удалять рабочие файлы автоматически.</dd>
         <dt>Что сделал я</dt>
-        <dd>Я задал требования и интерфейс: предпросмотр плана перед каждой синхронизацией, по умолчанию семь прежних версий каждого файла, автоматическая проверка с настраиваемым интервалом. Новые задачи начинают работать автоматически только после пяти подтверждённых ручных запусков.</dd>
+        <dd>Я задал требования и интерфейс: предпросмотр перед каждой синхронизацией, по умолчанию семь версий каждого файла, автоматика только после пяти подтверждённых ручных запусков.</dd>
         <dt>Как проверено</dt>
-        <dd>При каждом push в GitHub Actions на Windows запускаются тесты файловых операций и проверка сценариев, в том числе после прерванного процесса. По README эти тесты не заменяют проверку при отключении питания или на чистой установке Windows.</dd>
+        <dd>При каждом push в GitHub Actions на Windows запускаются тесты файловых операций, в том числе после прерванного процесса.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Репозиторий <span aria-hidden="true">↗</span></a>
@@ -105,15 +114,18 @@
     </article>
 
     <article class="case" id="GitHubSync">
-      <h3>GitHubSync</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/GitHubSync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>GitHubSync</h3>
+      </div>
       <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · лицензия MIT</p>
       <dl class="case-parts">
         <dt>Задача</dt>
-        <dd>Загружать файлы в GitHub и скачивать файлы проектов и релизов, причём каждую передачу нужно заранее подтвердить.</dd>
+        <dd>Загружать файлы в GitHub и скачивать их, причём каждую передачу нужно заранее подтвердить.</dd>
         <dt>Что сделал я</dt>
-        <dd>Я задал требования и интерфейс: вход через Git Credential Manager, никаких токенов в файлах программы, без force-push и без удаления. Заменяемые файлы сохраняются, файлы больше 100 МиБ отклоняются.</dd>
+        <dd>Я задал требования и интерфейс: вход через Git Credential Manager, без force-push и без удаления, заменяемые файлы сохраняются.</dd>
         <dt>Как проверено</dt>
-        <dd>Тестовые скрипты PowerShell проверяют программу на имитированных ответах GitHub и запускаются при каждом push в GitHub Actions. К релизу приложена контрольная сумма SHA-256. Другие компьютеры и настоящие обрывы сети пока не проверены.</dd>
+        <dd>Тестовые скрипты PowerShell проверяют программу на имитированных ответах GitHub при каждом push в GitHub Actions.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/GitHubSync">Репозиторий <span aria-hidden="true">↗</span></a>
@@ -122,15 +134,18 @@
     </article>
 
     <article class="case" id="LektienPlayer">
-      <h3>Конвейер лекций и LektienPlayer</h3>
-      <p class="case-meta">Whisper, Silero · плеер: Swift, macOS 15 · в работе · Source only</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/icons/lektien-player.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Конвейер лекций и LektienPlayer</h3>
+      </div>
+      <p class="case-meta">Whisper, Silero · плеер: Swift, macOS 15 · в работе, Source only</p>
       <dl class="case-parts">
         <dt>Задача</dt>
         <dd>Моя партнёрша повышает квалификацию по фитотерапии на немецких видеокурсах, но по-русски понимает лучше.</dd>
         <dt>Что сделал я</dt>
-        <dd>Я собираю конвейер: Whisper на моём компьютере делает немецкие субтитры, затем идут перевод и русская озвучка в темпе видео. Требования и правила проверки мои.</dd>
+        <dd>Я собираю конвейер: Whisper на моём компьютере делает немецкие субтитры, затем идут перевод и русская озвучка в темпе видео.</dd>
         <dt>Как проверено</dt>
-        <dd>Пилот на лекции в 40 минут; скрипт проверки ищет повторы и пропуски в распознавании. Плеер для Mac опубликован как исходный код, установка на чистый Mac ещё не проверена.</dd>
+        <dd>Пилот на лекции в 40 минут, скрипт проверки ищет повторы и пропуски в распознавании.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/LektienPlayer">Репозиторий <span aria-hidden="true">↗</span></a>

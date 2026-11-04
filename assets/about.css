@@ -18,6 +18,12 @@
   --nav-bg: #ffffffcc;
   --shadow-card: 0 16px 35px #263d6610;
   --shadow-photo: 0 24px 55px #142c5c14;
+  --shadow-lift: 0 6px 14px #276ce624;
+  --card-line-hover: #c4cfe2;
+  --icon-size: 64px;
+  --lift-s: -1px;
+  --lift-m: -2px;
+  --motion: 180ms ease;
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius-xs: 8px;
   --radius-s: 10px;
@@ -90,6 +96,30 @@ nav.lang a {
   text-decoration: none;
 }
 nav.lang a[aria-current="page"] { background: var(--ink); color: var(--on-blue); }
+
+/* Anheben bei Hover und Fokus (wie .project:hover im Katalog) */
+.button-primary, .button-secondary, .case-links a, nav.lang a {
+  transition: transform var(--motion), box-shadow var(--motion), background-color var(--motion), border-color var(--motion);
+}
+.case, .flow-step { transition: transform var(--motion), box-shadow var(--motion), border-color var(--motion); }
+.button-primary:focus-visible, .button-secondary:focus-visible, nav.lang a:focus-visible {
+  transform: translateY(var(--lift-m));
+  box-shadow: var(--shadow-lift);
+}
+.case-links a:focus-visible { transform: translateY(var(--lift-s)); box-shadow: var(--shadow-lift); }
+@media (hover: hover) {
+  .button-primary:hover, .button-secondary:hover, nav.lang a:hover {
+    transform: translateY(var(--lift-m));
+    box-shadow: var(--shadow-lift);
+  }
+  nav.lang a:not([aria-current="page"]):hover { background: var(--blue-soft); color: var(--blue-ink); }
+  .case-links a:hover { transform: translateY(var(--lift-s)); box-shadow: var(--shadow-lift); background: var(--blue-soft); }
+  .case:hover, .flow-step:hover {
+    transform: translateY(var(--lift-m));
+    box-shadow: var(--shadow-card);
+    border-color: var(--card-line-hover);
+  }
+}
 
 /* Erster Bildschirm */
 .about-hero {
@@ -194,13 +224,15 @@ h1 {
   border-radius: var(--radius-l);
   background: var(--surface);
 }
-.case h3 { margin: 0 0 var(--space-0); font-size: 22px; line-height: 1.25; letter-spacing: -0.02em; }
+.case-head { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-1); }
+.case-icon { flex-shrink: 0; width: var(--icon-size); height: var(--icon-size); object-fit: contain; }
+.case h3 { margin: 0; min-width: 0; font-size: 22px; line-height: 1.25; letter-spacing: -0.02em; }
 .case-meta { margin: 0 0 var(--space-2); font-size: 13px; color: var(--muted); }
 .case-parts { margin: 0 0 var(--space-2); flex: 1; }
 .case-parts dt { font-size: 13px; font-weight: 700; color: var(--ink); }
 .case-parts dd { margin: var(--space-hairline) 0 var(--space-2); font-size: 15px; color: var(--card-text); }
-.case-links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: 0; font-size: 14px; font-weight: 700; }
-.case-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--blue-ink); }
+.case-links { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0 0 0 calc(-1 * var(--space-1)); font-size: 14px; font-weight: 700; }
+.case-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-1); border-radius: var(--radius-xs); color: var(--blue-ink); }
 
 /* Werdegang */
 .timeline { list-style: none; margin: 0 0 var(--space-3); padding: 0; max-width: 860px; }
@@ -272,4 +304,6 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
+  .button-primary:hover, .button-secondary:hover, nav.lang a:hover, .case-links a:hover, .case:hover, .flow-step:hover,
+  .button-primary:focus-visible, .button-secondary:focus-visible, nav.lang a:focus-visible, .case-links a:focus-visible { transform: none; }
 }

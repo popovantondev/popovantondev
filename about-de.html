@@ -53,15 +53,18 @@
   <p>Fünf Projekte aus meinem Katalog. Status und Version entsprechen der veröffentlichten Fassung.</p>
   <div class="cases">
     <article class="case" id="PeakMP3">
-      <h3>PeakMP3</h3>
-      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 und neuer · Preview 0.16.0 · Quellcode einsehbar, ohne Open-Source-Lizenz</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>PeakMP3</h3>
+      </div>
+      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 und neuer · Preview 0.16.0</p>
       <dl class="case-parts">
         <dt>Aufgabe</dt>
-        <dd>Ein Bekannter, der ein Kulturhaus leitet, schickte mir regelmäßig zu leise Musikdateien. Ich bearbeitete sie von Hand in REAPER und Audacity nach.</dd>
+        <dd>Ein Bekannter, der ein Kulturhaus leitet, schickte mir regelmäßig zu leise Musikdateien zum Nachbearbeiten.</dd>
         <dt>Was ich gemacht habe</dt>
-        <dd>Ich legte die Anforderungen für seinen alten Windows-7-PC fest. Als Vorlage für die Oberfläche nahm ich ein echtes Gerät und ließ das Design in vielen Runden mit KI nachbauen; das hat lange gedauert. Das Programm hat einen Regler für die Dichte (Kompressor und Limiter), einen A/B-Vergleich und speichert MP3 mit 320 kbit/s.</dd>
+        <dd>Vorlage für die Oberfläche war ein echtes Gerät; das Design ließ ich in vielen Runden mit KI nachbauen, das hat lange gedauert.</dd>
         <dt>Wie geprüft</dt>
-        <dd>Jede Version habe ich selbst getestet. Ein Anwender bestätigt Windows 7 und 11, Windows 10 ist nicht geprüft. Heute bereitet der Bekannte seine Dateien selbst auf.</dd>
+        <dd>Ein Anwender bestätigt Windows 7 und 11; heute bereitet der Bekannte seine Dateien selbst auf.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
@@ -70,15 +73,18 @@
     </article>
 
     <article class="case" id="Kartoteka">
-      <h3>Kartoteka</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kartoteka.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kartoteka</h3>
+      </div>
       <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
       <dl class="case-parts">
         <dt>Aufgabe</dt>
-        <dd>Eine Kartei für Klassenkameraden und andere Listen, die nur auf dem eigenen Rechner liegt. Sie arbeitet ohne Internet und ohne Telemetrie und wird ohne Administratorrechte installiert.</dd>
+        <dd>Eine Kartei für Klassenkameraden und andere Listen, nur auf dem eigenen Rechner, ohne Internet und ohne Telemetrie.</dd>
         <dt>Was ich gemacht habe</dt>
-        <dd>Ich legte Anforderungen und Oberfläche fest: eigene Tabellen mit 11 Feldtypen, Fotos, Dokumentkopien, Suche, CSV-Export und eine Sicherheitskopie vor jedem Wiederherstellen. Die Oberfläche gibt es in drei Sprachen.</dd>
+        <dd>Ich legte Anforderungen und Oberfläche fest: eigene Tabellen mit 11 Feldtypen, Fotos, Suche, CSV-Export, Sicherheitskopie vor jedem Wiederherstellen.</dd>
         <dt>Wie geprüft</dt>
-        <dd>Vor dem Release 0.5.0 sind im Repository 39 bestandene Tests, das Update des Installers von 0.4.1 und die Prüfung der Oberfläche in drei Sprachen dokumentiert. Bildschirmskalierung über 100 % ist nicht geprüft, die EXE ist nicht signiert.</dd>
+        <dd>Im Prüfprotokoll zu 0.5.0 sind 39 bestandene Tests und das Update von 0.4.1 dokumentiert.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kartoteka">Repository <span aria-hidden="true">↗</span></a>
@@ -88,15 +94,18 @@
     </article>
 
     <article class="case" id="Kaktus-Backup-Sync">
-      <h3>Kaktus Backup &amp; Sync</h3>
-      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7 · Quellcode einsehbar, nicht Open Source</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/Kaktus-Backup-Sync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Kaktus Backup &amp; Sync</h3>
+      </div>
+      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7</p>
       <dl class="case-parts">
         <dt>Aufgabe</dt>
-        <dd>Ordner einseitig auf ein Ziel sichern, frühere Dateiversionen behalten und dabei keine Arbeitsdateien automatisch löschen.</dd>
+        <dd>Ordner einseitig sichern, frühere Dateiversionen behalten und keine Arbeitsdateien automatisch löschen.</dd>
         <dt>Was ich gemacht habe</dt>
-        <dd>Ich legte Anforderungen und Oberfläche fest: Vorschau des Plans vor jeder Synchronisierung, standardmäßig sieben frühere Versionen je Datei, automatische Prüfung in wählbaren Abständen. Neue Aufgaben laufen erst nach fünf bestätigten manuellen Durchgängen automatisch.</dd>
+        <dd>Ich legte Anforderungen und Oberfläche fest: Vorschau vor jeder Synchronisierung, standardmäßig sieben Versionen je Datei, Automatik erst nach fünf bestätigten manuellen Durchgängen.</dd>
         <dt>Wie geprüft</dt>
-        <dd>Bei jedem Push laufen in GitHub Actions auf Windows Tests der Dateioperationen und eine Prüfung der Abläufe, auch nach einem abgebrochenen Prozess. Laut README ersetzen diese Tests keine Prüfung bei Stromausfall oder auf einer sauberen Windows-Installation.</dd>
+        <dd>Bei jedem Push laufen in GitHub Actions auf Windows Tests der Dateioperationen, auch nach einem abgebrochenen Prozess.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Repository <span aria-hidden="true">↗</span></a>
@@ -105,15 +114,18 @@
     </article>
 
     <article class="case" id="GitHubSync">
-      <h3>GitHubSync</h3>
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/GitHubSync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>GitHubSync</h3>
+      </div>
       <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT-Lizenz</p>
       <dl class="case-parts">
         <dt>Aufgabe</dt>
-        <dd>Dateien zu GitHub hochladen und Projekt- oder Release-Dateien herunterladen, wobei jede Übertragung vorher bestätigt werden muss.</dd>
+        <dd>Dateien zu GitHub hochladen und herunterladen, jede Übertragung erst nach Bestätigung.</dd>
         <dt>Was ich gemacht habe</dt>
-        <dd>Ich legte Anforderungen und Oberfläche fest: Anmeldung über den Git Credential Manager, keine Tokens in Programmdateien, kein Force-Push und kein Löschen. Ersetzte Dateien werden gesichert, Dateien über 100 MiB abgelehnt.</dd>
+        <dd>Ich legte Anforderungen und Oberfläche fest: Anmeldung über den Git Credential Manager, kein Force-Push, kein Löschen, ersetzte Dateien werden gesichert.</dd>
         <dt>Wie geprüft</dt>
-        <dd>PowerShell-Testskripte prüfen das Programm gegen simulierte GitHub-Antworten und laufen bei jedem Push in GitHub Actions. Zum Release gehört eine SHA-256-Prüfsumme. Andere PCs und echte Netzunterbrechungen sind noch nicht geprüft.</dd>
+        <dd>PowerShell-Testskripte prüfen das Programm gegen simulierte GitHub-Antworten, bei jedem Push in GitHub Actions.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/GitHubSync">Repository <span aria-hidden="true">↗</span></a>
@@ -122,15 +134,18 @@
     </article>
 
     <article class="case" id="LektienPlayer">
-      <h3>Vorlesungs-Pipeline und LektienPlayer</h3>
-      <p class="case-meta">Whisper, Silero · Player: Swift, macOS 15 · im Aufbau · Source only</p>
+      <div class="case-head">
+        <img class="case-icon" src="assets/icons/lektien-player.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Vorlesungs-Pipeline und LektienPlayer</h3>
+      </div>
+      <p class="case-meta">Whisper, Silero · Player: Swift, macOS 15 · im Aufbau, Source only</p>
       <dl class="case-parts">
         <dt>Aufgabe</dt>
         <dd>Meine Partnerin bildet sich mit deutschen Videokursen in Phytotherapie weiter, versteht Russisch aber besser.</dd>
         <dt>Was ich gemacht habe</dt>
-        <dd>Ich baue eine Pipeline: Whisper erstellt auf meinem Rechner deutsche Untertitel, danach folgen Übersetzung und russische Vertonung im Timing des Videos. Anforderungen und Prüfregeln stammen von mir.</dd>
+        <dd>Ich baue eine Pipeline: Whisper erstellt auf meinem Rechner deutsche Untertitel, danach folgen Übersetzung und russische Vertonung im Timing des Videos.</dd>
         <dt>Wie geprüft</dt>
-        <dd>Eine 40-Minuten-Lektion dient als Pilot; ein Prüfskript sucht Wiederholungen und Lücken in der Erkennung. Der Player für den Mac ist als Quellcode veröffentlicht, die Installation auf einem frisch eingerichteten Mac ist noch nicht geprüft.</dd>
+        <dd>Eine 40-Minuten-Lektion dient als Pilot, ein Prüfskript sucht Wiederholungen und Lücken in der Erkennung.</dd>
       </dl>
       <p class="case-links">
         <a href="https://github.com/popovantondev/LektienPlayer">Repository <span aria-hidden="true">↗</span></a>
