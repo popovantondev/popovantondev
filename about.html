@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Anton Popov, retraining as Fachinformatiker für Anwendungsentwicklung at FAW. Looking for a mandatory internship from 15.03.2027. How I work, five projects, background and contact.">
+<meta name="description" content="Anton Popov, retraining as Fachinformatiker für Anwendungsentwicklung at FAW. Looking for a mandatory internship from 15.03.2027. How I work, six projects, background and contact.">
 <meta name="theme-color" content="#f6f7fb">
 <title>Anton Popov — About me</title>
 <link rel="stylesheet" href="assets/about.css">
@@ -50,7 +50,7 @@
 
 <section class="block" id="projects">
   <h2>Projects</h2>
-  <p>Five projects from my catalogue. Status and version match the published release.</p>
+  <p>Six projects from my catalogue. Status and version match the published release.</p>
   <div class="cases">
     <article class="case" id="PeakMP3">
       <div class="case-head">
@@ -69,6 +69,7 @@
       <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/PeakMP3/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+        <a href="#demo">Try it ↓</a>
       </p>
     </article>
 
@@ -152,7 +153,66 @@
         <a href="https://popovantondev.github.io/LektienPlayer/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
     </article>
+
+    <article class="case" id="HotspotControl">
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/HotspotControl.ico" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Hotspot Control</h3>
+      </div>
+      <p class="case-meta">WPF, .NET 10 · Windows 11 24H2+ · x64 · Release 0.3.0</p>
+      <dl class="case-parts">
+        <dt>Task</dt>
+        <dd>Control the Windows 11 Mobile Hotspot and show connected devices and network settings.</dd>
+        <dt>What I did</dt>
+        <dd>I set the requirements and the interface: three languages, no installer, no administrator rights, no telemetry, passwords are not saved.</dd>
+        <dt>How it was checked</dt>
+        <dd>Automated checks use fictional data, practical testing was limited to my computer; the release comes with a SHA-256 checksum.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/HotspotControl">Repository <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/HotspotControl/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
   </div>
+</section>
+
+<section class="block peak-demo-block" id="demo" data-lang="en">
+  <div class="peak-copy">
+    <h2>Try PeakMP3</h2>
+    <p>Three short music examples. Pick a track below, then use Play and the PeakMP3 knob directly on the image. A is the original excerpt, B the selected processing.</p>
+    <div class="peak-tracks">
+        <button class="peak-track" type="button" data-track="techno" aria-pressed="true"><strong>EDM Detection Mode</strong><small>Techno / EDM · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="electronic" aria-pressed="false"><strong>Electro (Sketch)</strong><small>Electronic · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="pop" aria-pressed="false"><strong>Life of Riley</strong><small>Pop · 24 s</small></button>
+    </div>
+    <div class="peak-controls">
+      <label class="peak-readout"><output id="density-number" for="density-range">7</output><span>Density</span></label>
+      <input id="density-range" type="range" min="0" max="10" value="7" aria-label="Density">
+      <div class="peak-toolbar">
+        <button type="button" data-compare="a" aria-pressed="false">A · Original</button>
+        <button type="button" data-compare="b" aria-pressed="true">B · Processed</button>
+        <button type="button" id="demo-play" aria-pressed="false">▶ Play</button>
+        <button type="button" id="demo-stop">■ Stop</button>
+      </div>
+      <label class="peak-volume"><span>Volume</span><input id="demo-volume" type="range" min="0" max="100" value="60" aria-label="Volume"></label>
+      <p class="peak-status" id="demo-state" role="status">Ready to listen</p>
+    </div>
+    <details class="peak-credits">
+      <summary>Music and licenses</summary>
+      <ul>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500026">EDM Detection Mode</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100390">Electro (Sketch)</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400054">Life of Riley</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+      </ul>
+      <p>24-second excerpts, processed in advance with PeakMP3 0.16.0. Nothing is processed in the browser.</p>
+    </details>
+    <noscript><p>The demo needs JavaScript. It also runs on the <a href="https://popovantondev.github.io/PeakMP3/index-en.html#demo">PeakMP3 page <span aria-hidden="true">↗</span></a>.</p></noscript>
+  </div>
+  <div class="peak-device">
+    <canvas id="peak-demo" width="778" height="1293" tabindex="0" role="img" aria-label="PeakMP3 with turntable: knob, presets, A/B, playback and volume can be used."></canvas>
+  </div>
+  <audio id="demo-audio" preload="none"></audio>
+  <script type="application/json" id="demo-strings">{"loading": "Loading example…", "ready": "Ready to listen", "error": "Could not load the example. Try again.", "play": "Play", "pause": "Pause", "stop": "Stop", "presets": ["Soft", "Balance", "Loud", "Maximum"]}</script>
 </section>
 
 <section class="block" id="path">
@@ -173,7 +233,7 @@
     </li>
     <li>
       <time datetime="2022">2022 – 2024</time>
-      <p>A computer shop with repair service in Izmail (Ukraine) that I was involved in. My tasks: purchasing, supplier, customer and sales data in 1C 8.3, repairs and data recovery.</p>
+      <p>A computer shop with repair service in Izmail (Ukraine) that I was involved in. My tasks: sales and customer advice, computer maintenance and software setup, purchasing, supplier, customer and sales data in 1C 8.3, repairs and data recovery.</p>
     </li>
     <li>
       <time datetime="2017">2017 – 2021</time>
@@ -211,5 +271,6 @@
   <p class="stand">As of 11/2026</p>
 </footer>
 </div>
+<script src="assets/peak-demo.js" defer></script>
 </body>
 </html>

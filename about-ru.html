@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Антон Попов, переобучение на Fachinformatiker für Anwendungsentwicklung в FAW. Ищу обязательную практику с 15.03.2027. Как я работаю, пять проектов, путь и контакт.">
+<meta name="description" content="Антон Попов, переобучение на Fachinformatiker für Anwendungsentwicklung в FAW. Ищу обязательную практику с 15.03.2027. Как я работаю, шесть проектов, путь и контакт.">
 <meta name="theme-color" content="#f6f7fb">
 <title>Антон Попов — обо мне</title>
 <link rel="stylesheet" href="assets/about.css">
@@ -50,7 +50,7 @@
 
 <section class="block" id="projects">
   <h2>Проекты</h2>
-  <p>Пять проектов из моего каталога. Статус и версия соответствуют опубликованной сборке.</p>
+  <p>Шесть проектов из моего каталога. Статус и версия соответствуют опубликованной сборке.</p>
   <div class="cases">
     <article class="case" id="PeakMP3">
       <div class="case-head">
@@ -69,6 +69,7 @@
       <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Репозиторий <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/PeakMP3/Guide-ru.html">Руководство <span aria-hidden="true">↗</span></a>
+        <a href="#demo">Попробовать ↓</a>
       </p>
     </article>
 
@@ -152,7 +153,66 @@
         <a href="https://popovantondev.github.io/LektienPlayer/Guide-ru.html">Руководство <span aria-hidden="true">↗</span></a>
       </p>
     </article>
+
+    <article class="case" id="HotspotControl">
+      <div class="case-head">
+        <img class="case-icon" src="assets/app-icons/HotspotControl.ico" width="64" height="64" alt="" decoding="async" loading="lazy">
+        <h3>Hotspot Control</h3>
+      </div>
+      <p class="case-meta">WPF, .NET 10 · Windows 11 24H2+ · x64 · Release 0.3.0</p>
+      <dl class="case-parts">
+        <dt>Задача</dt>
+        <dd>Управлять мобильной точкой доступа Windows 11 и показывать подключённые устройства и настройки сети.</dd>
+        <dt>Что сделал я</dt>
+        <dd>Я задал требования и интерфейс: три языка, без установщика, без прав администратора, без телеметрии, пароли программа не сохраняет.</dd>
+        <dt>Как проверено</dt>
+        <dd>Автоматические проверки используют вымышленные данные, на практике программа проверена только на моём компьютере; к релизу приложена контрольная сумма SHA-256.</dd>
+      </dl>
+      <p class="case-links">
+        <a href="https://github.com/popovantondev/HotspotControl">Репозиторий <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/HotspotControl/Guide-ru.html">Руководство <span aria-hidden="true">↗</span></a>
+      </p>
+    </article>
   </div>
+</section>
+
+<section class="block peak-demo-block" id="demo" data-lang="ru">
+  <div class="peak-copy">
+    <h2>Попробовать PeakMP3</h2>
+    <p>Три коротких музыкальных фрагмента. Трек выбирается кнопками ниже, Play и ручка PeakMP3 работают прямо на изображении. A: исходный фрагмент, B: выбранная обработка.</p>
+    <div class="peak-tracks">
+        <button class="peak-track" type="button" data-track="techno" aria-pressed="true"><strong>EDM Detection Mode</strong><small>Techno / EDM · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="electronic" aria-pressed="false"><strong>Electro (Sketch)</strong><small>Electronic · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="pop" aria-pressed="false"><strong>Life of Riley</strong><small>Pop · 24 s</small></button>
+    </div>
+    <div class="peak-controls">
+      <label class="peak-readout"><output id="density-number" for="density-range">7</output><span>Плотность</span></label>
+      <input id="density-range" type="range" min="0" max="10" value="7" aria-label="Плотность">
+      <div class="peak-toolbar">
+        <button type="button" data-compare="a" aria-pressed="false">A · Оригинал</button>
+        <button type="button" data-compare="b" aria-pressed="true">B · Обработка</button>
+        <button type="button" id="demo-play" aria-pressed="false">▶ Воспроизвести</button>
+        <button type="button" id="demo-stop">■ Стоп</button>
+      </div>
+      <label class="peak-volume"><span>Громкость</span><input id="demo-volume" type="range" min="0" max="100" value="60" aria-label="Громкость"></label>
+      <p class="peak-status" id="demo-state" role="status">Готово к прослушиванию</p>
+    </div>
+    <details class="peak-credits">
+      <summary>Музыка и лицензии</summary>
+      <ul>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500026">EDM Detection Mode</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100390">Electro (Sketch)</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400054">Life of Riley</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+      </ul>
+      <p>Фрагменты по 24 секунды, заранее обработанные PeakMP3 0.16.0. В браузере ничего не обрабатывается.</p>
+    </details>
+    <noscript><p>Для демо нужен JavaScript. Оно же есть на <a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo">странице PeakMP3 <span aria-hidden="true">↗</span></a>.</p></noscript>
+  </div>
+  <div class="peak-device">
+    <canvas id="peak-demo" width="778" height="1293" tabindex="0" role="img" aria-label="PeakMP3 с проигрывателем: ручка, пресеты, A/B, воспроизведение и громкость."></canvas>
+  </div>
+  <audio id="demo-audio" preload="none"></audio>
+  <script type="application/json" id="demo-strings">{"loading": "Загрузка примера…", "ready": "Готово к прослушиванию", "error": "Не удалось загрузить пример. Попробуйте ещё раз.", "play": "Воспроизвести", "pause": "Пауза", "stop": "Стоп", "presets": ["Мягко", "Баланс", "Громко", "Максимум"]}</script>
 </section>
 
 <section class="block" id="path">
@@ -173,7 +233,7 @@
     </li>
     <li>
       <time datetime="2022">2022 – 2024</time>
-      <p>Компьютерный магазин с сервисом в Измаиле (Украина), в работе которого я участвовал. Мои задачи: закупки, данные поставщиков, клиентов и продаж в 1C 8.3, ремонт и восстановление данных.</p>
+      <p>Компьютерный магазин с сервисом в Измаиле (Украина), в работе которого я участвовал. Мои задачи: продажи и консультации клиентов, обслуживание компьютеров и настройка программ, закупки, данные поставщиков, клиентов и продаж в 1C 8.3, ремонт и восстановление данных.</p>
     </li>
     <li>
       <time datetime="2017">2017 – 2021</time>
@@ -211,5 +271,6 @@
   <p class="stand">Актуально на 11/2026</p>
 </footer>
 </div>
+<script src="assets/peak-demo.js" defer></script>
 </body>
 </html>

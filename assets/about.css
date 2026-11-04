@@ -45,6 +45,20 @@
   --shell: 1200px;
   --gutter: 32px;
   --gutter-narrow: 18px;
+  /* PeakMP3-Demo: Farben der Dialoge wie im Original (PeakMP3/website/peak.css) */
+  --demo-max: 420px;
+  --demo-backdrop: #21170d55;
+  --demo-dialog-line: #8c887b;
+  --demo-dialog-bg: #f3f1e6;
+  --demo-dialog-ink: #111;
+  --demo-button-line: #4b4b40;
+  --demo-button-bg: #e9e7d8;
+  --demo-input-bg: #faf1d8;
+  --demo-limit-bg: #ddd6bf;
+  --demo-hot-focus: #ff8a20;
+  --demo-font: Tahoma, sans-serif;
+  --space-demo-input: 5px;
+  --radius-demo: 5px;
   color-scheme: light;
 }
 
@@ -299,6 +313,163 @@ h1 {
   .block h2 { font-size: 24px; }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-0); }
   nav.lang a { padding: var(--space-0) var(--space-control-x-narrow); }
+}
+
+/* PeakMP3 ausprobieren: Canvas und Dialoge aus PeakMP3/website/demo.js (Klassen mit peak-) */
+#demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--demo-max));
+  gap: var(--space-3) var(--space-5);
+  align-items: start;
+}
+.peak-copy { min-width: 0; max-width: 680px; }
+.peak-copy > p, .peak-credits p { color: var(--card-text); margin: 0 0 var(--space-2); }
+.peak-tracks { display: grid; gap: var(--space-1); margin: 0 0 var(--space-3); }
+.peak-track {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 44px;
+  padding: var(--space-control-y) var(--space-2);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.peak-track small { font-size: 13px; color: var(--muted); }
+.peak-track[aria-pressed="true"] { border-color: var(--blue); background: var(--blue-soft); }
+.peak-controls {
+  display: grid;
+  gap: var(--space-control-x);
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+}
+.peak-readout { display: flex; align-items: baseline; gap: var(--space-1); font-weight: 700; }
+.peak-readout output { font-size: 28px; line-height: 1; color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+.peak-controls input[type="range"] { width: 100%; max-width: 100%; min-height: 44px; margin: 0; accent-color: var(--blue); touch-action: pan-y; }
+.peak-toolbar { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.peak-toolbar button {
+  min-height: 44px;
+  padding: var(--space-control-y) var(--space-control-x);
+  border: 1px solid var(--blue-line);
+  border-radius: var(--radius-s);
+  background: var(--surface);
+  color: var(--blue-ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.peak-toolbar button[aria-pressed="true"] { border-color: var(--blue); background: var(--blue-soft); }
+.peak-volume { display: grid; gap: var(--space-0); font-size: 14px; font-weight: 700; }
+.peak-status { margin: 0; font-size: 14px; color: var(--muted); }
+.peak-credits { color: var(--card-text); font-size: 14px; }
+.peak-credits summary { min-height: 44px; padding: var(--space-control-y) 0; font-weight: 700; color: var(--ink); cursor: pointer; }
+.peak-credits ul { margin: 0 0 var(--space-1); padding-left: var(--space-3); }
+.peak-credits a { color: var(--blue-ink); }
+.peak-device { width: 100%; max-width: var(--demo-max); justify-self: center; }
+.peak-surface { position: relative; width: 100%; }
+.peak-surface canvas, .peak-device canvas { display: block; width: 100%; height: auto; touch-action: pan-y; }
+.peak-hotspots { position: absolute; inset: 0; pointer-events: none; }
+.peak-hotspots button {
+  position: absolute;
+  pointer-events: auto;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+}
+.peak-hotspots button:focus-visible { outline: 2px solid var(--demo-hot-focus); outline-offset: 1px; border-radius: var(--radius-demo); }
+
+.peak-dialog {
+  box-sizing: border-box;
+  width: 400px;
+  max-width: calc(100vw - var(--space-3));
+  padding: var(--space-3);
+  border: 1px solid var(--demo-dialog-line);
+  border-radius: var(--radius-m);
+  background: var(--demo-dialog-bg);
+  color: var(--demo-dialog-ink);
+  font: 13px var(--demo-font);
+  box-shadow: var(--shadow-photo);
+}
+.peak-dialog::backdrop { background: var(--demo-backdrop); }
+.peak-dialog h2 { margin: 0 0 var(--space-3); font: bold 19px var(--demo-font); }
+.peak-dialog button {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--demo-button-line);
+  border-radius: var(--radius-demo);
+  background: var(--demo-button-bg);
+  color: var(--demo-dialog-ink);
+  font: 13px var(--demo-font);
+  cursor: pointer;
+}
+.peak-track-dialog > button { display: block; width: 100%; margin: var(--space-1) 0; }
+.peak-dialog.peak-pixel-dialog {
+  padding: 0;
+  width: var(--dialog-w);
+  height: var(--dialog-h);
+  max-width: calc(100vw - var(--space-control-x));
+  border: 0;
+  background-color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.peak-dialog.peak-pixel-dialog button {
+  position: absolute;
+  display: block;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: transparent;
+}
+.peak-dialog.peak-pixel-dialog button:focus-visible { outline: 2px solid var(--demo-hot-focus); outline-offset: 0; }
+.peak-pixel-dialog input {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  top: 24.9%;
+  left: 5.9%;
+  width: 88.2%;
+  height: 18.8%;
+  padding: 0 var(--space-demo-input);
+  border: 0;
+  background: transparent;
+  font: 29px var(--demo-font);
+}
+.peak-pixel-dialog[data-kind="cal"] input { top: 27%; left: 20%; width: 23%; height: 19%; font-weight: bold; text-align: right; outline: none; }
+.peak-pixel-dialog input::-webkit-inner-spin-button, .peak-pixel-dialog input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.peak-dbfs-unit { position: absolute; left: 45%; top: 29%; font: bold 29px var(--demo-font); }
+.peak-density-limit {
+  position: absolute;
+  box-sizing: border-box;
+  left: 5.9%;
+  top: 46%;
+  width: 88.2%;
+  height: 27%;
+  margin: 0;
+  padding: var(--space-hairline) var(--space-demo-input) 0;
+  background: var(--demo-limit-bg);
+  font: 13px var(--demo-font);
+}
+
+@media (max-width: 900px) {
+  #demo { grid-template-columns: 1fr; }
+  .peak-copy { max-width: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
