@@ -220,12 +220,13 @@ h1 {
   content: "";
   position: absolute;
   top: 50%;
-  left: -17px;
+  left: calc(var(--space-3) / -2);
   width: 9px;
   height: 9px;
   border-top: 2px solid var(--blue);
   border-right: 2px solid var(--blue);
-  transform: translateY(-50%) rotate(45deg);
+  /* -85 %: sichtbar ist nur die Spitze des gedrehten Quadrats, so steht sie mittig in der Lücke */
+  transform: translate(-85%, -50%) rotate(45deg);
 }
 
 /* Projekte */
@@ -296,8 +297,8 @@ h1 {
 
 @media (max-width: 900px) {
   .about-hero { grid-template-columns: minmax(180px, 260px) 1fr; gap: var(--space-4); }
-  .flow { grid-template-columns: 1fr; gap: var(--space-2); }
-  .flow-step + .flow-step::before { top: -13px; left: 26px; transform: rotate(135deg); }
+  .flow { grid-template-columns: 1fr; gap: var(--space-3); }
+  .flow-step + .flow-step::before { top: calc(var(--space-3) / -2); left: 50%; transform: translate(-50%, -85%) rotate(135deg); }
 }
 
 @media (max-width: 700px) {
