@@ -478,3 +478,6 @@ h1 {
   .button-primary:hover, .button-secondary:hover, nav.lang a:hover, .case-links a:hover, .case:hover, .flow-step:hover,
   .button-primary:focus-visible, .button-secondary:focus-visible, nav.lang a:focus-visible, .case-links a:focus-visible { transform: none; }
 }
+
+/* Impressum: Telefonnummer als Bild, nicht als Text */
+.contact-phone { vertical-align: middle; }
