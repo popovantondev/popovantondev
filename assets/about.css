@@ -1,25 +1,26 @@
-/* Über mich, Impressum, Datenschutz — eigener Stil, unabhängig von catalog.css.
-   Alle Farben, Radien, Schatten und Abstände kommen aus :root.
-   Dunkles Design später: nur diesen Block ändern. */
+/* Über mich, Impressum, Datenschutz — auf den Tokens und Komponenten des gemeinsamen Kits (assets/kit/kit.css).
+   Die Farben unten verweisen auf --ppk-*, damit helles und dunkles Design ohne weitere Regeln funktionieren. */
+:root{--ppk-accent:#1d5bd0;--ppk-accent-ink:#ffffff;--ppk-tint:#e4edff}
+:root[data-theme="dark"]{--ppk-accent:#6ea8ff;--ppk-accent-ink:#071a38;--ppk-tint:#12294d}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--ppk-accent:#6ea8ff;--ppk-accent-ink:#071a38;--ppk-tint:#12294d}}
 :root {
-  --ink: #182238;
-  --muted: #657086;
-  --blue: #276ce6;
-  --blue-ink: #245dc2;
-  --blue-soft: #e6efff;
-  --blue-line: #c8dbfa;
-  --line: #e1e5ed;
-  --card-line: #e0e8f5;
-  --card-text: #47536b;
-  --surface: #fff;
-  --bg: #f7f9fc;
-  --focus: #4285ff;
-  --on-blue: #fff;
-  --nav-bg: #ffffffcc;
-  --shadow-card: 0 16px 35px #263d6610;
-  --shadow-photo: 0 24px 55px #142c5c14;
+  --ink: var(--ppk-ink);
+  --muted: var(--ppk-muted);
+  --blue: var(--ppk-accent);
+  --blue-ink: var(--ppk-accent);
+  --blue-soft: var(--ppk-tint);
+  --blue-line: var(--ppk-line);
+  --line: var(--ppk-line);
+  --card-line: var(--ppk-line);
+  --card-text: var(--ppk-muted);
+  --surface: var(--ppk-panel);
+  --bg: var(--ppk-bg);
+  --focus: var(--ppk-focus);
+  --on-blue: var(--ppk-accent-ink);
+  --shadow-card: var(--ppk-shadow);
+  --shadow-photo: var(--ppk-shadow);
   --shadow-lift: 0 6px 14px #276ce624;
-  --card-line-hover: #c4cfe2;
+  --card-line-hover: var(--ppk-accent);
   --icon-size: 64px;
   --lift-s: -1px;
   --lift-m: -2px;
@@ -42,9 +43,6 @@
   --space-3: 24px;
   --space-4: 32px;
   --space-5: 56px;
-  --shell: 1200px;
-  --gutter: 32px;
-  --gutter-narrow: 18px;
   /* PeakMP3-Demo: Farben der Dialoge wie im Original (PeakMP3/website/peak.css) */
   --demo-max: 420px;
   --demo-backdrop: #21170d55;
@@ -59,74 +57,31 @@
   --demo-font: Tahoma, sans-serif;
   --space-demo-input: 5px;
   --radius-demo: 5px;
-  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: var(--space-3); }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 16px/1.6 var(--font);
-  overflow-wrap: break-word;
-}
+body { overflow-wrap: break-word; }
 
 a { color: inherit; text-underline-offset: 4px; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-
-.shell { max-width: var(--shell); margin: 0 auto; padding: 0 var(--gutter); }
-
-/* Kopfzeile */
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) 0;
-}
-.brand { font-weight: 750; letter-spacing: -0.02em; text-decoration: none; }
-nav.lang {
-  display: flex;
-  gap: var(--space-0);
-  padding: var(--space-0);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  background: var(--nav-bg);
-}
-nav.lang a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  min-width: 44px;
-  justify-content: center;
-  padding: var(--space-0) var(--space-control-x);
-  border-radius: var(--radius-xs);
-  font-size: 13px;
-  font-weight: 650;
-  color: var(--muted);
-  text-decoration: none;
-}
-nav.lang a[aria-current="page"] { background: var(--ink); color: var(--on-blue); }
 
 /* Anheben bei Hover und Fokus (wie .project:hover im Katalog) */
-.button-primary, .button-secondary, .case-links a, nav.lang a {
+.button-primary, .button-secondary, .case-links a {
   transition: transform var(--motion), box-shadow var(--motion), background-color var(--motion), border-color var(--motion);
 }
 .case, .flow-step { transition: transform var(--motion), box-shadow var(--motion), border-color var(--motion); }
-.button-primary:focus-visible, .button-secondary:focus-visible, nav.lang a:focus-visible {
+.button-primary:focus-visible, .button-secondary:focus-visible {
   transform: translateY(var(--lift-m));
   box-shadow: var(--shadow-lift);
 }
 .case-links a:focus-visible { transform: translateY(var(--lift-s)); box-shadow: var(--shadow-lift); }
 @media (hover: hover) {
-  .button-primary:hover, .button-secondary:hover, nav.lang a:hover {
+  .button-primary:hover, .button-secondary:hover {
     transform: translateY(var(--lift-m));
     box-shadow: var(--shadow-lift);
   }
-  nav.lang a:not([aria-current="page"]):hover { background: var(--blue-soft); color: var(--blue-ink); }
   .case-links a:hover { transform: translateY(var(--lift-s)); box-shadow: var(--shadow-lift); background: var(--blue-soft); }
   .case:hover, .flow-step:hover {
     transform: translateY(var(--lift-m));
@@ -189,7 +144,7 @@ h1 {
   text-decoration: none;
 }
 .button-primary { background: var(--blue); color: var(--on-blue); border: 1px solid var(--blue); }
-.button-primary:hover { background: var(--blue-ink); border-color: var(--blue-ink); }
+.button-primary:hover { filter: brightness(1.08); }
 .button-secondary { background: var(--surface); color: var(--blue-ink); border: 1px solid var(--blue-line); }
 .button-secondary:hover { background: var(--blue-soft); }
 
@@ -277,24 +232,6 @@ h1 {
 .legal address { font-style: normal; margin: 0 0 var(--space-2); }
 .legal a { color: var(--blue-ink); }
 
-/* Fußzeile */
-.site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-  padding: var(--space-4) 0 var(--space-4);
-  border-top: 1px solid var(--line);
-  font-size: 13px;
-  color: var(--muted);
-}
-.legal-links { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); }
-.legal-links a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--ink); text-decoration: none; }
-.legal-links a:hover { text-decoration: underline; }
-.stand { margin: 0; }
-
 @media (max-width: 900px) {
   .about-hero { grid-template-columns: minmax(180px, 260px) 1fr; gap: var(--space-4); }
   .flow { grid-template-columns: 1fr; gap: var(--space-3); }
@@ -302,8 +239,6 @@ h1 {
 }
 
 @media (max-width: 700px) {
-  .shell { --gutter: var(--gutter-narrow); }
-  .top { padding: var(--space-2) 0; }
   .about-hero { grid-template-columns: 1fr; gap: var(--space-3); margin-bottom: var(--space-4); }
   .portrait { max-width: 200px; border-radius: var(--radius-l); }
   .hero-name { font-size: 21px; }
@@ -313,7 +248,6 @@ h1 {
   .case { padding: var(--space-3); }
   .block h2 { font-size: 24px; }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-0); }
-  nav.lang a { padding: var(--space-0) var(--space-control-x-narrow); }
 }
 
 /* PeakMP3 ausprobieren: Canvas und Dialoge aus PeakMP3/website/demo.js (Klassen mit peak-) */
@@ -476,9 +410,14 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
-  .button-primary:hover, .button-secondary:hover, nav.lang a:hover, .case-links a:hover, .case:hover, .flow-step:hover,
-  .button-primary:focus-visible, .button-secondary:focus-visible, nav.lang a:focus-visible, .case-links a:focus-visible { transform: none; }
+  .button-primary:hover, .button-secondary:hover, .case-links a:hover, .case:hover, .flow-step:hover,
+  .button-primary:focus-visible, .button-secondary:focus-visible, .case-links a:focus-visible { transform: none; }
 }
 
 /* Impressum: Telefonnummer als Bild, nicht als Text */
 .contact-phone { vertical-align: middle; }
+
+/* Kit shell around the content */
+main.ppk-shell { padding-bottom: var(--space-2); }
+.block h2 { font-size: clamp(24px, 2.4vw, 28px); }
+.portrait { border-color: var(--ppk-line); }

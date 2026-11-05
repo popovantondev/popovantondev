@@ -6,11 +6,12 @@ const {pathToFileURL}=require('url');
 const root=path.resolve(__dirname,'..');
 const labels={ru:'Каталог программ и руководств',de:'Anwendungen und Anleitungen',en:'Applications and guides'};
 (async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{
- const page=await browser.newPage({viewport:{width:2048,height:768},deviceScaleFactor:1});
+ const page=await browser.newPage({viewport:{width:2048,height:768},deviceScaleFactor:1,colorScheme:'light'});
  for(const lang of ['ru','de','en']){
-  await page.goto(pathToFileURL(path.join(root,lang==='en'?'index.html':`index-${lang}.html`)).href);
+  // German is the root language: index.html (de), index-en.html, index-ru.html.
+  await page.goto(pathToFileURL(path.join(root,lang==='de'?'index.html':`index-${lang}.html`)).href);
   await page.locator('.hero-studio img').evaluateAll(xs=>Promise.all(xs.map(i=>i.decode())));
-  await page.addStyleTag({content:'.shell{max-width:none;padding:0}.top{display:none}.hero.hero-studio{margin:0;width:2048px;box-shadow:none}.hero-studio .hero-actions{gap:0}.hero-studio .hero-actions a{font-size:24px}'});
+  await page.addStyleTag({content:'.ppk-nav-wrap,.ppk-skip{display:none}main.ppk-shell{max-width:none;padding:0}.hero.hero-studio{margin:0;width:2048px;box-shadow:none}.hero-studio .hero-actions{gap:0}.hero-studio .hero-actions a{font-size:24px}'});
   await page.locator('.hero-actions').evaluate((el,label)=>{el.replaceChildren();const a=document.createElement('a');a.className='primary';a.textContent=label+' ↗';a.href='#catalog';el.append(a)},labels[lang]);
   await page.locator('.hero-studio').screenshot({path:path.join(root,`assets/profile-studio-${lang}.png`)});
  }

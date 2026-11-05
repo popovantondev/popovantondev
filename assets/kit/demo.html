@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kit demo</title>
+<script>
+/* demo only: language from ?lang=de|en|ru, set before the kit reads <html lang> */
+(function () {
+  var m = /[?&]lang=(de|en|ru)\b/.exec(location.search);
+  if (m) document.documentElement.lang = m[1];
+})();
+</script>
+<script src="kit-theme.js"></script>
+<link rel="stylesheet" href="kit.css?v=2026.11.05-1">
+<style>
+/* Page accent: set it in the page's own CSS, in all three theme paths. */
+:root{--ppk-accent:#0f6f7c}
+:root[data-theme="dark"]{--ppk-accent:#3cc1cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--ppk-accent:#3cc1cc}}
+.demo-note{margin:18px auto 0;max-width:var(--ppk-shell);padding:0 28px;color:var(--ppk-muted);font-size:14px}
+@media(max-width:640px){.demo-note{padding:0 16px}}
+</style>
+<script src="programs.js?v=2026.11.05-1" defer></script>
+<script src="kit.js?v=2026.11.05-1" defer></script>
+</head>
+<body class="ppk-page">
+<a class="ppk-skip" href="#main" data-t="skip">Zum Inhalt</a>
+
+<div class="ppk-nav-wrap" id="ppk-nav-wrap">
+  <nav class="ppk-nav" aria-label="Hauptnavigation" data-t-aria="nav">
+    <a class="ppk-brand" href="demo.html"><img src="../app-icons/AnkiSound.png" alt="" width="34" height="34"><span>Anki SOUND</span></a>
+    <span class="ppk-spacer"></span>
+    <a class="ppk-back" href="https://popovantondev.github.io/popovantondev/index.html" data-t="back">← Alle Programme</a>
+    <button class="ppk-search-btn" type="button" data-ppk-open-search aria-label="Programme durchsuchen" data-t-aria="search"><span data-t="searchText">Suchen</span><kbd data-t="kbd">Strg K</kbd></button>
+    <div class="ppk-langs"><a href="demo.html?lang=ru" lang="ru" hreflang="ru">RU</a><a href="demo.html?lang=de" lang="de" hreflang="de">DE</a><a href="demo.html?lang=en" lang="en" hreflang="en">EN</a></div>
+    <button class="ppk-icon-btn ppk-theme-btn" type="button" data-ppk-theme aria-label="Farbschema wechseln" data-t-aria="theme"></button>
+    <a class="ppk-icon-btn ppk-gh-btn" href="https://github.com/popovantondev/AnkiSound" aria-label="GitHub"></a>
+  </nav>
+</div>
+
+<main class="ppk-shell" id="main">
+  <div class="ppk-hero">
+    <div>
+      <a class="ppk-pill" href="https://github.com/popovantondev/AnkiSound/blob/main/CHANGELOG.md"><span class="ppk-new" data-t="new">NEU</span><span data-t="pillText">Version 3.4.11 ist da</span> <span class="ppk-more" data-t="more">Was ist neu →</span></a>
+      <h1>Anki SOUND</h1>
+      <p class="ppk-lead" data-t="lead">Ergänzt Anki-Karten um lokale Sprachausgabe.</p>
+      <span class="ppk-status">Release · 3.4.11</span> <span class="ppk-chip" style="margin-left:6px">macOS 13+ · Apple Silicon</span>
+      <div class="ppk-actions">
+        <a class="ppk-btn ppk-btn-primary" href="#" data-t="download">Herunterladen für macOS</a>
+        <a class="ppk-btn ppk-btn-gh" href="https://github.com/popovantondev/AnkiSound"><span data-t="source">Quellcode</span> <span class="ppk-chip"><i class="ppk-dot"></i>Python · Swift</span></a>
+        <a class="ppk-btn" href="#" data-t="guide">Anleitung ↗</a>
+      </div>
+      <p class="ppk-requirements"><strong data-t="reqTitle">Vor dem Start</strong><span data-t="req">Anki muss installiert sein.</span></p>
+    </div>
+    <figure class="ppk-preview">
+      <div class="ppk-stage"><img src="../app-icons/AnkiSound.png" alt="" width="220" height="220"></div>
+      <figcaption data-t="caption">Beispiel-Komponenten des gemeinsamen Kits.</figcaption>
+    </figure>
+  </div>
+
+  <section class="ppk-bento-section ppk-section ppk-reveal">
+    <h2 data-t="bentoTitle">Was drin steckt</h2>
+    <p class="ppk-sub" data-t="bentoSub">Installation, Funktionen, Datenschutz, Prüfung.</p>
+    <div class="ppk-bento">
+      <div class="ppk-tile ppk-wide">
+        <h3 data-t="instTitle">Installation</h3>
+        <p data-t="instText">Archiv prüfen, entpacken, starten.</p>
+        <div class="ppk-term" role="group" aria-label="Terminal">
+          <div class="ppk-term-bar"><i></i><i></i><i></i></div>
+          <div class="ppk-term-out">
+            <div class="ppk-ps">$ shasum -a 256 -c SHA256SUMS.txt</div>
+            <div class="ppk-ok">AnkiSound-3.4.11.zip: OK</div>
+            <div class="ppk-ps">$ unzip AnkiSound-3.4.11.zip</div>
+            <div class="ppk-dim">  Archive entpackt</div>
+            <div class="ppk-ps">$ open "Anki SOUND.app"</div>
+          </div>
+        </div>
+      </div>
+      <div class="ppk-tile">
+        <h3 data-t="localTitle">Läuft lokal</h3>
+        <p data-t="localText">Kein Konto, keine Cloud.</p>
+        <span class="ppk-live" data-t="localLive">Lokal · offline</span>
+      </div>
+      <div class="ppk-tile">
+        <h3 data-t="featTitle">Funktionen</h3>
+        <div class="ppk-chips"><span>Sprachausgabe</span><span>Anki-Karten</span><span>Prüfpaket</span><span>RU · DE · EN</span></div>
+      </div>
+      <div class="ppk-tile ppk-wide">
+        <h3 data-t="checkTitle">Geprüft</h3>
+        <ul class="ppk-checks"><li data-t="check1">Versionsnummer und Änderungsprotokoll</li><li data-t="check2">SHA-256-Prüfsumme für den Download</li><li data-t="check3">Automatische Prüfungen im CI</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ppk-section ppk-process ppk-reveal">
+    <h2 data-t="stepsTitle">So funktioniert es</h2>
+    <ol class="ppk-flow"><li data-t="s1">Karten auswählen</li><li data-t="s2">Sprachausgabe erzeugen</li><li data-t="s3">Paket prüfen</li></ol>
+  </section>
+
+  <section class="ppk-section ppk-reveal" id="tabs-section">
+    <h2 data-t="tabsTitle">Nach Aufgabe</h2>
+    <p class="ppk-sub" data-t="tabsSub">Kategorien statt einer langen Tabelle.</p>
+    <div class="ppk-tabs" role="tablist" id="tabs"></div>
+    <div class="ppk-app-grid" id="grid"></div>
+  </section>
+
+  <section class="ppk-section ppk-demo-section ppk-reveal" id="demo">
+    <h2 data-t="demoTitle">Direkt im Browser testen</h2>
+    <p class="ppk-sub" data-t="demoSub">Nur Beispieldaten, nichts wird kopiert.</p>
+    <div class="ppk-demo">
+      <div class="ppk-demo-head"><span>Kaktus Backup &amp; Sync</span><span class="ppk-demo-label" data-t="demoLabel">Demo — Beispieldaten</span></div>
+      <div class="ppk-demo-body">
+        <div class="ppk-demo-side">
+          <div class="ppk-field"><small data-t="from">Quelle</small>Dokumente</div>
+          <div class="ppk-field"><small data-t="to">Ziel</small>Backup (E:)</div>
+          <button class="ppk-btn ppk-btn-primary" type="button" id="demoPreview" data-t="preview">Vorschau berechnen</button>
+          <button class="ppk-btn" type="button" id="demoRun" disabled data-t="run">Sicherung starten</button>
+        </div>
+        <div class="ppk-demo-main">
+          <ul class="ppk-rows" id="demoRows"></ul>
+          <div class="ppk-progress" id="demoBar" hidden><i></i></div>
+          <div class="ppk-demo-empty" id="demoMsg" data-t="demoHint">Klicken Sie auf „Vorschau berechnen“.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ppk-footer">
+  <span>© 2026 Anton Popov · Anki SOUND 3.4.11</span>
+  <nav aria-label="Rechtliches" data-t-aria="legal"><a href="https://popovantondev.github.io/popovantondev/impressum.html">Impressum</a><a href="https://popovantondev.github.io/popovantondev/datenschutz.html">Datenschutz</a><a href="https://github.com/popovantondev/AnkiSound">GitHub</a></nav>
+</footer>
+
+<script>
+(function () {
+  var L = document.documentElement.lang;
+  var T = {
+    de: { skip: 'Zum Inhalt', nav: 'Hauptnavigation', back: '← Alle Programme', search: 'Programme durchsuchen', searchText: 'Suchen', kbd: 'Strg K', theme: 'Farbschema wechseln', legal: 'Rechtliches', 'new': 'NEU', pillText: 'Version 3.4.11 ist da', more: 'Was ist neu →', lead: 'Ergänzt Anki-Karten um lokale Sprachausgabe.', download: 'Herunterladen für macOS', source: 'Quellcode', guide: 'Anleitung ↗', reqTitle: 'Vor dem Start', req: 'Anki muss installiert sein.', caption: 'Beispiel-Komponenten des gemeinsamen Kits.', bentoTitle: 'Was drin steckt', bentoSub: 'Installation, Funktionen, Datenschutz, Prüfung.', instTitle: 'Installation', instText: 'Archiv prüfen, entpacken, starten.', localTitle: 'Läuft lokal', localText: 'Kein Konto, keine Cloud.', localLive: 'Lokal · offline', featTitle: 'Funktionen', checkTitle: 'Geprüft', check1: 'Versionsnummer und Änderungsprotokoll', check2: 'SHA-256-Prüfsumme für den Download', check3: 'Automatische Prüfungen im CI', stepsTitle: 'So funktioniert es', s1: 'Karten auswählen', s2: 'Sprachausgabe erzeugen', s3: 'Paket prüfen', tabsTitle: 'Nach Aufgabe', tabsSub: 'Kategorien statt einer langen Tabelle.', demoTitle: 'Direkt im Browser testen', demoSub: 'Nur Beispieldaten, nichts wird kopiert.', demoLabel: 'Demo — Beispieldaten', from: 'Quelle', to: 'Ziel', preview: 'Vorschau berechnen', run: 'Sicherung starten', demoHint: 'Klicken Sie auf „Vorschau berechnen“.', all: 'Alle', done: '✓ Fertig: 2 Dateien kopiert, 1 übersprungen. (Demo — nichts wurde kopiert.)', fNew: 'neu', fSame: 'gleich' },
+    en: { skip: 'Skip to content', nav: 'Main navigation', back: '← All programs', search: 'Search programs', searchText: 'Search', kbd: 'Ctrl K', theme: 'Switch colour scheme', legal: 'Legal', 'new': 'NEW', pillText: 'Version 3.4.11 is out', more: "What's new →", lead: 'Adds local speech to Anki cards.', download: 'Download for macOS', source: 'Source code', guide: 'Guide ↗', reqTitle: 'Before you start', req: 'Anki must be installed.', caption: 'Sample components of the shared kit.', bentoTitle: "What's inside", bentoSub: 'Installation, features, privacy, checks.', instTitle: 'Installation', instText: 'Verify, extract, start.', localTitle: 'Runs locally', localText: 'No account, no cloud.', localLive: 'Local · offline', featTitle: 'Features', checkTitle: 'Checked', check1: 'Version number and changelog', check2: 'SHA-256 checksum for the download', check3: 'Automatic checks in CI', stepsTitle: 'How it works', s1: 'Pick cards', s2: 'Create speech', s3: 'Check the package', tabsTitle: 'By task', tabsSub: 'Categories instead of one long table.', demoTitle: 'Try it in the browser', demoSub: 'Sample data only, nothing is copied.', demoLabel: 'Demo — sample data', from: 'Source', to: 'Target', preview: 'Calculate preview', run: 'Start backup', demoHint: 'Click "Calculate preview".', all: 'All', done: '✓ Done: 2 files copied, 1 skipped. (Demo — nothing was copied.)', fNew: 'new', fSame: 'same' },
+    ru: { skip: 'К содержимому', nav: 'Основная навигация', back: '← Все программы', search: 'Поиск по программам', searchText: 'Поиск', kbd: 'Ctrl K', theme: 'Сменить тему', legal: 'Правовая информация', 'new': 'НОВОЕ', pillText: 'Вышла версия 3.4.11', more: 'Что нового →', lead: 'Добавляет к карточкам Anki локальную озвучку.', download: 'Скачать для macOS', source: 'Исходный код', guide: 'Руководство ↗', reqTitle: 'Перед началом', req: 'Должен быть установлен Anki.', caption: 'Примеры компонентов общего набора.', bentoTitle: 'Что внутри', bentoSub: 'Установка, функции, данные, проверка.', instTitle: 'Установка', instText: 'Проверить, распаковать, запустить.', localTitle: 'Работает локально', localText: 'Без аккаунта и облака.', localLive: 'Локально · офлайн', featTitle: 'Функции', checkTitle: 'Проверено', check1: 'Номер версии и журнал изменений', check2: 'Контрольная сумма SHA-256 для загрузки', check3: 'Автоматические проверки в CI', stepsTitle: 'Как это работает', s1: 'Выбрать карточки', s2: 'Создать озвучку', s3: 'Проверить пакет', tabsTitle: 'По задачам', tabsSub: 'Категории вместо длинной таблицы.', demoTitle: 'Попробовать в браузере', demoSub: 'Только примерные данные, ничего не копируется.', demoLabel: 'Демо — примерные данные', from: 'Источник', to: 'Назначение', preview: 'Рассчитать предпросмотр', run: 'Начать копирование', demoHint: 'Нажмите «Рассчитать предпросмотр».', all: 'Все', done: '✓ Готово: скопировано 2 файла, пропущен 1. (Демо — ничего не копировалось.)', fNew: 'новый', fSame: 'без изменений' }
+  }[L] || {};
+  document.querySelectorAll('[data-t]').forEach(function (n) { if (T[n.getAttribute('data-t')]) n.textContent = T[n.getAttribute('data-t')]; });
+  document.querySelectorAll('[data-t-aria]').forEach(function (n) { if (T[n.getAttribute('data-t-aria')]) n.setAttribute('aria-label', T[n.getAttribute('data-t-aria')]); });
+  document.querySelectorAll('.ppk-langs a').forEach(function (a) { if (a.lang === L) a.setAttribute('aria-current', 'page'); });
+  document.querySelectorAll('.ppk-pill .ppk-more').forEach(function () {});
+
+  /* tabs + cards from PPK_PROGRAMS (same data as the palette) */
+  document.addEventListener('DOMContentLoaded', function () {
+  var P = window.PPK_PROGRAMS || [], C = window.PPK_CATEGORIES || {};
+  var tabs = document.getElementById('tabs'), grid = document.getElementById('grid');
+  function tab(key, label, selected) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', selected ? 'true' : 'false'); b.dataset.cat = key; b.textContent = label; tabs.appendChild(b);
+  }
+  tab('all', T.all || 'Alle', true);
+  Object.keys(C).forEach(function (k) { tab(k, C[k][L] || C[k].de, false); });
+  function showCards(cat) {
+    grid.textContent = '';
+    P.filter(function (p) { return cat === 'all' || p.category === cat; }).forEach(function (p, i) {
+      var a = document.createElement('a'); a.className = 'ppk-app-card'; a.href = p.url[L] || p.url.de; a.style.animationDelay = (i * 25) + 'ms';
+      var img = document.createElement('img'); img.src = p.icon; img.alt = ''; img.loading = 'lazy'; a.appendChild(img);
+      var d = document.createElement('div'); var b = document.createElement('b'); b.textContent = p.name; var s = document.createElement('small'); s.textContent = p.stack + ' · ' + p.platform; d.appendChild(b); d.appendChild(s); a.appendChild(d);
+      grid.appendChild(a);
+    });
+  }
+  tabs.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    tabs.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    showCards(b.dataset.cat);
+  });
+  showCards('all');
+  });
+
+  /* demo frame behaviour (in memory only) */
+  var files = [['Bewerbung_Praktikum.pdf', 'fNew', 'ppk-badge-ok'], ['Fotos/Urlaub_001.jpg', 'fSame', ''], ['Rechnungen/2026-11.pdf', 'fNew', 'ppk-badge-ok']];
+  var rows = document.getElementById('demoRows'), bar = document.getElementById('demoBar'), msg = document.getElementById('demoMsg'), run = document.getElementById('demoRun');
+  document.getElementById('demoPreview').addEventListener('click', function () {
+    rows.textContent = ''; bar.hidden = true; msg.hidden = true; run.disabled = false;
+    files.forEach(function (f) {
+      var li = document.createElement('li'); var n = document.createElement('span'); n.textContent = f[0];
+      var bd = document.createElement('span'); bd.className = 'ppk-badge ' + f[2]; bd.textContent = T[f[1]] || f[1]; li.appendChild(n); li.appendChild(bd); rows.appendChild(li);
+    });
+  });
+  run.addEventListener('click', function () {
+    bar.hidden = false; run.disabled = true; var fill = bar.firstElementChild, p = 0;
+    var timer = setInterval(function () {
+      p += 10; fill.style.width = p + '%';
+      if (p >= 100) { clearInterval(timer); msg.hidden = false; msg.className = 'ppk-demo-empty ppk-demo-done'; msg.textContent = T.done; }
+    }, 60);
+  });
+})();
+</script>
+</body>
+</html>

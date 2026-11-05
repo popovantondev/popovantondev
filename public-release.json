@@ -44,7 +44,7 @@
           "guide": "https://popovantondev.github.io/SaveLecture/Guide-ru.html"
         },
         "de": {
-          "website": "https://popovantondev.github.io/SaveLecture/index-de.html",
+          "website": "https://popovantondev.github.io/SaveLecture/index.html",
           "guide": "https://popovantondev.github.io/SaveLecture/Guide-de.html"
         },
         "en": {
@@ -109,13 +109,15 @@
       "source_url": "https://github.com/popovantondev/TelegramMediaSender",
       "readmes": {
         "en": [
-          "README.md",
+          "README.en.md",
           "docs/en/README.md"
         ],
         "de": [
+          "README.md",
           "docs/de/README.md"
         ],
         "ru": [
+          "README.ru.md",
           "docs/ru/README.md"
         ]
       },
@@ -145,6 +147,12 @@
       ],
       "checksums": [
         "SHA256SUMS.txt"
+      ],
+      "version_files": [
+        {
+          "path": "src/telegram_media_sender/__init__.py",
+          "pattern": "__version__\\s*=\\s*\"([^\"]+)\""
+        }
       ]
     },
     {
@@ -172,10 +180,10 @@
       "source_url": "https://github.com/popovantondev/AnkiSound",
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "README.de.md"
+          "README.md"
         ],
         "ru": [
           "README.ru.md"
@@ -217,6 +225,12 @@
       ],
       "checksums": [
         "SHA256SUMS.txt"
+      ],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
       ]
     },
     {
@@ -248,9 +262,11 @@
           "docs/de/README.md"
         ],
         "en": [
+          "README.en.md",
           "docs/en/README.md"
         ],
         "ru": [
+          "README.ru.md",
           "docs/ru/README.md"
         ]
       },
@@ -295,6 +311,12 @@
       ],
       "checksums": [
         "SHA256SUMS"
+      ],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
       ]
     },
     {
@@ -322,11 +344,10 @@
       "source_url": "https://github.com/popovantondev/SRTtoSound",
       "readmes": {
         "en": [
-          "README.md",
           "README.en.md"
         ],
         "de": [
-          "README.de.md"
+          "README.md"
         ],
         "ru": [
           "README.ru.md"
@@ -368,6 +389,12 @@
       ],
       "checksums": [
         "SHA256SUMS"
+      ],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
       ]
     },
     {
@@ -394,14 +421,16 @@
       "repo": "LectureMerge",
       "source_url": "https://github.com/popovantondev/LectureMerge",
       "readmes": {
-        "en": [
-          "README.md",
-          "docs/en/README.md"
-        ],
         "de": [
+          "README.md",
           "docs/de/README.md"
         ],
+        "en": [
+          "README.en.md",
+          "docs/en/README.md"
+        ],
         "ru": [
+          "README.ru.md",
           "docs/ru/README.md"
         ]
       },
@@ -446,6 +475,12 @@
       ],
       "checksums": [
         "SHA256SUMS"
+      ],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
       ]
     },
     {
@@ -476,10 +511,10 @@
           "README.md"
         ],
         "en": [
-          "docs/README.en.md"
+          "README.en.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -539,6 +574,12 @@
       "checksums": [
         "Kaktus-Backup-Sync-Portable-5.2-preview.7.zip.sha256",
         "Kaktus-Backup-Sync-Source-5.2-preview.7.zip.sha256"
+      ],
+      "version_files": [
+        {
+          "path": "src/AntonsBackupManager.App/AntonsBackupManager.App.csproj",
+          "pattern": "<Version>([^<]+)</Version>"
+        }
       ]
     },
     {
@@ -566,13 +607,13 @@
       "source_url": "https://github.com/popovantondev/HotspotControl",
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -601,6 +642,12 @@
       ],
       "checksums": [
         "HotspotControl-0.3.0-win-x64.zip.sha256"
+      ],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
       ]
     },
     {
@@ -628,10 +675,10 @@
       "source_url": "https://github.com/popovantondev/MegaProg",
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "README.de.md"
+          "README.md"
         ],
         "ru": [
           "README.ru.md"
@@ -673,6 +720,12 @@
       ],
       "checksums": [
         "SHA256SUMS.txt"
+      ],
+      "version_files": [
+        {
+          "path": "ai_dev/version.py",
+          "pattern": "__version__\\s*=\\s*\"([^\"]+)\""
+        }
       ]
     },
     {
@@ -759,6 +812,12 @@
       ],
       "checksums": [
         "SHA256SUMS"
+      ],
+      "version_files": [
+        {
+          "path": "version.json",
+          "pattern": "\"version\"\\s*:\\s*\"([^\"]+)\""
+        }
       ]
     },
     {
@@ -786,13 +845,13 @@
       "source_url": "https://github.com/popovantondev/StudyArchivePrep",
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "docs/de/README.md"
+          "README.md"
         ],
         "ru": [
-          "docs/ru/README.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -806,7 +865,13 @@
       "release_url": null,
       "assets": [],
       "downloads": [],
-      "checksums": []
+      "checksums": [],
+      "version_files": [
+        {
+          "path": "pyproject.toml",
+          "pattern": "^version\\s*=\\s*\"([^\"]+)\""
+        }
+      ]
     },
     {
       "name": "OpenMedia Downloader",
@@ -833,14 +898,13 @@
       "source_url": "https://github.com/popovantondev/openmedia-downloader",
       "readmes": {
         "en": [
-          "README.md",
-          "README_EN.md"
+          "README.en.md"
         ],
         "de": [
-          "README_DE.md"
+          "README.md"
         ],
         "ru": [
-          "README_RU.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -854,7 +918,13 @@
       "release_url": null,
       "assets": [],
       "downloads": [],
-      "checksums": []
+      "checksums": [],
+      "version_files": [
+        {
+          "path": "VERSION",
+          "pattern": "^\\s*(\\S+)\\s*$"
+        }
+      ]
     },
     {
       "schema_version": 1,
@@ -883,13 +953,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -962,13 +1032,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ]
       },
       "guides": {
@@ -1083,13 +1153,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ]
       },
       "guides": {
@@ -1127,13 +1197,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ]
       },
       "guides": {
@@ -1214,13 +1284,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ]
       },
       "guides": {
@@ -1282,7 +1352,7 @@
           "guide": "https://popovantondev.github.io/YouTubeDownloader/Guide-ru.html"
         },
         "de": {
-          "website": "https://popovantondev.github.io/YouTubeDownloader/index-de.html",
+          "website": "https://popovantondev.github.io/YouTubeDownloader/index.html",
           "guide": "https://popovantondev.github.io/YouTubeDownloader/Guide-de.html"
         },
         "en": {
@@ -1397,13 +1467,13 @@
       },
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "ru": [
-          "docs/README.ru.md"
+          "README.ru.md"
         ],
         "de": [
-          "docs/README.de.md"
+          "README.md"
         ]
       },
       "guides": {
@@ -1419,7 +1489,7 @@
           "guide": "https://popovantondev.github.io/PeakMP3/Guide-ru.html"
         },
         "de": {
-          "website": "https://popovantondev.github.io/PeakMP3/index-de.html",
+          "website": "https://popovantondev.github.io/PeakMP3/index.html",
           "guide": "https://popovantondev.github.io/PeakMP3/Guide-de.html"
         },
         "en": {
@@ -1450,16 +1520,16 @@
         "de",
         "en"
       ],
-      "runtime_target": "Windows11 x64; Rust/egui, SQLite; per-user installation",
+      "runtime_target": "Windows 11 x64; Rust/egui, SQLite; per-user installation",
       "description": {
-        "ru": "Храните карточки одноклассников и другие списки на своём компьютере. Таблицы, собственные поля, фотографии, документы, поиск и резервные копии — в одном приложении.",
-        "de": "Verwalten Sie Klassenkameraden und andere Listen auf Ihrem eigenen Computer. Karten, Tabellen, eigene Felder, Fotos, Dokumente, Suche und Sicherungen in einer Anwendung.",
-        "en": "Keep classmates and other lists on your own computer. Cards, tables, custom fields, photos, documents, search and backups in one application."
+        "ru": "Храните карточки людей, коллекции и другие списки на своём компьютере. Таблицы, собственные поля, фотографии, документы, поиск и резервные копии — в одном приложении.",
+        "de": "Verwalten Sie Kontakte, Sammlungen und andere Listen auf Ihrem eigenen Computer. Karten, Tabellen, eigene Felder, Fotos, Dokumente, Suche und Sicherungen in einer Anwendung.",
+        "en": "Keep contacts, collections and other lists on your own computer. Cards, tables, custom fields, photos, documents, search and backups in one application."
       },
       "requirements": {
-        "ru": "Проверено на Windows 11 x 64. EXE не подписан. Таблица показывает до 2000 строк, поиск — до 500 результатов. Свободное перетягивание полей формы и импорт Microsoft Access не реализованы. Системный DPI 125/150% и два монитора отдельно не проверены; качество сглаживания зависит от рендера egui. Программа не отправляет телеметрию; основные функции работают офлайн.",
-        "de": "Auf Windows 11 x 64 geprüft. Die EXE ist nicht signiert. Die Tabelle zeigt bis zu 2000 Zeilen, die Suche bis zu 500 Treffer. Freie Formularanordnung und Microsoft-Access-Import sind nicht implementiert. Windows-DPI 125/150% und zwei Monitore sind nicht separat geprüft; die Schriftglättung hängt vom egui-Renderer ab. Keine Telemetrie; Kernfunktionen arbeiten offline.",
-        "en": "Tested on Windows 11 x 64. The EXE is unsigned. The table shows up to 2,000 rows and search up to 500 results. Free-form layout editing and Microsoft Access import are not implemented. Windows DPI 125/150% and two monitors were not separately tested; font smoothing depends on the egui renderer. No telemetry; core features work offline."
+        "ru": "Проверено на Windows 11 x64. EXE не подписан. Таблица показывает до 2000 строк, поиск — до 500 результатов. Свободное перетягивание полей формы и импорт Microsoft Access не реализованы. Системный DPI 125/150% и два монитора отдельно не проверены; качество сглаживания зависит от рендера egui. Программа не отправляет телеметрию; основные функции работают офлайн.",
+        "de": "Auf Windows 11 x64 geprüft. Die EXE ist nicht signiert. Die Tabelle zeigt bis zu 2000 Zeilen, die Suche bis zu 500 Treffer. Freie Formularanordnung und Microsoft-Access-Import sind nicht implementiert. Windows-DPI 125/150% und zwei Monitore sind nicht separat geprüft; die Schriftglättung hängt vom egui-Renderer ab. Keine Telemetrie; Kernfunktionen arbeiten offline.",
+        "en": "Tested on Windows 11 x64. The EXE is unsigned. The table shows up to 2,000 rows and search up to 500 results. Free-form layout editing and Microsoft Access import are not implemented. Windows DPI 125/150% and two monitors were not separately tested; font smoothing depends on the egui renderer. No telemetry; core features work offline."
       },
       "start": {
         "ru": "Запустите Kartoteka-0.5.0-Setup.exe и оставьте предложенную папку текущего пользователя. Права администратора и Rust не требуются. Перед обновлением сохраните изменения и закройте старое окно. Для запуска без установки распакуйте весь переносной ZIP: EXE и три DLL должны находиться рядом.",
@@ -1471,10 +1541,10 @@
           "README.ru.md"
         ],
         "de": [
-          "README.de.md"
+          "README.md"
         ],
         "en": [
-          "README.md"
+          "README.en.md"
         ]
       },
       "guides": {
@@ -1490,11 +1560,11 @@
           "guide": "https://popovantondev.github.io/Kartoteka/Guide-ru.html"
         },
         "de": {
-          "website": "https://popovantondev.github.io/Kartoteka/index-de.html",
+          "website": "https://popovantondev.github.io/Kartoteka/index.html",
           "guide": "https://popovantondev.github.io/Kartoteka/Guide-de.html"
         },
         "en": {
-          "website": "https://popovantondev.github.io/Kartoteka/index.html",
+          "website": "https://popovantondev.github.io/Kartoteka/index-en.html",
           "guide": "https://popovantondev.github.io/Kartoteka/Guide-en.html"
         }
       },
@@ -1548,13 +1618,13 @@
       "feedback_url": "https://github.com/popovantondev/LektienPlayer/issues/new",
       "readmes": {
         "en": [
-          "README.md"
+          "README.en.md"
         ],
         "ru": [
           "README.ru.md"
         ],
         "de": [
-          "README.de.md"
+          "README.md"
         ]
       },
       "guides": {
@@ -1568,7 +1638,7 @@
           "guide": "https://popovantondev.github.io/LektienPlayer/Guide-ru.html"
         },
         "de": {
-          "website": "https://popovantondev.github.io/LektienPlayer/index-de.html",
+          "website": "https://popovantondev.github.io/LektienPlayer/index.html",
           "guide": "https://popovantondev.github.io/LektienPlayer/Guide-de.html"
         },
         "en": {
@@ -1615,106 +1685,150 @@
     "Kartoteka": "assets/app-icons/Kartoteka.svg",
     "LektienPlayer": "assets/icons/lektien-player.png"
   },
+  "catalog_categories": {
+    "SaveLecture": "lernen",
+    "TelegramMediaSender": "werkzeuge",
+    "AnkiSound": "lernen",
+    "LectureTranslate": "lernen",
+    "SRTtoSound": "medien",
+    "LectureMerge": "medien",
+    "Kaktus-Backup-Sync": "daten",
+    "HotspotControl": "werkzeuge",
+    "MegaProg": "werkzeuge",
+    "LectureCompanion": "lernen",
+    "StudyArchivePrep": "daten",
+    "openmedia-downloader": "medien",
+    "GitHubSync": "daten",
+    "VirtualPianoArranger": "medien",
+    "SoundLeaf": "medien",
+    "QuickAnswer": "lernen",
+    "YouTubeDownloader": "medien",
+    "PeakMP3": "medien",
+    "Kartoteka": "daten",
+    "LektienPlayer": "lernen"
+  },
+  "catalog_stacks": {
+    "SaveLecture": "C# · WPF",
+    "TelegramMediaSender": "Python · PySide6",
+    "AnkiSound": "Python · Swift",
+    "LectureTranslate": "Swift · SwiftUI",
+    "SRTtoSound": "Ruby · Swift",
+    "LectureMerge": "Swift · AppKit",
+    "Kaktus-Backup-Sync": "C# · .NET · WPF",
+    "HotspotControl": "C# · .NET · WPF",
+    "MegaProg": "Python · PySide6",
+    "LectureCompanion": "Python · JavaScript",
+    "StudyArchivePrep": "Python · PySide6",
+    "openmedia-downloader": "Swift · Python",
+    "GitHubSync": "C# · WPF",
+    "VirtualPianoArranger": "Python · PySide6",
+    "SoundLeaf": "C# · PowerShell",
+    "QuickAnswer": "JavaScript",
+    "YouTubeDownloader": "C# · JavaScript",
+    "PeakMP3": "C# · .NET",
+    "Kartoteka": "Rust · egui · SQLite",
+    "LektienPlayer": "Swift · SwiftUI"
+  },
   "catalog_websites": {
     "SaveLecture": {
       "ru": "https://popovantondev.github.io/SaveLecture/index-ru.html",
-      "de": "https://popovantondev.github.io/SaveLecture/index-de.html",
+      "de": "https://popovantondev.github.io/SaveLecture/index.html",
       "en": "https://popovantondev.github.io/SaveLecture/index-en.html"
     },
     "TelegramMediaSender": {
       "ru": "https://popovantondev.github.io/TelegramMediaSender/index-ru.html",
-      "de": "https://popovantondev.github.io/TelegramMediaSender/index-de.html",
+      "de": "https://popovantondev.github.io/TelegramMediaSender/index.html",
       "en": "https://popovantondev.github.io/TelegramMediaSender/index-en.html"
     },
     "AnkiSound": {
       "ru": "https://popovantondev.github.io/AnkiSound/index-ru.html",
-      "de": "https://popovantondev.github.io/AnkiSound/index-de.html",
+      "de": "https://popovantondev.github.io/AnkiSound/index.html",
       "en": "https://popovantondev.github.io/AnkiSound/index-en.html"
     },
     "LectureTranslate": {
       "ru": "https://popovantondev.github.io/LectureTranslate/index-ru.html",
-      "de": "https://popovantondev.github.io/LectureTranslate/index-de.html",
+      "de": "https://popovantondev.github.io/LectureTranslate/index.html",
       "en": "https://popovantondev.github.io/LectureTranslate/index-en.html"
     },
     "SRTtoSound": {
       "ru": "https://popovantondev.github.io/SRTtoSound/index-ru.html",
-      "de": "https://popovantondev.github.io/SRTtoSound/index-de.html",
+      "de": "https://popovantondev.github.io/SRTtoSound/index.html",
       "en": "https://popovantondev.github.io/SRTtoSound/index-en.html"
     },
     "LectureMerge": {
       "ru": "https://popovantondev.github.io/LectureMerge/index-ru.html",
-      "de": "https://popovantondev.github.io/LectureMerge/index-de.html",
+      "de": "https://popovantondev.github.io/LectureMerge/index.html",
       "en": "https://popovantondev.github.io/LectureMerge/index-en.html"
     },
     "Kaktus-Backup-Sync": {
       "ru": "https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html",
-      "de": "https://popovantondev.github.io/Kaktus-Backup-Sync/index-de.html",
+      "de": "https://popovantondev.github.io/Kaktus-Backup-Sync/index.html",
       "en": "https://popovantondev.github.io/Kaktus-Backup-Sync/index-en.html"
     },
     "HotspotControl": {
       "ru": "https://popovantondev.github.io/HotspotControl/index-ru.html",
-      "de": "https://popovantondev.github.io/HotspotControl/index-de.html",
+      "de": "https://popovantondev.github.io/HotspotControl/index.html",
       "en": "https://popovantondev.github.io/HotspotControl/index-en.html"
     },
     "MegaProg": {
       "ru": "https://popovantondev.github.io/MegaProg/index-ru.html",
-      "de": "https://popovantondev.github.io/MegaProg/index-de.html",
+      "de": "https://popovantondev.github.io/MegaProg/index.html",
       "en": "https://popovantondev.github.io/MegaProg/index-en.html"
     },
     "LectureCompanion": {
       "ru": "https://popovantondev.github.io/LectureCompanion/index-ru.html",
-      "de": "https://popovantondev.github.io/LectureCompanion/index-de.html",
+      "de": "https://popovantondev.github.io/LectureCompanion/index.html",
       "en": "https://popovantondev.github.io/LectureCompanion/index-en.html"
     },
     "StudyArchivePrep": {
       "ru": "https://popovantondev.github.io/StudyArchivePrep/index-ru.html",
-      "de": "https://popovantondev.github.io/StudyArchivePrep/index-de.html",
+      "de": "https://popovantondev.github.io/StudyArchivePrep/index.html",
       "en": "https://popovantondev.github.io/StudyArchivePrep/index-en.html"
     },
     "openmedia-downloader": {
       "ru": "https://popovantondev.github.io/openmedia-downloader/index-ru.html",
-      "de": "https://popovantondev.github.io/openmedia-downloader/index-de.html",
+      "de": "https://popovantondev.github.io/openmedia-downloader/index.html",
       "en": "https://popovantondev.github.io/openmedia-downloader/index-en.html"
     },
     "GitHubSync": {
       "ru": "https://popovantondev.github.io/GitHubSync/index-ru.html",
-      "de": "https://popovantondev.github.io/GitHubSync/index-de.html",
+      "de": "https://popovantondev.github.io/GitHubSync/index.html",
       "en": "https://popovantondev.github.io/GitHubSync/index-en.html"
     },
     "VirtualPianoArranger": {
       "ru": "https://popovantondev.github.io/VirtualPianoArranger/index-ru.html",
-      "de": "https://popovantondev.github.io/VirtualPianoArranger/index-de.html",
+      "de": "https://popovantondev.github.io/VirtualPianoArranger/index.html",
       "en": "https://popovantondev.github.io/VirtualPianoArranger/index-en.html"
     },
     "SoundLeaf": {
       "ru": "https://popovantondev.github.io/SoundLeaf/index-ru.html",
-      "de": "https://popovantondev.github.io/SoundLeaf/index-de.html",
+      "de": "https://popovantondev.github.io/SoundLeaf/index.html",
       "en": "https://popovantondev.github.io/SoundLeaf/index-en.html"
     },
     "QuickAnswer": {
       "ru": "https://popovantondev.github.io/QuickAnswer/index-ru.html",
-      "de": "https://popovantondev.github.io/QuickAnswer/index-de.html",
+      "de": "https://popovantondev.github.io/QuickAnswer/index.html",
       "en": "https://popovantondev.github.io/QuickAnswer/index-en.html"
     },
     "YouTubeDownloader": {
       "ru": "https://popovantondev.github.io/YouTubeDownloader/index-ru.html",
-      "de": "https://popovantondev.github.io/YouTubeDownloader/index-de.html",
+      "de": "https://popovantondev.github.io/YouTubeDownloader/index.html",
       "en": "https://popovantondev.github.io/YouTubeDownloader/index-en.html"
     },
     "PeakMP3": {
       "ru": "https://popovantondev.github.io/PeakMP3/index-ru.html",
-      "de": "https://popovantondev.github.io/PeakMP3/index-de.html",
+      "de": "https://popovantondev.github.io/PeakMP3/index.html",
       "en": "https://popovantondev.github.io/PeakMP3/index-en.html"
     },
     "Kartoteka": {
       "ru": "https://popovantondev.github.io/Kartoteka/index-ru.html",
-      "de": "https://popovantondev.github.io/Kartoteka/index-de.html",
-      "en": "https://popovantondev.github.io/Kartoteka/index.html"
+      "de": "https://popovantondev.github.io/Kartoteka/index.html",
+      "en": "https://popovantondev.github.io/Kartoteka/index-en.html"
     },
     "LektienPlayer": {
-      "en": "https://popovantondev.github.io/LektienPlayer/index-en.html",
       "ru": "https://popovantondev.github.io/LektienPlayer/index-ru.html",
-      "de": "https://popovantondev.github.io/LektienPlayer/index-de.html"
+      "de": "https://popovantondev.github.io/LektienPlayer/index.html",
+      "en": "https://popovantondev.github.io/LektienPlayer/index-en.html"
     }
   }
 }

@@ -5,3 +5,11 @@ node_modules/
 __pycache__/
 .DS_Store
 .autopilot/serve.*
+
+# Service files of the build tooling stay out of the repository.
+/.autopilot/
+AGENTS.md
+CLAUDE.md
+/CONTEXT.md
+/docs/adr/
+/docs/architecture.md

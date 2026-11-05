@@ -29,3 +29,7 @@ Applications distributed in another project’s installer declare `shared_distri
 ### Profile studio artwork
 
 Generate catalog pages first with `python tools/check_public_docs.py --write`, then run `node tools/render_profile_studio.cjs` with Playwright available. This renders the three `assets/profile-studio-*.png` files from the same photograph, localized screenshots and screen transforms as the website. Each complete README banner links to its localized catalog; it contains one matching catalog action, not several independently clickable image buttons. The older `build_profile_art.py` / `render_profile_devices.cjs` helpers maintain legacy artwork and do not build the current profile hero.
+
+### File names, kit and categories
+
+German is the root language: the catalog is `index.html` (`index-en.html`, `index-ru.html`) and the profile README is `README.md` (`README.en.md`, `README.ru.md`). `index-de.html` only forwards to `index.html`; `check_public_docs.py` generates it. Category tabs come from `catalog_categories`, the stack chip from `catalog_stacks`, the program site from `catalog_websites` in `public-release.json`. Header, search, theme and footer come from the shared kit in `assets/kit/` (`python tools/sync_kit.py --check .`). The personal about pages are not linked from any generated page; the validator rejects such links.

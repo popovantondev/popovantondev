@@ -13,7 +13,8 @@ START='<!-- public-release:start -->'
 END='<!-- public-release:end -->'
 LANGS=('de','en','ru')
 def status(d,l):
-    return LABELS[l][{'release':'release','preview':'preview','source':'source_status'}[d['status']]]+' '+d['version']
+    label=LABELS[l][{'release':'release','preview':'preview','source':'source_status'}[d['status']]]
+    return label+' '+d['version'] if re.match(r'^\d',d['version']) else label
 def actions(d,l,websites=None):
     t=LABELS[l]
     result=[(t['download'] if d['release_url'] else t['source'],d['release_url'] or d['source_url'])]
@@ -67,32 +68,67 @@ def generated_app(d):
         if CSS not in new: new=new.replace('</style>',CSS+'\n</style>',1)
         generated[name]=new
     return generated
-CATALOG_CSS='''*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#14253d;font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:#0753ad;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #1677ff;outline-offset:3px}.shell{max-width:1100px;margin:auto;padding:24px 20px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}nav{display:flex;gap:8px}nav a{padding:5px 10px;border:1px solid #dbe4f0;border-radius:20px;text-decoration:none;background:white}nav a[aria-current]{background:#e5efff;font-weight:700}.hero{margin:22px 0}.hero-banner{width:100%;height:auto;display:block;border-radius:24px}.hero p{margin:16px 0 0;color:#526176}h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 14px}h2{font-size:22px;line-height:1.3;margin:0 0 10px}.hero p{max-width:760px}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project{background:white;border:1px solid #dbe4f0;border-radius:18px;padding:24px;display:flex;flex-direction:column}.project-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px}.project-title{min-width:0;flex:1}.project-icon{width:64px;height:64px;flex:0 0 64px;object-fit:contain;display:block}.project p{margin:8px 0}.project .description{flex:1}.platform{font-size:14px;color:#526176}.status{display:inline-block;align-self:flex-start;border-radius:8px;padding:3px 8px;background:#e7f3eb;color:#25633b;font-size:13px;font-weight:650}.preview{background:#fff1d7;color:#7d5315}.source{background:#eef0f4;color:#4d5663}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.actions a{padding:8px 12px;background:#edf4ff;border-radius:9px;text-decoration:none;font-weight:650;font-size:14px}.actions a:first-child{background:#0753ad;color:white}.requirements{font-size:14px;color:#526176}footer{margin:25px 0 0;color:#526176;font-size:14px}@media(max-width:650px){.projects{grid-template-columns:1fr}.hero-banner{border-radius:18px}.project{padding:20px}}'''
+SITE='https://popovantondev.github.io/popovantondev/'
+def catalog_file(l):
+    """German is the root language: index.html / README.md; the others carry a language suffix."""
+    return 'index.html' if l=='de' else 'index-'+l+'.html'
+def readme_file(l):
+    return 'README.md' if l=='de' else 'README.'+l+'.md'
+PROFILE_LABELS={
+ 'ru':dict(website='Сайт',demo='Попробовать в браузере',shared='{a} входит в установочный пакет {b}, поэтому ссылка «Скачать» у {a} ведёт на релиз {b}.'),
+ 'de':dict(website='Webseite',demo='Im Browser testen',shared='{a} wird im Installationspaket von {b} ausgeliefert; der Download-Link von {a} führt deshalb zum Release von {b}.'),
+ 'en':dict(website='Website',demo='Try in browser',shared='{a} ships inside the {b} installer, so the download link of {a} opens the {b} release.')}
+def program_site(p,l,websites=None):
+    """The program's own website; catalog_websites (curated in this repository) wins over mirrored navigation."""
+    return (websites or {}).get(p['repo'],{}).get(l) or p.get('navigation',{}).get(l,{}).get('website') or p['source_url']
+def profile_actions(p,l,websites=None):
+    """Buttons of one program in the catalog and the README: (kind,label,url). Source code is always its own link."""
+    t=LABELS[l];x=PROFILE_LABELS[l];site=program_site(p,l,websites)
+    out=[]
+    if p['release_url']:out.append(('download',t['download'],p['release_url']))
+    out.append(('website',x['website'],site))
+    out.append(('source',t['source'],p['source_url']))
+    out.append(('guide',t['guide'],p['help_url'].format(lang=l)))
+    if p['repo']=='PeakMP3':out.append(('demo',x['demo'],site+'#demo'))
+    out.append(('bug',t['bug'],p['feedback_url']))
+    return out
+def shared_note(d,l):
+    """One sentence per program that ships inside another program's installer (PeakMP3)."""
+    names={p['repo']:p['name'] for p in d['projects']}
+    return [PROFILE_LABELS[l]['shared'].format(a=p['name'],b=names.get(p['shared_distribution']['repo'],p['shared_distribution']['repo'])) for p in d['projects'] if p.get('shared_distribution')]
+FEATURED=['Kartoteka','Kaktus-Backup-Sync','GitHubSync','HotspotControl','TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge']
+def built_with(d,l):
+    """Technologies from catalog_stacks, most used first; JavaScript keeps its link to Quick Answer."""
+    counts={}
+    for stack in d['catalog_stacks'].values():
+        for token in stack.split(' · '):counts[token]=counts.get(token,0)+1
+    quick=next(p for p in d['projects'] if p['repo']=='QuickAnswer')
+    site=program_site(quick,l,d.get('catalog_websites'))
+    return ' · '.join(f'[JavaScript — {quick["name"]}]({site})' if token=='JavaScript' else token for token in sorted(counts,key=lambda k:-counts[k]))
 def profile_readme(d,l):
-    t=LABELS[l];e=escape
+    t=LABELS[l];e=escape;websites=d.get('catalog_websites')
     copy={
-        'en':{'intro':'I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.','catalog':'Browse applications & guides','featured':'Featured applications','all':'All applications','screens':'Interface previews','help':'Downloads & support','help_text':'Open a program’s guide for requirements and first steps. Download the application from Releases, not the source-code ZIP. Preview releases are still being developed; source-only projects have no ready-to-install package.','support':'For help or a bug report, use “Report a problem” in the application catalog. Include the application version, operating system and steps to reproduce the problem.','tech':'Built with','tags':'STUDY · MEDIA · BACKUP · AUTOMATION'},
-        'ru':{'intro':'Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.','catalog':'Каталог программ и руководств','featured':'Основные программы','all':'Все программы','screens':'Посмотреть интерфейсы','help':'Загрузка и помощь','help_text':'В руководстве каждой программы указаны требования и первые шаги. Скачивайте приложение из Releases, а не ZIP с исходниками. Preview — предварительные версии; для проектов со статусом «Только исходники» готового установочного пакета нет.','support':'Для вопроса или сообщения об ошибке откройте «Сообщить об ошибке» в каталоге. Укажите версию программы, ОС и действия, после которых возникла проблема.','tech':'Технологии','tags':'УЧЁБА · МЕДИА · РЕЗЕРВНЫЕ КОПИИ · АВТОМАТИЗАЦИЯ'},
-        'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Lade die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutze „Problem melden“ im Anwendungskatalog. Gib die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien','tags':'LERNEN · MEDIEN · BACKUP · AUTOMATISIERUNG'}
+        'en':{'intro':'I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.','catalog':'Browse applications & guides','featured':'Featured applications','all':'All applications','screens':'Interface previews','help':'Downloads & support','help_text':'Open a program’s guide for requirements and first steps. Download the application from Releases, not the source-code ZIP. Preview releases are still being developed; source-only projects have no ready-to-install package.','support':'For help or a bug report, use “Report a problem” in the application row. Include the application version, operating system and steps to reproduce the problem.','tech':'Built with'},
+        'ru':{'intro':'Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.','catalog':'Каталог программ и руководств','featured':'Основные программы','all':'Все программы','screens':'Посмотреть интерфейсы','help':'Загрузка и помощь','help_text':'В руководстве каждой программы указаны требования и первые шаги. Скачивайте приложение из Releases, а не ZIP с исходниками. Preview — предварительные версии; для проектов со статусом «Только исходники» готового установочного пакета нет.','support':'Для вопроса или сообщения об ошибке откройте «Сообщить об ошибке» в строке программы. Укажите версию программы, ОС и действия, после которых возникла проблема.','tech':'Технологии'},
+        'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Laden Sie die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutzen Sie „Fehler melden“ in der Zeile der Anwendung. Geben Sie die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien'}
     }[l]
-    catalog_url='https://popovantondev.github.io/popovantondev/'+('index.html' if l=='en' else 'index-'+l+'.html')
-    out=['<p align="right"><a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.md">English</a></p>','',f'[![popovantondev](assets/profile-studio-{l}.png)]({catalog_url})','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    catalog_url=SITE+catalog_file(l)
+    links=lambda p:' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for kind,label,url in profile_actions(p,l,websites) if kind!='website')
+    out=['<p align="right">'+' · '.join(f'<a href="{readme_file(x)}">{n}</a>' for x,n in (('ru','Русский'),('de','Deutsch'),('en','English')))+'</p>','',f'[![popovantondev](assets/profile-studio-{l}.png)]({catalog_url})','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
     if any(p['repo']=='PeakMP3' for p in d['projects']):
-        demo='https://popovantondev.github.io/PeakMP3/index-'+l+'.html#demo'
+        demo=program_site(next(p for p in d['projects'] if p['repo']=='PeakMP3'),l,websites)+'#demo'
         label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
         out=out[:-2]+[f'[![{label}](assets/peakmp3-demo-{l}.svg)]({demo})','',f'[![{label}](assets/peakmp3-demo-link-{l}.svg)]({demo})','',out[-2],out[-1]]
-    featured=['TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge','HotspotControl','Kaktus-Backup-Sync']
-    for i,repo in enumerate(featured):
+    for i,repo in enumerate(FEATURED):
         p=next(p for p in d['projects'] if p['repo']==repo)
         if i%2==0:out.append('<tr>')
         icon=d['catalog_icons'][repo]
-        website=p.get('navigation',{}).get(l,{}).get('website') or d.get('catalog_websites',{}).get(repo,{}).get(l) or p['source_url']
-        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(website)}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>'+ ' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for label,url in actions(p,l,d.get('catalog_websites')))+'</p></td>']
+        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(program_site(p,l,websites))}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>{links(p)}</p></td>']
         if i%2==1:out.append('</tr>')
     out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
-        target=p.get("navigation",{}).get(l,{}).get("website") or p["source_url"]
-        out.append(f'| [{p["name"]}]({target}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for label,url in actions(p,l,d.get('catalog_websites')))+' |')
+        out.append(f'| [{p["name"]}]({program_site(p,l,websites)}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for kind,label,url in profile_actions(p,l,websites) if kind!='website')+' |')
+    out += ['',*[f'*{note}*' for note in shared_note(d,l)]]
     out += ['',f'## {copy["screens"]}','']
     demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
     illustration_caption={'ru':'Опубликованная демонстрационная иллюстрация интерфейса.','de':'Veröffentlichte Demonstrationsillustration der Oberfläche.','en':'Published demonstration illustration of the interface.'}[l]
@@ -106,12 +142,20 @@ def profile_readme(d,l):
     for repo,cap,img in previews:
         p=next(p for p in d['projects'] if p['repo']==repo)
         out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','','Rust / egui / SQLite · Swift · Python · [JavaScript — Quick Answer](https://github.com/popovantondev/QuickAnswer) · C# / .NET · SwiftUI · PySide6 / Qt · WPF','',t['notice'],'']
+    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','',built_with(d,l),'',t['notice'],'']
     return '\n'.join(out)
+REDIRECT_NAMES={'ru':'RU','de':'DE','en':'EN'}
+def legacy_catalog():
+    """index-de.html used to be the German catalog; it now forwards to the German root page."""
+    langs=' · '.join(f'<a href="{catalog_file(x)}" lang="{x}" hreflang="{x}">{REDIRECT_NAMES[x]}</a>' for x in ('ru','de','en'))
+    return f'''<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>location.replace('index.html'+location.hash)</script><meta http-equiv="refresh" content="0; url=index.html"><link rel="canonical" href="{SITE}index.html"><meta name="robots" content="noindex"><title>popovantondev — Weiterleitung</title></head>
+<body><p>Diese Seite ist umgezogen: <a href="index.html">zum Anwendungskatalog</a>.</p><p>{langs}</p></body></html>
+'''
 def catalog(d,l):
     sys.path.insert(0,str(ROOT/'tools'))
     from catalog_page import render
-    return render(d,l,LABELS,status,lambda p,lang:actions(p,lang,d.get('catalog_websites')))
+    return render(d,l,LABELS,status,lambda p,lang:profile_actions(p,lang,d.get('catalog_websites')),shared_note(d,l))
 
 def generated(d):
     if 'projects' not in d:
@@ -122,7 +166,7 @@ def generated(d):
             changes={'ru':'Изменения версии:','de':'Änderungen dieser Version:','en':'Version changes:'}[l]
             pages['docs/release-notes.'+l+'.md']='\n'.join([f'# {d["name"]} · {status(d,l)}','',f'## {headings[0]}','',changes+' '+d['source_url']+'/commits/main/','',f'## {headings[1]}','',d['platform'],'',f'## {headings[2]}','',d['start'][l],'',f'## {headings[3]}','',d['requirements'][l],'',f'## {headings[4]}','',(' · '.join(f'[{n}]({next(a["url"] for a in d["assets"] if a["name"]==n)})' for n in d['checksums']) or t['source_status']),''])
         return pages
-    return {**{('README.md' if l=='en' else 'README.'+l+'.md'):profile_readme(d,l) for l in LANGS},**{('index.html' if l=='en' else 'index-'+l+'.html'):catalog(d,l) for l in LANGS}}
+    return {**{readme_file(l):profile_readme(d,l) for l in LANGS},**{catalog_file(l):catalog(d,l) for l in LANGS},'index-de.html':legacy_catalog()}
 class Links(HTMLParser):
     def __init__(self):super().__init__();self.links=[];self.images=[]
     def handle_starttag(self,tag,attrs):
@@ -185,6 +229,8 @@ def validate(d,files,online=False,published=False):
         if text!=expected:errors.append(name+': regenerate release summary')
         links=Links();links.feed(text)
         for href in links.links+re.findall(r'(?<!!)\[[^\]]+\]\(([^\s)]+)',text):
+            # Nothing public may point to the personal about pages (owner's rule).
+            if 'projects' in d and re.search(r'(?:^|/)about(?:-[a-z]{2})?\.html',href):errors.append(name+': links to an about page '+href)
             if href.startswith(('#','mailto:')) or '://' in href:continue
             path=(ROOT/name).parent/unescape(href.split('#',1)[0].split('?',1)[0])
             if not path.exists():errors.append(name+': missing local link '+href)
@@ -198,9 +244,8 @@ def validate(d,files,online=False,published=False):
         if name.endswith('.html'):
             l=re.search(r'<html[^>]*lang="([^"]+)"',text).group(1)
             for other in LANGS:
-                target='Guide-'+other+'.html' if 'projects' not in d else ('index.html' if other=='en' else 'index-'+other+'.html')
-                if target not in links.links:errors.append(name+': missing language link '+target)
-        # Restrict this guard to public descriptions, not functional application prompts.
+                target='Guide-'+other+'.html' if 'projects' not in d else catalog_file(other)
+                if target not in links.links:errors.append(name+': missing language link '+target)        # Restrict this guard to public descriptions, not functional application prompts.
         visible=unescape(re.sub(r'<[^>]*>',' ',text))
         if re.search(r'(?:made|built|generated|created)\s+(?:with|by|using)\s+(?:ChatGPT|Codex|OpenAI)|(?:сделан\w*|создан\w*|сгенерирован\w*)\s+(?:через|с помощью)\s+(?:ChatGPT|Codex)|(?:erstellt|generiert)\s+(?:mit|durch)\s+(?:ChatGPT|Codex)|imagegen\s+prompt|PORTFOLIO(?:\.|_).*(?:VIDEO|SCENARIO)',visible,re.I):errors.append(name+': internal production content')
     for path in ROOT.rglob('*'):

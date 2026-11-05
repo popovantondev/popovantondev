@@ -20,7 +20,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check documentation validator
-        run: python tools/test_public_docs.py
+        run: |
+          python tools/test_public_docs.py
+          python tools/test_catalog.py
       - name: Verify release metadata and user pages
         env:
           GITHUB_TOKEN: ${{ github.token }}
