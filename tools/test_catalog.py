@@ -37,6 +37,14 @@ class CatalogTests(unittest.TestCase):
         cls.data = json.loads((ROOT / 'public-release.json').read_text(encoding='utf-8'))
         cls.files = docs.generated(cls.data)
 
+    def test_browser_demos_have_a_try_button_in_their_language(self):
+        # PeakMP3 opens its demo, the piano opens its game page — both as the orange button beside the card title.
+        pages = {'de': 'index.html', 'ru': 'index-ru.html', 'en': 'index-en.html'}
+        for lang, page in pages.items():
+            demos = [a['href'] for t, a in tags(self.files[page]) if t == 'a' and a.get('class') == 'try-demo']
+            self.assertIn(f'https://popovantondev.github.io/VirtualPianoArranger/play-{lang}.html', demos, page)
+            self.assertTrue(any('/PeakMP3/' in h and h.endswith('#demo') for h in demos), page)
+
     def test_german_is_the_root_language(self):
         self.assertEqual(
             set(self.files),

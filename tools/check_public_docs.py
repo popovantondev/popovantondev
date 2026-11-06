@@ -75,9 +75,9 @@ def catalog_file(l):
 def readme_file(l):
     return 'README.md' if l=='de' else 'README.'+l+'.md'
 PROFILE_LABELS={
- 'ru':dict(website='Сайт',demo='Попробовать в браузере',shared='{a} входит в установочный пакет {b}, поэтому ссылка «Скачать» у {a} ведёт на релиз {b}.'),
- 'de':dict(website='Webseite',demo='Im Browser testen',shared='{a} wird im Installationspaket von {b} ausgeliefert; der Download-Link von {a} führt deshalb zum Release von {b}.'),
- 'en':dict(website='Website',demo='Try in browser',shared='{a} ships inside the {b} installer, so the download link of {a} opens the {b} release.')}
+ 'ru':dict(website='Сайт',demo='Попробовать в браузере',play='Играть в браузере',shared='{a} входит в установочный пакет {b}, поэтому ссылка «Скачать» у {a} ведёт на релиз {b}.'),
+ 'de':dict(website='Webseite',demo='Im Browser testen',play='Im Browser spielen',shared='{a} wird im Installationspaket von {b} ausgeliefert; der Download-Link von {a} führt deshalb zum Release von {b}.'),
+ 'en':dict(website='Website',demo='Try in browser',play='Play in the browser',shared='{a} ships inside the {b} installer, so the download link of {a} opens the {b} release.')}
 def program_site(p,l,websites=None):
     """The program's own website; catalog_websites (curated in this repository) wins over mirrored navigation."""
     return (websites or {}).get(p['repo'],{}).get(l) or p.get('navigation',{}).get(l,{}).get('website') or p['source_url']
@@ -90,6 +90,7 @@ def profile_actions(p,l,websites=None):
     out.append(('source',t['source'],p['source_url']))
     out.append(('guide',t['guide'],p['help_url'].format(lang=l)))
     if p['repo']=='PeakMP3':out.append(('demo',x['demo'],site+'#demo'))
+    if p['repo']=='VirtualPianoArranger':out.append(('demo',x['play'],site.rsplit('/',1)[0]+f'/play-{l}.html'))
     out.append(('bug',t['bug'],p['feedback_url']))
     return out
 def shared_note(d,l):
