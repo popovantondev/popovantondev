@@ -5,6 +5,14 @@
   var doc = document;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 0. The hero loops (drifting rays, glint) pause while the hero is off screen, so scrolling the long page stays light.
+  var hero = doc.querySelector('.ab-hero');
+  if (hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      doc.documentElement.classList.toggle('ab-hero-off', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+  }
+
   // 1. Jump links: mark the section that sits in the middle band of the viewport.
   var links = Array.prototype.slice.call(doc.querySelectorAll('.ab-jump a[href^="#"]'));
   var byId = {};

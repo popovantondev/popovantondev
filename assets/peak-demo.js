@@ -19,7 +19,7 @@ const start=()=>(async()=>{
  const range=document.querySelector('#density-range'),volumeRange=document.querySelector('#demo-volume'),status=document.querySelector('#demo-state'),playButton=document.querySelector('#demo-play');
  const lang=section.dataset.lang;
  const names=['turntable_plate','arm-base','arm-moving','spindle',...['base-'+lang,'knob','transport','comparison','volume','speaker','presets-'+lang,'caption-'+lang,'file-'+lang,'queue-'+lang,'export-'+lang,'label-techno','label-electronic','label-pop'].map(x=>'native/'+x)];
- const load=name=>new Promise((resolve,reject)=>{let tries=0;const im=new Image();im.onload=()=>resolve([name,im]);im.onerror=()=>{if(tries++<1){im.src=BASE+'img/'+name+'.webp?r=1';}else reject(Error('Image unavailable: '+name));};im.src=BASE+'img/'+name+'.webp';});
+ const load=name=>new Promise((resolve,reject)=>{let tries=0;const im=new Image();im.onload=()=>{const done=()=>resolve([name,im]);if(im.decode){im.decode().then(done,done);}else done();};im.onerror=()=>{if(tries++<1){im.src=BASE+'img/'+name+'.webp?r=1';}else reject(Error('Image unavailable: '+name));};im.src=BASE+'img/'+name+'.webp';});
  const [pairs,tracks]=await Promise.all([Promise.all(names.map(load)),fetch(BASE+'music/tracks.json').then(r=>{if(!r.ok)throw Error('Tracks unavailable');return r.json();})]);
  const art=Object.fromEntries(pairs),timelineCache=new Map();let trackIndex=0,density=7,mode='b',volume=60,selection=0,meter=null,drag=null,frame=0,last=0,angle=0,speed=0,arm=-16,lift=1,pendingSeek=0,visible=true,loading=false;
  let reference=0,previousVolume=60,transportState=0;
@@ -119,6 +119,10 @@ const start=()=>(async()=>{
 })().catch(e=>{console.error('Music demo unavailable',e);const el=document.querySelector('#demo-state');if(el)el.textContent=JSON.parse(document.querySelector('#demo-strings').textContent).error;});
 /* Lazy start: nothing loads from BASE until #demo is close to the viewport. */
 if(!('IntersectionObserver' in window)){start();return;}
-const lazy=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){lazy.disconnect();start();}},{rootMargin:'200px'});
+/* The images are fetched and decoded while the browser is idle, before the visitor scrolls here (decoding during the scroll caused the long frames); the start is guarded so it runs once. */
+let started=false;const go=()=>{if(started)return;started=true;lazy.disconnect();start();};
+const lazy=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))go();},{rootMargin:'200px'});
 lazy.observe(section);
+const idle=()=>(window.requestIdleCallback||(f=>setTimeout(f,1500)))(go,{timeout:5000});
+if(document.readyState==='complete')idle();else window.addEventListener('load',idle,{once:true});
 })();
