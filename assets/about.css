@@ -118,8 +118,9 @@ a { color: inherit; text-underline-offset: 4px; }
   object-fit: cover;
   object-position: 50% 20%;
   justify-self: end;
-  border-radius: 24px;
-  box-shadow: 0 0 0 1px rgba(165, 210, 255, 0.4), 0 26px 50px -22px rgba(0, 0, 0, 0.75), 0 0 70px -14px rgba(42, 123, 255, 0.7);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06), 0 22px 44px -20px rgba(0, 0, 0, 0.7), 0 0 56px -18px rgba(92, 200, 255, 0.55);
 }
 .ab-hero-copy { min-width: 0; max-width: 680px; }
 .ab-name { margin: 0 0 var(--space-0); font-size: 22px; line-height: 1.25; font-weight: 750; letter-spacing: -0.02em; }
