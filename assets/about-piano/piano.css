@@ -1,0 +1,154 @@
+/* Mini piano: keys and key bed in the look of Virtual Piano Arranger (graphite and gold).
+   Key gradients are taken from web/play.css of that program; classes use the pk- prefix.
+   The piano keeps its own look in both colour themes, like the program does. */
+.pk-studio {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 18px 16px;
+  border: 1px solid #3a3226;
+  border-radius: 22px;
+  color: #efe6d4;
+  background:
+    radial-gradient(ellipse 70% 90% at 50% -10%, rgba(223, 184, 124, 0.22), transparent 70%),
+    linear-gradient(180deg, #181a1f, #0d0e11);
+  box-shadow: 0 26px 60px -32px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 223, 158, 0.14);
+}
+.pk-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0 0 14px; }
+.pk-titles { display: grid; gap: 2px; min-width: 0; }
+.pk-eyebrow { color: #dfb87c; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; line-height: 1.2; text-transform: uppercase; }
+.pk-name { font: 600 21px/1.2 Georgia, "Times New Roman", serif; color: #f4ead6; }
+.pk-tools { display: flex; align-items: center; gap: 8px; }
+.pk-tag {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid rgba(223, 184, 124, 0.4);
+  border-radius: 999px;
+  background: rgba(223, 184, 124, 0.1);
+  color: #e5c38d;
+  font-size: 12px;
+  font-weight: 650;
+}
+.pk-tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #e5c38d; box-shadow: 0 0 8px 1px rgba(229, 195, 141, 0.7); }
+.is-armed .pk-tag { display: inline-flex; }
+.pk-mute {
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid rgba(223, 184, 124, 0.4);
+  border-radius: 999px;
+  background: rgba(223, 184, 124, 0.08);
+  color: #f1e6d0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.pk-mute:hover { background: rgba(223, 184, 124, 0.2); }
+.pk-mute:focus-visible, .pk-link:focus-visible { outline: 3px solid #ffe0a8; outline-offset: 3px; }
+
+/* key bed with the gold felt rail */
+.pk-bed {
+  position: relative;
+  overflow: hidden;
+  padding: 0 4px 4px;
+  border: 1px solid #625340;
+  border-radius: 6px;
+  background: linear-gradient(#090a0b, #28211a);
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 223, 158, 0.31);
+}
+.pk-felt {
+  height: 7px;
+  margin: 1px 0 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(90deg, rgba(255, 226, 162, 0.05) 0 1px, transparent 1px 3px), linear-gradient(#e6c886, #9f773d 60%, #70502d);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px #ffe9b7;
+}
+.pk-bed .pk-static { display: block; width: 100%; height: auto; }
+.pk-board { position: relative; width: 100%; height: 150px; background: #0b0c0d; touch-action: none; user-select: none; -webkit-user-select: none; }
+.pk {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  font: inherit;
+}
+.pk-white {
+  height: 100%;
+  z-index: 1;
+  color: #766649;
+  background: linear-gradient(90deg, #b8b4a6 0, #e8e4d8 5%, #fffdf6 11%, #f7f5ec 85%, #e2ded0 96%, #b2ad9e), #f8f5eb;
+  border-right: 1px solid #47443c;
+  border-radius: 0 0 6px 6px;
+  box-shadow: inset 0 10px 13px -8px rgba(0, 0, 0, 0.6), inset 0 -5px 6px -5px #786e52, 0 2px 2px rgba(0, 0, 0, 0.33);
+}
+.pk-white::before {
+  content: ""; position: absolute; inset: 4px 2px 12px; pointer-events: none;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.47) 0, transparent 35%, rgba(255, 255, 255, 0.85) 53%, transparent 76%);
+}
+.pk-white::after {
+  content: ""; position: absolute; left: 1px; right: 1px; bottom: 0; height: 7px; pointer-events: none;
+  border-radius: 0 0 5px 5px; background: linear-gradient(rgba(255, 255, 250, 0.6), #e7e1d1 60%, rgba(195, 187, 165, 0.47));
+  box-shadow: inset 0 -1px rgba(177, 169, 145, 0.53);
+}
+.pk-black {
+  height: 63%;
+  z-index: 2;
+  color: #ddc99e;
+  background: linear-gradient(90deg, #08090a 0, #2d2e30 11%, #17191b 17%, #111316 83%, #060708 91%, #161719);
+  border: 1px solid #030405;
+  border-bottom: 0;
+  border-radius: 1px 1px 5px 5px;
+  box-shadow: 1px 5px 3px rgba(0, 0, 0, 0.6), 0 7px 10px rgba(0, 0, 0, 0.3), inset 0 -8px #08090b;
+}
+.pk-black::before {
+  content: ""; position: absolute; left: 13%; right: 13%; top: 2px; bottom: 11px; pointer-events: none; border-radius: 1px;
+  background: linear-gradient(165deg, rgba(153, 155, 158, 0.47) 0, #343638 7%, #15181b 24%, #35383d 48%, #101216 76%);
+  border-top: 1px solid rgba(150, 151, 152, 0.47);
+  box-shadow: inset 1px 0 rgba(115, 117, 121, 0.2), inset -1px 0 rgba(0, 0, 0, 0.7);
+}
+.pk-black::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 9px; pointer-events: none;
+  border-top: 1px solid #414144; border-radius: 0 0 4px 4px; background: linear-gradient(#1f2022, #060708);
+}
+/* a pressed key is gold all the way down, white and black alike */
+.pk-white.is-active { background: linear-gradient(90deg, #b98c4e, #f0c98a 12%, #f2d08e 50%, #deb571 88%, #b98c4e); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.16), 0 0 18px rgba(223, 184, 124, 0.45); }
+.pk-white.is-active::before { background: linear-gradient(170deg, rgba(255, 243, 205, 0.38) 0, transparent 38%, rgba(255, 236, 176, 0.26) 56%, transparent 80%); }
+.pk-white.is-active::after { background: linear-gradient(rgba(255, 226, 160, 0.5), #d9a95b 55%, rgba(150, 104, 40, 0.75)); box-shadow: inset 0 -1px rgba(120, 78, 22, 0.55); }
+.pk-black.is-active { color: #ffe8be; background: linear-gradient(90deg, #513419, #bd8a46, #52381e); }
+.pk-black.is-active::before { background: linear-gradient(165deg, #ffd798, #a5773a 20%, #c99d5c 50%, #6b4723 90%); border-top-color: rgba(255, 228, 170, 0.6); }
+.pk-black.is-active::after { border-top-color: #a57a40; background: linear-gradient(#8c602e, #48321b); }
+.pk:focus-visible { outline: 3px solid #ff8a20; outline-offset: -3px; z-index: 3; }
+.pk-label, .pk-mark { position: absolute; left: 0; right: 0; z-index: 3; text-align: center; pointer-events: none; line-height: 1; }
+.pk-label { bottom: 14px; font-size: clamp(11px, 1.1vw, 13px); font-weight: 650; }
+.pk-black .pk-label { font-size: 10px; font-weight: 600; }
+.pk-mark { bottom: 32px; font-size: 10px; font-weight: 700; color: #8a6a2f; letter-spacing: -0.01em; }
+.pk-white.is-active .pk-mark { color: #5a3d10; }
+.pk-status { margin: 12px 0 0; min-height: 1.5em; color: #bfb39b; font-size: 13.5px; }
+
+/* copy next to the piano */
+.pk-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 16px; border: 1px solid #c69c61; border-radius: 999px; background: linear-gradient(#e5c38d, #c69c61); color: #17140e; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease; }
+@media (hover: hover) { .pk-link:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px rgba(198, 156, 97, 0.9); } }
+.pk-credit { margin: 10px 4px 0; font-size: 12.5px; color: var(--ppk-muted); }
+.pk-credit a { color: var(--ppk-accent); }
+.pk-hint { margin: 0 0 var(--space-2, 16px); }
+
+@media (max-width: 520px) {
+  .pk-studio { padding: 14px 10px 12px; border-radius: 18px; }
+  .pk-board { height: 132px; }
+  .pk-label { bottom: 10px; font-size: 10px; }
+  .pk-black .pk-label { font-size: 9px; }
+  .pk-mark { bottom: 26px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pk-link { transition: none; }
+  .pk-link:hover { transform: none; }
+}
+@media print { .pk-studio { display: none; } }

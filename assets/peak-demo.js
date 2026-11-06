@@ -1,13 +1,17 @@
 /* PeakMP3 demo for the "Über mich" pages.
-   Copy of https://popovantondev.github.io/PeakMP3/website/demo.js with minimal changes:
-   images, audio and timelines load from BASE (no copies in this repository), the language comes from
-   #demo[data-lang], the VU reference stays in memory (no browser storage), the export link is removed,
-   the language buttons open the about pages, CSS classes use the peak- prefix, and everything starts
-   only when #demo comes near the viewport.
+   Copy of PeakMP3/website/demo.js with minimal changes: images, VU timelines and button sounds load
+   from assets/about/peak/ (own files, converted to WebP; before, 19 images and all timelines were fetched
+   from the published PeakMP3 site on every visit and one failed request disabled the whole demo).
+   The music clips (24 s, about 1 MB each, 33 files) still come from the published PeakMP3 site, with two retries.
+   The language comes from #demo[data-lang], the VU reference stays in memory (no browser storage),
+   the export link is removed, the language buttons open the about pages, CSS classes use the peak- prefix,
+   and everything starts only when #demo comes near the viewport.
    The audio and VU timelines are rendered by the unmodified Windows engine.
    This page only plays the selected example and draws its physical controls. */
 (()=>{
-const BASE='https://popovantondev.github.io/PeakMP3/';
+const BASE='assets/about/peak/';
+const AUDIO='https://popovantondev.github.io/PeakMP3/music/';
+let retries=0;
 const section=document.querySelector('#demo');if(!section)return;
 const start=()=>(async()=>{
  const canvas=document.querySelector('#peak-demo');if(!canvas)return;
@@ -15,7 +19,7 @@ const start=()=>(async()=>{
  const range=document.querySelector('#density-range'),volumeRange=document.querySelector('#demo-volume'),status=document.querySelector('#demo-state'),playButton=document.querySelector('#demo-play');
  const lang=section.dataset.lang;
  const names=['turntable_plate','arm-base','arm-moving','spindle',...['base-'+lang,'knob','transport','comparison','volume','speaker','presets-'+lang,'caption-'+lang,'file-'+lang,'queue-'+lang,'export-'+lang,'label-techno','label-electronic','label-pop'].map(x=>'native/'+x)];
- const load=name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve([name,im]);im.onerror=reject;im.src=BASE+'assets/site/'+name+'.png';});
+ const load=name=>new Promise((resolve,reject)=>{let tries=0;const im=new Image();im.onload=()=>resolve([name,im]);im.onerror=()=>{if(tries++<1){im.src=BASE+'img/'+name+'.webp?r=1';}else reject(Error('Image unavailable: '+name));};im.src=BASE+'img/'+name+'.webp';});
  const [pairs,tracks]=await Promise.all([Promise.all(names.map(load)),fetch(BASE+'music/tracks.json').then(r=>{if(!r.ok)throw Error('Tracks unavailable');return r.json();})]);
  const art=Object.fromEntries(pairs),timelineCache=new Map();let trackIndex=0,density=7,mode='b',volume=60,selection=0,meter=null,drag=null,frame=0,last=0,angle=0,speed=0,arm=-16,lift=1,pendingSeek=0,visible=true,loading=false;
  let reference=0,previousVolume=60,transportState=0;
@@ -23,10 +27,10 @@ const start=()=>(async()=>{
  audio.volume=volume/100;audio.loop=false;
  const track=()=>tracks[trackIndex],strength=()=>mode==='a'?0:density;
  const position=()=>Math.min(24,Math.max(0,audio.currentTime||0));
- function clipUrl(){return BASE+'music/'+track().id+'/density-'+strength()+'.mp3';}
+ function clipUrl(){return AUDIO+track().id+'/density-'+strength()+'.mp3';}
  function setStatus(text){status.textContent=text;}
  async function selectClip(keepTime=true){
-  const id=++selection,playing=!audio.paused;pendingSeek=keepTime?position():0;audio.pause();audio.src=clipUrl();audio.load();loading=true;setStatus(s.loading);updateControls();
+  const id=++selection,playing=!audio.paused;pendingSeek=keepTime?position():0;audio.pause();retries=0;audio.src=clipUrl();audio.load();loading=true;setStatus(s.loading);updateControls();
   const key=track().id+'/'+strength();
   try{if(!timelineCache.has(key))timelineCache.set(key,fetch(BASE+'music/'+key.replace('/','/density-')+'.json').then(r=>{if(!r.ok)throw Error('Timeline unavailable');return r.json();}));
    const data=await timelineCache.get(key);if(id!==selection)return;meter=data;loading=false;setStatus(s.ready);if(playing)await audio.play();draw();schedule();
@@ -34,13 +38,13 @@ const start=()=>(async()=>{
  }
  audio.addEventListener('loadedmetadata',()=>{if(pendingSeek>0)audio.currentTime=Math.min(pendingSeek,audio.duration||24);pendingSeek=0;});
  audio.addEventListener('play',()=>{updateControls();setStatus(s.ready);schedule();});audio.addEventListener('pause',()=>{updateControls();schedule();});
- audio.addEventListener('error',()=>{if(audio.currentSrc)setStatus(s.error);});
+ audio.addEventListener('error',()=>{if(!audio.currentSrc)return;if(retries++<2){setTimeout(()=>{if(audio.error)audio.load();},700*retries);return;}setStatus(s.error);});
  audio.addEventListener('ended',()=>changeTrack((trackIndex+1)%tracks.length,true));
  async function toggle(){if(loading)return;try{if(audio.paused){transportState=1;await audio.play();}else {transportState=2;audio.pause();}}catch(e){setStatus(s.error);}schedule();}
  function stop(){transportState=0;audio.pause();audio.currentTime=0;pendingSeek=0;updateControls();schedule();}
  async function changeTrack(index,autoplay=false){const wasPlaying=!audio.paused||autoplay;audio.pause();trackIndex=index;pendingSeek=0;await selectClip(false);if(wasPlaying&&!loading)try{await audio.play();}catch(e){setStatus(s.error);}updateControls();schedule();}
  function updateControls(){range.value=density;volumeRange.value=volume;document.querySelector('#density-number').value=density;document.querySelectorAll('[data-compare]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.compare===mode)));document.querySelectorAll('[data-track]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.track===track().id)));playButton.textContent=(audio.paused?'▶ ':'Ⅱ ')+(audio.paused?s.play:s.pause);playButton.setAttribute('aria-pressed',String(!audio.paused));draw();}
- const sounds=[0,1,2].map(i=>{const a=new Audio(BASE+'assets/site/native/sound-'+i+'.wav');a.preload='auto';return a;});let lastSound=0;function sound(i){if(i===1&&performance.now()-lastSound<24)return;lastSound=performance.now();sounds[i].currentTime=0;sounds[i].play().catch(()=>{});}
+ const sounds=[0,1,2].map(i=>{const a=new Audio(BASE+'sound/sound-'+i+'.wav');a.preload='auto';return a;});let lastSound=0;function sound(i){if(i===1&&performance.now()-lastSound<24)return;lastSound=performance.now();sounds[i].currentTime=0;sounds[i].play().catch(()=>{});}
  let densityTimer;
  function setDensity(value,delay=false){const next=Math.max(0,Math.min(10,Math.round(value)));if(next!==density)sound(1);density=next;updateControls();clearTimeout(densityTimer);if(delay)densityTimer=setTimeout(()=>selectClip(),140);else selectClip();}
  function setVolume(value){volume=Math.max(0,Math.min(100,Math.round(value)));audio.volume=volume/100;updateControls();}
@@ -78,7 +82,7 @@ const start=()=>(async()=>{
  const dialog=document.createElement('dialog');dialog.className='peak-dialog';document.body.append(dialog);
  function showDialog(kind){dialog.replaceChildren();dialog.className='peak-dialog '+(kind==='tracks'?'peak-track-dialog':'peak-pixel-dialog');dialog.dataset.kind=kind;
   if(kind==='tracks'){const title=document.createElement('h2');title.textContent=copy.choose;dialog.append(title);tracks.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t.title;b.onclick=()=>{changeTrack(i);dialog.close();};dialog.append(b);});const close=document.createElement('button');close.textContent=copy.cancel;close.onclick=()=>dialog.close();dialog.append(close);dialog.showModal();return;}
-  const cal=kind==='cal',w=cal?400:440,h=cal?246:245;dialog.style.setProperty('--dialog-w',w+'px');dialog.style.setProperty('--dialog-h',h+'px');dialog.style.backgroundImage='url("'+BASE+'assets/site/native/'+(cal?'calibration-':'density-')+lang+'.png")';dialog.setAttribute('aria-label',cal?copy.cal:copy.density);
+  const cal=kind==='cal',w=cal?400:440,h=cal?246:245;dialog.style.setProperty('--dialog-w',w+'px');dialog.style.setProperty('--dialog-h',h+'px');dialog.style.backgroundImage='url("'+BASE+'img/native/'+(cal?'calibration-':'density-')+lang+'.webp")';dialog.setAttribute('aria-label',cal?copy.cal:copy.density);
   const input=document.createElement('input');input.type='number';input.step='1';input.min=cal?'-24':'0';input.max=cal?'3':'10';input.value=cal?reference:density;input.setAttribute('aria-label',cal?copy.cal:copy.density);dialog.append(input);
   function button(label,box,action){const b=document.createElement('button');b.setAttribute('aria-label',label);b.title=label;const[x,y,bw,bh]=box;Object.assign(b.style,{left:x/w*100+'%',top:y/h*100+'%',width:bw/w*100+'%',height:bh/h*100+'%'});b.onclick=action;dialog.append(b);}
   const apply=()=>{if(!input.reportValidity()||!Number.isInteger(Number(input.value)))return false;if(cal){reference=Number(input.value);draw();}else setDensity(Number(input.value));return true;};

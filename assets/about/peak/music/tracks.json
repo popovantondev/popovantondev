@@ -1,0 +1,41 @@
+[
+  {
+    "id": "techno",
+    "title": "EDM Detection Mode",
+    "genre": "Techno / EDM",
+    "author": "Kevin MacLeod",
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500026",
+    "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/EDM%20Detection%20Mode.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "original_sha256": "746f7b1d4dad9c949a67bc063e0ca79da34452c69cd98f4ab9c16a712e92e951",
+    "excerpt_start": 126,
+    "excerpt_duration": 24
+  },
+  {
+    "id": "electronic",
+    "title": "Electro (Sketch)",
+    "genre": "Electronic",
+    "author": "Kevin MacLeod",
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100390",
+    "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Electro%20Sketch.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "original_sha256": "f046fdbb8cbdb8f4389537f51d8a36e91e5b7f4ba699adf81479acfec3646a17",
+    "excerpt_start": 12,
+    "excerpt_duration": 24
+  },
+  {
+    "id": "pop",
+    "title": "Life of Riley",
+    "genre": "Pop",
+    "author": "Kevin MacLeod",
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400054",
+    "download_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Life%20of%20Riley.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "original_sha256": "1916f05cd1860949f9241e17966d334c39852b531329e4a05802720bb154c564",
+    "excerpt_start": 42,
+    "excerpt_duration": 24
+  }
+]

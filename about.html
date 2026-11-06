@@ -10,7 +10,8 @@
 <title>Anton Popov — About me</title>
 <script src="assets/kit/kit-theme.js"></script>
 <link rel="stylesheet" href="assets/kit/kit.css?v=2026.11.05-1">
-<link rel="stylesheet" href="assets/about.css?v=kit-2026.11.05-1">
+<link rel="stylesheet" href="assets/about.css?v=ab-2026.11.06-1">
+<link rel="stylesheet" href="assets/about-piano/piano.css?v=ab-2026.11.06-1">
 <script src="assets/kit/programs.js?v=2026.11.05-1" defer></script>
 <script src="assets/kit/kit.js?v=2026.11.05-1" defer></script>
 </head>
@@ -29,44 +30,48 @@
 </div>
 
 <main class="ppk-shell" id="main">
-<section class="about-hero" id="top">
-  <img class="portrait" src="assets/profile-photo.jpg" width="460" height="460" alt="Anton Popov">
-  <div class="about-hero-copy">
-    <p class="hero-name">Anton Popov</p>
-    <p class="eyebrow">Retraining as <span lang="de">Fachinformatiker für Anwendungsentwicklung</span> · FAW</p>
-    <h1>Mandatory internship in application development from 15 March 2027</h1>
-    <p class="lead">As part of my retraining at FAW (<span lang="de">Fortbildungsakademie der Wirtschaft</span>), I am looking for a mandatory internship (<span lang="de">Pflichtpraktikum</span>) in application development. It covers about 200 working days in three phases, the first from 15.03. to 25.06.2027.</p>
-    <div class="actions">
-      <a class="button-primary" href="mailto:ant0ngm2012@gmail.com">Send an email</a>
-      <a class="button-secondary" href="#projects">See projects</a>
-      <a class="button-secondary" href="https://github.com/popovantondev">GitHub <span aria-hidden="true">↗</span></a>
+<section class="ab-hero" id="top">
+  <div class="ab-scene" aria-hidden="true"><i class="ab-ray ab-ray-1"></i><i class="ab-ray ab-ray-2"></i><i class="ab-ray ab-ray-3"></i><i class="ab-glass"></i></div>
+  <div class="ab-hero-grid">
+    <img class="ab-portrait" src="assets/profile-photo.jpg" width="460" height="460" alt="Anton Popov">
+    <div class="ab-hero-copy">
+      <p class="ab-name">Anton Popov</p>
+      <p class="ab-role">Retraining as <span lang="de">Fachinformatiker für Anwendungsentwicklung</span> · FAW</p>
+      <h1>Mandatory internship in application development from 15 March 2027</h1>
+      <p class="ab-lead">As part of my retraining at FAW (<span lang="de">Fortbildungsakademie der Wirtschaft</span>), I am looking for a mandatory internship (<span lang="de">Pflichtpraktikum</span>) in application development. It covers about 200 working days in three phases, the first from 15.03. to 25.06.2027.</p>
+      <div class="ab-actions">
+        <a class="ab-btn ab-btn-primary" href="mailto:ant0ngm2012@gmail.com">Send an email</a>
+        <a class="ab-btn ab-btn-ghost" href="#projects">See projects</a>
+        <a class="ab-btn ab-btn-ghost" href="https://github.com/popovantondev">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="block" id="how">
+<ul class="ab-facts ppk-reveal" aria-label="At a glance"><li><b>15.03.2027</b><span>Start of the first internship phase, until 25.06.2027</span></li><li><b>≈ 200</b><span>working days in three phases</span></li><li><b>6</b><span>projects from my catalogue</span></li><li><b>B2</b><span>German Beruf (DTB), passed in 2026</span></li></ul>
+<nav class="ab-jump" aria-label="On this page"><a href="#how">Method</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#demo">PeakMP3</a><a href="#piano">Piano</a><a href="#path">Background</a><a href="#contact">Contact</a></nav>
+
+<section class="block ppk-reveal" id="how">
   <h2>How I work</h2>
   <ol class="flow">
-    <li class="flow-step"><strong>Idea</strong><span>A specific problem and the person who will use the program.</span></li>
-    <li class="flow-step"><strong>Requirements</strong><span>What the program has to do, which system it runs on, what the interface looks like.</span></li>
-    <li class="flow-step"><strong>AI writes the code</strong><span>Implementation of the requirements from the previous step.</span></li>
-    <li class="flow-step"><strong>Checks</strong><span>Tests and check scripts; whatever is not tested is stated in the documentation.</span></li>
-    <li class="flow-step"><strong>Release</strong><span>For releases: version number, SHA-256 checksum, guide in three languages.</span></li>
+    <li class="flow-step"><strong>Idea</strong><span>A specific problem and the person who will use the program.</span></li><li class="flow-step"><strong>Requirements</strong><span>What the program has to do, which system it runs on, what the interface looks like.</span></li><li class="flow-step"><strong>AI writes the code</strong><span>Implementation of the requirements from the previous step.</span></li><li class="flow-step"><strong>Checks</strong><span>Tests and check scripts; whatever is not tested is stated in the documentation.</span></li><li class="flow-step"><strong>Release</strong><span>For releases: version number, SHA-256 checksum, guide in three languages.</span></li>
   </ol>
   <p>The code of my projects is written by an AI (Codex, ChatGPT or Claude); the idea, requirements, interface and tests are mine. I am building my own programming skills in the retraining.</p>
 </section>
 
 <section class="block" id="projects">
-  <h2>Projects</h2>
-  <p>Six projects from my catalogue. Status and version match the published release.</p>
+  <h2 class="ppk-reveal">Projects</h2>
+  <p class="ppk-reveal">Six projects from my catalogue. Status and version match the published release.</p>
   <div class="cases">
-    <article class="case" id="PeakMP3">
-      <div class="case-head">
-        <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>PeakMP3</h3>
-      </div>
-      <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 and later · Preview 0.16.0</p>
-      <dl class="case-parts">
+    <article class="case ppk-reveal" id="PeakMP3">
+      <div class="case-shot shot-peak"><img class="shot-img" src="assets/about/peakmp3-en.webp" width="560" height="506" alt="PeakMP3 window" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>PeakMP3</h3>
+        </div>
+        <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 and later · Preview 0.16.0</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>An acquaintance who runs a cultural centre regularly sent me music files to rework because they were too quiet.</dd>
         <dt>What I did</dt>
@@ -74,21 +79,23 @@
         <dt>How it was checked</dt>
         <dd>A user confirms Windows 7 and 11; my acquaintance now prepares his files himself.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/PeakMP3">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/PeakMP3/index-en.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/PeakMP3/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
         <a href="#demo">Try it ↓</a>
       </p>
-    </article>
-
-    <article class="case" id="Kartoteka">
-      <div class="case-head">
-        <img class="case-icon" src="assets/app-icons/Kartoteka.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>Kartoteka</h3>
       </div>
-      <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
-      <dl class="case-parts">
+    </article>
+    <article class="case ppk-reveal" id="Kartoteka">
+      <div class="case-shot shot-kart"><img class="shot-img" src="assets/about/kartoteka-en.webp" width="720" height="455" alt="Kartoteka window" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/app-icons/Kartoteka.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>Kartoteka</h3>
+        </div>
+        <p class="case-meta">Rust, egui, SQLite · Windows 11 x64 · Release 0.5.0</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>A card index for classmates and other lists, only on your own computer, without internet and without telemetry.</dd>
         <dt>What I did</dt>
@@ -96,21 +103,23 @@
         <dt>How it was checked</dt>
         <dd>The release checks for 0.5.0 document 39 passed tests and the upgrade from 0.4.1.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/Kartoteka">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://github.com/popovantondev/Kartoteka/blob/main/RELEASE-CHECKS.md">Release checks <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/Kartoteka/index.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/Kartoteka/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
-    </article>
-
-    <article class="case" id="Kaktus-Backup-Sync">
-      <div class="case-head">
-        <img class="case-icon" src="assets/app-icons/Kaktus-Backup-Sync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>Kaktus Backup &amp; Sync</h3>
       </div>
-      <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7</p>
-      <dl class="case-parts">
+    </article>
+    <article class="case ppk-reveal" id="Kaktus-Backup-Sync">
+      <div class="case-shot shot-kaktus"><img class="shot-img" src="assets/about/kaktus-en.webp" width="720" height="483" alt="Kaktus Backup &amp; Sync window" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/app-icons/Kaktus-Backup-Sync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>Kaktus Backup &amp; Sync</h3>
+        </div>
+        <p class="case-meta">C#, WPF, .NET · Windows x64 · Preview 5.2.0-preview.7</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>Copy folders one way, keep earlier file versions and never delete working files automatically.</dd>
         <dt>What I did</dt>
@@ -118,20 +127,22 @@
         <dt>How it was checked</dt>
         <dd>On every push, GitHub Actions runs tests of the file operations on Windows, including after a terminated process.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-en.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
-    </article>
-
-    <article class="case" id="GitHubSync">
-      <div class="case-head">
-        <img class="case-icon" src="assets/app-icons/GitHubSync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>GitHubSync</h3>
       </div>
-      <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT licence</p>
-      <dl class="case-parts">
+    </article>
+    <article class="case ppk-reveal" id="GitHubSync">
+      <div class="case-shot shot-ghs"><img class="shot-img" src="assets/about/githubsync-en.webp" width="600" height="564" alt="GitHubSync window" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/app-icons/GitHubSync.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>GitHubSync</h3>
+        </div>
+        <p class="case-meta">PowerShell 5.1, .NET Framework 4.6.2, WPF · Windows 10/11 x64 · Release 1.5.3 · MIT licence</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>Upload files to GitHub and download them, with every transfer confirmed first.</dd>
         <dt>What I did</dt>
@@ -139,20 +150,22 @@
         <dt>How it was checked</dt>
         <dd>PowerShell test scripts check the program against simulated GitHub responses on every push in GitHub Actions.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/GitHubSync">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/GitHubSync/index-en.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/GitHubSync/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
-    </article>
-
-    <article class="case" id="LektienPlayer">
-      <div class="case-head">
-        <img class="case-icon" src="assets/icons/lektien-player.png" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>Lecture pipeline and LektienPlayer</h3>
       </div>
-      <p class="case-meta">Whisper, Silero · player: Swift, macOS 15 · in progress, Source only</p>
-      <dl class="case-parts">
+    </article>
+    <article class="case ppk-reveal" id="LektienPlayer">
+      <div class="case-shot shot-lekt"><img class="shot-img shot-icon" src="assets/about/lektien-icon.webp" width="256" height="256" alt="" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/icons/lektien-player.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>Lecture pipeline and LektienPlayer</h3>
+        </div>
+        <p class="case-meta">Whisper, Silero · player: Swift, macOS 15 · in progress, Source only</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>My partner is studying phytotherapy through German video courses but understands Russian better.</dd>
         <dt>What I did</dt>
@@ -160,20 +173,22 @@
         <dt>How it was checked</dt>
         <dd>A 40-minute lecture serves as the pilot, and a check script looks for repetitions and gaps in the recognition.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/LektienPlayer">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/LektienPlayer/index-en.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/LektienPlayer/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
-    </article>
-
-    <article class="case" id="HotspotControl">
-      <div class="case-head">
-        <img class="case-icon" src="assets/app-icons/HotspotControl.ico" width="64" height="64" alt="" decoding="async" loading="lazy">
-        <h3>Hotspot Control</h3>
       </div>
-      <p class="case-meta">WPF, .NET 10 · Windows 11 24H2+ · x64 · Release 0.3.0</p>
-      <dl class="case-parts">
+    </article>
+    <article class="case ppk-reveal" id="HotspotControl">
+      <div class="case-shot shot-hot"><img class="shot-img" src="assets/about/hotspot-en.webp" width="520" height="462" alt="Hotspot Control window" loading="lazy" decoding="async"></div>
+      <div class="case-body">
+        <div class="case-head">
+          <img class="case-icon" src="assets/app-icons/HotspotControl.ico" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>Hotspot Control</h3>
+        </div>
+        <p class="case-meta">WPF, .NET 10 · Windows 11 24H2+ · x64 · Release 0.3.0</p>
+        <dl class="case-parts">
         <dt>Task</dt>
         <dd>Control the Windows 11 Mobile Hotspot and show connected devices and network settings.</dd>
         <dt>What I did</dt>
@@ -181,16 +196,25 @@
         <dt>How it was checked</dt>
         <dd>Automated checks use fictional data, practical testing was limited to my computer; the release comes with a SHA-256 checksum.</dd>
       </dl>
-      <p class="case-links">
+        <p class="case-links">
         <a href="https://github.com/popovantondev/HotspotControl">Repository <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/HotspotControl/index-en.html">About the app <span aria-hidden="true">↗</span></a>
         <a href="https://popovantondev.github.io/HotspotControl/Guide-en.html">Guide <span aria-hidden="true">↗</span></a>
       </p>
+      </div>
     </article>
   </div>
 </section>
 
-<section class="block peak-demo-block" id="demo" data-lang="en">
+<section class="block ppk-reveal" id="skills">
+  <h2>Technology and skills</h2>
+  <p>I am building my own programming skills in the retraining.</p>
+  <div class="chip-groups">
+    <div class="chip-group"><h3>Technology of my projects</h3><ul class="chips"><li>C#</li><li>.NET</li><li>WPF</li><li>Rust</li><li>egui</li><li>SQLite</li><li>PowerShell</li><li>Swift</li><li>Whisper</li><li>Silero</li><li>GitHub Actions</li></ul></div><div class="chip-group"><h3>From work and retraining</h3><ul class="chips"><li>Windows 11</li><li>Hyper-V</li><li>RAID and backup</li><li>Networks (OSI, IPv4/IPv6, subnetting)</li><li>Virtualisation</li><li>ISO 27001</li><li>1C 8.3</li><li>Data recovery</li></ul></div><div class="chip-group"><h3>Working method</h3><ul class="chips"><li>Lastenheft</li><li>Scrum</li><li>Kanban</li><li>Tests and check scripts</li><li>SHA-256 checksums</li><li>Guides in three languages</li></ul></div><div class="chip-group"><h3>Languages</h3><ul class="chips chips-lang"><li>German: <span lang="de">B2 Beruf</span></li><li>Russian: fluent</li><li>Ukrainian: fluent</li></ul></div>
+  </div>
+</section>
+
+<section class="block peak-demo-block ppk-reveal" id="demo" data-lang="en">
   <div class="peak-copy">
     <h2>Try PeakMP3</h2>
     <p>Three short music examples. Pick a track below, then use Play and the PeakMP3 knob directly on the image. A is the original excerpt, B the selected processing.</p>
@@ -229,7 +253,29 @@
   <script type="application/json" id="demo-strings">{"loading": "Loading example…", "ready": "Ready to listen", "error": "Could not load the example. Try again.", "play": "Play", "pause": "Pause", "stop": "Stop", "presets": ["Soft", "Balance", "Loud", "Maximum"]}</script>
 </section>
 
-<section class="block" id="path">
+<section class="block ab-piano ppk-reveal" id="piano" data-lang="en">
+  <div class="ab-piano-copy">
+    <h2>Mini piano</h2>
+    <p>A small cut-out of Virtual Piano Arranger, one of the programs in my catalogue: two octaves to play with the mouse, a finger or the computer keyboard.</p>
+    <p class="pk-hint">Tap a key, then keep playing with the letters of the keyboard (bottom row Z to M with S D G H J, top row Q to U with 2 3 5 6 7). Sound starts only after your first touch.</p>
+    <a class="pk-link" href="https://popovantondev.github.io/VirtualPianoArranger/play-en.html">Full version <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="ab-piano-stage">
+    <div class="pk-studio">
+      <div class="pk-head">
+        <div class="pk-titles"><span class="pk-eyebrow">Virtual Piano Arranger</span><span class="pk-name">Salamander Grand</span></div>
+        <div class="pk-tools"><span class="pk-tag">Keyboard active</span><button class="pk-mute" type="button" >Sound off</button></div>
+      </div>
+      <div class="pk-bed" id="mini-piano"><img class="pk-static" src="assets/about-piano/piano-static.svg" width="708" height="163" alt="Two octaves of a piano keyboard"></div>
+      <p class="pk-status" role="status"></p>
+      <noscript><p class="pk-status">The mini piano needs JavaScript. The full version runs on the Virtual Piano Arranger page.</p></noscript>
+    </div>
+    <p class="pk-credit">Sound: Salamander Grand Piano V3 by Alexander Holm, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>; the same recordings the program uses.</p>
+  </div>
+  <script type="application/json" id="piano-strings">{"notes": ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "A♯", "B"], "aria": "Mini piano, two octaves from C4 to B5", "loading": "Loading the piano sound…", "ready": "Piano sound loaded", "error": "The piano sound could not be loaded, a simple tone is played.", "mute": "Sound off", "unmute": "Sound on", "silent": "Sound is off.", "idle": "Tap a key. The sound starts only then.", "armed": "Keyboard active"}</script>
+</section>
+
+<section class="block ppk-reveal" id="path">
   <h2>Background</h2>
   <ol class="timeline">
     <li>
@@ -258,20 +304,13 @@
       <p>Bachelor's degree in teaching computer science (<span lang="de">Lehramt Informatik</span>), Izmail State University of Humanities (Ukraine).</p>
     </li>
   </ol>
-  <h3>Languages</h3>
-  <ul class="languages">
-    <li>German: <span lang="de">B2 Beruf</span></li>
-    <li>Russian: fluent</li>
-    <li>Ukrainian: fluent</li>
-  </ul>
-  <p>The internship contract is coordinated with FAW. The dates of all three phases are in the internship calendar of my application.</p>
+  <p class="ab-path-note">The internship contract is coordinated with FAW. The dates of all three phases are in the internship calendar of my application.</p>
 </section>
 
-<section class="block" id="contact">
+<section class="block ppk-reveal" id="contact">
   <h2>Contact</h2>
   <ul class="contact">
-    <li>Email: <a href="mailto:ant0ngm2012@gmail.com">ant0ngm2012@gmail.com</a></li>
-    <li>GitHub: <a href="https://github.com/popovantondev">github.com/popovantondev <span aria-hidden="true">↗</span></a></li>
+    <li>Email: <a href="mailto:ant0ngm2012@gmail.com">ant0ngm2012@gmail.com</a></li><li>GitHub: <a href="https://github.com/popovantondev">github.com/popovantondev <span aria-hidden="true">↗</span></a></li>
   </ul>
 </section>
 </main>
@@ -281,5 +320,6 @@
   <nav aria-label="More pages"><a href="impressum.html" hreflang="de">Impressum (German)</a><a href="datenschutz.html" hreflang="de">Datenschutz (German)</a><a href="index-en.html">All applications</a><a href="https://github.com/popovantondev">GitHub</a></nav>
 </footer>
 <script src="assets/peak-demo.js" defer></script>
+<script src="assets/about-piano/piano.js" defer></script>
 </body>
 </html>
