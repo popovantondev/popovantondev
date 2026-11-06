@@ -292,6 +292,26 @@ class KitStaticTests(unittest.TestCase):
             if 'max-width' in body:  # the pill itself carries no glass: it would be repainted with the layout jump
                 self.assertNotIn('backdrop-filter', body)
 
+    def test_side_decor_is_one_fixed_quiet_layer_on_wide_screens_only(self):
+        # Decor in the margins: a single fixed layer (no per-scroll painting), invisible to people and to the pointer,
+        # shown only from 1280 px and built by script after load (nothing without JS, nothing on a phone).
+        self.assertRegex(self.css, r'\n\.ppk-decor\{display:none\}')
+        wide = re.search(r'@media \(min-width:1280px\)\{(.*?)\n\}', self.css, flags=re.S)
+        self.assertIsNotNone(wide, 'decor is not gated to min-width:1280px')
+        layer = re.search(r'\.ppk-decor\{([^{}]*)\}', wide.group(1)).group(1)
+        for needle in ('position:fixed', 'pointer-events:none', 'z-index:0'):
+            self.assertIn(needle, layer)
+        for body in self.rules('.ppk-decor-i'):
+            opacity = re.search(r'opacity\s*:\s*([\d.]+)', body)
+            if opacity:
+                self.assertLessEqual(float(opacity.group(1)), 0.25)
+        self.assertRegex(self.css, r'@media \(prefers-reduced-motion:reduce\)\{[^@]*\.ppk-decor-side\{animation:none')
+        self.assertNotRegex(' '.join(self.rules('.ppk-decor')), r'transition\s*:[^;]*\b(width|height|top|left|margin|padding)\b')
+        self.assertRegex(self.js, r"'ppk-decor'\);\s*layer\.setAttribute\('aria-hidden', 'true'\)")
+        self.assertIn('(min-width: 1280px)', self.js)
+        decor_js = self.js[self.js.index('side decor'):self.js.index('function init()')]
+        self.assertNotIn("'scroll'", decor_js)  # no scroll handler: the layer never repaints on scroll
+        self.assertIn('data-ppk-slash', decor_js)  # the piano game page keeps its own note background
     def test_brand_label_is_not_clipped_in_the_floating_pill(self):
         # `overflow:hidden` on the label cut the last letter ("popovantondev" lost its v) and the descender of "p"
         # at fractional zoom (125/150 %). The label needs ink room on the right and below, paid back by negative margins.
