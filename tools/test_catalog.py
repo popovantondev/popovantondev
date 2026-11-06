@@ -154,6 +154,23 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(meta['twitter:card'], 'summary_large_image', name)
             self.assertTrue((ROOT / 'assets' / ('profile-studio-%s.png' % lang)).is_file())
 
+    def test_piano_card_sits_right_of_the_peakmp3_card_in_one_row(self):
+        for name, lang in (('index.html', 'de'), ('index-en.html', 'en'), ('index-ru.html', 'ru')):
+            html = self.files[name]
+            row = html.split('class="demo-feature-row"', 1)[1].split('id="marquee"', 1)[0]
+            links = [a for t, a in tags(row) if t == 'a' and 'peak-demo-feature' in a.get('class', '').split()]
+            self.assertEqual(len(links), 2, name)
+            peak, piano = links
+            self.assertIn('/PeakMP3/', peak['href'], name)
+            self.assertEqual(piano['href'], 'https://popovantondev.github.io/VirtualPianoArranger/play-%s.html' % lang, name)
+            imgs = [a for t, a in tags(row) if t == 'img']
+            self.assertEqual([a['src'] for a in imgs], ['assets/peakmp3-demo-%s.svg' % lang, 'assets/piano-demo-%s.svg' % lang], name)
+            self.assertEqual({(a['width'], a['height']) for a in imgs}, {('1400', '520')}, name)
+            self.assertTrue((ROOT / 'assets' / ('piano-demo-%s.svg' % lang)).is_file())
+        css = (ROOT / 'assets' / 'catalog.css').read_text(encoding='utf-8')
+        self.assertRegex(css, r'\.demo-feature-row\{display:grid;grid-template-columns:repeat\(2')
+        self.assertRegex(css, r'max-width:760px\)\{\.demo-feature-row\{grid-template-columns:1fr')
+
     def test_generated_pages_validate_against_the_files_on_disk(self):
         errors = docs.validate(self.data, self.files)
         self.assertEqual(errors, [])

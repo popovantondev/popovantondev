@@ -10,7 +10,7 @@
 <title>Антон Попов — обо мне</title>
 <script src="assets/kit/kit-theme.js"></script>
 <link rel="stylesheet" href="assets/kit/kit.css?v=2026.11.05-1">
-<link rel="stylesheet" href="assets/about.css?v=ab-2026.11.06-1">
+<link rel="stylesheet" href="assets/about.css?v=ab-2026.11.06-2">
 <link rel="stylesheet" href="assets/about-piano/piano.css?v=ab-2026.11.06-1">
 <script src="assets/kit/programs.js?v=2026.11.05-1" defer></script>
 <script src="assets/kit/kit.js?v=2026.11.05-1" defer></script>
@@ -33,7 +33,6 @@
 <section class="ab-hero" id="top">
   <div class="ab-scene" aria-hidden="true"><i class="ab-ray ab-ray-1"></i><i class="ab-ray ab-ray-2"></i><i class="ab-ray ab-ray-3"></i><i class="ab-glass"></i></div>
   <div class="ab-hero-grid">
-    <img class="ab-portrait" src="assets/profile-photo.jpg" width="460" height="460" alt="Anton Popov">
     <div class="ab-hero-copy">
       <p class="ab-name">Anton Popov</p>
       <p class="ab-role">Переобучение на <span lang="de">Fachinformatiker für Anwendungsentwicklung</span> · FAW</p>
@@ -45,11 +44,12 @@
         <a class="ab-btn ab-btn-ghost" href="https://github.com/popovantondev">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </div>
+    <img class="ab-portrait" src="assets/profile-photo.jpg" width="460" height="460" alt="Anton Popov">
   </div>
 </section>
 
 <ul class="ab-facts ppk-reveal" aria-label="Коротко"><li><b>15.03.2027</b><span>Начало первого этапа практики, до 25.06.2027</span></li><li><b>≈ 200</b><span>дней практики в три этапа</span></li><li><b>6</b><span>проектов из моего каталога</span></li><li><b>B2</b><span>Немецкий B2 Beruf (DTB), сдан в 2026</span></li></ul>
-<nav class="ab-jump" aria-label="На этой странице"><a href="#how">Метод</a><a href="#projects">Проекты</a><a href="#skills">Навыки</a><a href="#demo">PeakMP3</a><a href="#piano">Пианино</a><a href="#path">Путь</a><a href="#contact">Контакт</a></nav>
+<nav class="ab-jump" aria-label="На этой странице"><a href="#how">Метод</a><a href="#piano">Пианино</a><a href="#demo">PeakMP3</a><a href="#projects">Проекты</a><a href="#skills">Навыки</a><a href="#path">Путь</a><a href="#contact">Контакт</a></nav>
 
 <section class="block ppk-reveal" id="how">
   <h2>Как я работаю</h2>
@@ -59,31 +59,91 @@
   <p>Код моих проектов пишет ИИ (Codex, ChatGPT или Claude); идея, требования, интерфейс и тесты на мне. Собственные навыки программирования я сейчас нарабатываю в переобучении.</p>
 </section>
 
+<section class="block ab-piano ppk-reveal" id="piano" data-lang="ru">
+  <div class="ab-piano-copy">
+    <h2>Мини-пианино</h2>
+    <p>Небольшой фрагмент Virtual Piano Arranger, одной из программ моего каталога: две октавы, играть можно мышью, пальцем или клавиатурой компьютера.</p>
+    <p class="pk-hint">Нажмите клавишу и продолжайте играть буквами на клавиатуре (нижний ряд Z–M и S D G H J, верхний Q–U и 2 3 5 6 7). Звук включается только после первого касания.</p>
+    <a class="pk-link" href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html">Полная версия <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="ab-piano-stage">
+    <div class="pk-studio">
+      <div class="pk-head">
+        <div class="pk-titles"><span class="pk-eyebrow">Virtual Piano Arranger</span><span class="pk-name">Salamander Grand</span></div>
+        <div class="pk-tools"><span class="pk-tag">Клавиатура активна</span><button class="pk-mute" type="button" >Звук выкл.</button></div>
+      </div>
+      <div class="pk-bed" id="mini-piano"><img class="pk-static" src="assets/about-piano/piano-static.svg" width="708" height="163" alt="Две октавы клавиатуры пианино"></div>
+      <p class="pk-status" role="status"></p>
+      <noscript><p class="pk-status">Мини-пианино нужен JavaScript. Полная версия работает на странице Virtual Piano Arranger.</p></noscript>
+    </div>
+    <p class="pk-credit">Звук: Salamander Grand Piano V3, Alexander Holm, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>; те же записи, что и в программе.</p>
+  </div>
+  <script type="application/json" id="piano-strings">{"notes": ["до", "до♯", "ре", "ре♯", "ми", "фа", "фа♯", "соль", "соль♯", "ля", "ля♯", "си"], "aria": "Мини-пианино, две октавы от до первой до си второй", "loading": "Загрузка звука пианино…", "ready": "Звук пианино загружен", "error": "Не удалось загрузить звук пианино, звучит простой тон.", "mute": "Звук выкл.", "unmute": "Звук вкл.", "silent": "Звук выключен.", "idle": "Нажмите клавишу. Звук включится только тогда.", "armed": "Клавиатура активна"}</script>
+</section>
+
+<section class="block peak-demo-block ppk-reveal" id="demo" data-lang="ru">
+  <div class="peak-copy">
+    <h2>Попробовать PeakMP3</h2>
+    <p>Три коротких музыкальных фрагмента. Трек выбирается кнопками ниже, Play и ручка PeakMP3 работают прямо на изображении. A: исходный фрагмент, B: выбранная обработка.</p>
+    <div class="peak-tracks">
+        <button class="peak-track" type="button" data-track="techno" aria-pressed="true"><strong>EDM Detection Mode</strong><small>Techno / EDM · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="electronic" aria-pressed="false"><strong>Electro (Sketch)</strong><small>Electronic · 24 s</small></button>
+        <button class="peak-track" type="button" data-track="pop" aria-pressed="false"><strong>Life of Riley</strong><small>Pop · 24 s</small></button>
+    </div>
+    <div class="peak-controls">
+      <label class="peak-readout"><output id="density-number" for="density-range">7</output><span>Плотность</span></label>
+      <input id="density-range" type="range" min="0" max="10" value="7" aria-label="Плотность">
+      <div class="peak-toolbar">
+        <button type="button" data-compare="a" aria-pressed="false">A · Оригинал</button>
+        <button type="button" data-compare="b" aria-pressed="true">B · Обработка</button>
+        <button type="button" id="demo-play" aria-pressed="false">▶ Воспроизвести</button>
+        <button type="button" id="demo-stop">■ Стоп</button>
+      </div>
+      <label class="peak-volume"><span>Громкость</span><input id="demo-volume" type="range" min="0" max="100" value="60" aria-label="Громкость"></label>
+      <p class="peak-status" id="demo-state" role="status">Готово к прослушиванию</p>
+    </div>
+    <details class="peak-credits">
+      <summary>Музыка и лицензии</summary>
+      <ul>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500026">EDM Detection Mode</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100390">Electro (Sketch)</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400054">Life of Riley</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+      </ul>
+      <p>Фрагменты по 24 секунды, заранее обработанные PeakMP3 0.16.0. В браузере ничего не обрабатывается.</p>
+    </details>
+    <noscript><p>Для демо нужен JavaScript. Оно же есть на <a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo">странице PeakMP3 <span aria-hidden="true">↗</span></a>.</p></noscript>
+  </div>
+  <div class="peak-device">
+    <canvas id="peak-demo" width="778" height="1293" tabindex="0" role="img" aria-label="PeakMP3 с проигрывателем: ручка, пресеты, A/B, воспроизведение и громкость."></canvas>
+  </div>
+  <audio id="demo-audio" preload="none"></audio>
+  <script type="application/json" id="demo-strings">{"loading": "Загрузка примера…", "ready": "Готово к прослушиванию", "error": "Не удалось загрузить пример. Попробуйте ещё раз.", "play": "Воспроизвести", "pause": "Пауза", "stop": "Стоп", "presets": ["Мягко", "Баланс", "Громко", "Максимум"]}</script>
+</section>
+
 <section class="block" id="projects">
   <h2 class="ppk-reveal">Проекты</h2>
   <p class="ppk-reveal">Шесть проектов из моего каталога. Статус и версия соответствуют опубликованной сборке.</p>
   <div class="cases">
-    <article class="case ppk-reveal" id="PeakMP3">
-      <div class="case-shot shot-peak"><img class="shot-img" src="assets/about/peakmp3-ru.webp" width="560" height="506" alt="Окно PeakMP3" loading="lazy" decoding="async"></div>
+    <article class="case ppk-reveal" id="LectureCompanion">
+      <div class="case-shot shot-lc"><img class="shot-img shot-fit" src="assets/about/lecturecompanion-ru.webp" width="648" height="682" alt="Окно Lecture Companion с искусственными данными" loading="lazy" decoding="async"></div>
       <div class="case-body">
         <div class="case-head">
-          <img class="case-icon" src="assets/app-icons/PeakMP3.svg" width="64" height="64" alt="" decoding="async" loading="lazy">
-          <h3>PeakMP3</h3>
+          <img class="case-icon" src="assets/app-icons/LectureCompanion.png" width="64" height="64" alt="" decoding="async" loading="lazy">
+          <h3>Lecture Companion</h3>
         </div>
-        <p class="case-meta">C# (.NET Framework 3.5) · Windows 7 SP1 и новее · Preview 0.16.0</p>
+        <p class="case-meta">Python, JavaScript · Windows 11 x64 · Preview 2.4</p>
         <dl class="case-parts">
         <dt>Задача</dt>
-        <dd>Знакомый, который руководит домом культуры, регулярно присылал мне на доработку слишком тихие музыкальные файлы.</dd>
+        <dd>Я не успевал за словами преподавателя: пока вспоминал немецкое слово и искал его, терял смысл сказанного. Робот помогает мне оставаться в контексте лекции и разбирать её, ничего не отправляя в интернет.</dd>
         <dt>Что сделал я</dt>
-        <dd>Интерфейс сделан по образцу настоящего прибора; дизайн я много раз прогонял через ИИ, это заняло много времени.</dd>
+        <dd>Идея моя, как и у PeakMP3; дизайн согласовывался со мной, код написал ИИ, на мне приёмка, тесты и остальное.</dd>
         <dt>Как проверено</dt>
-        <dd>Пользователь подтверждает Windows 7 и 11; теперь знакомый сам готовит свои файлы.</dd>
+        <dd>В GitHub Actions на Windows запускаются проверки без моделей (verify.py); к выпуску приложены контрольные суммы SHA-256, есть демо без Teams с искусственными данными. На втором чистом ПК программа пока не проверялась.</dd>
       </dl>
         <p class="case-links">
-        <a href="https://github.com/popovantondev/PeakMP3">Репозиторий <span aria-hidden="true">↗</span></a>
-        <a href="https://popovantondev.github.io/PeakMP3/index-ru.html">О программе <span aria-hidden="true">↗</span></a>
-        <a href="https://popovantondev.github.io/PeakMP3/Guide-ru.html">Руководство <span aria-hidden="true">↗</span></a>
-        <a href="#demo">Попробовать ↓</a>
+        <a href="https://github.com/popovantondev/LectureCompanion">Репозиторий <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/LectureCompanion/index-ru.html">О программе <span aria-hidden="true">↗</span></a>
+        <a href="https://popovantondev.github.io/LectureCompanion/Guide-ru.html">Руководство <span aria-hidden="true">↗</span></a>
       </p>
       </div>
     </article>
@@ -214,67 +274,6 @@
   </div>
 </section>
 
-<section class="block peak-demo-block ppk-reveal" id="demo" data-lang="ru">
-  <div class="peak-copy">
-    <h2>Попробовать PeakMP3</h2>
-    <p>Три коротких музыкальных фрагмента. Трек выбирается кнопками ниже, Play и ручка PeakMP3 работают прямо на изображении. A: исходный фрагмент, B: выбранная обработка.</p>
-    <div class="peak-tracks">
-        <button class="peak-track" type="button" data-track="techno" aria-pressed="true"><strong>EDM Detection Mode</strong><small>Techno / EDM · 24 s</small></button>
-        <button class="peak-track" type="button" data-track="electronic" aria-pressed="false"><strong>Electro (Sketch)</strong><small>Electronic · 24 s</small></button>
-        <button class="peak-track" type="button" data-track="pop" aria-pressed="false"><strong>Life of Riley</strong><small>Pop · 24 s</small></button>
-    </div>
-    <div class="peak-controls">
-      <label class="peak-readout"><output id="density-number" for="density-range">7</output><span>Плотность</span></label>
-      <input id="density-range" type="range" min="0" max="10" value="7" aria-label="Плотность">
-      <div class="peak-toolbar">
-        <button type="button" data-compare="a" aria-pressed="false">A · Оригинал</button>
-        <button type="button" data-compare="b" aria-pressed="true">B · Обработка</button>
-        <button type="button" id="demo-play" aria-pressed="false">▶ Воспроизвести</button>
-        <button type="button" id="demo-stop">■ Стоп</button>
-      </div>
-      <label class="peak-volume"><span>Громкость</span><input id="demo-volume" type="range" min="0" max="100" value="60" aria-label="Громкость"></label>
-      <p class="peak-status" id="demo-state" role="status">Готово к прослушиванию</p>
-    </div>
-    <details class="peak-credits">
-      <summary>Музыка и лицензии</summary>
-      <ul>
-          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500026">EDM Detection Mode</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
-          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100390">Electro (Sketch)</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
-          <li><a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400054">Life of Riley</a> — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
-      </ul>
-      <p>Фрагменты по 24 секунды, заранее обработанные PeakMP3 0.16.0. В браузере ничего не обрабатывается.</p>
-    </details>
-    <noscript><p>Для демо нужен JavaScript. Оно же есть на <a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo">странице PeakMP3 <span aria-hidden="true">↗</span></a>.</p></noscript>
-  </div>
-  <div class="peak-device">
-    <canvas id="peak-demo" width="778" height="1293" tabindex="0" role="img" aria-label="PeakMP3 с проигрывателем: ручка, пресеты, A/B, воспроизведение и громкость."></canvas>
-  </div>
-  <audio id="demo-audio" preload="none"></audio>
-  <script type="application/json" id="demo-strings">{"loading": "Загрузка примера…", "ready": "Готово к прослушиванию", "error": "Не удалось загрузить пример. Попробуйте ещё раз.", "play": "Воспроизвести", "pause": "Пауза", "stop": "Стоп", "presets": ["Мягко", "Баланс", "Громко", "Максимум"]}</script>
-</section>
-
-<section class="block ab-piano ppk-reveal" id="piano" data-lang="ru">
-  <div class="ab-piano-copy">
-    <h2>Мини-пианино</h2>
-    <p>Небольшой фрагмент Virtual Piano Arranger, одной из программ моего каталога: две октавы, играть можно мышью, пальцем или клавиатурой компьютера.</p>
-    <p class="pk-hint">Нажмите клавишу и продолжайте играть буквами на клавиатуре (нижний ряд Z–M и S D G H J, верхний Q–U и 2 3 5 6 7). Звук включается только после первого касания.</p>
-    <a class="pk-link" href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html">Полная версия <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="ab-piano-stage">
-    <div class="pk-studio">
-      <div class="pk-head">
-        <div class="pk-titles"><span class="pk-eyebrow">Virtual Piano Arranger</span><span class="pk-name">Salamander Grand</span></div>
-        <div class="pk-tools"><span class="pk-tag">Клавиатура активна</span><button class="pk-mute" type="button" >Звук выкл.</button></div>
-      </div>
-      <div class="pk-bed" id="mini-piano"><img class="pk-static" src="assets/about-piano/piano-static.svg" width="708" height="163" alt="Две октавы клавиатуры пианино"></div>
-      <p class="pk-status" role="status"></p>
-      <noscript><p class="pk-status">Мини-пианино нужен JavaScript. Полная версия работает на странице Virtual Piano Arranger.</p></noscript>
-    </div>
-    <p class="pk-credit">Звук: Salamander Grand Piano V3, Alexander Holm, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>; те же записи, что и в программе.</p>
-  </div>
-  <script type="application/json" id="piano-strings">{"notes": ["до", "до♯", "ре", "ре♯", "ми", "фа", "фа♯", "соль", "соль♯", "ля", "ля♯", "си"], "aria": "Мини-пианино, две октавы от до первой до си второй", "loading": "Загрузка звука пианино…", "ready": "Звук пианино загружен", "error": "Не удалось загрузить звук пианино, звучит простой тон.", "mute": "Звук выкл.", "unmute": "Звук вкл.", "silent": "Звук выключен.", "idle": "Нажмите клавишу. Звук включится только тогда.", "armed": "Клавиатура активна"}</script>
-</section>
-
 <section class="block ppk-reveal" id="path">
   <h2>Путь</h2>
   <ol class="timeline">
@@ -319,6 +318,7 @@
   <span>© 2026 Anton Popov · Актуально на 11/2026</span>
   <nav aria-label="Другие страницы"><a href="impressum.html" hreflang="de">Impressum (на немецком)</a><a href="datenschutz.html" hreflang="de">Datenschutz (на немецком)</a><a href="index-ru.html">Все приложения</a><a href="https://github.com/popovantondev">GitHub</a></nav>
 </footer>
+<script src="assets/about-motion.js?v=ab-2026.11.06-2" defer></script>
 <script src="assets/peak-demo.js" defer></script>
 <script src="assets/about-piano/piano.js" defer></script>
 </body>
