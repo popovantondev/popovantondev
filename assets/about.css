@@ -537,8 +537,8 @@ a { color: inherit; text-underline-offset: 4px; }
   font: 13px var(--demo-font);
 }
 
-/* Demo frame: the picture's corners follow the frame (outer radius 28 minus padding 18 = 10). */
-.peak-device canvas, .peak-surface { border-radius: 10px; }
+/* Demo frame: the picture's own window has rounded corners (about 26 px of 973) and white outside them baked into the image; the radius in percent of the canvas clips that white so the walnut frame shows through. */
+.peak-device canvas, .peak-surface { border-radius: 2.9% / 1.75%; }
 
 /* Control panel next to the demo in the brown PeakMP3 style (cream card by day, dark walnut at night). */
 #demo {
