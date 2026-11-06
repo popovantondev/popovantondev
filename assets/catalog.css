@@ -85,7 +85,7 @@ main.ppk-shell{padding-bottom:8px}
 .hero-studio .hero-actions a{display:inline-flex;align-items:center;justify-content:center;gap:.5859cqw;min-height:3.125cqw;font-size:1.0254cqw;font-weight:700;text-decoration:none;white-space:nowrap;color:#e3efff}
 .hero-studio .hero-actions span{margin:0}
 .hero-studio .hero-actions .primary{padding:.7324cqw 1.3672cqw;background:linear-gradient(#fff,#edf5ff);color:#0872f3;border:1px solid #dceafa;border-radius:999px;box-shadow:0 8px 22px #0010393b;text-shadow:none}
-.hero-studio .hero-actions a+ a{border-bottom:1px dotted #809bc6}
+.hero-studio .hero-actions a+ a{border-bottom:0}
 .hero-studio .hero-meta{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:1.0742cqw;color:#a8c8ef;font-size:.8789cqw;line-height:1.4;margin:1.6602cqw 0 0;white-space:nowrap}
 .hero-studio .hero-meta span+span:before{content:'·';margin-right:1.0742cqw;color:#6c95c5}
 html[lang=en] .hero-studio h1{font-size:3.3203cqw}
