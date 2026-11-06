@@ -77,7 +77,8 @@ a { color: inherit; text-underline-offset: 4px; }
   isolation: isolate;
   overflow: hidden;
   margin: 12px 0 0;
-  padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 56px) clamp(70px, 8vw, 96px);
+  --ab-pad-b: clamp(70px, 8vw, 96px);
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 56px) var(--ab-pad-b);
   border-radius: 26px;
   background: #062048;
   color: #f7fbff;
@@ -112,24 +113,22 @@ a { color: inherit; text-underline-offset: 4px; }
   background: linear-gradient(180deg, rgba(8, 28, 66, 0.1), rgba(3, 12, 32, 0.85));
   box-shadow: inset 0 14px 30px -18px rgba(120, 190, 255, 0.45);
 }
-.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 300px); gap: clamp(24px, 5vw, 56px); align-items: center; }
-/* Portrait frame: square, head and shoulders; the file is swapped through the single src attribute (assets/about/portrait.webp later). */
+.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 440px); gap: clamp(24px, 4vw, 48px); align-items: center; }
+/* Portrait: transparent cut-out standing in the scene, no frame. Its bottom sits on the hero's lower edge (negative margin eats the hero padding),
+   where overflow clips it and the facts strip (z-index 1, overlapping the hero) covers the cut. */
 .ab-portrait {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50% 20%;
+  aspect-ratio: 900 / 916;
   justify-self: end;
-  /* Studio frame: an 8 px ring with a light-blue to violet gradient (painted by the border box), a dark inner mat, soft glow. */
-  box-sizing: border-box;
-  border: 8px solid transparent;
-  border-radius: 30px;
-  background: linear-gradient(#062048, #062048) padding-box, linear-gradient(140deg, #8fe3ff 0%, #3d8bff 42%, #a58bff 78%, #62d8ff 100%) border-box;
-  box-shadow: 0 0 0 1px rgba(190, 225, 255, 0.35), 0 18px 36px -18px rgba(0, 0, 0, 0.7), 0 0 40px -12px rgba(92, 200, 255, 0.6);
-}
-.ab-hero-copy { min-width: 0; max-width: 680px; }
+  align-self: end;
+  margin-bottom: calc(-1 * var(--ab-pad-b));
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}.ab-hero-copy { min-width: 0; max-width: 680px; }
 .ab-name { margin: 0 0 var(--space-0); font-size: 22px; line-height: 1.25; font-weight: 750; letter-spacing: -0.02em; }
 .ab-role { margin: 0 0 var(--space-2); color: #5cc8ff; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; }
 .ab-hero h1 {
@@ -617,7 +616,8 @@ main.ppk-shell { padding-bottom: var(--space-2); }
 @media (max-width: 700px) {
   .ab-hero { border-radius: 20px; }
   .ab-hero-grid { grid-template-columns: 1fr; gap: var(--space-3); }
-  .ab-portrait { order: -1; justify-self: start; max-width: 190px; border-width: 6px; border-radius: 26px; }
+  /* Portrait sits above the text, so its cut would show mid-hero: fade the lower part out. */
+  .ab-portrait { order: -1; justify-self: start; align-self: auto; max-width: 250px; margin-bottom: 0; -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
   .ab-name { font-size: 20px; }
   .ab-hero h1 { font-size: 28px; }
   .ab-lead { font-size: 16px; }
@@ -652,7 +652,7 @@ main.ppk-shell { padding-bottom: var(--space-2); }
   .ab-hero-grid { grid-template-columns: 1fr 110px; gap: 18px; }
   .ab-hero::after { display: none; }
   .ab-name, .ab-role, .ab-hero h1, .ab-lead, .ab-actions, .ab-portrait { animation: none !important; }
-  .ab-portrait { box-shadow: none; border-radius: 12px; }
+  .ab-portrait { margin-bottom: 0; }
   .ab-hero h1, .ab-name, .ab-lead { color: #000; }
   .ab-role { color: #0a3a86; }
   .ab-facts { margin: 12px 0 0; }
