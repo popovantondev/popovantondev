@@ -106,6 +106,54 @@ class CatalogTests(unittest.TestCase):
             self.assertIn('<a href="README.en.md">English</a>', first)
             self.assertIn('<a href="README.ru.md">Русский</a>', first)
 
+    def test_marquee_has_two_opposite_tracks_with_every_program_site(self):
+        for name, lang in (('index.html', 'de'), ('index-en.html', 'en'), ('index-ru.html', 'ru')):
+            html = self.files[name]
+            section = html.split('id="marquee"', 1)[1].split('id="catalog"', 1)[0]
+            ts = tags(section)
+            tracks = [a for t, a in ts if t == 'div' and 'marquee-track' in a.get('class', '').split()]
+            self.assertEqual(len(tracks), 2, name)
+            rows = [a for t, a in ts if t == 'div' and 'marquee' in a.get('class', '').split()]
+            self.assertEqual(sorted(a['class'] for a in rows), ['marquee marquee-forward', 'marquee marquee-reverse'], name)
+            hidden = [a for t, a in ts if t == 'div' and a.get('aria-hidden') == 'true']
+            self.assertEqual(len(hidden), 2, name)
+            links = [a for t, a in ts if t == 'a']
+            self.assertEqual(len(links), 40, name)
+            live = [a for a in links if a.get('tabindex') != '-1']
+            copies = [a for a in links if a.get('tabindex') == '-1']
+            self.assertEqual(len(live), 20, name)
+            self.assertEqual(len(copies), 20, name)
+            expected = {self.data['catalog_websites'][p['repo']][lang] for p in self.data['projects']}
+            self.assertEqual({a['href'] for a in live}, expected, name)
+            self.assertEqual(len(expected), 20, name)
+
+    def test_marquee_pauses_on_hover_and_focus_and_respects_reduced_motion(self):
+        css = (ROOT / 'assets' / 'catalog.css').read_text(encoding='utf-8')
+        self.assertRegex(css, r'\.marquee:hover\s+\.marquee-track')
+        self.assertRegex(css, r'\.marquee:focus-within\s+\.marquee-track')
+        reduced = css.split('prefers-reduced-motion:reduce', 1)[1]
+        self.assertIn('.marquee', reduced)
+        self.assertIn('animation:none', reduced.replace(' ', ''))
+
+    def test_open_graph_tags_use_the_studio_banner_of_the_language(self):
+        base = 'https://popovantondev.github.io/popovantondev/'
+        for name, lang, locale, url in (('index.html', 'de', 'de_DE', 'index.html'),
+                                        ('index-en.html', 'en', 'en_US', 'index-en.html'),
+                                        ('index-ru.html', 'ru', 'ru_RU', 'index-ru.html')):
+            meta = {}
+            for t, a in tags(self.files[name].split('</head>', 1)[0]):
+                if t == 'meta' and (a.get('property') or a.get('name')):
+                    meta[a.get('property') or a.get('name')] = a.get('content')
+            self.assertEqual(meta['og:type'], 'website', name)
+            self.assertEqual(meta['og:locale'], locale, name)
+            self.assertEqual(meta['og:url'], base + url, name)
+            self.assertEqual(meta['og:image'], base + 'assets/profile-studio-%s.png' % lang, name)
+            self.assertEqual((meta['og:image:width'], meta['og:image:height']), ('2048', '768'), name)
+            self.assertTrue(meta['og:image:alt'], name)
+            self.assertTrue(meta['og:title'] and meta['og:description'], name)
+            self.assertEqual(meta['twitter:card'], 'summary_large_image', name)
+            self.assertTrue((ROOT / 'assets' / ('profile-studio-%s.png' % lang)).is_file())
+
     def test_generated_pages_validate_against_the_files_on_disk(self):
         errors = docs.validate(self.data, self.files)
         self.assertEqual(errors, [])

@@ -102,3 +102,21 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 }
 @media(max-width:400px){.catalog-top{flex-wrap:wrap}.ppk-tabs button{padding:8px 11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project,.filters button{transition:none}.project:hover{transform:none}}
+
+/* ---------- program ticker (profile only) ---------- */
+.marquee-section h2{margin:0 0 6px}
+.marquee{overflow:hidden;padding:6px 0;margin-top:14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marquee-scroll 60s linear infinite}
+.marquee-reverse .marquee-track{animation-direction:reverse;animation-duration:70s}
+.marquee-set{display:flex;gap:16px;padding-right:16px}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+@keyframes marquee-scroll{to{transform:translateX(-50%)}}
+.marquee-card{display:block;width:250px;flex:none;overflow:hidden;border:1px solid var(--ppk-line);border-radius:16px;background:var(--ppk-panel);color:var(--ppk-ink);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.marquee-card:hover,.marquee-card:focus-visible{transform:translateY(-3px);box-shadow:var(--ppk-shadow)}
+.marquee-card:focus-visible{outline:2px solid var(--ppk-focus);outline-offset:2px}
+.marquee-shot{display:grid;place-items:center;height:132px;background:linear-gradient(145deg,var(--ppk-hero),var(--ppk-hero-end))}
+.marquee-shot img{width:64px;height:64px;object-fit:contain}
+.marquee-meta{display:block;padding:10px 12px}
+.marquee-meta b{display:block;font-size:14px;line-height:1.2}
+.marquee-meta small{display:block;color:var(--ppk-muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.marquee-set[aria-hidden="true"]{display:none}.marquee-card{transition:none}.marquee-card:hover,.marquee-card:focus-visible{transform:none}}
