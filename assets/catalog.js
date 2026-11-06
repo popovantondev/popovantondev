@@ -32,4 +32,4 @@ input.addEventListener('input',update);
 (()=>{const art=document.querySelector(".hero-studio .studio-art");if(!art)return;const resize=()=>art.style.setProperty("--scale",art.clientWidth/2048);new ResizeObserver(resize).observe(art);resize();
 // Show the scene only when the photograph and all window pictures are decoded (otherwise the windows pop in over a half-drawn studio).
 const imgs=[...art.querySelectorAll("img")],show=()=>art.classList.add("is-ready");
-Promise.race([Promise.all(imgs.map(i=>i.decode?i.decode().catch(()=>{}):Promise.resolve())),new Promise(r=>setTimeout(r,20000))]).then(show,show)})();
+Promise.race([Promise.all(imgs.map(i=>i.decode?i.decode().catch(()=>{}):Promise.resolve())),new Promise(r=>setTimeout(r,3000))]).then(show,show)})();

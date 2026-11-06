@@ -30,8 +30,9 @@ const start=()=>(async()=>{
  function clipUrl(){return AUDIO+track().id+'/density-'+strength()+'.mp3';}
  function setStatus(text){status.textContent=text;}
  const exportLink=document.createElement('a');exportLink.id='demo-export';exportLink.hidden=true;exportLink.target='_blank';exportLink.rel='noopener';exportLink.tabIndex=-1;exportLink.setAttribute('aria-hidden','true');section.append(exportLink);
+ let activated=false;function applySrc(){const u=clipUrl();if(audio.getAttribute("data-applied")!==u){audio.setAttribute("data-applied",u);audio.src=u;audio.load();}}
  async function selectClip(keepTime=true){
-  const id=++selection,playing=!audio.paused;pendingSeek=keepTime?position():0;audio.pause();retries=0;audio.src=clipUrl();audio.load();loading=true;setStatus(s.loading);updateControls();
+  const id=++selection,playing=!audio.paused;pendingSeek=keepTime?position():0;audio.pause();retries=0;if(playing||activated)applySrc();loading=true;setStatus(s.loading);updateControls();
   const key=track().id+'/'+strength();
   try{if(!timelineCache.has(key))timelineCache.set(key,fetch(BASE+'music/'+key.replace('/','/density-')+'.json').then(r=>{if(!r.ok)throw Error('Timeline unavailable');return r.json();}));
    const data=await timelineCache.get(key);if(id!==selection)return;meter=data;loading=false;setStatus(s.ready);if(playing)await audio.play();draw();schedule();
@@ -41,9 +42,9 @@ const start=()=>(async()=>{
  audio.addEventListener('play',()=>{updateControls();setStatus(s.ready);schedule();});audio.addEventListener('pause',()=>{updateControls();schedule();});
  audio.addEventListener('error',()=>{if(!audio.currentSrc)return;if(retries++<2){setTimeout(()=>{if(audio.error)audio.load();},700*retries);return;}setStatus(s.error);});
  audio.addEventListener('ended',()=>changeTrack((trackIndex+1)%tracks.length,true));
- async function toggle(){if(loading)return;try{if(audio.paused){transportState=1;await audio.play();}else {transportState=2;audio.pause();}}catch(e){setStatus(s.error);}schedule();}
+ async function toggle(){if(loading)return;try{if(audio.paused){transportState=1;activated=true;applySrc();await audio.play();}else {transportState=2;audio.pause();}}catch(e){setStatus(s.error);}schedule();}
  function stop(){transportState=0;audio.pause();audio.currentTime=0;pendingSeek=0;updateControls();schedule();}
- async function changeTrack(index,autoplay=false){const wasPlaying=!audio.paused||autoplay;audio.pause();trackIndex=index;pendingSeek=0;await selectClip(false);if(wasPlaying&&!loading)try{await audio.play();}catch(e){setStatus(s.error);}updateControls();schedule();}
+ async function changeTrack(index,autoplay=false){const wasPlaying=!audio.paused||autoplay;audio.pause();trackIndex=index;pendingSeek=0;await selectClip(false);if(wasPlaying){activated=true;applySrc();}if(wasPlaying&&!loading)try{await audio.play();}catch(e){setStatus(s.error);}updateControls();schedule();}
  function updateControls(){range.value=density;volumeRange.value=volume;document.querySelector('#density-number').value=density;document.querySelectorAll('[data-compare]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.compare===mode)));document.querySelectorAll('[data-track]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.track===track().id)));playButton.textContent=(audio.paused?'▶ ':'Ⅱ ')+(audio.paused?s.play:s.pause);playButton.setAttribute('aria-pressed',String(!audio.paused));exportLink.href=clipUrl();exportLink.download=track().title+' - PeakMP3 '+strength()+'.mp3';draw();}
  const sounds=[0,1,2].map(i=>{const a=new Audio(BASE+'sound/sound-'+i+'.wav');a.preload='auto';return a;});let lastSound=0;function sound(i){if(i===1&&performance.now()-lastSound<24)return;lastSound=performance.now();sounds[i].currentTime=0;sounds[i].play().catch(()=>{});}
  let densityTimer;
