@@ -6,11 +6,14 @@
 
 **[→ Каталог программ и руководств](https://popovantondev.github.io/popovantondev/index-ru.html)**
 
+<table>
+<tr>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><img src="assets/peakmp3-demo-ru.svg" width="100%" alt="Попробовать PeakMP3 в браузере"></a><br><a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><b>▶ Попробовать PeakMP3 в браузере</b></a></td>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><img src="assets/piano-demo-ru.svg" width="100%" alt="Virtual Piano Arranger — Играть на пианино в браузере"></a><br><a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><b>▶ Играть на пианино в браузере</b></a></td>
+</tr>
+</table>
+
 ## Основные программы
-[![Попробовать PeakMP3 в браузере](assets/peakmp3-demo-ru.svg)](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)
-
-[![Попробовать PeakMP3 в браузере](assets/peakmp3-demo-link-ru.svg)](https://popovantondev.github.io/PeakMP3/index-ru.html#demo)
-
 
 <table>
 <tr>

@@ -6,11 +6,14 @@ Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltäglich
 
 **[→ Anwendungen und Anleitungen entdecken](https://popovantondev.github.io/popovantondev/index.html)**
 
+<table>
+<tr>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/PeakMP3/index.html#demo"><img src="assets/peakmp3-demo-de.svg" width="100%" alt="PeakMP3 im Browser testen"></a><br><a href="https://popovantondev.github.io/PeakMP3/index.html#demo"><b>▶ PeakMP3 im Browser testen</b></a></td>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/VirtualPianoArranger/play-de.html"><img src="assets/piano-demo-de.svg" width="100%" alt="Virtual Piano Arranger — Klavier im Browser spielen"></a><br><a href="https://popovantondev.github.io/VirtualPianoArranger/play-de.html"><b>▶ Klavier im Browser spielen</b></a></td>
+</tr>
+</table>
+
 ## Ausgewählte Anwendungen
-[![PeakMP3 im Browser testen](assets/peakmp3-demo-de.svg)](https://popovantondev.github.io/PeakMP3/index.html#demo)
-
-[![PeakMP3 im Browser testen](assets/peakmp3-demo-link-de.svg)](https://popovantondev.github.io/PeakMP3/index.html#demo)
-
 
 <table>
 <tr>

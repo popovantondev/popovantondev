@@ -6,11 +6,14 @@ I build desktop tools for studying, working with media and managing everyday tas
 
 **[→ Browse applications & guides](https://popovantondev.github.io/popovantondev/index-en.html)**
 
+<table>
+<tr>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/PeakMP3/index-en.html#demo"><img src="assets/peakmp3-demo-en.svg" width="100%" alt="Try PeakMP3 in your browser"></a><br><a href="https://popovantondev.github.io/PeakMP3/index-en.html#demo"><b>▶ Try PeakMP3 in your browser</b></a></td>
+<td width="50%" valign="top"><a href="https://popovantondev.github.io/VirtualPianoArranger/play-en.html"><img src="assets/piano-demo-en.svg" width="100%" alt="Virtual Piano Arranger — Play the piano in your browser"></a><br><a href="https://popovantondev.github.io/VirtualPianoArranger/play-en.html"><b>▶ Play the piano in your browser</b></a></td>
+</tr>
+</table>
+
 ## Featured applications
-[![Try PeakMP3 in your browser](assets/peakmp3-demo-en.svg)](https://popovantondev.github.io/PeakMP3/index-en.html#demo)
-
-[![Try PeakMP3 in your browser](assets/peakmp3-demo-link-en.svg)](https://popovantondev.github.io/PeakMP3/index-en.html#demo)
-
 
 <table>
 <tr>

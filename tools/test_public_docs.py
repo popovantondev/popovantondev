@@ -52,6 +52,27 @@ class SharedDistributionTests(PublicDocsTests):
     def test_invalid_shared_repository_rejected(self):
         self.set_shared();self.data['shared_distribution']['repo']='../Other';self.assertTrue(any('invalid shared' in e for e in self.check()))
 
+class ProfileReadmeTests(unittest.TestCase):
+    """The profile README as GitHub shows it: demo cards, order, links and files."""
+    def setUp(self):
+        self.root=Path(__file__).resolve().parents[1]
+        self.data=json.loads((self.root/'public-release.json').read_text(encoding='utf-8'))
+    def test_piano_card_right_of_peakmp3_in_every_language(self):
+        import re
+        for l in docs.LANGS:
+            text=docs.profile_readme(self.data,l)
+            row=re.search(r'<tr>\n(<td[^\n]*peakmp3-demo[^\n]*\n<td[^\n]*)\n</tr>',text)
+            self.assertIsNotNone(row,l)
+            cells=row.group(1).split('\n')
+            self.assertIn('peakmp3-demo-'+l+'.svg',cells[0])
+            self.assertIn('VirtualPianoArranger/play-'+l+'.html',cells[1])
+            self.assertIn('piano-demo-'+l+'.svg',cells[1])
+            self.assertLess(text.index('piano-demo-'),text.index('<h3>'))
+    def test_profile_readmes_are_valid_and_current(self):
+        files=docs.generated(self.data)
+        self.assertEqual(docs.validate(self.data,files),[])
+        for name,text in files.items():
+            if name.startswith('README'):self.assertEqual((self.root/name).read_text(encoding='utf-8'),text,name)
 class NetworkRetryTests(unittest.TestCase):
     def test_transient_connection_error_is_retried(self):
         import io

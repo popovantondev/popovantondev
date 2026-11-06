@@ -118,7 +118,11 @@ def profile_readme(d,l):
     if any(p['repo']=='PeakMP3' for p in d['projects']):
         demo=program_site(next(p for p in d['projects'] if p['repo']=='PeakMP3'),l,websites)+'#demo'
         label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
-        out=out[:-2]+[f'[![{label}](assets/peakmp3-demo-{l}.svg)]({demo})','',f'[![{label}](assets/peakmp3-demo-link-{l}.svg)]({demo})','',out[-2],out[-1]]
+        piano_label={'ru':'Играть на пианино в браузере','en':'Play the piano in your browser','de':'Klavier im Browser spielen'}[l]
+        piano=f'https://popovantondev.github.io/VirtualPianoArranger/play-{l}.html'
+        card=lambda url,img,text,alt:f'<td width="50%" valign="top"><a href="{e(url)}"><img src="assets/{img}-{l}.svg" width="100%" alt="{e(alt)}"></a><br><a href="{e(url)}"><b>▶ {e(text)}</b></a></td>'
+        # Two cards side by side: PeakMP3 on the left, the piano on the right.
+        out=out[:-3]+['<table>','<tr>',card(demo,'peakmp3-demo',label,label),card(piano,'piano-demo',piano_label,'Virtual Piano Arranger — '+piano_label),'</tr>','</table>','',*out[-3:]]
     for i,repo in enumerate(FEATURED):
         p=next(p for p in d['projects'] if p['repo']==repo)
         if i%2==0:out.append('<tr>')
