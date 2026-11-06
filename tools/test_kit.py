@@ -267,6 +267,43 @@ class KitStaticTests(unittest.TestCase):
         self.assertIn("'ppk-theme'", self.js)
         self.assertRegex((KIT / 'KIT_VERSION').read_text(encoding='utf-8'), r'^\d{4}\.\d{2}\.\d{2}-\d+\n$')
 
+    def rules(self, needle):
+        """Declaration bodies of every rule whose selector contains `needle` (media blocks included)."""
+        css = re.sub(r'/\*.*?\*/', '', self.css, flags=re.S)
+        css = re.sub(r'url\("[^"]*"\)', 'url()', css)
+        return [body for sel, body in re.findall(r'([^{}]+)\{([^{}]*)\}', css) if needle in sel]
+
+    def test_floating_header_does_not_animate_layout_properties(self):
+        # Animating max-width/padding re-lays the page out on every frame; with backdrop-filter this made the
+        # header "freeze" on the way into the pill. Only paint/composite properties may transition.
+        banned = re.compile(r'\b(all|max-width|min-width|width|height|padding[\w-]*|margin[\w-]*|top|left|right|bottom|gap|flex[\w-]*|backdrop-filter)\b')
+        checked = 0
+        for needle in ('.ppk-nav-wrap', '.ppk-nav', '.ppk-floating'):
+            for body in self.rules(needle):
+                for prop in re.findall(r'(?<![\w-])transition(?:-property)?\s*:\s*([^;]+)', body):
+                    checked += 1
+                    names = re.sub(r'cubic-bezier\([^)]*\)', '', prop)
+                    self.assertIsNone(banned.search(names), 'layout property transitions in the header: ' + prop)
+        self.assertGreater(checked, 0)
+        glass = ' '.join(self.rules('.ppk-nav::before'))
+        self.assertIn('backdrop-filter', glass)  # the glass lives on its own fading layer
+        self.assertRegex(' '.join(self.rules('.ppk-floating .ppk-nav::before')), r'opacity\s*:\s*1')
+        for body in self.rules('.ppk-floating .ppk-nav'):
+            if 'max-width' in body:  # the pill itself carries no glass: it would be repainted with the layout jump
+                self.assertNotIn('backdrop-filter', body)
+
+    def test_brand_label_is_not_clipped_in_the_floating_pill(self):
+        # `overflow:hidden` on the label cut the last letter ("popovantondev" lost its v) and the descender of "p"
+        # at fractional zoom (125/150 %). The label needs ink room on the right and below, paid back by negative margins.
+        bodies = [b for b in self.rules('.ppk-brand span') if 'overflow' in b]
+        self.assertEqual(len(bodies), 1)
+        pad = re.search(r'padding\s*:\s*(\d+)px\s+(\d+)px\s+(\d+)px\s+0\b', bodies[0])
+        mar = re.search(r'margin\s*:\s*-(\d+)px\s+-(\d+)px\s+-(\d+)px\s+0\b', bodies[0])
+        self.assertTrue(pad and mar, bodies[0])
+        self.assertGreaterEqual(int(pad.group(2)), 3)  # right
+        self.assertGreaterEqual(int(pad.group(3)), 2)  # bottom (descenders)
+        self.assertEqual(pad.groups(), mar.groups())
+
 
 if __name__ == '__main__':
     unittest.main()
