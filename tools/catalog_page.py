@@ -7,7 +7,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from kit_programs import CATEGORIES
 
 KIT_VERSION=(Path(__file__).resolve().parents[1]/'assets'/'kit'/'KIT_VERSION').read_text(encoding='utf-8').strip()
-CATALOG_REV='r5'  # raise when assets/catalog.css or catalog.js change, so browsers drop the old copies
+CATALOG_REV='r6'  # raise when assets/catalog.css or catalog.js change, so browsers drop the old copies
 GITHUB='https://github.com/popovantondev'
 ORDER=('lernen','medien','werkzeuge','daten')
 ALL_LABEL={'ru':'Все','de':'Alle','en':'All'}

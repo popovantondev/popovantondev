@@ -107,9 +107,9 @@ def built_with(d,l):
     return ' · '.join(f'[JavaScript — {quick["name"]}]({site})' if token=='JavaScript' else token for token in sorted(counts,key=lambda k:-counts[k]))
 PROFILE_MANIFEST='docs/readme/manifest.json'
 def profile_manifest():
-    """Pictures of the profile README (built by GitHubPolish tools/readme_kit/profile.py, committed here so this check runs alone)."""
+    """Pictures of the profile README (built by GitHubPolish tools/readme_kit/profile_kit.py, committed here so this check runs alone)."""
     path=ROOT/PROFILE_MANIFEST
-    if not path.is_file():raise ValueError(PROFILE_MANIFEST+' is missing: build the profile pictures (GitHubPolish readme_kit profile.py)')
+    if not path.is_file():raise ValueError(PROFILE_MANIFEST+' is missing: build the profile pictures (GitHubPolish readme_kit profile_kit.py)')
     return json.loads(path.read_text(encoding='utf-8'))
 def profile_picture(manifest,raw,kind,l,href):
     """<a><picture> with the dark source; width, height and alt come from the manifest (alt names the program or the card)."""

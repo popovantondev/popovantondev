@@ -209,6 +209,7 @@
     if (off < 0) return;
     e.preventDefault();
     arm(true);
+    try { keys[off].el.focus({ preventScroll: true }); } catch (err) { /* not focusable */ }
     try { board.setPointerCapture(e.pointerId); } catch (err) { /* not capturable */ }
     active.set(e.pointerId, off);
     press(off, 'p' + e.pointerId);
@@ -252,10 +253,16 @@
     if (k && (e.key === 'Enter' || e.key === ' ')) release(Number(k.dataset.off), 'e' + k.dataset.off);
   });
   board.addEventListener('focusin', () => arm(true));
+  // Focus left the piano (Tab, click elsewhere): the computer keyboard stops playing.
+  section.addEventListener('focusout', (e) => {
+    if (e.relatedTarget && section.contains(e.relatedTarget)) return;
+    releaseAll(); arm(false);
+  });
   // Letters of the computer keyboard play only while the piano is "armed" (clicked or focused),
   // so the page's own shortcuts and the search field keep working.
   document.addEventListener('keydown', (e) => {
     if (!armed || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    if (!section.contains(document.activeElement)) { releaseAll(); arm(false); return; }
     const t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     const off = OFFSET_OF.get(e.code);

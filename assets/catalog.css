@@ -30,6 +30,8 @@ main.ppk-shell{padding-bottom:8px}
 .project-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
 .project-heading>*{min-width:0}
 .project-badge{order:2;display:grid;place-items:center;flex:none;width:76px;height:76px;border:1px solid var(--ppk-line);border-radius:20px;background:#e8eef6}
+:root[data-theme="dark"] .project-badge{border-color:transparent;background:transparent}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .project-badge{border-color:transparent;background:transparent}}
 .project-icon{display:block;width:60px;height:60px;object-fit:contain}
 .platform{order:1;color:var(--ppk-muted);font-size:14px;overflow-wrap:anywhere}
 .project-title-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
