@@ -178,6 +178,10 @@ class Links(HTMLParser):
         a=dict(attrs)
         if tag=='a' and a.get('href'):self.links.append(a['href'])
         if tag=='img' and a.get('src'):self.images.append(a['src'])
+        if tag in ('source','img') and a.get('srcset'):
+            for candidate in a['srcset'].split(','):
+                parts=candidate.split()
+                if parts and not parts[0].startswith('data:'):self.images.append(parts[0])
 def fetch_bytes(request, attempts=3):
     """Retry temporary transport errors; permanent HTTP errors still fail."""
     for attempt in range(attempts):

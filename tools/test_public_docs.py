@@ -23,6 +23,14 @@ class PublicDocsTests(unittest.TestCase):
         self.data['downloads']=['app.zip'];self.assertTrue(any('source-only' in e for e in self.check()))
     def test_missing_image(self):
         (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n![Example](missing.png)',encoding='utf-8');self.assertTrue(any('missing image' in e for e in self.check()))
+    def test_missing_srcset_image(self):
+        (docs.ROOT/'ok.png').write_bytes(b'x')
+        picture='\n<picture><source media="(prefers-color-scheme: dark)" srcset="missing-dark.png"><img src="ok.png" alt="x"></picture>'
+        (docs.ROOT/'README.md').write_text(self.files['README.md']+picture,encoding='utf-8');self.assertTrue(any('missing image missing-dark.png' in e for e in self.check()))
+    def test_existing_srcset_image_passes(self):
+        (docs.ROOT/'ok.png').write_bytes(b'x');(docs.ROOT/'dark.png').write_bytes(b'x')
+        text=self.files['README.md']+'\n<picture><source media="(prefers-color-scheme: dark)" srcset="dark.png 1x, ok.png 2x"><img src="ok.png" alt="x"></picture>'
+        self.files['README.md']=text;(docs.ROOT/'README.md').write_text(text,encoding='utf-8');self.assertEqual(self.check(),[])
     def test_missing_local_document(self):
         (docs.ROOT/'README.md').write_text(self.files['README.md']+'\n[Setup](missing.md)',encoding='utf-8');self.assertTrue(any('missing local link' in e for e in self.check()))
     def test_production_credit(self):
