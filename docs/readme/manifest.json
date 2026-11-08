@@ -15,21 +15,21 @@
    "kind": "demo-peakmp3",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/demo-peakmp3-ru-light.0b319262.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-ru-light.59323e76.webp",
+   "width": 412,
    "height": 120,
    "alt": "Попробовать PeakMP3 в браузере",
-   "bytes": 11998
+   "bytes": 11978
   },
   {
    "kind": "demo-piano",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/demo-piano-ru-light.460628c0.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-ru-light.b97a4184.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Играть на пианино в браузере",
-   "bytes": 11742
+   "bytes": 11770
   },
   {
    "kind": "card-SaveLecture",
@@ -245,21 +245,21 @@
    "kind": "demo-peakmp3",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/demo-peakmp3-de-light.93a15576.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-de-light.f1772716.webp",
+   "width": 412,
    "height": 120,
    "alt": "PeakMP3 im Browser testen",
-   "bytes": 11952
+   "bytes": 11912
   },
   {
    "kind": "demo-piano",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/demo-piano-de-light.13babcbe.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-de-light.bf0893ed.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Klavier im Browser spielen",
-   "bytes": 11888
+   "bytes": 11986
   },
   {
    "kind": "card-SaveLecture",
@@ -475,21 +475,21 @@
    "kind": "demo-peakmp3",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/demo-peakmp3-en-light.fe50c2e4.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-en-light.25aa4b6b.webp",
+   "width": 412,
    "height": 120,
    "alt": "Try PeakMP3 in your browser",
-   "bytes": 11778
+   "bytes": 11802
   },
   {
    "kind": "demo-piano",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/demo-piano-en-light.6534831b.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-en-light.f8d4aa93.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Play the piano in your browser",
-   "bytes": 11812
+   "bytes": 11848
   },
   {
    "kind": "card-SaveLecture",
@@ -705,21 +705,21 @@
    "kind": "demo-peakmp3",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/demo-peakmp3-ru-dark.67adaa36.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-ru-dark.74ccff95.webp",
+   "width": 412,
    "height": 120,
    "alt": "Попробовать PeakMP3 в браузере",
-   "bytes": 11944
+   "bytes": 11908
   },
   {
    "kind": "demo-piano",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/demo-piano-ru-dark.9367b151.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-ru-dark.836d135b.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Играть на пианино в браузере",
-   "bytes": 11796
+   "bytes": 11956
   },
   {
    "kind": "card-SaveLecture",
@@ -935,21 +935,21 @@
    "kind": "demo-peakmp3",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/demo-peakmp3-de-dark.5f570838.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-de-dark.7c835ea5.webp",
+   "width": 412,
    "height": 120,
    "alt": "PeakMP3 im Browser testen",
-   "bytes": 11950
+   "bytes": 11918
   },
   {
    "kind": "demo-piano",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/demo-piano-de-dark.543ecd84.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-de-dark.236ddd43.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Klavier im Browser spielen",
-   "bytes": 11836
+   "bytes": 11930
   },
   {
    "kind": "card-SaveLecture",
@@ -1165,21 +1165,21 @@
    "kind": "demo-peakmp3",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/demo-peakmp3-en-dark.acf174da.webp",
-   "width": 432,
+   "path": "docs/readme/demo-peakmp3-en-dark.7a49c968.webp",
+   "width": 412,
    "height": 120,
    "alt": "Try PeakMP3 in your browser",
-   "bytes": 11782
+   "bytes": 11818
   },
   {
    "kind": "demo-piano",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/demo-piano-en-dark.8b775904.webp",
-   "width": 432,
+   "path": "docs/readme/demo-piano-en-dark.55b479a1.webp",
+   "width": 412,
    "height": 120,
    "alt": "Virtual Piano Arranger — Play the piano in your browser",
-   "bytes": 11852
+   "bytes": 11606
   },
   {
    "kind": "card-SaveLecture",

@@ -9,8 +9,8 @@ Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltäglich
 ## Gleich ausprobieren
 
 <p>
-<a href="https://popovantondev.github.io/PeakMP3/index.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-de-dark.5f570838.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-de-light.93a15576.webp" width="432" height="120" alt="PeakMP3 im Browser testen"></picture></a>
-<a href="https://popovantondev.github.io/VirtualPianoArranger/play-de.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-de-dark.543ecd84.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-de-light.13babcbe.webp" width="432" height="120" alt="Virtual Piano Arranger — Klavier im Browser spielen"></picture></a>
+<a href="https://popovantondev.github.io/PeakMP3/index.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-de-dark.7c835ea5.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-de-light.f1772716.webp" width="412" height="120" alt="PeakMP3 im Browser testen"></picture></a>
+<a href="https://popovantondev.github.io/VirtualPianoArranger/play-de.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-de-dark.236ddd43.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-de-light.bf0893ed.webp" width="412" height="120" alt="Virtual Piano Arranger — Klavier im Browser spielen"></picture></a>
 </p>
 
 ## Alle Anwendungen

@@ -9,8 +9,8 @@
 ## Попробовать сразу
 
 <p>
-<a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-dark.67adaa36.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-light.0b319262.webp" width="432" height="120" alt="Попробовать PeakMP3 в браузере"></picture></a>
-<a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-dark.9367b151.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-light.460628c0.webp" width="432" height="120" alt="Virtual Piano Arranger — Играть на пианино в браузере"></picture></a>
+<a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-dark.74ccff95.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-light.59323e76.webp" width="412" height="120" alt="Попробовать PeakMP3 в браузере"></picture></a>
+<a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-dark.836d135b.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-light.b97a4184.webp" width="412" height="120" alt="Virtual Piano Arranger — Играть на пианино в браузере"></picture></a>
 </p>
 
 ## Все программы
