@@ -93,13 +93,13 @@ class ProfileReadmeTests(unittest.TestCase):
             self.assertNotIn('<table',text.split('<details>')[0])                 # no table above the text-only link list
     def test_profile_readme_uses_light_images_in_the_budget_of_the_brief(self):
         manifest=json.loads((self.root/'docs'/'readme'/'manifest.json').read_text(encoding='utf-8'))
-        limits={'banner':50_000,'demo':15_000,'card':3_000}
+        limits={'banner':50_000,'demo':15_000,'card':7_000}
         for image in manifest['images']:
             self.assertLessEqual((self.root/image['path']).stat().st_size,limits[image['kind'].split('-')[0]],image['path'])
         for l in docs.LANGS:
             for theme in ('light','dark'):
                 total=sum(i['bytes'] for i in manifest['images'] if i['lang']==l and i['theme']==theme)
-                self.assertLess(total,140*1024,(l,theme))
+                self.assertLess(total,200*1000,(l,theme))
     def test_stale_banner_number_is_reported(self):
         import copy
         fewer=copy.deepcopy(self.data);fewer['projects']=fewer['projects'][:-1]

@@ -35,201 +35,201 @@
    "kind": "card-SaveLecture",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-SaveLecture-ru-light.18fb2660.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-ru-light.40a23e70.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Сохраняет субтитры Teams и снимки демонстрации экрана",
-   "bytes": 2898
+   "bytes": 6696
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-TelegramMediaSender-ru-light.d2f3f9ff.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-ru-light.cee93f9e.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Отправляет наборы видео, аудио и субтитров в Telegram",
-   "bytes": 2632
+   "bytes": 6878
   },
   {
    "kind": "card-AnkiSound",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-AnkiSound-ru-light.66fefca9.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-ru-light.014f9953.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Добавляет локальную озвучку карточкам Anki",
-   "bytes": 2690
+   "bytes": 6538
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-LectureTranslate-ru-light.ef686557.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-ru-light.37329486.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Переводит немецкие SRT-субтитры на русский",
-   "bytes": 2350
+   "bytes": 6808
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-SRTtoSound-ru-light.6e781073.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-ru-light.d6c12c49.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Создаёт русскую озвучку из готовых SRT-субтитров",
-   "bytes": 2876
+   "bytes": 6864
   },
   {
    "kind": "card-LectureMerge",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-LectureMerge-ru-light.77d28e52.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-ru-light.25e2c7d1.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Объединяет видео лекции, озвучку и субтитры в MP4",
-   "bytes": 2964
+   "bytes": 6308
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-ru-light.96e07489.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-ru-light.a5d1015f.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — Одностороннее резервное копирование папок с предпросмотром",
-   "bytes": 2756
+   "bytes": 6978
   },
   {
    "kind": "card-HotspotControl",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-HotspotControl-ru-light.f28247a4.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-ru-light.b8770dc8.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Управляет мобильной точкой доступа Windows",
-   "bytes": 2602
+   "bytes": 6546
   },
   {
    "kind": "card-MegaProg",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-MegaProg-ru-light.27ca019a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-ru-light.3aa4ad3a.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Ведёт задачи разработки: требования, проверки и прогресс",
-   "bytes": 2582
+   "bytes": 6812
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-LectureCompanion-ru-light.88745784.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-ru-light.9773f0be.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Следит за лекцией в Teams и объясняет выбранный слайд",
-   "bytes": 2384
+   "bytes": 6850
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-StudyArchivePrep-ru-light.e2222457.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-ru-light.d7ec9866.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Организует учебные материалы по датам и извлекает аудио",
-   "bytes": 2646
+   "bytes": 6650
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-openmedia-downloader-ru-light.da828e37.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-ru-light.560ae000.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Проверяет медиассылки и скачивает разрешённые материалы",
-   "bytes": 2736
+   "bytes": 6628
   },
   {
    "kind": "card-GitHubSync",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-GitHubSync-ru-light.9a6ea49d.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-ru-light.70c1e82c.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Отправляет файлы в GitHub и скачивает исходники и выпуски",
-   "bytes": 2912
+   "bytes": 6546
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-VirtualPianoArranger-ru-light.fa169dc7.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-ru-light.384b877d.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Офлайн-пианино, буквенная запись и импорт партий MIDI",
-   "bytes": 2704
+   "bytes": 6710
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-SoundLeaf-ru-light.5fe4e960.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-ru-light.3d917ed4.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Записывает системный звук Windows из трея",
-   "bytes": 2746
+   "bytes": 6140
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-QuickAnswer-ru-light.ce27f8fd.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-ru-light.c370f639.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Расширение Edge и экспериментальные исходники Desktop",
-   "bytes": 2836
+   "bytes": 6992
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-ru-light.74d8e0de.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-ru-light.8e2b4a82.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Сохраняет видео и звук YouTube в Windows",
-   "bytes": 2544
+   "bytes": 6726
   },
   {
    "kind": "card-PeakMP3",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-PeakMP3-ru-light.319e9ff6.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-ru-light.5a4a3f28.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Аналоговый интерфейс, плотность звука, A/B и экспорт MP3 320",
-   "bytes": 2480
+   "bytes": 6944
   },
   {
    "kind": "card-Kartoteka",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-Kartoteka-ru-light.2d88da56.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-ru-light.4b048613.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Картотека — Карточки, таблицы и списки на вашем компьютере",
-   "bytes": 2928
+   "bytes": 5580
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-LektienPlayer-ru-light.a74db930.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-ru-light.a1c8671a.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Плеер лекций для Mac: распознавание, перевод и озвучка",
-   "bytes": 2652
+   "bytes": 6988
   },
   {
    "kind": "banner",
@@ -265,201 +265,201 @@
    "kind": "card-SaveLecture",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-SaveLecture-de-light.22fdf514.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-de-light.90fb25b2.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Speichert Teams-Untertitel und Bilder der Bildschirmfreigabe",
-   "bytes": 2868
+   "bytes": 6584
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-TelegramMediaSender-de-light.bfe023cd.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-de-light.98de46cd.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Sendet Pakete aus Video, Audio und Untertiteln an Telegram",
-   "bytes": 2654
+   "bytes": 6946
   },
   {
    "kind": "card-AnkiSound",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-AnkiSound-de-light.da0de7c0.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-de-light.5c2c0894.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Ergänzt Anki-Karten um lokale Sprachausgabe",
-   "bytes": 2642
+   "bytes": 6722
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-LectureTranslate-de-light.dbd30c4b.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-de-light.4ee29725.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Übersetzt deutsche SRT-Untertitel ins Russische",
-   "bytes": 2324
+   "bytes": 6934
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-SRTtoSound-de-light.75b21479.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-de-light.77035df8.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Erstellt russische Sprachausgabe aus fertigen SRT-Untertiteln",
-   "bytes": 2578
+   "bytes": 6822
   },
   {
    "kind": "card-LectureMerge",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-LectureMerge-de-light.44df4ac8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-de-light.a7ddb00c.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Verbindet Vorlesungsvideo, Sprachausgabe und Untertitel als MP4",
-   "bytes": 3000
+   "bytes": 6628
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-de-light.471aa2be.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-de-light.114a9e42.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — Einseitige Ordnersicherung mit Vorschau und alten Versionen",
-   "bytes": 2500
+   "bytes": 6790
   },
   {
    "kind": "card-HotspotControl",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-HotspotControl-de-light.30134fed.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-de-light.9d75ddb9.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Steuert den mobilen Windows-Hotspot",
-   "bytes": 2868
+   "bytes": 5904
   },
   {
    "kind": "card-MegaProg",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-MegaProg-de-light.a62be227.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-de-light.dd492a36.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Führt freigegebene Entwicklungsaufgaben aus, speichert Fortschritt",
-   "bytes": 2634
+   "bytes": 6906
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-LectureCompanion-de-light.f0378a6a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-de-light.e465182c.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Begleitet Teams-Vorlesungen und erklärt ausgewählte Folien",
-   "bytes": 2410
+   "bytes": 6992
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-StudyArchivePrep-de-light.e7a50a75.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-de-light.804b0d6c.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Ordnet Lernmaterial nach Datum und extrahiert Audio",
-   "bytes": 2884
+   "bytes": 6142
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-openmedia-downloader-de-light.62d759b8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-de-light.4ce22603.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Prüft Medienlinks und lädt erlaubte Inhalte herunter",
-   "bytes": 2828
+   "bytes": 6898
   },
   {
    "kind": "card-GitHubSync",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-GitHubSync-de-light.2e1f699a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-de-light.d84463bd.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Überträgt Dateien zu GitHub und lädt Releases herunter",
-   "bytes": 2970
+   "bytes": 6170
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-VirtualPianoArranger-de-light.8466d19d.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-de-light.8452c9cf.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Offline-Klavier, Buchstabennotation und MIDI-Import",
-   "bytes": 2576
+   "bytes": 6934
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-SoundLeaf-de-light.a3b45b30.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-de-light.918db984.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Nimmt Windows-Systemaudio auf, gesteuert aus dem Tray",
-   "bytes": 2992
+   "bytes": 6582
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-QuickAnswer-de-light.68e31122.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-de-light.a381fb44.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Edge-Erweiterung und experimenteller Desktop-Quellcode",
-   "bytes": 2788
+   "bytes": 6912
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-de-light.83626124.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-de-light.049a534b.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Speichert YouTube-Videos und Audio unter Windows",
-   "bytes": 2680
+   "bytes": 6956
   },
   {
    "kind": "card-PeakMP3",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-PeakMP3-de-light.41330ae3.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-de-light.01687b86.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Analoge Oberfläche, Audiodichte, A/B-Vergleich und MP3-320",
-   "bytes": 2490
+   "bytes": 6596
   },
   {
    "kind": "card-Kartoteka",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-Kartoteka-de-light.bf4f1147.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-de-light.4c40c0a0.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kartoteka — Kontakte, Sammlungen und Listen auf Ihrem eigenen Computer",
-   "bytes": 2916
+   "bytes": 5826
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-LektienPlayer-de-light.79b4a625.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-de-light.5be81a10.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Vorlesungsplayer für den Mac: Erkennung, Übersetzung, Vertonung",
-   "bytes": 2786
+   "bytes": 6618
   },
   {
    "kind": "banner",
@@ -495,201 +495,201 @@
    "kind": "card-SaveLecture",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-SaveLecture-en-light.a30d42cd.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-en-light.08c4f2fd.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Saves Teams captions and shared-screen images locally",
-   "bytes": 2760
+   "bytes": 6570
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-TelegramMediaSender-en-light.b9c63082.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-en-light.c2d76223.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Sends bundles of video, audio and subtitles to Telegram",
-   "bytes": 2932
+   "bytes": 6932
   },
   {
    "kind": "card-AnkiSound",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-AnkiSound-en-light.aa36f883.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-en-light.eaf21229.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Adds local speech to your Anki cards",
-   "bytes": 2930
+   "bytes": 6806
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-LectureTranslate-en-light.311af9c8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-en-light.5b2c3501.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Translates German SRT subtitles into Russian",
-   "bytes": 2984
+   "bytes": 6788
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-SRTtoSound-en-light.80130167.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-en-light.7e9386c2.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Creates Russian narration from finished SRT subtitles",
-   "bytes": 2962
+   "bytes": 6514
   },
   {
    "kind": "card-LectureMerge",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-LectureMerge-en-light.19384df7.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-en-light.26b85ee9.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Combines lecture video, narration and subtitles into MP4",
-   "bytes": 2974
+   "bytes": 6072
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-en-light.5481e870.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-en-light.04896955.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — One-way folder backup with preview and kept versions",
-   "bytes": 2484
+   "bytes": 6752
   },
   {
    "kind": "card-HotspotControl",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-HotspotControl-en-light.6a568b5a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-en-light.6a9a796b.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Controls the Windows Mobile Hotspot",
-   "bytes": 2942
+   "bytes": 5910
   },
   {
    "kind": "card-MegaProg",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-MegaProg-en-light.e95e31b1.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-en-light.b2064901.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Runs approved development tasks and keeps project progress",
-   "bytes": 2602
+   "bytes": 6860
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-LectureCompanion-en-light.505f5ecc.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-en-light.f09ce0b0.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Follows Teams lectures and explains a selected slide",
-   "bytes": 2900
+   "bytes": 6636
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-StudyArchivePrep-en-light.b64bde5e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-en-light.b6761012.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Organizes study materials by date and extracts audio",
-   "bytes": 2922
+   "bytes": 6444
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-openmedia-downloader-en-light.7663a2ed.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-en-light.65c745b6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Inspects media links and downloads authorized content",
-   "bytes": 2620
+   "bytes": 6568
   },
   {
    "kind": "card-GitHubSync",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-GitHubSync-en-light.9ce50de1.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-en-light.6036d3bf.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Uploads files to GitHub and downloads project releases",
-   "bytes": 2976
+   "bytes": 6306
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-VirtualPianoArranger-en-light.24a51e3a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-en-light.7b4a1257.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Offline piano, letter notation and MIDI part import",
-   "bytes": 2936
+   "bytes": 6930
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-SoundLeaf-en-light.4791afe3.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-en-light.3853f44e.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Records Windows system audio from the tray",
-   "bytes": 2742
+   "bytes": 6104
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-QuickAnswer-en-light.fa26125d.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-en-light.7a255715.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Edge extension and experimental Desktop source",
-   "bytes": 2646
+   "bytes": 6900
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-en-light.4c49e66a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-en-light.f6611b31.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Saves YouTube video and audio on Windows",
-   "bytes": 2538
+   "bytes": 6822
   },
   {
    "kind": "card-PeakMP3",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-PeakMP3-en-light.f9239605.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-en-light.61c53fb1.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Vintage controls, audio density, A/B and MP3 320 export",
-   "bytes": 2964
+   "bytes": 6824
   },
   {
    "kind": "card-Kartoteka",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-Kartoteka-en-light.1e814080.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-en-light.b790b7b7.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kartoteka — Contacts, collections and lists on your own computer",
-   "bytes": 2722
+   "bytes": 5692
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-LektienPlayer-en-light.9e7e4929.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-en-light.03b7c9b9.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Lecture player for Mac: recognition, translation, voice-over",
-   "bytes": 2850
+   "bytes": 6830
   },
   {
    "kind": "banner",
@@ -725,201 +725,201 @@
    "kind": "card-SaveLecture",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-SaveLecture-ru-dark.11a6d2f5.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-ru-dark.a53d6939.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Сохраняет субтитры Teams и снимки демонстрации экрана",
-   "bytes": 2570
+   "bytes": 6778
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-TelegramMediaSender-ru-dark.2b2cb0f6.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-ru-dark.2f9c8ffb.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Отправляет наборы видео, аудио и субтитров в Telegram",
-   "bytes": 2734
+   "bytes": 6480
   },
   {
    "kind": "card-AnkiSound",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-AnkiSound-ru-dark.5ea3aa74.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-ru-dark.1c1385e6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Добавляет локальную озвучку карточкам Anki",
-   "bytes": 2520
+   "bytes": 6544
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-LectureTranslate-ru-dark.b815bf62.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-ru-dark.d3328694.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Переводит немецкие SRT-субтитры на русский",
-   "bytes": 2464
+   "bytes": 6976
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-SRTtoSound-ru-dark.0886f426.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-ru-dark.6b02dec6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Создаёт русскую озвучку из готовых SRT-субтитров",
-   "bytes": 2704
+   "bytes": 6848
   },
   {
    "kind": "card-LectureMerge",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-LectureMerge-ru-dark.b2aebe52.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-ru-dark.f3c4e5a7.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Объединяет видео лекции, озвучку и субтитры в MP4",
-   "bytes": 2216
+   "bytes": 6512
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-ru-dark.e573cab1.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-ru-dark.2a957090.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — Одностороннее резервное копирование папок с предпросмотром",
-   "bytes": 2424
+   "bytes": 6860
   },
   {
    "kind": "card-HotspotControl",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-HotspotControl-ru-dark.5c4b9a5c.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-ru-dark.a268656a.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Управляет мобильной точкой доступа Windows",
-   "bytes": 2256
+   "bytes": 6626
   },
   {
    "kind": "card-MegaProg",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-MegaProg-ru-dark.7e4a61b5.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-ru-dark.0fa54b08.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Ведёт задачи разработки: требования, проверки и прогресс",
-   "bytes": 2388
+   "bytes": 6800
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-LectureCompanion-ru-dark.924fcd01.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-ru-dark.cae4c0a1.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Следит за лекцией в Teams и объясняет выбранный слайд",
-   "bytes": 2600
+   "bytes": 6982
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-StudyArchivePrep-ru-dark.64c17c64.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-ru-dark.26770a38.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Организует учебные материалы по датам и извлекает аудио",
-   "bytes": 2498
+   "bytes": 6994
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-openmedia-downloader-ru-dark.60fe3658.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-ru-dark.30fabdb4.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Проверяет медиассылки и скачивает разрешённые материалы",
-   "bytes": 2772
+   "bytes": 6604
   },
   {
    "kind": "card-GitHubSync",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-GitHubSync-ru-dark.be0e0752.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-ru-dark.c8e183c8.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Отправляет файлы в GitHub и скачивает исходники и выпуски",
-   "bytes": 2960
+   "bytes": 6588
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-VirtualPianoArranger-ru-dark.d2c02732.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-ru-dark.328276fc.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Офлайн-пианино, буквенная запись и импорт партий MIDI",
-   "bytes": 2772
+   "bytes": 6680
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-SoundLeaf-ru-dark.4b880323.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-ru-dark.185b0722.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Записывает системный звук Windows из трея",
-   "bytes": 2766
+   "bytes": 6164
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-QuickAnswer-ru-dark.7e84fa3e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-ru-dark.ea887067.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Расширение Edge и экспериментальные исходники Desktop",
-   "bytes": 2496
+   "bytes": 6966
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-ru-dark.2d14a028.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-ru-dark.733f1ab9.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Сохраняет видео и звук YouTube в Windows",
-   "bytes": 2508
+   "bytes": 6786
   },
   {
    "kind": "card-PeakMP3",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-PeakMP3-ru-dark.623dfd63.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-ru-dark.0601ec95.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Аналоговый интерфейс, плотность звука, A/B и экспорт MP3 320",
-   "bytes": 2502
+   "bytes": 6992
   },
   {
    "kind": "card-Kartoteka",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-Kartoteka-ru-dark.977c70d7.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-ru-dark.f430890b.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Картотека — Карточки, таблицы и списки на вашем компьютере",
-   "bytes": 2948
+   "bytes": 5690
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-LektienPlayer-ru-dark.38b404e1.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-ru-dark.f55140ab.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Плеер лекций для Mac: распознавание, перевод и озвучка",
-   "bytes": 2672
+   "bytes": 6812
   },
   {
    "kind": "banner",
@@ -955,201 +955,201 @@
    "kind": "card-SaveLecture",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-SaveLecture-de-dark.db33721c.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-de-dark.30aad83a.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Speichert Teams-Untertitel und Bilder der Bildschirmfreigabe",
-   "bytes": 2594
+   "bytes": 6688
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-TelegramMediaSender-de-dark.2675d70b.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-de-dark.d98b487e.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Sendet Pakete aus Video, Audio und Untertiteln an Telegram",
-   "bytes": 2758
+   "bytes": 6940
   },
   {
    "kind": "card-AnkiSound",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-AnkiSound-de-dark.8b4a52f6.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-de-dark.97fdc5a4.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Ergänzt Anki-Karten um lokale Sprachausgabe",
-   "bytes": 2484
+   "bytes": 6862
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-LectureTranslate-de-dark.45dcc7c8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-de-dark.d97a5570.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Übersetzt deutsche SRT-Untertitel ins Russische",
-   "bytes": 2410
+   "bytes": 6682
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-SRTtoSound-de-dark.a317f044.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-de-dark.2becdbba.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Erstellt russische Sprachausgabe aus fertigen SRT-Untertiteln",
-   "bytes": 2750
+   "bytes": 6780
   },
   {
    "kind": "card-LectureMerge",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-LectureMerge-de-dark.b7bf067b.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-de-dark.ecbeb9cc.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Verbindet Vorlesungsvideo, Sprachausgabe und Untertitel als MP4",
-   "bytes": 2394
+   "bytes": 6818
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-de-dark.0340f18c.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-de-dark.a3b5c5eb.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — Einseitige Ordnersicherung mit Vorschau und alten Versionen",
-   "bytes": 2588
+   "bytes": 6660
   },
   {
    "kind": "card-HotspotControl",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-HotspotControl-de-dark.0c554c1f.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-de-dark.a04c41a5.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Steuert den mobilen Windows-Hotspot",
-   "bytes": 2940
+   "bytes": 5952
   },
   {
    "kind": "card-MegaProg",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-MegaProg-de-dark.de526c30.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-de-dark.d4fc75e9.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Führt freigegebene Entwicklungsaufgaben aus, speichert Fortschritt",
-   "bytes": 2718
+   "bytes": 6928
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-LectureCompanion-de-dark.47e6d915.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-de-dark.65123335.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Begleitet Teams-Vorlesungen und erklärt ausgewählte Folien",
-   "bytes": 2630
+   "bytes": 6876
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-StudyArchivePrep-de-dark.aeaa633a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-de-dark.66e03cc0.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Ordnet Lernmaterial nach Datum und extrahiert Audio",
-   "bytes": 2348
+   "bytes": 6512
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-openmedia-downloader-de-dark.858eb8d3.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-de-dark.f23bd6f6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Prüft Medienlinks und lädt erlaubte Inhalte herunter",
-   "bytes": 2562
+   "bytes": 6982
   },
   {
    "kind": "card-GitHubSync",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-GitHubSync-de-dark.75406c9e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-de-dark.59b2c48f.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Überträgt Dateien zu GitHub und lädt Releases herunter",
-   "bytes": 2876
+   "bytes": 6170
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-VirtualPianoArranger-de-dark.a50fc18c.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-de-dark.ec4b35d6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Offline-Klavier, Buchstabennotation und MIDI-Import",
-   "bytes": 2668
+   "bytes": 6382
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-SoundLeaf-de-dark.386d8e17.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-de-dark.8fdaa12b.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Nimmt Windows-Systemaudio auf, gesteuert aus dem Tray",
-   "bytes": 2958
+   "bytes": 6608
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-QuickAnswer-de-dark.553d2e83.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-de-dark.921d9803.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Edge-Erweiterung und experimenteller Desktop-Quellcode",
-   "bytes": 2446
+   "bytes": 6852
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-de-dark.efe024c7.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-de-dark.2b5ca100.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Speichert YouTube-Videos und Audio unter Windows",
-   "bytes": 2652
+   "bytes": 6388
   },
   {
    "kind": "card-PeakMP3",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-PeakMP3-de-dark.7bd1ec1a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-de-dark.6512fc8d.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Analoge Oberfläche, Audiodichte, A/B-Vergleich und MP3-320",
-   "bytes": 2542
+   "bytes": 6504
   },
   {
    "kind": "card-Kartoteka",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-Kartoteka-de-dark.39a4c2bc.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-de-dark.6dfc6cea.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kartoteka — Kontakte, Sammlungen und Listen auf Ihrem eigenen Computer",
-   "bytes": 2712
+   "bytes": 5952
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-LektienPlayer-de-dark.6ad76cf7.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-de-dark.6fda5798.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Vorlesungsplayer für den Mac: Erkennung, Übersetzung, Vertonung",
-   "bytes": 2576
+   "bytes": 6584
   },
   {
    "kind": "banner",
@@ -1185,201 +1185,201 @@
    "kind": "card-SaveLecture",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-SaveLecture-en-dark.831e344a.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SaveLecture-en-dark.9ee5fbee.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SaveLecture — Saves Teams captions and shared-screen images locally",
-   "bytes": 2484
+   "bytes": 6640
   },
   {
    "kind": "card-TelegramMediaSender",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-TelegramMediaSender-en-dark.629eae15.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-TelegramMediaSender-en-dark.76af7778.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Telegram Media Sender — Sends bundles of video, audio and subtitles to Telegram",
-   "bytes": 2720
+   "bytes": 6892
   },
   {
    "kind": "card-AnkiSound",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-AnkiSound-en-dark.301f8eb4.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-AnkiSound-en-dark.9f1e8ead.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Anki SOUND — Adds local speech to your Anki cards",
-   "bytes": 2574
+   "bytes": 6882
   },
   {
    "kind": "card-LectureTranslate",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-LectureTranslate-en-dark.e3b80b20.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureTranslate-en-dark.275424b5.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureTranslate — Translates German SRT subtitles into Russian",
-   "bytes": 2366
+   "bytes": 6878
   },
   {
    "kind": "card-SRTtoSound",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-SRTtoSound-en-dark.27987757.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SRTtoSound-en-dark.6f7e336a.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SRT to Sound — Creates Russian narration from finished SRT subtitles",
-   "bytes": 2346
+   "bytes": 6844
   },
   {
    "kind": "card-LectureMerge",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-LectureMerge-en-dark.7fb668ee.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureMerge-en-dark.fa3b8c62.webp",
+   "width": 412,
+   "height": 112,
    "alt": "LectureMerge — Combines lecture video, narration and subtitles into MP4",
-   "bytes": 2386
+   "bytes": 6246
   },
   {
    "kind": "card-Kaktus-Backup-Sync",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-Kaktus-Backup-Sync-en-dark.a41f5000.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kaktus-Backup-Sync-en-dark.60e9676b.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kaktus Backup & Sync — One-way folder backup with preview and kept versions",
-   "bytes": 2574
+   "bytes": 6924
   },
   {
    "kind": "card-HotspotControl",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-HotspotControl-en-dark.e0a7ceeb.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-HotspotControl-en-dark.8b29bb5f.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Hotspot Control — Controls the Windows Mobile Hotspot",
-   "bytes": 2970
+   "bytes": 5966
   },
   {
    "kind": "card-MegaProg",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-MegaProg-en-dark.135a87f3.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-MegaProg-en-dark.3d8ddce7.webp",
+   "width": 412,
+   "height": 112,
    "alt": "MegaProg — Runs approved development tasks and keeps project progress",
-   "bytes": 2652
+   "bytes": 6908
   },
   {
    "kind": "card-LectureCompanion",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-LectureCompanion-en-dark.aea8409e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LectureCompanion-en-dark.cfa3eba1.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lecture Companion — Follows Teams lectures and explains a selected slide",
-   "bytes": 2456
+   "bytes": 6734
   },
   {
    "kind": "card-StudyArchivePrep",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-StudyArchivePrep-en-dark.0063ed61.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-StudyArchivePrep-en-dark.1bfaf7d5.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Study Archive Prep — Organizes study materials by date and extracts audio",
-   "bytes": 2914
+   "bytes": 6764
   },
   {
    "kind": "card-openmedia-downloader",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-openmedia-downloader-en-dark.d388e71e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-openmedia-downloader-en-dark.29a596d8.webp",
+   "width": 412,
+   "height": 112,
    "alt": "OpenMedia Downloader — Inspects media links and downloads authorized content",
-   "bytes": 2606
+   "bytes": 6408
   },
   {
    "kind": "card-GitHubSync",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-GitHubSync-en-dark.34caa716.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-GitHubSync-en-dark.d6d18c61.webp",
+   "width": 412,
+   "height": 112,
    "alt": "GitHubSync — Uploads files to GitHub and downloads project releases",
-   "bytes": 2826
+   "bytes": 6306
   },
   {
    "kind": "card-VirtualPianoArranger",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-VirtualPianoArranger-en-dark.5398dd9b.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-VirtualPianoArranger-en-dark.322e92d6.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Virtual Piano Arranger — Offline piano, letter notation and MIDI part import",
-   "bytes": 2372
+   "bytes": 6864
   },
   {
    "kind": "card-SoundLeaf",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-SoundLeaf-en-dark.ea6daf26.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-SoundLeaf-en-dark.1b41ae62.webp",
+   "width": 412,
+   "height": 112,
    "alt": "SoundLeaf — Records Windows system audio from the tray",
-   "bytes": 2728
+   "bytes": 6130
   },
   {
    "kind": "card-QuickAnswer",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-QuickAnswer-en-dark.d6f0bac8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-QuickAnswer-en-dark.9662d2a1.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Quick Answer — Edge extension and experimental Desktop source",
-   "bytes": 2326
+   "bytes": 6866
   },
   {
    "kind": "card-YouTubeDownloader",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-en-dark.a4e974f8.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-YouTubeDownloader-en-dark.56e8f795.webp",
+   "width": 412,
+   "height": 112,
    "alt": "YouTube Downloader — Saves YouTube video and audio on Windows",
-   "bytes": 2498
+   "bytes": 6622
   },
   {
    "kind": "card-PeakMP3",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-PeakMP3-en-dark.3b404d1b.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-PeakMP3-en-dark.9a0e6d92.webp",
+   "width": 412,
+   "height": 112,
    "alt": "PeakMP3 — Vintage controls, audio density, A/B and MP3 320 export",
-   "bytes": 2416
+   "bytes": 6870
   },
   {
    "kind": "card-Kartoteka",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-Kartoteka-en-dark.924cc31c.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-Kartoteka-en-dark.49a10c3e.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Kartoteka — Contacts, collections and lists on your own computer",
-   "bytes": 2854
+   "bytes": 5746
   },
   {
    "kind": "card-LektienPlayer",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-LektienPlayer-en-dark.75bb1b1e.webp",
-   "width": 432,
-   "height": 104,
+   "path": "docs/readme/card-LektienPlayer-en-dark.d6baf480.webp",
+   "width": 412,
+   "height": 112,
    "alt": "Lektien Player — Lecture player for Mac: recognition, translation, voice-over",
-   "bytes": 2408
+   "bytes": 6880
   }
  ],
  "previews": [
