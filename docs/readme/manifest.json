@@ -5,11 +5,11 @@
    "kind": "banner",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/banner-ru-light.4b39a4b4.webp",
+   "path": "docs/readme/banner-ru-light.ec8e0ab7.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 приложений для macOS и Windows",
-   "bytes": 41764
+   "bytes": 41740
   },
   {
    "kind": "demo-peakmp3",
@@ -195,7 +195,7 @@
    "kind": "card-YouTubeDownloader",
    "lang": "ru",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-ru-light.d00f54b9.webp",
+   "path": "docs/readme/card-YouTubeDownloader-ru-light.74d8e0de.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Сохраняет видео и звук YouTube в Windows",
@@ -235,11 +235,11 @@
    "kind": "banner",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/banner-de-light.b2ab64b4.webp",
+   "path": "docs/readme/banner-de-light.a44fa315.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 Anwendungen für macOS und Windows",
-   "bytes": 41808
+   "bytes": 41902
   },
   {
    "kind": "demo-peakmp3",
@@ -425,11 +425,11 @@
    "kind": "card-YouTubeDownloader",
    "lang": "de",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-de-light.460bfd06.webp",
+   "path": "docs/readme/card-YouTubeDownloader-de-light.83626124.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Speichert YouTube-Videos und Audio unter Windows",
-   "bytes": 2672
+   "bytes": 2680
   },
   {
    "kind": "card-PeakMP3",
@@ -465,11 +465,11 @@
    "kind": "banner",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/banner-en-light.97a28bb4.webp",
+   "path": "docs/readme/banner-en-light.544235e3.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 applications for macOS and Windows",
-   "bytes": 41378
+   "bytes": 41370
   },
   {
    "kind": "demo-peakmp3",
@@ -655,11 +655,11 @@
    "kind": "card-YouTubeDownloader",
    "lang": "en",
    "theme": "light",
-   "path": "docs/readme/card-YouTubeDownloader-en-light.65d69371.webp",
+   "path": "docs/readme/card-YouTubeDownloader-en-light.4c49e66a.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Saves YouTube video and audio on Windows",
-   "bytes": 2526
+   "bytes": 2538
   },
   {
    "kind": "card-PeakMP3",
@@ -695,11 +695,11 @@
    "kind": "banner",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/banner-ru-dark.914b4a93.webp",
+   "path": "docs/readme/banner-ru-dark.16e1a8d5.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 приложений для macOS и Windows",
-   "bytes": 41452
+   "bytes": 41416
   },
   {
    "kind": "demo-peakmp3",
@@ -885,11 +885,11 @@
    "kind": "card-YouTubeDownloader",
    "lang": "ru",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-ru-dark.94b0347b.webp",
+   "path": "docs/readme/card-YouTubeDownloader-ru-dark.2d14a028.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Сохраняет видео и звук YouTube в Windows",
-   "bytes": 2534
+   "bytes": 2508
   },
   {
    "kind": "card-PeakMP3",
@@ -925,11 +925,11 @@
    "kind": "banner",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/banner-de-dark.783aafdd.webp",
+   "path": "docs/readme/banner-de-dark.7985820e.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 Anwendungen für macOS und Windows",
-   "bytes": 41748
+   "bytes": 41738
   },
   {
    "kind": "demo-peakmp3",
@@ -1115,11 +1115,11 @@
    "kind": "card-YouTubeDownloader",
    "lang": "de",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-de-dark.e6d4abf5.webp",
+   "path": "docs/readme/card-YouTubeDownloader-de-dark.efe024c7.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Speichert YouTube-Videos und Audio unter Windows",
-   "bytes": 2678
+   "bytes": 2652
   },
   {
    "kind": "card-PeakMP3",
@@ -1155,11 +1155,11 @@
    "kind": "banner",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/banner-en-dark.328fcd8c.webp",
+   "path": "docs/readme/banner-en-dark.b0b9efa0.webp",
    "width": 880,
    "height": 260,
    "alt": "popovantondev — 20 applications for macOS and Windows",
-   "bytes": 41418
+   "bytes": 41398
   },
   {
    "kind": "demo-peakmp3",
@@ -1345,11 +1345,11 @@
    "kind": "card-YouTubeDownloader",
    "lang": "en",
    "theme": "dark",
-   "path": "docs/readme/card-YouTubeDownloader-en-dark.c0eac32e.webp",
+   "path": "docs/readme/card-YouTubeDownloader-en-dark.a4e974f8.webp",
    "width": 432,
    "height": 104,
    "alt": "YouTube Downloader — Saves YouTube video and audio on Windows",
-   "bytes": 2528
+   "bytes": 2498
   },
   {
    "kind": "card-PeakMP3",
