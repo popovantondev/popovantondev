@@ -81,11 +81,51 @@ class CatalogTests(unittest.TestCase):
         for name, text in self.files.items():
             self.assertNotRegex(text, r'(?i)(href=["\']|\]\()[^"\')]*about', name)
 
-    def test_readme_featured_contains_kartoteka_and_stays_even(self):
-        text = self.files['README.md']
-        featured = text.split('## Ausgewählte Anwendungen', 1)[1].split('## Alle Anwendungen', 1)[0]
-        self.assertIn('<h3><a href="https://popovantondev.github.io/Kartoteka/index.html">Kartoteka</a></h3>', featured)
-        self.assertEqual(featured.count('<td '), 8)
+    def test_readme_cards_are_grouped_by_the_four_categories_and_open_the_program_site(self):
+        # The long table became a grid of card pictures, one per program, under its category heading.
+        import sys
+        sys.path.insert(0, str(ROOT / 'tools'))
+        from kit_programs import CATEGORIES
+        for name, lang in (('README.md', 'de'), ('README.en.md', 'en'), ('README.ru.md', 'ru')):
+            text = self.files[name]
+            body = text.split('\n## ', 3)[2]                  # the section "All applications"
+            sections = re.split(r'\n### ', body)[1:]
+            self.assertEqual([s.splitlines()[0] for s in sections],
+                             [CATEGORIES[c][lang] for c in ('lernen', 'medien', 'werkzeuge', 'daten')], name)
+            seen = []
+            for section in sections:
+                category = next(c for c in CATEGORIES if CATEGORIES[c][lang] == section.splitlines()[0])
+                cards = re.findall(r'<a href="([^"]+)"><picture>.*?alt="([^"]+)"></picture></a>', section)
+                expected = [p for p in self.data['projects'] if self.data['catalog_categories'][p['repo']] == category]
+                self.assertEqual([c[0] for c in cards], [self.data['catalog_websites'][p['repo']][lang] for p in expected], name)
+                for (href, alt), p in zip(cards, expected):
+                    self.assertTrue(alt.startswith(p['name'].replace('&', '&amp;') + ' — ') or lang == 'ru', (name, alt))
+                seen += [p['repo'] for p in expected]
+            self.assertEqual(sorted(seen), sorted(p['repo'] for p in self.data['projects']), name)
+            self.assertEqual(len(seen), 20, name)
+
+    def test_program_count_comes_from_the_catalog_not_from_the_text(self):
+        import copy
+        import sys
+        sys.path.insert(0, str(ROOT / 'tools'))
+        from catalog_page import marquee_sub, apps_count
+        fewer = copy.deepcopy(self.data)
+        fewer['projects'] = fewer['projects'][:-1]
+        gone = self.data['projects'][-1]['repo']
+        for lang, word in (('de', 'Anwendungen'), ('en', 'applications'), ('ru', 'приложений')):
+            self.assertIn('20 ' + word, marquee_sub(lang, 20))
+            self.assertIn('19 ' + word, marquee_sub(lang, 19))
+            self.assertNotIn('20 ', marquee_sub(lang, 19))
+            self.assertEqual(apps_count(21, 'ru'), '21 приложение')
+            self.assertEqual(apps_count(22, 'ru'), '22 приложения')
+            page = docs.catalog(fewer, lang)
+            self.assertIn('19 ' + word, page)
+            self.assertNotIn('20 ' + word, page)
+            # The banner picture still says 20 until it is rebuilt (validate reports that); the text must already say 19.
+            readme = re.sub(r'<picture>.*?</picture>', '', docs.profile_readme(fewer, lang))
+            self.assertIn('19 ' + word, readme)
+            self.assertNotIn('20 ' + word, readme)
+            self.assertNotIn('card-' + gone + '-', readme)
 
     def test_readme_table_names_open_the_program_site_and_source_is_separate(self):
         for name, lang in (('README.md', 'de'), ('README.en.md', 'en'), ('README.ru.md', 'ru')):

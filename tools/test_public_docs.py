@@ -69,13 +69,42 @@ class ProfileReadmeTests(unittest.TestCase):
         import re
         for l in docs.LANGS:
             text=docs.profile_readme(self.data,l)
-            row=re.search(r'<tr>\n(<td[^\n]*peakmp3-demo[^\n]*\n<td[^\n]*)\n</tr>',text)
+            # Both demo cards sit in one paragraph (side by side; they wrap under each other on a phone): PeakMP3 first, the piano after it.
+            row=re.search(r'<p>\n(<a href="[^"\n]*PeakMP3[^\n]*\n<a [^\n]*)\n</p>',text)
             self.assertIsNotNone(row,l)
             cells=row.group(1).split('\n')
-            self.assertIn('peakmp3-demo-'+l+'.svg',cells[0])
-            self.assertIn('VirtualPianoArranger/play-'+l+'.html',cells[1])
-            self.assertIn('piano-demo-'+l+'.svg',cells[1])
-            self.assertLess(text.index('piano-demo-'),text.index('<h3>'))
+            self.assertEqual(len(cells),2,l)
+            self.assertIn('/PeakMP3/',cells[0]);self.assertTrue(cells[0].startswith('<a href="https://popovantondev.github.io/PeakMP3/'))
+            self.assertIn('demo-peakmp3-'+l+'-light.',cells[0])
+            self.assertTrue(cells[1].startswith('<a href="https://popovantondev.github.io/VirtualPianoArranger/play-'+l+'.html"'))
+            self.assertIn('demo-piano-'+l+'-light.',cells[1])
+            self.assertLess(text.index('demo-peakmp3-'),text.index('demo-piano-'))
+            self.assertLess(text.index('demo-piano-'),text.index('card-'))
+    def test_profile_pictures_are_light_dark_pairs_with_size_and_alt(self):
+        import re
+        for l in docs.LANGS:
+            text=docs.profile_readme(self.data,l)
+            pictures=re.findall(r'<picture>.*?</picture>',text)
+            self.assertEqual(len(pictures),1+2+len(self.data['projects']),l)      # banner, two demos, one card per program
+            for picture in pictures:
+                self.assertRegex(picture,r'<source media="\(prefers-color-scheme: dark\)" srcset="https://raw\.githubusercontent\.com/popovantondev/popovantondev/main/docs/readme/[^"]+-'+l+r'-dark\.[0-9a-f]{8}\.webp">')
+                self.assertRegex(picture,r'<img src="[^"]+-'+l+r'-light\.[0-9a-f]{8}\.webp" width="\d+" height="\d+" alt="[^"]{8,}">')
+            self.assertNotIn('loading=',text)                                     # GitHub strips it, so it is not written
+            self.assertNotIn('<table',text.split('<details>')[0])                 # no table above the text-only link list
+    def test_profile_readme_uses_light_images_in_the_budget_of_the_brief(self):
+        manifest=json.loads((self.root/'docs'/'readme'/'manifest.json').read_text(encoding='utf-8'))
+        limits={'banner':50_000,'demo':15_000,'card':3_000}
+        for image in manifest['images']:
+            self.assertLessEqual((self.root/image['path']).stat().st_size,limits[image['kind'].split('-')[0]],image['path'])
+        for l in docs.LANGS:
+            for theme in ('light','dark'):
+                total=sum(i['bytes'] for i in manifest['images'] if i['lang']==l and i['theme']==theme)
+                self.assertLess(total,140*1024,(l,theme))
+    def test_stale_banner_number_is_reported(self):
+        import copy
+        fewer=copy.deepcopy(self.data);fewer['projects']=fewer['projects'][:-1]
+        errors=docs.validate(fewer,docs.generated(fewer))
+        self.assertTrue(any('the banner shows 20 programs but the catalog has 19' in e for e in errors),errors)
     def test_profile_readmes_are_valid_and_current(self):
         files=docs.generated(self.data)
         self.assertEqual(docs.validate(self.data,files),[])

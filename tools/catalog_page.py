@@ -24,9 +24,20 @@ PERMISSION_NOTICE={
 
 SITE='https://popovantondev.github.io/popovantondev/'
 MARQUEE={
- 'ru':dict(title='Все программы одной лентой',sub='20 приложений для macOS и Windows. Наведите курсор или нажмите Tab — лента остановится.',label='Лента программ'),
- 'de':dict(title='Alle Anwendungen in einer Laufschrift',sub='20 Anwendungen für macOS und Windows. Mit der Maus darüber oder per Tab — die Laufschrift hält an.',label='Laufschrift der Anwendungen'),
- 'en':dict(title='All applications in one ticker',sub='20 applications for macOS and Windows. Hover or tab onto it and the ticker pauses.',label='Application ticker')}
+ 'ru':dict(title='Все программы одной лентой',sub='{apps} для macOS и Windows. Наведите курсор или нажмите Tab — лента остановится.',label='Лента программ'),
+ 'de':dict(title='Alle Anwendungen in einer Laufschrift',sub='{apps} für macOS und Windows. Mit der Maus darüber oder per Tab — die Laufschrift hält an.',label='Laufschrift der Anwendungen'),
+ 'en':dict(title='All applications in one ticker',sub='{apps} for macOS and Windows. Hover or tab onto it and the ticker pauses.',label='Application ticker')}
+def apps_count(n,l):
+ """'20 приложений' / '20 Anwendungen' / '20 applications': the number always comes from the catalog, never typed by hand."""
+ if l=='ru':
+  word='приложение' if n%10==1 and n%100!=11 else 'приложения' if 2<=n%10<=4 and not 12<=n%100<=14 else 'приложений'
+ elif l=='de':word='Anwendung' if n==1 else 'Anwendungen'
+ else:word='application' if n==1 else 'applications'
+ return f'{n} {word}'
+
+def marquee_sub(l,n):
+ return MARQUEE[l]['sub'].format(apps=apps_count(n,l))
+
 OG={
  'ru':dict(locale='ru_RU',alt='Студийный баннер popovantondev: программы для macOS и Windows на двух рабочих столах'),
  'de':dict(locale='de_DE',alt='Studio-Banner von popovantondev: Anwendungen für macOS und Windows auf zwei Schreibtischen'),
@@ -94,7 +105,7 @@ def render(d,l,labels,status,actions,notes=()):
 <div class="ppk-nav-wrap" id="ppk-nav-wrap"><nav class="ppk-nav" aria-label="{e(c['nav'])}"><a class="ppk-brand" href="{("index.html" if l=="de" else "index-"+l+".html")}"><span>popovantondev</span></a><span class="ppk-spacer"></span><button class="ppk-search-btn" type="button" data-ppk-open-search aria-label="{e(c['search_label'])}"><span>{e(c['search_text'])}</span><kbd>{e(c['kbd'])}</kbd></button><div class="ppk-langs">{nav}</div><button class="ppk-icon-btn ppk-theme-btn" type="button" data-ppk-theme aria-label="{e(c['theme'])}"></button><a class="ppk-icon-btn ppk-gh-btn" href="{GITHUB}" aria-label="GitHub"></a></nav></div>
 <main class="ppk-shell" id="main"><section class="hero hero-studio"><div class="studio-art" aria-hidden="true"><div class="scene"><img class="photograph" src="assets/studio/studio-desktops.webp" width="2048" height="768" alt="" aria-hidden="true"><div class="desktop mac-desktop" style="transform:matrix3d(0.362478164855,0.00268640514118,0,2.11527963873e-05,-0.00544406398359,0.354618133095,0,-2.39855755711e-05,0,0,1,0,91,127,0,1)" aria-hidden="true"><img class="app translator" src="assets/studio/translate-{l}.webp" width="1160" height="756" alt=""><div class="sender-window"><div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span>Telegram Media Sender</div><img src="assets/studio/sender-{l}.webp" width="1040" height="702" alt=""></div></div><div class="desktop windows-desktop" style="transform:matrix3d(0.307737845066,-0.00272982638239,0,-1.96390387222e-05,-0.0464419135057,0.323316632667,0,-2.52904813132e-05,0,0,1,0,1407,139,0,1)" aria-hidden="true"><img class="app peak" src="assets/studio/peak-{l}.webp" width="700" height="1163" alt=""><img class="app quick" src="assets/studio/quick-{l}.webp" width="420" height="586" alt=""></div></div></div><div class="hero-copy"><p class="eyebrow">{e(c['eyebrow'])}</p><h1>{title}</h1><p class="lead">{e(c['intro'])}</p><div class="hero-actions"><a class="primary" href="#catalog">{e(c['browse'])} <span aria-hidden="true">↘</span></a><a href="{GITHUB}">{e(c['github'])} <span aria-hidden="true">↗</span></a></div><div class="hero-meta"><span>{n} {e(c['count'])}</span><span>macOS / Windows</span><span>RU / DE / EN</span></div></div></section>
 <div class="demo-feature-row"><a class="peak-demo-feature" href="https://popovantondev.github.io/PeakMP3/{"index.html" if l=="de" else "index-"+l+".html"}#demo"><img src="assets/peakmp3-demo-{l}.svg" width="1400" height="520" alt="PeakMP3 — {dict(ru='Попробовать в браузере',de='Im Browser testen',en='Try in browser')[l]}" loading="lazy"></a><a class="peak-demo-feature piano-demo-feature" href="https://popovantondev.github.io/VirtualPianoArranger/play-{l}.html"><img src="assets/piano-demo-{l}.svg" width="1400" height="520" alt="Virtual Piano Arranger — {dict(ru='Играть в браузере',de='Im Browser spielen',en='Play in the browser')[l]}" loading="lazy"></a></div>
-<section id="marquee" class="ppk-section marquee-section" aria-labelledby="marquee-title"><h2 id="marquee-title">{e(MARQUEE[l]['title'])}</h2><p class="ppk-sub">{e(MARQUEE[l]['sub'])}</p>{marquee(d,l,actions)}</section>
+<section id="marquee" class="ppk-section marquee-section" aria-labelledby="marquee-title"><h2 id="marquee-title">{e(MARQUEE[l]['title'])}</h2><p class="ppk-sub">{e(marquee_sub(l,n))}</p>{marquee(d,l,actions)}</section>
 <section id="catalog" class="ppk-section" aria-labelledby="catalog-title"><div class="catalog-top"><div><p class="eyebrow">{e(c['platform'])} · macOS / Windows</p><h2 id="catalog-title">{e(c['all'])}</h2></div><span class="result-count" id="result-count" aria-live="polite">{n} / {n}</span></div>
 <div class="catalog-controls" hidden><div class="ppk-tabs" role="tablist" aria-label="{e(c['categories'])}">{tabs}</div><div class="catalog-filters"><div class="filters" role="group" aria-label="{e(c['platform'])}"><button type="button" data-filter="all" aria-pressed="true">{e(ALL_LABEL[l])}</button><button type="button" data-filter="macos" aria-pressed="false">macOS</button><button type="button" data-filter="windows" aria-pressed="false">Windows</button></div><label class="search"><span class="ppk-sr-only">{e(c['search'])}</span><input id="project-search" type="search" placeholder="{e(c['placeholder'])}" autocomplete="off"></label></div></div>
 <div class="projects" id="projects" role="tabpanel" aria-labelledby="tab-all">{''.join(cards)}</div><p class="empty" id="empty" hidden>{e(c['empty'])}</p><p class="ppk-sub catalog-note">{e(c['footer'])}</p></section></main>

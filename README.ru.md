@@ -1,40 +1,62 @@
 <p align="right"><a href="README.ru.md">Русский</a> · <a href="README.md">Deutsch</a> · <a href="README.en.md">English</a></p>
 
-[![popovantondev](assets/profile-studio-ru.png)](https://popovantondev.github.io/popovantondev/index-ru.html)
+<a href="https://popovantondev.github.io/popovantondev/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/banner-ru-dark.914b4a93.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/banner-ru-light.4b39a4b4.webp" width="880" height="260" alt="popovantondev — 20 приложений для macOS и Windows"></picture></a>
 
-Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.
+Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows. В каталоге сейчас 20 приложений.
 
 **[→ Каталог программ и руководств](https://popovantondev.github.io/popovantondev/index-ru.html)**
 
-<table>
-<tr>
-<td width="50%" valign="top"><a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><img src="assets/peakmp3-demo-ru.svg" width="100%" alt="Попробовать PeakMP3 в браузере"></a><br><a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><b>▶ Попробовать PeakMP3 в браузере</b></a></td>
-<td width="50%" valign="top"><a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><img src="assets/piano-demo-ru.svg" width="100%" alt="Virtual Piano Arranger — Играть на пианино в браузере"></a><br><a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><b>▶ Играть на пианино в браузере</b></a></td>
-</tr>
-</table>
+## Попробовать сразу
 
-## Основные программы
-
-<table>
-<tr>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/Kartoteka.svg"><h3><a href="https://popovantondev.github.io/Kartoteka/index-ru.html">Kartoteka</a></h3><p>Храните карточки людей, коллекции и другие списки на своём компьютере. Таблицы, собственные поля, фотографии, документы, поиск и резервные копии — в одном приложении.</p><p><sub>Windows 11 · x64<br>Выпуск 0.5.0</sub></p><p><a href="https://github.com/popovantondev/Kartoteka/releases/tag/v0.5.0">Скачать</a> · <a href="https://github.com/popovantondev/Kartoteka">Исходники</a> · <a href="https://popovantondev.github.io/Kartoteka/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/Kartoteka/issues/new">Сообщить об ошибке</a></p></td>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/Kaktus-Backup-Sync.png"><h3><a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html">Kaktus Backup &amp; Sync</a></h3><p>Выполняет одностороннее резервное копирование папок с предварительным просмотром и сохранением предыдущих версий.</p><p><sub>Windows · x64<br>Предварительный выпуск 5.2.0-preview.7</sub></p><p><a href="https://github.com/popovantondev/Kaktus-Backup-Sync/releases/tag/v5.2.0-preview.7">Скачать</a> · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync">Исходники</a> · <a href="https://popovantondev.github.io/Kaktus-Backup-Sync/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/Kaktus-Backup-Sync/issues/new/choose">Сообщить об ошибке</a></p></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/GitHubSync.png"><h3><a href="https://popovantondev.github.io/GitHubSync/index-ru.html">GitHubSync</a></h3><p>Отправляет файлы в GitHub и скачивает исходники или файлы выпусков после подтверждения пользователя.</p><p><sub>Windows 10/11 · x64<br>Выпуск 1.5.3</sub></p><p><a href="https://github.com/popovantondev/GitHubSync/releases/tag/v1.5.3">Скачать</a> · <a href="https://github.com/popovantondev/GitHubSync">Исходники</a> · <a href="https://popovantondev.github.io/GitHubSync/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/GitHubSync/issues/new/choose">Сообщить об ошибке</a></p></td>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/HotspotControl.ico"><h3><a href="https://popovantondev.github.io/HotspotControl/index-ru.html">Hotspot Control</a></h3><p>Управляет мобильной точкой доступа Windows, показывает устройства и настройки сети.</p><p><sub>Windows 11 24H2+ · x64<br>Выпуск 0.3.0</sub></p><p><a href="https://github.com/popovantondev/HotspotControl/releases/tag/v0.3.0">Скачать</a> · <a href="https://github.com/popovantondev/HotspotControl">Исходники</a> · <a href="https://popovantondev.github.io/HotspotControl/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/HotspotControl/issues/new/choose">Сообщить об ошибке</a></p></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/TelegramMediaSender.svg"><h3><a href="https://popovantondev.github.io/TelegramMediaSender/index-ru.html">Telegram Media Sender</a></h3><p>Отправляет пронумерованные наборы видео, аудио и субтитров в Telegram в выбранном порядке.</p><p><sub>macOS 13+ · Apple Silicon<br>Выпуск 1.1.2</sub></p><p><a href="https://github.com/popovantondev/TelegramMediaSender/releases/tag/v1.1.2">Скачать</a> · <a href="https://github.com/popovantondev/TelegramMediaSender">Исходники</a> · <a href="https://popovantondev.github.io/TelegramMediaSender/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/TelegramMediaSender/issues/new/choose">Сообщить об ошибке</a></p></td>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/AnkiSound.png"><h3><a href="https://popovantondev.github.io/AnkiSound/index-ru.html">Anki SOUND</a></h3><p>Добавляет локальную озвучку выбранным карточкам Anki и сохраняет отдельный проверенный пакет.</p><p><sub>macOS 13+ · Apple Silicon<br>Выпуск 3.4.11</sub></p><p><a href="https://github.com/popovantondev/AnkiSound/releases/tag/v3.4.11">Скачать</a> · <a href="https://github.com/popovantondev/AnkiSound">Исходники</a> · <a href="https://popovantondev.github.io/AnkiSound/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/AnkiSound/issues/new/choose">Сообщить об ошибке</a></p></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/LectureTranslate.png"><h3><a href="https://popovantondev.github.io/LectureTranslate/index-ru.html">LectureTranslate</a></h3><p>Переводит немецкие SRT-субтитры на русский с сохранением таймкодов, очередью и проверкой черновика.</p><p><sub>macOS 15+ · Apple Silicon<br>Выпуск 3.5.1</sub></p><p><a href="https://github.com/popovantondev/LectureTranslate/releases/tag/v3.5.1">Скачать</a> · <a href="https://github.com/popovantondev/LectureTranslate">Исходники</a> · <a href="https://popovantondev.github.io/LectureTranslate/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/LectureTranslate/issues/new/choose">Сообщить об ошибке</a></p></td>
-<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="assets/app-icons/LectureMerge.png"><h3><a href="https://popovantondev.github.io/LectureMerge/index-ru.html">LectureMerge</a></h3><p>Объединяет видео лекции, озвучку, исходное аудио и субтитры в MP4; также экспортирует аудио.</p><p><sub>macOS 14+ · Apple Silicon<br>Выпуск 2.2.0</sub></p><p><a href="https://github.com/popovantondev/LectureMerge/releases/tag/v2.2.0">Скачать</a> · <a href="https://github.com/popovantondev/LectureMerge">Исходники</a> · <a href="https://popovantondev.github.io/LectureMerge/Guide-ru.html">Инструкция</a> · <a href="https://github.com/popovantondev/LectureMerge/issues/new/choose">Сообщить об ошибке</a></p></td>
-</tr>
-</table>
+<p>
+<a href="https://popovantondev.github.io/PeakMP3/index-ru.html#demo"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-dark.67adaa36.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-peakmp3-ru-light.0b319262.webp" width="432" height="120" alt="Попробовать PeakMP3 в браузере"></picture></a>
+<a href="https://popovantondev.github.io/VirtualPianoArranger/play-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-dark.9367b151.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/demo-piano-ru-light.460628c0.webp" width="432" height="120" alt="Virtual Piano Arranger — Играть на пианино в браузере"></picture></a>
+</p>
 
 ## Все программы
+
+### Учёба
+
+<p>
+<a href="https://popovantondev.github.io/SaveLecture/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SaveLecture-ru-dark.11a6d2f5.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SaveLecture-ru-light.18fb2660.webp" width="432" height="104" alt="SaveLecture — Сохраняет субтитры Teams и снимки демонстрации экрана"></picture></a>
+<a href="https://popovantondev.github.io/AnkiSound/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-AnkiSound-ru-dark.5ea3aa74.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-AnkiSound-ru-light.66fefca9.webp" width="432" height="104" alt="Anki SOUND — Добавляет локальную озвучку карточкам Anki"></picture></a>
+<a href="https://popovantondev.github.io/LectureTranslate/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureTranslate-ru-dark.b815bf62.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureTranslate-ru-light.ef686557.webp" width="432" height="104" alt="LectureTranslate — Переводит немецкие SRT-субтитры на русский"></picture></a>
+<a href="https://popovantondev.github.io/LectureCompanion/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureCompanion-ru-dark.924fcd01.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureCompanion-ru-light.88745784.webp" width="432" height="104" alt="Lecture Companion — Следит за лекцией в Teams и объясняет выбранный слайд"></picture></a>
+<a href="https://popovantondev.github.io/QuickAnswer/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-QuickAnswer-ru-dark.7e84fa3e.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-QuickAnswer-ru-light.ce27f8fd.webp" width="432" height="104" alt="Quick Answer — Расширение Edge и экспериментальные исходники Desktop"></picture></a>
+<a href="https://popovantondev.github.io/LektienPlayer/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LektienPlayer-ru-dark.38b404e1.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LektienPlayer-ru-light.a74db930.webp" width="432" height="104" alt="Lektien Player — Плеер лекций для Mac: распознавание, перевод и озвучка"></picture></a>
+</p>
+
+### Медиа
+
+<p>
+<a href="https://popovantondev.github.io/SRTtoSound/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SRTtoSound-ru-dark.0886f426.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SRTtoSound-ru-light.6e781073.webp" width="432" height="104" alt="SRT to Sound — Создаёт русскую озвучку из готовых SRT-субтитров"></picture></a>
+<a href="https://popovantondev.github.io/LectureMerge/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureMerge-ru-dark.b2aebe52.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-LectureMerge-ru-light.77d28e52.webp" width="432" height="104" alt="LectureMerge — Объединяет видео лекции, озвучку и субтитры в MP4"></picture></a>
+<a href="https://popovantondev.github.io/openmedia-downloader/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-openmedia-downloader-ru-dark.60fe3658.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-openmedia-downloader-ru-light.da828e37.webp" width="432" height="104" alt="OpenMedia Downloader — Проверяет медиассылки и скачивает разрешённые материалы"></picture></a>
+<a href="https://popovantondev.github.io/VirtualPianoArranger/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-VirtualPianoArranger-ru-dark.d2c02732.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-VirtualPianoArranger-ru-light.fa169dc7.webp" width="432" height="104" alt="Virtual Piano Arranger — Офлайн-пианино, буквенная запись и импорт партий MIDI"></picture></a>
+<a href="https://popovantondev.github.io/SoundLeaf/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SoundLeaf-ru-dark.4b880323.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-SoundLeaf-ru-light.5fe4e960.webp" width="432" height="104" alt="SoundLeaf — Записывает системный звук Windows из трея"></picture></a>
+<a href="https://popovantondev.github.io/YouTubeDownloader/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-YouTubeDownloader-ru-dark.94b0347b.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-YouTubeDownloader-ru-light.d00f54b9.webp" width="432" height="104" alt="YouTube Downloader — Сохраняет видео и звук YouTube в Windows"></picture></a>
+<a href="https://popovantondev.github.io/PeakMP3/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-PeakMP3-ru-dark.623dfd63.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-PeakMP3-ru-light.319e9ff6.webp" width="432" height="104" alt="PeakMP3 — Аналоговый интерфейс, плотность звука, A/B и экспорт MP3 320"></picture></a>
+</p>
+
+### Инструменты
+
+<p>
+<a href="https://popovantondev.github.io/TelegramMediaSender/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-TelegramMediaSender-ru-dark.2b2cb0f6.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-TelegramMediaSender-ru-light.d2f3f9ff.webp" width="432" height="104" alt="Telegram Media Sender — Отправляет наборы видео, аудио и субтитров в Telegram"></picture></a>
+<a href="https://popovantondev.github.io/HotspotControl/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-HotspotControl-ru-dark.5c4b9a5c.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-HotspotControl-ru-light.f28247a4.webp" width="432" height="104" alt="Hotspot Control — Управляет мобильной точкой доступа Windows"></picture></a>
+<a href="https://popovantondev.github.io/MegaProg/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-MegaProg-ru-dark.7e4a61b5.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-MegaProg-ru-light.27ca019a.webp" width="432" height="104" alt="MegaProg — Ведёт задачи разработки: требования, проверки и прогресс"></picture></a>
+</p>
+
+### Данные и бэкап
+
+<p>
+<a href="https://popovantondev.github.io/Kaktus-Backup-Sync/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-Kaktus-Backup-Sync-ru-dark.e573cab1.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-Kaktus-Backup-Sync-ru-light.96e07489.webp" width="432" height="104" alt="Kaktus Backup &amp; Sync — Одностороннее резервное копирование папок с предпросмотром"></picture></a>
+<a href="https://popovantondev.github.io/StudyArchivePrep/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-StudyArchivePrep-ru-dark.64c17c64.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-StudyArchivePrep-ru-light.e2222457.webp" width="432" height="104" alt="Study Archive Prep — Организует учебные материалы по датам и извлекает аудио"></picture></a>
+<a href="https://popovantondev.github.io/GitHubSync/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-GitHubSync-ru-dark.be0e0752.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-GitHubSync-ru-light.9a6ea49d.webp" width="432" height="104" alt="GitHubSync — Отправляет файлы в GitHub и скачивает исходники и выпуски"></picture></a>
+<a href="https://popovantondev.github.io/Kartoteka/index-ru.html"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-Kartoteka-ru-dark.977c70d7.webp"><img src="https://raw.githubusercontent.com/popovantondev/popovantondev/main/docs/readme/card-Kartoteka-ru-light.2d88da56.webp" width="432" height="104" alt="Картотека — Карточки, таблицы и списки на вашем компьютере"></picture></a>
+</p>
+
+<details>
+<summary>Ссылки на загрузку, инструкции и сообщения об ошибках</summary>
 
 | Программы | Платформа / Статус | Ссылки |
 |---|---|---|
@@ -61,61 +83,11 @@
 
 *PeakMP3 входит в установочный пакет YouTube Downloader, поэтому ссылка «Скачать» у PeakMP3 ведёт на релиз YouTube Downloader.*
 
+</details>
+
 ## Посмотреть интерфейсы
 
-<details>
-<summary>Virtual Piano Arranger</summary>
-
-![Virtual Piano Arranger](https://raw.githubusercontent.com/popovantondev/VirtualPianoArranger/main/assets/surface-laptop-v1.png)
-
-*Опубликованная демонстрационная иллюстрация интерфейса.*
-
-</details>
-
-<details>
-<summary>PeakMP3</summary>
-
-![PeakMP3](https://raw.githubusercontent.com/popovantondev/PeakMP3/main/assets/site/peakmp3-ru.webp)
-
-*Интерфейс с демонстрационными данными.*
-
-</details>
-
-<details>
-<summary>SoundLeaf</summary>
-
-![SoundLeaf](https://raw.githubusercontent.com/popovantondev/SoundLeaf/main/assets/screenshots/ru-control-dark.png)
-
-*Интерфейс с демонстрационными данными.*
-
-</details>
-
-<details>
-<summary>Lecture Companion</summary>
-
-![Lecture Companion](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/screenshots/app-ru.png)
-
-*Опубликованная демонстрация v2.4 с синтетическими данными.*
-
-</details>
-
-<details>
-<summary>LectureMerge</summary>
-
-![LectureMerge](https://raw.githubusercontent.com/popovantondev/LectureMerge/main/docs/ru/screenshots/main.png)
-
-*Интерфейс с демонстрационными данными.*
-
-</details>
-
-<details>
-<summary>Quick Answer</summary>
-
-![Quick Answer](https://raw.githubusercontent.com/popovantondev/QuickAnswer/main/docs/assets/screenshots/popup-ru.png)
-
-*Интерфейс с демонстрационными данными.*
-
-</details>
+[SaveLecture](https://raw.githubusercontent.com/popovantondev/SaveLecture/main/docs/readme/preview-ru-light.c67006b6.webp) · [Telegram Media Sender](https://raw.githubusercontent.com/popovantondev/TelegramMediaSender/main/docs/readme/preview-ru-light.7070ffa6.webp) · [Anki SOUND](https://raw.githubusercontent.com/popovantondev/AnkiSound/main/docs/readme/preview-ru-light.3b70a2ac.webp) · [LectureTranslate](https://raw.githubusercontent.com/popovantondev/LectureTranslate/main/docs/readme/preview-ru-light.bd004472.webp) · [SRT to Sound](https://raw.githubusercontent.com/popovantondev/SRTtoSound/main/docs/readme/preview-ru-light.6a308467.webp) · [LectureMerge](https://raw.githubusercontent.com/popovantondev/LectureMerge/main/docs/readme/preview-ru-light.e4bca2a6.webp) · [Kaktus Backup & Sync](https://raw.githubusercontent.com/popovantondev/Kaktus-Backup-Sync/main/docs/readme/preview-ru-light.cdee99ba.webp) · [Hotspot Control](https://raw.githubusercontent.com/popovantondev/HotspotControl/main/docs/readme/preview-ru-light.5c1211ff.webp) · [MegaProg](https://raw.githubusercontent.com/popovantondev/MegaProg/main/docs/readme/preview-ru-light.202eeaed.webp) · [Lecture Companion](https://raw.githubusercontent.com/popovantondev/LectureCompanion/main/docs/readme/preview-ru-light.7b6cd2d4.webp) · [Study Archive Prep](https://raw.githubusercontent.com/popovantondev/StudyArchivePrep/main/docs/readme/preview-ru-light.8a8344c6.webp) · [OpenMedia Downloader](https://raw.githubusercontent.com/popovantondev/openmedia-downloader/main/docs/readme/preview-ru-light.f8e8f889.webp) · [GitHubSync](https://raw.githubusercontent.com/popovantondev/GitHubSync/main/docs/readme/preview-ru-light.fad4ab59.webp) · [Virtual Piano Arranger](https://raw.githubusercontent.com/popovantondev/VirtualPianoArranger/main/docs/readme/preview-ru-light.f039cdd8.webp) · [SoundLeaf](https://raw.githubusercontent.com/popovantondev/SoundLeaf/main/docs/readme/preview-ru-light.e3a83feb.webp) · [Quick Answer](https://raw.githubusercontent.com/popovantondev/QuickAnswer/main/docs/readme/preview-ru-light.f9f4cb06.webp) · [YouTube Downloader](https://raw.githubusercontent.com/popovantondev/YouTubeDownloader/main/docs/readme/preview-ru-light.3635ab95.webp) · [PeakMP3](https://raw.githubusercontent.com/popovantondev/PeakMP3/main/docs/readme/preview-ru-light.ede3cc77.webp) · [Kartoteka](https://raw.githubusercontent.com/popovantondev/Kartoteka/main/docs/readme/preview-ru-light.d37e80bf.webp) · [Lektien Player](https://raw.githubusercontent.com/popovantondev/LektienPlayer/main/docs/readme/preview-ru-light.087254fd.webp)
 
 ## Загрузка и помощь
 

@@ -97,7 +97,6 @@ def shared_note(d,l):
     """One sentence per program that ships inside another program's installer (PeakMP3)."""
     names={p['repo']:p['name'] for p in d['projects']}
     return [PROFILE_LABELS[l]['shared'].format(a=p['name'],b=names.get(p['shared_distribution']['repo'],p['shared_distribution']['repo'])) for p in d['projects'] if p.get('shared_distribution')]
-FEATURED=['Kartoteka','Kaktus-Backup-Sync','GitHubSync','HotspotControl','TelegramMediaSender','AnkiSound','LectureTranslate','LectureMerge']
 def built_with(d,l):
     """Technologies from catalog_stacks, most used first; JavaScript keeps its link to Quick Answer."""
     counts={}
@@ -106,48 +105,54 @@ def built_with(d,l):
     quick=next(p for p in d['projects'] if p['repo']=='QuickAnswer')
     site=program_site(quick,l,d.get('catalog_websites'))
     return ' · '.join(f'[JavaScript — {quick["name"]}]({site})' if token=='JavaScript' else token for token in sorted(counts,key=lambda k:-counts[k]))
+PROFILE_MANIFEST='docs/readme/manifest.json'
+def profile_manifest():
+    """Pictures of the profile README (built by GitHubPolish tools/readme_kit/profile.py, committed here so this check runs alone)."""
+    path=ROOT/PROFILE_MANIFEST
+    if not path.is_file():raise ValueError(PROFILE_MANIFEST+' is missing: build the profile pictures (GitHubPolish readme_kit profile.py)')
+    return json.loads(path.read_text(encoding='utf-8'))
+def profile_picture(manifest,raw,kind,l,href):
+    """<a><picture> with the dark source; width, height and alt come from the manifest (alt names the program or the card)."""
+    pick=lambda theme:next((i for i in manifest['images'] if i['kind']==kind and i['lang']==l and i['theme']==theme),None)
+    light,dark=pick('light'),pick('dark')
+    if not light or not dark:raise ValueError(f'{PROFILE_MANIFEST}: no {kind} picture for {l} in both themes')
+    return f'<a href="{escape(href)}"><picture><source media="(prefers-color-scheme: dark)" srcset="{raw+dark["path"]}"><img src="{raw+light["path"]}" width="{light["width"]}" height="{light["height"]}" alt="{escape(light["alt"])}"></picture></a>'
 def profile_readme(d,l):
-    t=LABELS[l];e=escape;websites=d.get('catalog_websites')
+    sys.path.insert(0,str(ROOT/'tools'))
+    from catalog_page import apps_count,marquee_sub
+    from kit_programs import CATEGORIES
+    t=LABELS[l];e=escape;websites=d.get('catalog_websites');n=len(d['projects'])
+    manifest=profile_manifest();raw='https://raw.githubusercontent.com/popovantondev/'+d['repo']+'/main/'
     copy={
-        'en':{'intro':'I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.','catalog':'Browse applications & guides','featured':'Featured applications','all':'All applications','screens':'Interface previews','help':'Downloads & support','help_text':'Open a program’s guide for requirements and first steps. Download the application from Releases, not the source-code ZIP. Preview releases are still being developed; source-only projects have no ready-to-install package.','support':'For help or a bug report, use “Report a problem” in the application row. Include the application version, operating system and steps to reproduce the problem.','tech':'Built with'},
-        'ru':{'intro':'Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.','catalog':'Каталог программ и руководств','featured':'Основные программы','all':'Все программы','screens':'Посмотреть интерфейсы','help':'Загрузка и помощь','help_text':'В руководстве каждой программы указаны требования и первые шаги. Скачивайте приложение из Releases, а не ZIP с исходниками. Preview — предварительные версии; для проектов со статусом «Только исходники» готового установочного пакета нет.','support':'Для вопроса или сообщения об ошибке откройте «Сообщить об ошибке» в строке программы. Укажите версию программы, ОС и действия, после которых возникла проблема.','tech':'Технологии'},
-        'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','catalog':'Anwendungen und Anleitungen entdecken','featured':'Ausgewählte Anwendungen','all':'Alle Anwendungen','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Laden Sie die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutzen Sie „Fehler melden“ in der Zeile der Anwendung. Geben Sie die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien'}
+        'en':{'intro':'I build desktop tools for studying, working with media and managing everyday tasks on macOS and Windows.','count':'The catalog currently lists {apps}.','catalog':'Browse applications & guides','try':'Try it now','all':'All applications','table':'Links to downloads, guides and bug reports','screens':'Interface previews','help':'Downloads & support','help_text':'Open a program’s guide for requirements and first steps. Download the application from Releases, not the source-code ZIP. Preview releases are still being developed; source-only projects have no ready-to-install package.','support':'For help or a bug report, use “Report a problem” in the application row. Include the application version, operating system and steps to reproduce the problem.','tech':'Built with'},
+        'ru':{'intro':'Разрабатываю приложения для учёбы, работы с медиа и повседневных задач на macOS и Windows.','count':'В каталоге сейчас {apps}.','catalog':'Каталог программ и руководств','try':'Попробовать сразу','all':'Все программы','table':'Ссылки на загрузку, инструкции и сообщения об ошибках','screens':'Посмотреть интерфейсы','help':'Загрузка и помощь','help_text':'В руководстве каждой программы указаны требования и первые шаги. Скачивайте приложение из Releases, а не ZIP с исходниками. Preview — предварительные версии; для проектов со статусом «Только исходники» готового установочного пакета нет.','support':'Для вопроса или сообщения об ошибке откройте «Сообщить об ошибке» в строке программы. Укажите версию программы, ОС и действия, после которых возникла проблема.','tech':'Технологии'},
+        'de':{'intro':'Ich entwickle Desktop-Anwendungen fürs Lernen, für Medien und für alltägliche Aufgaben unter macOS und Windows.','count':'Im Katalog stehen derzeit {apps}.','catalog':'Anwendungen und Anleitungen entdecken','try':'Gleich ausprobieren','all':'Alle Anwendungen','table':'Links zu Download, Anleitung und Fehlermeldung','screens':'Oberflächen ansehen','help':'Downloads und Hilfe','help_text':'Die Anleitung jeder Anwendung enthält Voraussetzungen und erste Schritte. Laden Sie die Anwendung aus Releases herunter, nicht das Quellcode-ZIP. Preview-Versionen werden noch entwickelt; Projekte mit dem Status „Nur Quellcode“ haben kein fertiges Installationspaket.','support':'Für Fragen oder Fehlerberichte nutzen Sie „Fehler melden“ in der Zeile der Anwendung. Geben Sie die Programmversion, das Betriebssystem und die Schritte zum Nachstellen an.','tech':'Technologien'}
     }[l]
     catalog_url=SITE+catalog_file(l)
-    links=lambda p:' · '.join(f'<a href="{e(url)}">{e(label)}</a>' for kind,label,url in profile_actions(p,l,websites) if kind!='website')
-    out=['<p align="right">'+' · '.join(f'<a href="{readme_file(x)}">{n}</a>' for x,n in (('ru','Русский'),('de','Deutsch'),('en','English')))+'</p>','',f'[![popovantondev](assets/profile-studio-{l}.png)]({catalog_url})','',copy['intro'],'',f'**[→ {copy["catalog"]}]({catalog_url})**','',f'## {copy["featured"]}','','<table>']
+    links=lambda p:' · '.join(f'[{label}]({url})' for kind,label,url in profile_actions(p,l,websites) if kind!='website')
+    out=['<p align="right">'+' · '.join(f'<a href="{readme_file(x)}">{name}</a>' for x,name in (('ru','Русский'),('de','Deutsch'),('en','English')))+'</p>','',
+         profile_picture(manifest,raw,'banner',l,catalog_url),'',
+         copy['intro']+' '+copy['count'].format(apps=apps_count(n,l)),'',f'**[→ {copy["catalog"]}]({catalog_url})**','']
     if any(p['repo']=='PeakMP3' for p in d['projects']):
         demo=program_site(next(p for p in d['projects'] if p['repo']=='PeakMP3'),l,websites)+'#demo'
-        label={'ru':'Попробовать PeakMP3 в браузере','en':'Try PeakMP3 in your browser','de':'PeakMP3 im Browser testen'}[l]
-        piano_label={'ru':'Играть на пианино в браузере','en':'Play the piano in your browser','de':'Klavier im Browser spielen'}[l]
         piano=f'https://popovantondev.github.io/VirtualPianoArranger/play-{l}.html'
-        card=lambda url,img,text,alt:f'<td width="50%" valign="top"><a href="{e(url)}"><img src="assets/{img}-{l}.svg" width="100%" alt="{e(alt)}"></a><br><a href="{e(url)}"><b>▶ {e(text)}</b></a></td>'
-        # Two cards side by side: PeakMP3 on the left, the piano on the right.
-        out=out[:-3]+['<table>','<tr>',card(demo,'peakmp3-demo',label,label),card(piano,'piano-demo',piano_label,'Virtual Piano Arranger — '+piano_label),'</tr>','</table>','',*out[-3:]]
-    for i,repo in enumerate(FEATURED):
-        p=next(p for p in d['projects'] if p['repo']==repo)
-        if i%2==0:out.append('<tr>')
-        icon=d['catalog_icons'][repo]
-        out += [f'<td width="50%" valign="top"><img align="right" width="48" height="48" alt="" src="{e(icon)}"><h3><a href="{e(program_site(p,l,websites))}">{e(p["name"])}</a></h3><p>{e(p["description"][l])}</p><p><sub>{e(p["platform"])}<br>{e(status(p,l))}</sub></p><p>{links(p)}</p></td>']
-        if i%2==1:out.append('</tr>')
-    out += ['</table>','',f'## {copy["all"]}','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
+        # Two cards side by side: PeakMP3 on the left, the piano on the right (they wrap under each other on a phone).
+        out+=[f'## {copy["try"]}','','<p>',profile_picture(manifest,raw,'demo-peakmp3',l,demo),profile_picture(manifest,raw,'demo-piano',l,piano),'</p>','']
+    out+=[f'## {copy["all"]}','']
+    for category in ('lernen','medien','werkzeuge','daten'):
+        cards=[p for p in d['projects'] if d['catalog_categories'][p['repo']]==category]
+        if not cards:continue
+        out+=[f'### {CATEGORIES[category][l]}','','<p>',*[profile_picture(manifest,raw,'card-'+p['repo'],l,program_site(p,l,websites)) for p in cards],'</p>','']
+    # The long table stays as text for readers, search and assistive tech; the cards above are its picture.
+    out+=['<details>',f'<summary>{copy["table"]}</summary>','',f'| {t["catalog"]} | {t["os"]} / {t["status"]} | {t["links"]} |','|---|---|---|']
     for p in d['projects']:
-        out.append(f'| [{p["name"]}]({program_site(p,l,websites)}) | {p["platform"]}<br>{status(p,l)} | '+' · '.join(f'[{label}]({url})' for kind,label,url in profile_actions(p,l,websites) if kind!='website')+' |')
-    out += ['',*[f'*{note}*' for note in shared_note(d,l)]]
-    out += ['',f'## {copy["screens"]}','']
-    demo_caption={'ru':'Интерфейс с демонстрационными данными.','de':'Oberfläche mit Demonstrationsdaten.','en':'Interface with demonstration data.'}[l]
-    illustration_caption={'ru':'Опубликованная демонстрационная иллюстрация интерфейса.','de':'Veröffentlichte Demonstrationsillustration der Oberfläche.','en':'Published demonstration illustration of the interface.'}[l]
-    previews=[
-        ('VirtualPianoArranger',illustration_caption,'assets/surface-laptop'+({'ru':'','de':'-de','en':'-en'}[l])+'-v1.png'),
-        ('PeakMP3',demo_caption,f'assets/site/peakmp3-{l}.webp'),
-        ('SoundLeaf',demo_caption,f'assets/screenshots/{l}-control-dark.png'),
-        ('LectureCompanion',t['lc_caption'],f'docs/screenshots/app-{l}.png'),
-        ('LectureMerge',demo_caption,f'docs/{l}/screenshots/main.png'),
-        ('QuickAnswer',demo_caption,f'docs/assets/screenshots/popup-{l}.png')]
-    for repo,cap,img in previews:
-        p=next(p for p in d['projects'] if p['repo']==repo)
-        out += [f'<details>\n<summary>{p["name"]}</summary>\n\n![{p["name"]}](https://raw.githubusercontent.com/popovantondev/{repo}/main/{img})\n\n*{cap}*\n\n</details>','']
-    out += [f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','',built_with(d,l),'',t['notice'],'']
+        out.append(f'| [{p["name"]}]({program_site(p,l,websites)}) | {p["platform"]}<br>{status(p,l)} | {links(p)} |')
+    out+=['',*[f'*{note}*' for note in shared_note(d,l)],'','</details>','']
+    # Preview pictures of the programs are linked, not embedded: the profile keeps its picture weight small.
+    names={p['repo']:p['name'] for p in d['projects']}
+    previews=[f'[{names[i["repo"]]}](https://raw.githubusercontent.com/popovantondev/{i["repo"]}/main/{i["path"]})' for i in manifest.get('previews',[]) if i['lang']==l and i['repo'] in names]
+    out+=[f'## {copy["screens"]}','',' · '.join(previews),'']
+    out+=[f'## {copy["help"]}','',copy['help_text'],'',copy['support'],'',f'### {copy["tech"]}','',built_with(d,l),'',t['notice'],'']
     return '\n'.join(out)
 REDIRECT_NAMES={'ru':'RU','de':'DE','en':'EN'}
 def legacy_catalog():
@@ -233,6 +238,11 @@ def validate(d,files,online=False,published=False):
         if p['tag'] and p['release_url']!=p['source_url']+'/releases/tag/'+p['tag']:errors.append(p['repo']+': release URL/tag mismatch')
         for field in ('description','requirements','start'):
             if set(p[field])!=set(LANGS):errors.append(p['repo']+': incomplete localization '+field)
+    if 'projects' in d:
+        try:manifest=profile_manifest()
+        except ValueError as exc:errors.append(str(exc))
+        else:
+            if manifest.get('programs')!=len(projects):errors.append(f'{PROFILE_MANIFEST}: the banner shows {manifest.get("programs")} programs but the catalog has {len(projects)}: rebuild the profile pictures')
     for name,expected in files.items():
         text=(ROOT/name).read_text(encoding='utf-8')
         if text!=expected:errors.append(name+': regenerate release summary')
