@@ -32,6 +32,8 @@
 }
 .pk-tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #e5c38d; box-shadow: 0 0 8px 1px rgba(229, 195, 141, 0.7); }
 .is-armed .pk-tag { display: inline-flex; }
+.is-touch .pk-tag { display: none; }
+.is-touch .pk:focus-visible { outline: none; }
 .pk-mute {
   min-height: 40px;
   padding: 6px 14px;

@@ -86,6 +86,12 @@
   }
   let armed = false;
   function arm(on) { armed = on; section.classList.toggle('is-armed', on); }
+  let touchMode = false;
+  function setTouchMode(on) {
+    if (touchMode === on) return;
+    touchMode = on;
+    section.classList.toggle('is-touch', on);
+  }
 
   // ---------- audio ----------
   let ctx = null, master = null, loadState = 'none';
@@ -105,6 +111,27 @@
     loadSamples();
     return ctx;
   }
+  // iOS Safari starts audio only from a "real" gesture (touchend / click), and a finger gives pointerdown first.
+  // So, as the full version does, the piano section listens to all of them and keeps trying until the context runs.
+  // Still nothing is created before the visitor touches the piano itself.
+  const UNLOCK_EVENTS = ['pointerdown', 'pointerup', 'touchend', 'click', 'keydown'];
+  function unlockAudio() {
+    if (muted) return;
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* optional API */ }
+    const c = ensureAudio();
+    if (!c) return;
+    if (c.state !== 'running') {
+      try { // a silent one-sample sound inside the gesture is what wakes iOS
+        const src = c.createBufferSource();
+        src.buffer = c.createBuffer(1, 1, 22050);
+        src.connect(c.destination); src.start(0);
+      } catch (e) { /* the resume is what matters */ }
+      try { c.resume().catch(() => {}); } catch (e) { /* no gesture yet */ }
+    } else {
+      for (const n of UNLOCK_EVENTS) section.removeEventListener(n, unlockAudio, true);
+    }
+  }
+  for (const n of UNLOCK_EVENTS) section.addEventListener(n, unlockAudio, true);
   const decode = (data) => new Promise((resolve, reject) => { ctx.decodeAudioData(data, resolve, reject); });
   async function loadSamples() {
     if (loadState !== 'none') return;
@@ -212,8 +239,12 @@
     const off = keyAt(e.clientX, e.clientY);
     if (off < 0) return;
     e.preventDefault();
-    arm(true);
-    try { keys[off].el.focus({ preventScroll: true }); } catch (err) { /* not focusable */ }
+    // A finger has no computer keyboard: no "Keyboard active" tag and no orange focus frame after a touch.
+    setTouchMode(e.pointerType === 'touch');
+    if (e.pointerType !== 'touch') {
+      arm(true);
+      try { keys[off].el.focus({ preventScroll: true }); } catch (err) { /* not focusable */ }
+    }
     try { board.setPointerCapture(e.pointerId); } catch (err) { /* not capturable */ }
     active.set(e.pointerId, off);
     press(off, 'p' + e.pointerId);
@@ -256,7 +287,9 @@
     const k = e.target.closest ? e.target.closest('.pk') : null;
     if (k && (e.key === 'Enter' || e.key === ' ')) release(Number(k.dataset.off), 'e' + k.dataset.off);
   });
-  board.addEventListener('focusin', () => arm(true));
+  board.addEventListener('focusin', () => { if (!touchMode) arm(true); });
+  // Any real key press brings the keyboard mode (and the focus frame) back.
+  section.addEventListener('keydown', () => { setTouchMode(false); }, true);
   // Focus left the piano (Tab, click elsewhere): the computer keyboard stops playing.
   section.addEventListener('focusout', (e) => {
     if (e.relatedTarget && section.contains(e.relatedTarget)) return;
