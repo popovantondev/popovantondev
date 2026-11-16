@@ -13,17 +13,21 @@
   const T = JSON.parse(stringsEl.textContent);
   const BASE = 'assets/about-piano/samples/';
   const LOW = 60; // MIDI C4
-  const COUNT = 24; // two octaves
+  // Two octaves C4..B5; on a phone one octave plus C5 (8 white keys, each at least 40 px wide, so a finger hits one key)
+  const narrow = !!(window.matchMedia && matchMedia('(max-width: 520px)').matches);
+  // white keys that fit with >= 40 px each (5..8), counted from C4: C D E F G A B C -> keys up to the last white one
+  const fit = narrow ? Math.max(5, Math.min(8, Math.floor((root.getBoundingClientRect().width || 300) / 40))) : 14;
+  const COUNT = narrow ? [1, 3, 5, 6, 8, 10, 12, 13][fit - 1] : 24;
   const WHITE_PC = [0, 2, 4, 5, 7, 9, 11];
   const SAMPLES = [['C4', 60], ['Ds4', 63], ['Fs4', 66], ['A4', 69], ['C5', 72], ['Ds5', 75], ['Fs5', 78], ['A5', 81], ['C6', 84]];
   // Tracker-style layout: lower row Z..M with S D G H J for the black keys, upper row Q..U with 2 3 5 6 7.
   const CODES = ['KeyZ', 'KeyS', 'KeyX', 'KeyD', 'KeyC', 'KeyV', 'KeyG', 'KeyB', 'KeyH', 'KeyN', 'KeyJ', 'KeyM',
     'KeyQ', 'Digit2', 'KeyW', 'Digit3', 'KeyE', 'KeyR', 'Digit5', 'KeyT', 'Digit6', 'KeyY', 'Digit7', 'KeyU'];
-  const OFFSET_OF = new Map(CODES.map((c, i) => [c, i]));
+  const OFFSET_OF = new Map(CODES.slice(0, COUNT).map((c, i) => [c, i]));
   const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- keys ----------
-  const whiteCount = 14;
+  const whiteCount = fit;
   const wPct = 100 / whiteCount;
   const bPct = wPct * 0.6;
   const board = document.createElement('div');
@@ -65,7 +69,7 @@
   root.classList.add('is-live');
   if (navigator.keyboard && navigator.keyboard.getLayoutMap) {
     navigator.keyboard.getLayoutMap().then((map) => {
-      CODES.forEach((c, i) => { const v = map.get(c); if (v) keys[i].label.textContent = v.toUpperCase(); });
+      CODES.forEach((c, i) => { const v = map.get(c); if (v && keys[i]) keys[i].label.textContent = v.toUpperCase(); });
     }).catch(() => {});
   }
 

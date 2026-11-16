@@ -126,6 +126,9 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 .hero-studio .hero-meta span+span:before{margin-right:10px}
 }
 @media(max-width:700px){
+/* Phones: the studio photograph sits inside the card with a margin, so both laptops are whole (the card's rounded corners and its edge no longer touch them) */
+.hero.hero-studio{padding:0 14px 28px}
+.hero-studio .studio-art{margin:14px 0 0;border-radius:16px}
 .projects{grid-template-columns:1fr;gap:16px}
 .project{padding:20px}
 .catalog-top h2{font-size:24px}
