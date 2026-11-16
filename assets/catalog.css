@@ -38,6 +38,8 @@ main.ppk-shell{padding-bottom:8px}
 .project h2{margin:0;font-size:23px;letter-spacing:-.02em;overflow-wrap:anywhere}
 .project h2 a{color:var(--ppk-ink);text-decoration:none}
 .project h2 a:hover{color:var(--ppk-accent)}
+/* phones: the title link is a finger-sized target (the extra padding is cancelled by the negative margin, the look stays) */
+@media(pointer:coarse),(max-width:700px){.project h2 a{display:inline-block;padding:6px 0;margin:-6px 0}}
 .project-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0}
 .status{display:inline-block;padding:3px 9px;border-radius:7px;background:var(--ppk-ok-bg);color:var(--ppk-ok-fg);font-size:13px;font-weight:700}
 .status.preview{background:var(--ppk-warn-bg);color:var(--ppk-warn-fg)}
@@ -136,6 +138,8 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 .search,.search input,.filters{width:100%}
 }
 @media(max-width:400px){.catalog-top{flex-wrap:wrap}.ppk-tabs button{padding:8px 11px}}
+/* very narrow phones: the three facts wrap as whole items, no dot is left at the start of a line */
+@media(max-width:400px){.hero-studio .hero-meta{gap:4px 16px}.hero-studio .hero-meta span{white-space:nowrap}.hero-studio .hero-meta span+span:before{content:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project,.filters button{transition:none}.project:hover{transform:none}}
 
 /* ---------- program ticker (profile only) ---------- */

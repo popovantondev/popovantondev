@@ -33,7 +33,7 @@
   const board = document.createElement('div');
   board.className = 'pk-board';
   board.setAttribute('role', 'group');
-  board.setAttribute('aria-label', T.aria);
+  board.setAttribute('aria-label', narrow && T.ariaNarrow ? T.ariaNarrow : T.aria);
   const keys = [];
   let wi = 0;
   for (let off = 0; off < COUNT; off++) {
