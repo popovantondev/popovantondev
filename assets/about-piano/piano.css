@@ -15,7 +15,7 @@
 }
 .pk-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0 0 14px; }
 .pk-titles { display: grid; gap: 2px; min-width: 0; }
-.pk-eyebrow { color: #dfb87c; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; line-height: 1.2; text-transform: uppercase; }
+.pk-eyebrow { color: #dfb87c; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; line-height: 1.2; text-transform: uppercase; }
 .pk-name { font: 600 21px/1.2 Georgia, "Times New Roman", serif; color: #f4ead6; }
 .pk-tools { display: flex; align-items: center; gap: 8px; }
 .pk-tag {
@@ -128,8 +128,8 @@
 .pk:focus-visible { outline: 3px solid #ff8a20; outline-offset: -3px; z-index: 3; }
 .pk-label, .pk-mark { position: absolute; left: 0; right: 0; z-index: 3; text-align: center; pointer-events: none; line-height: 1; }
 .pk-label { bottom: 14px; font-size: clamp(11px, 1.1vw, 13px); font-weight: 650; }
-.pk-black .pk-label { font-size: 10px; font-weight: 600; }
-.pk-mark { bottom: 32px; font-size: 10px; font-weight: 700; color: #8a6a2f; letter-spacing: -0.01em; }
+.pk-black .pk-label { font-size: 12px; font-weight: 600; }
+.pk-mark { bottom: 32px; font-size: 12px; font-weight: 700; color: #8a6a2f; letter-spacing: -0.01em; }
 .pk-white.is-active .pk-mark { color: #5a3d10; }
 .pk-status { margin: 12px 0 0; min-height: 1.5em; color: #bfb39b; font-size: 13.5px; }
 
@@ -143,9 +143,9 @@
 @media (max-width: 520px) {
   .pk-studio { padding: 14px 10px 12px; border-radius: 18px; }
   .pk-board { height: 132px; }
-  .pk-label { bottom: 10px; font-size: 10px; }
-  .pk-black .pk-label { font-size: 9px; }
-  .pk-mark { bottom: 26px; font-size: 9px; }
+  .pk-label { bottom: 10px; font-size: 12px; }
+  .pk-black .pk-label { font-size: 12px; }
+  .pk-mark { bottom: 28px; font-size: 12px; letter-spacing: -0.06em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pk-link { transition: none; }

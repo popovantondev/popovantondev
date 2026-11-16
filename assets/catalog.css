@@ -46,6 +46,7 @@ main.ppk-shell{padding-bottom:8px}
 .collection-notice{margin:4px 0 14px;padding:8px 12px;border-left:3px solid var(--ppk-accent);border-radius:0 8px 8px 0;background:var(--ppk-tint);color:var(--ppk-ink);font-size:14px;line-height:1.55}
 .requirements{margin-bottom:18px;padding-top:12px;border-top:1px solid var(--ppk-line);color:var(--ppk-muted);font-size:14px}
 .requirements summary{cursor:pointer;list-style-position:inside}
+@media(max-width:700px){.requirements summary{display:flex;align-items:center;min-height:44px;margin-top:-6px}.requirements summary::marker{content:none}.requirements summary::before{content:"\25B8";flex:none;width:1.3em;color:var(--ppk-muted)}.requirements[open] summary::before{content:"\25BE"}}
 .requirements p{margin:10px 0 0;overflow-wrap:anywhere}
 .actions{display:flex;flex-wrap:wrap;gap:8px}
 .project .actions .ppk-btn{min-height:44px;padding:8px 12px;font-size:14px;white-space:normal;overflow-wrap:anywhere;max-width:100%}
@@ -63,7 +64,22 @@ main.ppk-shell{padding-bottom:8px}
 .peak-demo-feature img{display:block;width:100%;height:auto;border-radius:0;box-shadow:none;filter:drop-shadow(0 8px 14px #37270c14)}
 .piano-demo-feature img{filter:drop-shadow(0 8px 14px #0d0f1226)}
 .peak-demo-feature:hover,.peak-demo-feature:focus-visible{transform:translateY(-2px)}
-@media(max-width:760px){.demo-feature-row{grid-template-columns:1fr;gap:14px}}
+/* Phone version of the two banners: real text (the SVG text is 7 px on a 360 px screen). */
+.demo-m{display:none}
+@media(max-width:760px){
+.demo-feature-row{grid-template-columns:1fr;gap:14px}
+.peak-demo-feature{--dm-bg:linear-gradient(135deg,#fff8e8,#e5d4b3);--dm-line:#ad8d61;--dm-eyebrow:#9a4a0c;--dm-title:#292820;--dm-sub:#5a4a34;--dm-btn:linear-gradient(#d4600a,#b04403);--dm-btn-ink:#fff;--dm-btn-line:#8f3a04}
+.piano-demo-feature{--dm-bg:linear-gradient(135deg,#23262b,#0f1114);--dm-line:#c69c61;--dm-eyebrow:#dfb87c;--dm-title:#f1ece3;--dm-sub:#c5c2bc;--dm-btn:linear-gradient(#e5c38d,#c69c61);--dm-btn-ink:#2a200f;--dm-btn-line:#8f6a2f}
+.peak-demo-feature>img{display:none}
+.peak-demo-feature{text-decoration:none}.peak-demo-feature .demo-m{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"eyebrow eyebrow" "copy art" "btn btn";gap:12px 14px;align-items:center;padding:18px 16px 16px;border:2px solid var(--dm-line);border-radius:20px;background:var(--dm-bg);box-shadow:0 8px 14px -8px #0003}
+.demo-m-eyebrow{grid-area:eyebrow;color:var(--dm-eyebrow);font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1.35}
+.demo-m-copy{grid-area:copy;display:grid;gap:6px;min-width:0}
+.demo-m-title{display:block;color:var(--dm-title);font-size:22px;line-height:1.18;letter-spacing:-.01em;margin-bottom:4px}
+.demo-m-sub{display:block;color:var(--dm-sub);font-size:14px;line-height:1.4}
+.demo-m-art{grid-area:art;display:block;width:auto;height:132px;max-width:96px;object-fit:contain;filter:drop-shadow(0 6px 10px #0004)}
+.demo-m-btn{grid-area:btn;display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 14px;border:1px solid var(--dm-btn-line);border-radius:12px;background:var(--dm-btn);color:var(--dm-btn-ink);font-size:16px;font-weight:700;text-align:center}
+.peak-demo-feature{filter:none}
+}
 @media(prefers-reduced-motion:reduce){.peak-demo-feature{transition:none}.peak-demo-feature:hover,.peak-demo-feature:focus-visible{transform:none}}
 
 /* ---------- approved photographic studio: only application windows are projected into the screen planes ---------- */
@@ -73,7 +89,8 @@ main.ppk-shell{padding-bottom:8px}
 .hero-studio .studio-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;container-type:inline-size;background:linear-gradient(135deg,#041a3f,#0a3a86 55%,#062048)}
 /* No jump on reload: the scale comes from the CSS width of the art (no script needed), the scene stays hidden until its pictures
    are decoded (catalog.js adds .is-ready), and the hero keeps its 8:3 box meanwhile. */
-@supports (transform:scale(tan(atan2(1px,1px)))){.hero-studio .scene{transform:scale(tan(atan2(100cqw,2048px)))}}
+/* The scale is set by catalog.js (--scale = art width / 2048) on every engine. iOS Safari left tan(atan2(100cqw,2048px)) unscaled (only a corner of the photograph showed), so the CSS-only form is kept just for visitors without scripts. */
+@media(scripting:none){@supports (transform:scale(tan(atan2(1px,1px)))){.hero-studio .scene{transform:scale(tan(atan2(100cqw,2048px)))}}}
 .hero-studio .scene{opacity:0;transition:opacity .25s ease}
 .hero-studio .studio-art.is-ready .scene{opacity:1}
 @media(scripting:none){.hero-studio .scene{opacity:1;transition:none}}
@@ -98,7 +115,7 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 .hero.hero-studio{aspect-ratio:auto;padding:0 20px 28px}
 .hero-studio .studio-art{position:relative;aspect-ratio:8/3;margin:0 -20px}
 .hero-studio .hero-copy{position:relative;left:auto;top:auto;width:100%;max-width:640px;margin:0 auto}
-.hero-studio .eyebrow{font-size:11px;letter-spacing:1.2px;margin:8px 0 16px}
+.hero-studio .eyebrow{font-size:12px;letter-spacing:1.2px;margin:8px 0 16px}
 .hero-studio h1,html[lang=en] .hero-studio h1,html[lang=de] .hero-studio h1{font-size:clamp(26px,5vw,42px);letter-spacing:-1px;margin:0 0 18px}
 .hero-studio h1 span{white-space:normal}
 .hero-studio .lead,html[lang=de] .hero-studio .lead{font-size:16px;max-width:580px;margin:0 auto 22px}
@@ -134,4 +151,7 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 .marquee-meta{display:block;padding:10px 12px}
 .marquee-meta b{display:block;font-size:14px;line-height:1.2}
 .marquee-meta small{display:block;color:var(--ppk-muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.marquee-set[aria-hidden="true"]{display:none}.marquee-card{transition:none}.marquee-card:hover,.marquee-card:focus-visible{transform:none}}
+.hint-touch{display:none}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.marquee-set[aria-hidden="true"]{display:none}.marquee-card{transition:none}.marquee-card:hover,.marquee-card:focus-visible{transform:none}.hint-pointer{display:none}.hint-touch{display:inline}}
+/* Touch screens have no hover to pause the ticker: it becomes a row you swipe (one copy, snap, fade only on the right edge). */
+@media(hover:none) and (pointer:coarse){.marquee{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent)}.marquee::-webkit-scrollbar{display:none}.marquee-track{animation:none}.marquee-set[aria-hidden="true"]{display:none}.marquee-card{scroll-snap-align:start}.marquee-set{padding-left:0}.hint-pointer{display:none}.hint-touch{display:inline}}

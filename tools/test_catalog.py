@@ -211,13 +211,19 @@ class CatalogTests(unittest.TestCase):
             peak, piano = links
             self.assertIn('/PeakMP3/', peak['href'], name)
             self.assertEqual(piano['href'], 'https://popovantondev.github.io/VirtualPianoArranger/play-%s.html' % lang, name)
-            imgs = [a for t, a in tags(row) if t == 'img']
+            imgs = [a for t, a in tags(row) if t == 'img' and a.get('class') != 'demo-m-art']
+            arts = [a['src'] for t, a in tags(row) if t == 'img' and a.get('class') == 'demo-m-art']
+            self.assertEqual(arts, ['assets/peakmp3-demo-thumb-%s.webp' % lang, 'assets/piano-demo-keys.svg'], name)  # phone card pictures
+            self.assertEqual(row.count('class="demo-m"'), 2, name)  # phone cards: real text instead of the 7 px SVG text
+            for art in arts:
+                self.assertTrue((ROOT / art).is_file(), art)
             self.assertEqual([a['src'] for a in imgs], ['assets/peakmp3-demo-%s.svg' % lang, 'assets/piano-demo-%s.svg' % lang], name)
             self.assertEqual({(a['width'], a['height']) for a in imgs}, {('1400', '520')}, name)
             self.assertTrue((ROOT / 'assets' / ('piano-demo-%s.svg' % lang)).is_file())
         css = (ROOT / 'assets' / 'catalog.css').read_text(encoding='utf-8')
         self.assertRegex(css, r'\.demo-feature-row\{display:grid;grid-template-columns:repeat\(2')
-        self.assertRegex(css, r'max-width:760px\)\{\.demo-feature-row\{grid-template-columns:1fr')
+        self.assertRegex(css, r'max-width:760px\)\{\s*\.demo-feature-row\{grid-template-columns:1fr')
+        self.assertRegex(css, r'\.hint-touch\{display:none\}')  # swipe hint of the ticker only on touch / reduced motion
 
     def test_generated_pages_validate_against_the_files_on_disk(self):
         errors = docs.validate(self.data, self.files)

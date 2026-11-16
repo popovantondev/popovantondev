@@ -7,7 +7,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from kit_programs import CATEGORIES
 
 KIT_VERSION=(Path(__file__).resolve().parents[1]/'assets'/'kit'/'KIT_VERSION').read_text(encoding='utf-8').strip()
-CATALOG_REV='r6'  # raise when assets/catalog.css or catalog.js change, so browsers drop the old copies
+CATALOG_REV='r7'  # raise when assets/catalog.css or catalog.js change, so browsers drop the old copies
 GITHUB='https://github.com/popovantondev'
 ORDER=('lernen','medien','werkzeuge','daten')
 ALL_LABEL={'ru':'Все','de':'Alle','en':'All'}
@@ -24,9 +24,9 @@ PERMISSION_NOTICE={
 
 SITE='https://popovantondev.github.io/popovantondev/'
 MARQUEE={
- 'ru':dict(title='Все программы одной лентой',sub='{apps} для macOS и Windows. Наведите курсор или нажмите Tab — лента остановится.',label='Лента программ'),
- 'de':dict(title='Alle Anwendungen in einer Laufschrift',sub='{apps} für macOS und Windows. Mit der Maus darüber oder per Tab — die Laufschrift hält an.',label='Laufschrift der Anwendungen'),
- 'en':dict(title='All applications in one ticker',sub='{apps} for macOS and Windows. Hover or tab onto it and the ticker pauses.',label='Application ticker')}
+ 'ru':dict(title='Все программы одной лентой',lead='{apps} для macOS и Windows.',hint='Наведите курсор или нажмите Tab — лента остановится.',touch='Листайте ленту пальцем в сторону.',label='Лента программ'),
+ 'de':dict(title='Alle Anwendungen in einer Laufschrift',lead='{apps} für macOS und Windows.',hint='Mit der Maus darüber oder per Tab — die Laufschrift hält an.',touch='Mit dem Finger seitlich wischen.',label='Laufschrift der Anwendungen'),
+ 'en':dict(title='All applications in one ticker',lead='{apps} for macOS and Windows.',hint='Hover or tab onto it and the ticker pauses.',touch='Swipe the ticker sideways.',label='Application ticker')}
 def apps_count(n,l):
  """'20 приложений' / '20 Anwendungen' / '20 applications': the number always comes from the catalog, never typed by hand."""
  if l=='ru':
@@ -36,7 +36,11 @@ def apps_count(n,l):
  return f'{n} {word}'
 
 def marquee_sub(l,n):
- return MARQUEE[l]['sub'].format(apps=apps_count(n,l))
+ m=MARQUEE[l];return m['lead'].format(apps=apps_count(n,l))+' '+m['hint']
+
+def marquee_sub_html(l,n):
+ """Caption under the ticker: the pointer hint on desktop, the swipe hint on touch screens and for reduced motion (CSS picks one)."""
+ m=MARQUEE[l];return e(m['lead'].format(apps=apps_count(n,l)))+' <span class="hint-pointer">'+e(m['hint'])+'</span><span class="hint-touch">'+e(m['touch'])+'</span>'
 
 OG={
  'ru':dict(locale='ru_RU',alt='Студийный баннер popovantondev: программы для macOS и Windows на двух рабочих столах'),
@@ -58,6 +62,35 @@ def marquee(d,l,actions):
   return f'<div class="marquee {cls}"><div class="marquee-track"><div class="marquee-set">{one}</div><div class="marquee-set" aria-hidden="true">{two}</div></div></div>'
  return track(items[:half],'marquee-forward')+track(items[half:],'marquee-reverse')
 
+DEMO={
+ 'peak':dict(
+  eyebrow='PEAKMP3 · RU / DE / EN',
+  title={'ru':('Покрути PeakMP3','прямо в браузере'),'de':('PeakMP3 direkt','im Browser testen'),'en':('Try PeakMP3','in your browser')},
+  sub={'ru':('Три музыкальных примера · Оригинальный интерфейс','Плотность · A/B · VU · Громкость'),'de':('Drei Musikbeispiele · Originale Bedienelemente','Dichte · A/B · VU · Lautstärke'),'en':('Three music examples · Original application controls','Density · A/B · VU · Volume')},
+  button={'ru':'▶ Открыть интерактивное демо','de':'▶ Interaktive Demo öffnen','en':'▶ Open interactive demo'},
+  alt={'ru':'Попробовать в браузере','de':'Im Browser testen','en':'Try in browser'},name='PeakMP3'),
+ 'piano':dict(
+  eyebrow='VIRTUAL PIANO ARRANGER · RU / DE / EN',
+  title={'ru':('Играй на пианино','прямо в браузере'),'de':('Klavier spielen','direkt im Browser'),'en':('Play the piano','in your browser')},
+  sub={'ru':('Мышь · касание · клавиатура компьютера','Звук Salamander Grand Piano'),'de':('Maus · Touch · Computertastatur','Klang Salamander Grand Piano'),'en':('Mouse · touch · computer keyboard','Salamander Grand Piano sound')},
+  button={'ru':'▶ Играть в браузере','de':'▶ Im Browser spielen','en':'▶ Play in the browser'},
+  alt={'ru':'Играть в браузере','de':'Im Browser spielen','en':'Play in the browser'},name='Virtual Piano Arranger')}
+
+def demo_card(kind,l,href,cls):
+ """Two pictures of one banner: the wide SVG on desktop and a real HTML card on phones (CSS shows one of them; the SVG text is 7 px on a phone)."""
+ d=DEMO[kind]
+ art=f'assets/peakmp3-demo-thumb-{l}.webp' if kind=='peak' else 'assets/piano-demo-keys.svg'
+ size=('240" height="399' if kind=='peak' else '120" height="150')
+ return (f'<a class="{cls}" href="{e(href)}"><img src="assets/{"peakmp3" if kind=="peak" else "piano"}-demo-{l}.svg" width="1400" height="520" alt="{e(d["name"])} — {e(d["alt"][l])}" loading="lazy">'
+  f'<span class="demo-m"><span class="demo-m-eyebrow">{e(d["eyebrow"])}</span>'
+  f'<span class="demo-m-copy"><strong class="demo-m-title">{e(d["title"][l][0])}<br>{e(d["title"][l][1])}</strong><span class="demo-m-sub">{e(d["sub"][l][0])}</span><span class="demo-m-sub">{e(d["sub"][l][1])}</span></span>'
+  f'<img class="demo-m-art" src="{art}" width="{size}" alt="" loading="lazy"><span class="demo-m-btn">{e(d["button"][l])}</span></span></a>')
+
+def demo_row(l):
+ peak=f'https://popovantondev.github.io/PeakMP3/{"index.html" if l=="de" else "index-"+l+".html"}#demo'
+ piano=f'https://popovantondev.github.io/VirtualPianoArranger/play-{l}.html'
+ return '<div class="demo-feature-row">'+demo_card('peak',l,peak,'peak-demo-feature demo-peak')+demo_card('piano',l,piano,'peak-demo-feature piano-demo-feature demo-piano')+'</div>'
+
 def head_meta(c,l,labels):
  o=OG[l];url=SITE+('index.html' if l=='de' else f'index-{l}.html');image=f'{SITE}assets/profile-studio-{l}.png'
  title=f'popovantondev — {labels[l]["catalog"]}'
@@ -73,7 +106,7 @@ def render(d,l,labels,status,actions,notes=()):
  for p in d['projects']:
   if p.get('shared_distribution'):shared[p['repo']]=next((n for n in notes if n.startswith(p['name'])),'')
  cards=[]
- for p in d['projects']:
+ for n_card,p in enumerate(d['projects']):
   os='macos' if 'macOS' in p['platform'] else 'windows'
   icon=d['catalog_icons'][p['repo']]
   category=d['catalog_categories'][p['repo']]
@@ -92,7 +125,7 @@ def render(d,l,labels,status,actions,notes=()):
    cls='ppk-btn'+(' ppk-btn-primary' if kind==primary else '')+(' ppk-btn-gh' if kind=='source' else '')+(' support-link' if kind=='bug' else '')
    buttons.append(f'<a class="{cls}" href="{e(url)}">{e(label)}</a>')
   cards.append(f'''<article class="project" id="{e(p['repo'])}" data-platform="{os}" data-category="{category}" data-keywords="{e(keywords)}">
-<div class="project-heading"><span class="project-badge"><img class="project-icon" src="{e(icon)}" width="64" height="64" alt="" decoding="async" loading="lazy"></span><span class="platform">{e(p['platform'])}</span></div>
+<div class="project-heading"><span class="project-badge"><img class="project-icon" src="{e(icon)}" width="64" height="64" alt="" decoding="async" loading="{"eager" if n_card<6 else "lazy"}"></span><span class="platform">{e(p['platform'])}</span></div>
 <div class="project-title-row"><h2><a href="{e(site)}">{e(p['name'])}</a></h2>{demo_link}</div><p class="project-meta"><span class="status {p['status']}">{e(status(p,l))}</span><span class="ppk-chip"><i class="ppk-dot"></i>{e(stack)}</span></p>
 <p class="description">{e(p['description'][l])}</p>{notice}
 <details class="requirements"><summary>{e(c['requirements'])}</summary><p>{e(p['requirements'][l])}</p></details>
@@ -104,8 +137,8 @@ def render(d,l,labels,status,actions,notes=()):
 <body class="ppk-page"><a class="ppk-skip" href="#catalog">{e(c['skip'])}</a>
 <div class="ppk-nav-wrap" id="ppk-nav-wrap"><nav class="ppk-nav" aria-label="{e(c['nav'])}"><a class="ppk-brand" href="{("index.html" if l=="de" else "index-"+l+".html")}"><span>popovantondev</span></a><span class="ppk-spacer"></span><button class="ppk-search-btn" type="button" data-ppk-open-search aria-label="{e(c['search_label'])}"><span>{e(c['search_text'])}</span><kbd>{e(c['kbd'])}</kbd></button><div class="ppk-langs">{nav}</div><button class="ppk-icon-btn ppk-theme-btn" type="button" data-ppk-theme aria-label="{e(c['theme'])}"></button><a class="ppk-icon-btn ppk-gh-btn" href="{GITHUB}" aria-label="GitHub"></a></nav></div>
 <main class="ppk-shell" id="main"><section class="hero hero-studio"><div class="studio-art" aria-hidden="true"><div class="scene"><img class="photograph" src="assets/studio/studio-desktops.webp" width="2048" height="768" alt="" aria-hidden="true"><div class="desktop mac-desktop" style="transform:matrix3d(0.362478164855,0.00268640514118,0,2.11527963873e-05,-0.00544406398359,0.354618133095,0,-2.39855755711e-05,0,0,1,0,91,127,0,1)" aria-hidden="true"><img class="app translator" src="assets/studio/translate-{l}.webp" width="1160" height="756" alt=""><div class="sender-window"><div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span>Telegram Media Sender</div><img src="assets/studio/sender-{l}.webp" width="1040" height="702" alt=""></div></div><div class="desktop windows-desktop" style="transform:matrix3d(0.307737845066,-0.00272982638239,0,-1.96390387222e-05,-0.0464419135057,0.323316632667,0,-2.52904813132e-05,0,0,1,0,1407,139,0,1)" aria-hidden="true"><img class="app peak" src="assets/studio/peak-{l}.webp" width="700" height="1163" alt=""><img class="app quick" src="assets/studio/quick-{l}.webp" width="420" height="586" alt=""></div></div></div><div class="hero-copy"><p class="eyebrow">{e(c['eyebrow'])}</p><h1>{title}</h1><p class="lead">{e(c['intro'])}</p><div class="hero-actions"><a class="primary" href="#catalog">{e(c['browse'])} <span aria-hidden="true">↘</span></a><a href="{GITHUB}">{e(c['github'])} <span aria-hidden="true">↗</span></a></div><div class="hero-meta"><span>{n} {e(c['count'])}</span><span>macOS / Windows</span><span>RU / DE / EN</span></div></div></section>
-<div class="demo-feature-row"><a class="peak-demo-feature" href="https://popovantondev.github.io/PeakMP3/{"index.html" if l=="de" else "index-"+l+".html"}#demo"><img src="assets/peakmp3-demo-{l}.svg" width="1400" height="520" alt="PeakMP3 — {dict(ru='Попробовать в браузере',de='Im Browser testen',en='Try in browser')[l]}" loading="lazy"></a><a class="peak-demo-feature piano-demo-feature" href="https://popovantondev.github.io/VirtualPianoArranger/play-{l}.html"><img src="assets/piano-demo-{l}.svg" width="1400" height="520" alt="Virtual Piano Arranger — {dict(ru='Играть в браузере',de='Im Browser spielen',en='Play in the browser')[l]}" loading="lazy"></a></div>
-<section id="marquee" class="ppk-section marquee-section" aria-labelledby="marquee-title"><h2 id="marquee-title">{e(MARQUEE[l]['title'])}</h2><p class="ppk-sub">{e(marquee_sub(l,n))}</p>{marquee(d,l,actions)}</section>
+{demo_row(l)}
+<section id="marquee" class="ppk-section marquee-section" aria-labelledby="marquee-title"><h2 id="marquee-title">{e(MARQUEE[l]['title'])}</h2><p class="ppk-sub">{marquee_sub_html(l,n)}</p>{marquee(d,l,actions)}</section>
 <section id="catalog" class="ppk-section" aria-labelledby="catalog-title"><div class="catalog-top"><div><p class="eyebrow">{e(c['platform'])} · macOS / Windows</p><h2 id="catalog-title">{e(c['all'])}</h2></div><span class="result-count" id="result-count" aria-live="polite">{n} / {n}</span></div>
 <div class="catalog-controls" hidden><div class="ppk-tabs" role="tablist" aria-label="{e(c['categories'])}">{tabs}</div><div class="catalog-filters"><div class="filters" role="group" aria-label="{e(c['platform'])}"><button type="button" data-filter="all" aria-pressed="true">{e(ALL_LABEL[l])}</button><button type="button" data-filter="macos" aria-pressed="false">macOS</button><button type="button" data-filter="windows" aria-pressed="false">Windows</button></div><label class="search"><span class="ppk-sr-only">{e(c['search'])}</span><input id="project-search" type="search" placeholder="{e(c['placeholder'])}" autocomplete="off"></label></div></div>
 <div class="projects" id="projects" role="tabpanel" aria-labelledby="tab-all">{''.join(cards)}</div><p class="empty" id="empty" hidden>{e(c['empty'])}</p><p class="ppk-sub catalog-note">{e(c['footer'])}</p></section></main>

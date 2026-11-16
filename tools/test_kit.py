@@ -312,6 +312,18 @@ class KitStaticTests(unittest.TestCase):
         decor_js = self.js[self.js.index('side decor'):self.js.index('function init()')]
         self.assertNotIn("'scroll'", decor_js)  # no scroll handler: the layer never repaints on scroll
         self.assertIn('data-ppk-slash', decor_js)  # the piano game page keeps its own note background
+    def test_phone_header_is_two_full_rows_with_finger_sized_controls(self):
+        # Safari on a phone showed the search and language switch hanging in a second row. Below 560 px the header is two full rows
+        # (name + theme + GitHub, then [back] search + a language switch that takes the rest) and every control is >= 40 px.
+        phone = re.search(r'@media \(max-width:560px\)\{(.*?)\n\}', self.css, flags=re.S)
+        self.assertTrue(phone)
+        body = phone.group(1)
+        self.assertRegex(body, r'\.ppk-langs\{[^}]*flex:1 1 0')
+        self.assertRegex(body, r'\.ppk-nav\{[^}]*flex-wrap:wrap')
+        small = ' '.join(re.findall(r'@media \(max-width:640px\)\{(.*?)\n\}', self.css, flags=re.S))
+        for needle in ('.ppk-icon-btn{width:44px;height:44px}', '.ppk-search-btn{width:44px;min-height:44px}', '.ppk-langs a{min-width:40px;min-height:40px}'):
+            self.assertIn(needle, small)
+
     def test_brand_label_is_not_clipped_in_the_floating_pill(self):
         # `overflow:hidden` on the label cut the last letter ("popovantondev" lost its v) and the descender of "p"
         # at fractional zoom (125/150 %). The label needs ink room on the right and below, paid back by negative margins.
