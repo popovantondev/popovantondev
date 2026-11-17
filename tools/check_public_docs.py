@@ -116,7 +116,7 @@ def profile_picture(manifest,raw,kind,l,href):
     pick=lambda theme:next((i for i in manifest['images'] if i['kind']==kind and i['lang']==l and i['theme']==theme),None)
     light,dark=pick('light'),pick('dark')
     if not light or not dark:raise ValueError(f'{PROFILE_MANIFEST}: no {kind} picture for {l} in both themes')
-    return f'<a href="{escape(href)}"><picture><source media="(prefers-color-scheme: dark)" srcset="{raw+dark["path"]}"><img src="{raw+light["path"]}" width="{light["width"]}" height="{light["height"]}" alt="{escape(light["alt"])}"></picture></a>'
+    return f'<a href="{escape(href)}"><picture><source media="(prefers-color-scheme: dark)" srcset="{raw+dark["path"]}"><img src="{raw+light["path"]}" width="{light["width"]}" alt="{escape(light["alt"])}"></picture></a>'
 def profile_readme(d,l):
     sys.path.insert(0,str(ROOT/'tools'))
     from catalog_page import apps_count,marquee_sub

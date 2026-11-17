@@ -88,7 +88,7 @@ class ProfileReadmeTests(unittest.TestCase):
             self.assertEqual(len(pictures),1+2+len(self.data['projects']),l)      # banner, two demos, one card per program
             for picture in pictures:
                 self.assertRegex(picture,r'<source media="\(prefers-color-scheme: dark\)" srcset="https://raw\.githubusercontent\.com/popovantondev/popovantondev/main/docs/readme/[^"]+-'+l+r'-dark\.[0-9a-f]{8}\.webp">')
-                self.assertRegex(picture,r'<img src="[^"]+-'+l+r'-light\.[0-9a-f]{8}\.webp" width="\d+" height="\d+" alt="[^"]{8,}">')
+                self.assertRegex(picture,r'<img src="[^"]+-'+l+r'-light\.[0-9a-f]{8}\.webp" width="\d+" alt="[^"]{8,}">')
             self.assertNotIn('loading=',text)                                     # GitHub strips it, so it is not written
             self.assertNotIn('<table',text.split('<details>')[0])                 # no table above the text-only link list
     def test_profile_readme_uses_light_images_in_the_budget_of_the_brief(self):
