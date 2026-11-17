@@ -78,7 +78,8 @@ a { color: inherit; text-underline-offset: 4px; }
   overflow: hidden;
   margin: 12px 0 0;
   --ab-pad-b: clamp(70px, 8vw, 96px);
-  padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 56px) var(--ab-pad-b);
+  --ab-pad-x: clamp(20px, 5vw, 56px);
+  padding: clamp(28px, 5vw, 56px) var(--ab-pad-x) var(--ab-pad-b);
   border-radius: 26px;
   background: #062048;
   color: #f7fbff;
@@ -113,7 +114,7 @@ a { color: inherit; text-underline-offset: 4px; }
   background: linear-gradient(180deg, rgba(8, 28, 66, 0.1), rgba(3, 12, 32, 0.85));
   box-shadow: inset 0 14px 30px -18px rgba(120, 190, 255, 0.45);
 }
-.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 440px); gap: clamp(24px, 4vw, 48px); align-items: center; }
+.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, min(440px, 30vw)); gap: clamp(24px, 4vw, 48px); align-items: center; }
 /* Portrait: transparent cut-out standing in the scene, no frame. Its bottom sits on the hero's lower edge (negative margin eats the hero padding),
    where overflow clips it and the facts strip (z-index 1, overlapping the hero) covers the cut. */
 .ab-portrait {
@@ -124,6 +125,9 @@ a { color: inherit; text-underline-offset: 4px; }
   justify-self: end;
   align-self: end;
   margin-bottom: calc(-1 * var(--ab-pad-b));
+  /* Stand further to the right: the figure leaves the column and takes the hero's right padding, down to 14px from the edge
+     (the right sleeve is the widest point of the cut-out and ends at its edge; overflow hidden on .ab-hero clips nothing visible). */
+  margin-right: calc(-1 * (var(--ab-pad-x) - 14px));
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -134,7 +138,7 @@ a { color: inherit; text-underline-offset: 4px; }
 .ab-hero h1 {
   margin: 0 0 var(--space-2);
   color: #fff;
-  font-size: clamp(30px, 3.9vw, 46px);
+  font-size: clamp(28px, 3.9vw, 46px);
   line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 750;
@@ -617,7 +621,7 @@ main.ppk-shell { padding-bottom: var(--space-2); }
   .ab-hero { border-radius: 20px; }
   .ab-hero-grid { grid-template-columns: 1fr; gap: var(--space-3); }
   /* Portrait sits above the text, so its cut would show mid-hero: fade the lower part out. */
-  .ab-portrait { order: -1; justify-self: start; align-self: auto; max-width: 250px; margin-bottom: 0; -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
+  .ab-portrait { order: -1; justify-self: end; align-self: auto; max-width: 250px; margin-bottom: 0; -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
   .ab-name { font-size: 20px; }
   .ab-hero h1 { font-size: 28px; }
   .ab-lead { font-size: 16px; }
@@ -631,6 +635,10 @@ main.ppk-shell { padding-bottom: var(--space-2); }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-0); }
   .block { padding-top: var(--space-4); }
   .peak-device { padding: 12px; border-radius: 22px; }
+}
+@media (max-width: 380px) {
+  /* "Anwendungsentwicklung" at 28px is 316px wide, the column at 375 is 303px and at 320 is 248px: the word broke in the middle. */
+  .ab-hero h1 { font-size: clamp(21px, 6.6vw, 28px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
