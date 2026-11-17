@@ -115,7 +115,14 @@ html[lang=de] .hero-studio .lead{font-size:1.1719cqw}
 
 @media(max-width:1000px){
 .hero.hero-studio{aspect-ratio:auto;padding:0 20px 28px}
-.hero-studio .studio-art{position:relative;aspect-ratio:8/3;margin:0 -20px}
+.hero-studio .studio-art{position:relative;aspect-ratio:1748/768;margin:0 -20px;--scene-w:1748}
+/* Text sits below the picture here, so the 470px of empty table between the two laptops is cut out: the photograph is drawn as two pieces
+   (left to x=950, right from x=1150 of the original, 100px cross-fade) and the Windows laptop with its screens moves 300px closer. catalog.js reads --scene-w. */
+.hero-studio .photograph{display:none}
+.hero-studio .scene::before,.hero-studio .scene::after{content:"";position:absolute;z-index:-1;top:0;height:768px;background:url(studio/studio-desktops.webp) no-repeat;background-size:2048px 768px}
+.hero-studio .scene::before{left:0;width:950px}
+.hero-studio .scene::after{left:850px;width:898px;background-position:-1150px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 100px);mask-image:linear-gradient(90deg,transparent,#000 100px)}
+.hero-studio .windows-desktop{translate:-300px 0}
 .hero-studio .hero-copy{position:relative;left:auto;top:auto;width:100%;max-width:640px;margin:0 auto}
 .hero-studio .eyebrow{font-size:12px;letter-spacing:1.2px;margin:8px 0 16px}
 .hero-studio h1,html[lang=en] .hero-studio h1,html[lang=de] .hero-studio h1{font-size:clamp(26px,5vw,42px);letter-spacing:-1px;margin:0 0 18px}

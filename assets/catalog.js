@@ -29,7 +29,7 @@ input.addEventListener('input',update);
 })();
 
 // Keep the original photograph and screen planes on the same coordinate system.
-(()=>{const art=document.querySelector(".hero-studio .studio-art");if(!art)return;const resize=()=>{const w=art.getBoundingClientRect().width||art.clientWidth;if(w)art.style.setProperty("--scale",w/2048)};if(window.ResizeObserver)new ResizeObserver(resize).observe(art);window.addEventListener("resize",resize);window.addEventListener("orientationchange",resize);window.addEventListener("load",resize);resize();
+(()=>{const art=document.querySelector(".hero-studio .studio-art");if(!art)return;const resize=()=>{const w=art.getBoundingClientRect().width||art.clientWidth,sw=parseFloat(getComputedStyle(art).getPropertyValue("--scene-w"))||2048;if(w)art.style.setProperty("--scale",w/sw)};if(window.ResizeObserver)new ResizeObserver(resize).observe(art);window.addEventListener("resize",resize);window.addEventListener("orientationchange",resize);window.addEventListener("load",resize);resize();
 // Show the scene only when the photograph and all window pictures are decoded (otherwise the windows pop in over a half-drawn studio).
 const imgs=[...art.querySelectorAll("img")],show=()=>art.classList.add("is-ready");
 Promise.race([Promise.all(imgs.map(i=>i.decode?i.decode().catch(()=>{}):Promise.resolve())),new Promise(r=>setTimeout(r,3000))]).then(show,show)})();
