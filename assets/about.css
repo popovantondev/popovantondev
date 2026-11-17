@@ -114,7 +114,9 @@ a { color: inherit; text-underline-offset: 4px; }
   background: linear-gradient(180deg, rgba(8, 28, 66, 0.1), rgba(3, 12, 32, 0.85));
   box-shadow: inset 0 14px 30px -18px rgba(120, 190, 255, 0.45);
 }
-.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, min(440px, 30vw)); gap: clamp(24px, 4vw, 48px); align-items: center; }
+/* The portrait column takes what the headline leaves: "Anwendungsentwicklung" (about 11.3 x font size wide) must not break, so the column is
+   42vw - 64px up to ~1120px, 96vw - 673px above (headline capped at 44px, card capped at 1144px), at most 480px. */
+.ab-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(220px, max(42vw - 64px, 96vw - 673px), 480px); gap: clamp(24px, 4vw, 48px); align-items: center; }
 /* Portrait: transparent cut-out standing in the scene, no frame. Its bottom sits on the hero's lower edge (negative margin eats the hero padding),
    where overflow clips it and the facts strip (z-index 1, overlapping the hero) covers the cut. */
 .ab-portrait {
@@ -138,7 +140,7 @@ a { color: inherit; text-underline-offset: 4px; }
 .ab-hero h1 {
   margin: 0 0 var(--space-2);
   color: #fff;
-  font-size: clamp(28px, 3.9vw, 46px);
+  font-size: clamp(28px, 3.9vw, 44px);
   line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 750;
@@ -621,7 +623,7 @@ main.ppk-shell { padding-bottom: var(--space-2); }
   .ab-hero { border-radius: 20px; }
   .ab-hero-grid { grid-template-columns: 1fr; gap: var(--space-3); }
   /* Portrait sits above the text, so its cut would show mid-hero: fade the lower part out. */
-  .ab-portrait { order: -1; justify-self: end; align-self: auto; max-width: 250px; margin-bottom: 0; -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
+  .ab-portrait { order: -1; justify-self: end; align-self: auto; max-width: 250px; margin-bottom: 0; margin-right: calc(-1 * (var(--ab-pad-x) - 34px)); -webkit-mask-image: linear-gradient(#000 72%, transparent); mask-image: linear-gradient(#000 72%, transparent); }
   .ab-name { font-size: 20px; }
   .ab-hero h1 { font-size: 28px; }
   .ab-lead { font-size: 16px; }
