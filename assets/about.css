@@ -617,17 +617,16 @@ main.ppk-shell { padding-bottom: var(--space-2); }
   #demo, .ab-piano { grid-template-columns: 1fr; }
   .peak-copy { max-width: none; }
 }
-/* Tablets and phones turned sideways (701-1000px): the text no longer sits next to a narrow portrait. Name, role and headline stay at the
-   top left, the portrait (up to 600px) stands on the right behind/after them - its left part above the laptop is transparent, so the headline
-   fits in front of it - and the paragraph and buttons start below, over the faded lower edge of the cut-out. */
+/* Tablets and phones turned sideways (701-1000px). The portrait stands bottom right (--ab-pw wide, as large as fits) and is taken out of the
+   grid. Name, role and headline run across its transparent upper left (the cut-out is empty left of the face above the laptop), the paragraph
+   and the buttons fill the column to the left of the laptop (--ab-lw wide, about 300px), so there is no empty space beside the laptop. */
 @media (min-width: 701px) and (max-width: 1000px) {
-  .ab-hero { --ab-pw: clamp(300px, 74vw - 88px, 600px); }
-  .ab-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
-  .ab-hero-copy { display: contents; }
-  .ab-hero-head { display: block; grid-area: 1 / 1; position: relative; z-index: 1; max-width: calc(100% + var(--ab-pad-x) - 30px - 0.59 * var(--ab-pw)); }
-  .ab-portrait { grid-area: 1 / 1; justify-self: end; align-self: start; width: var(--ab-pw); margin-bottom: 0; -webkit-mask-image: linear-gradient(#000 68%, transparent); mask-image: linear-gradient(#000 68%, transparent); }
-  .ab-lead { grid-row: 2; position: relative; z-index: 1; margin-top: calc(-0.1 * var(--ab-pw)); max-width: 680px; }
-  .ab-actions { grid-row: 3; position: relative; z-index: 1; }
+  .ab-hero { --ab-pw: clamp(260px, 91vw - 370px, 460px); --ab-gap: clamp(24px, 4vw, 48px); }
+  .ab-hero-grid { display: block; min-height: calc(var(--ab-pw) * 1.018 - clamp(28px, 5vw, 56px) - var(--ab-pad-b) + 24px); }
+  .ab-hero-copy { max-width: none; }
+  .ab-hero-head { display: block; position: relative; z-index: 1; max-width: calc(100% + var(--ab-pad-x) - 30px - 0.59 * var(--ab-pw)); }
+  .ab-portrait { position: absolute; right: 14px; bottom: 0; width: var(--ab-pw); margin: 0; }
+  .ab-lead, .ab-actions { max-width: calc(100% + var(--ab-pad-x) - 14px - var(--ab-gap) - var(--ab-pw)); }
 }
 @media (max-width: 820px) {
   .cases, .chip-groups { grid-template-columns: 1fr; }
